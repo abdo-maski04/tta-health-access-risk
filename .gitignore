@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+airflow/logs/
+data/interim/*
+!data/interim/.gitkeep
+.DS_Store
