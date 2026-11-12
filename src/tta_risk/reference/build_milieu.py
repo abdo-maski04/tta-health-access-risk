@@ -1,4 +1,4 @@
-"""
+﻿"""
 TTA Health Access Risk — Membre A
 Étape 3 : détermination du milieu de résidence (Urbain / Rural / Mixte) par commune.
 
@@ -33,7 +33,7 @@ from pathlib import Path
 
 import openpyxl
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 DOUARS = ROOT / "data" / "raw_downloads" / "hcp_douars_rural_TTA_rgph2024.xlsx"
 REF146 = ROOT / "data" / "reference" / "communes_TTA_146.csv"
 DEMO = ROOT / "data" / "reference" / "demographics.csv"

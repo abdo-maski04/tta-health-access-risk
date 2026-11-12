@@ -1,4 +1,4 @@
-"""
+﻿"""
 TTA Health Access Risk — Membre A
 Étape 4 : assemblage du jeu de données livrable (dataset final du Membre A).
 
@@ -17,7 +17,7 @@ import csv
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 REF = ROOT / "data" / "reference" / "communes_TTA_146.csv"
 DEMO = ROOT / "data" / "reference" / "demographics.csv"
 OUT = ROOT / "data" / "processed"

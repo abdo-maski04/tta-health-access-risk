@@ -1,4 +1,4 @@
-"""
+﻿"""
 TTA Health Access Risk — Membre A
 Étape 2 : intégration de la population légale RGPH 2024 (HCP) au référentiel.
 
@@ -24,7 +24,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 POP_RAW = ROOT / "data" / "raw_downloads" / "population_legale_rgph2024_TTA.csv"
 REF146 = ROOT / "data" / "reference" / "communes_TTA_146.csv"
 OUT_DIR = ROOT / "data" / "reference"

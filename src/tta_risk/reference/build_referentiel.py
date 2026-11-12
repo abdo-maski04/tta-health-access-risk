@@ -1,4 +1,4 @@
-"""
+﻿"""
 TTA Health Access Risk — Membre A
 Étape 1 : construction du référentiel territorial communal (région TTA).
 
@@ -27,7 +27,7 @@ from pathlib import Path
 
 from shapely.geometry import shape
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 RAW = ROOT / "data" / "raw_downloads" / "communes_rgph2024_MAR.geojson"
 OUT_DIR = ROOT / "data" / "reference"
 
