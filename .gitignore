@@ -7,5 +7,7 @@ __pycache__/
 airflow/logs/
 data/interim/*
 !data/interim/.gitkeep
-.DS_Storedata/raw_downloads/
+.DS_Store
+data/interim/
+data/raw_downloads/
 data/interim/
