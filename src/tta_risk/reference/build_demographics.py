@@ -21,7 +21,7 @@ from __future__ import annotations
 import csv
 import json
 import unicodedata
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -144,7 +144,7 @@ def main() -> None:
         pop_prov[x["province"]] = pop_prov.get(x["province"], 0) + x["population_2024"]
 
     qc = {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "source": "HCP RGPH 2024 — population légale des collectivités territoriales (région TTA)",
         "communes_reference": len(ref),
         "communes_appariees": len(rows),
