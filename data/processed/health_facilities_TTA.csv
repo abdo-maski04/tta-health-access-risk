@@ -1,0 +1,894 @@
+osm_type,osm_id,name,facility_type,healthcare,lat,lon,operator,opening_hours,phone,addr_city,source,licence
+node,5575040515,Arrazi Radiologie,clinic,clinic,35.776286,-5.814061,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796214007,Cabinet Dr Imane El Fatemi,clinic,,35.770388,-5.825675,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,586432801,Cabinets de Pédiatrie,clinic,clinic,35.776143,-5.837292,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5577523880,Centre De Biologic Medicale,clinic,clinic,35.773427,-5.809831,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11291276254,Centre de Santé Rural Belyounech,clinic,clinic,35.909442,-5.387021,,,,Belyounech,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3834127864,Centre de santé Ain el Haouzi,clinic,clinic,35.179134,-5.279529,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3168405186,Centre de santé Al Haouta,clinic,clinic,35.169166,-5.262732,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3105612829,Centre de santé Bab El Ain,clinic,clinic,35.167467,-5.265464,,,+212 6 18 71 80 38,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3834218455,Centre de santé Dhar Ben Ayed,clinic,clinic,35.154512,-5.275714,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1444798113,Centro de Salud Recinto Sur,clinic,centre,35.885619,-5.307272,Instituto Nacional de Gestión Sanitaria (INGESA),,+34 956514030,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14045580374,Ceuta Medical Center,clinic,clinic,35.8885,-5.309191,,,+34 956 51 11 76,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7374757009,Clinica Septem,clinic,clinic,35.889142,-5.308233,,,+34 856 201 446,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5593628783,Clinique Aoufi,clinic,clinic,35.782088,-5.82205,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,587062462,Clinique Assalam,clinic,clinic,35.769934,-5.80951,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,417732221,Clinique Bennis مصحة بنيس,clinic,clinic,35.765431,-5.797942,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,585535631,Clinique Sidi Amar,clinic,clinic,35.779251,-5.831075,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1007591774,Clinique Val Fleuri,clinic,clinic,35.777586,-5.827112,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7374752360,Clínica Jaudanes,clinic,clinic,35.887752,-5.31506,,,+34 956511715,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3153555148,Croissant Rouge الهلال الأحمر,clinic,clinic,35.168818,-5.271746,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14045527389,HC Ceuta,clinic,clinic,35.888778,-5.315161,,,+34956922531,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,581751845,Laboratoire D'Analyses Médicales de Tanger,clinic,clinic,35.776199,-5.806356,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14045580376,Policlínica Virgen de África,clinic,clinic,35.888764,-5.308767,,,+34956510783,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5579470642,Cabinet Medical,doctors,doctor,35.770206,-5.829214,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5605589178,Cabinet Medical,doctors,doctor,35.747319,-5.839068,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,584963784,Cabinet Medical,doctors,doctor,35.740239,-5.805582,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8572612458,Cabinet de Cardiologie Dr. Chaoui Alae,doctors,doctor,35.571269,-5.385027,,Mo-Fr 10:00-17:00,+212 5 39 70 28 83; +212 6 43 87 01 28,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13294747985,Cabinet médical de Tanja Balia – Dr Sofia Daad,doctors,doctor,35.768774,-5.76222,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4694004827,Centre de Santé Bni Ouriaghel,doctors,doctor,35.745966,-5.82498,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,1290967708,Centre de Santé Communal Moulay Bousselham,doctors,doctor,34.878777,-6.281191,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,9886764617,Centre médical,doctors,doctor,35.57128,-5.372762,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,363347283,Centro de Salud Otero,doctors,doctor,35.888425,-5.327754,,,+34 956527724,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,586728054,Clinique Achifaa,doctors,doctor,35.744852,-5.830375,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7382868502,Clínica Laservisión Ceuta,doctors,doctor,35.888316,-5.308529,,,+34 956 511 176,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3770569363,Dr Amina Bissoufa,doctors,doctor,35.166319,-5.264782,,,+212 5 39 98 83 83,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3770569367,Dr Faouzi Cherradi,doctors,doctor,35.166611,-5.26511,,,+212 5 39 98 87 80,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3795380378,Dr Karim Akaaboune,doctors,doctor,35.170473,-5.268903,,,+212 5 39 98 81 92,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3773518937,Dr Khaddidi Abdelmjid,doctors,doctor,35.167833,-5.268922,,,+212 6 61 18 63 77,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5003898221,Dr. El Alaoui,doctors,doctor,35.780568,-5.812649,,Mo-Fr 09:00-16:00; Sa 09:00-14:00,+212 539323030,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5605589370,Laboratoire Aoufi d'Analyses Médicales,doctors,doctor,35.744474,-5.832753,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,585202490,Medecin,doctors,doctor,35.750796,-5.829526,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,585202494,Medecin,doctors,doctor,35.747363,-5.828892,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5609842841,Médecin,doctors,doctor,35.733233,-5.881966,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,850237066,,healthcare_unspecified,yes,35.880926,-5.329138,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,627146973,Centro de Salud El Tarajal,healthcare_unspecified,yes,35.873765,-5.34399,,,+34956508200,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1082328217,Clinique de cité universitaire,healthcare_unspecified,yes,35.736316,-5.892157,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,10558675910,,hospital,hospital,35.684269,-5.926075,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,363772898,,hospital,hospital,34.933317,-3.5233,,,,Midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,411183375,,hospital,hospital,35.683128,-5.922201,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,478960842,,hospital,hospital,35.103748,-3.840558,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,908806511,,hospital,hospital,34.976112,-3.384519,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1326144502,AKDITAL : Hôpital Privé de Tanger,hospital,hospital,35.744422,-5.862043,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12729460358,APEX Dental Clinic,hospital,hospital,35.775725,-5.804625,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12846726229,C. d'oncologie d'Al Hoceima,hospital,hospital,35.237344,-3.928308,,,,Al Hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,871505068,CHU de Tanger-Tétouan-Al Hoceima,hospital,hospital,35.683432,-5.925265,centre,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3025053649,Cabinet Medical,hospital,hospital,34.938064,-3.533939,,,,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,698795145,Cabinet Medical,hospital,hospital,34.938581,-3.533993,,,,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,698795156,Cabinet Medical,hospital,hospital,34.938375,-3.534285,,,+212 5 36 36 42 00,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,587335799,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,hospital,hospital,35.683029,-5.921931,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789800644,Centre De Sante Martil,hospital,hospital,35.619828,-5.274029,hopital,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,736805477,Centre De sante Saadina,hospital,hospital,35.606703,-5.449787,,,,Saadina,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,298573709,Centre El Fath D`hemodialyse,hospital,hospital,34.936637,-3.535201,,,,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8377190516,Centre Hospitalier Provincial Mohammed VI,hospital,hospital,35.195741,-3.887508,Ministère de la Santé,,,Al Hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,737744536,Centre Médical Boujarrah,hospital,hospital,35.590099,-5.351683,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1206485292,Centre Sante Ait Youssef Ou Ali,hospital,hospital,35.173827,-3.871146,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,737752781,Centre de Sante Touila,hospital,hospital,35.580955,-5.362416,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13067630487,Centre de Santé Said Noussairi,hospital,hospital,35.770601,-5.814609,,,+212 6 63 61 32 42,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,hospital,34.995493,-5.90619,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815486727,Centre de Santé Urbain 9 Juillet,hospital,hospital,34.80178,-5.576777,Ministère de la Santé Maroc,,,Ouazzane ⵡⴰⵣⴰⵏ وزان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13762411301,Centre de Santé Urbain Dradeb,hospital,,35.787265,-5.834375,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,150999624,Centre de dialyse Arrayane,hospital,hospital,35.58449,-5.346729,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789174876,Centre de santé Tafersit,hospital,hospital,35.007444,-3.545896,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,150856463,Clinique Bades,hospital,hospital,35.233858,-3.925566,clinic,,,Al Hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13827510345,Clinique Riad Marshan,hospital,hospital,35.786937,-5.820158,,24/7,+212 6 61 40 56 04,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,1596542299,Clinique Rif,hospital,hospital,35.586766,-5.346908,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12846991817,Clinique Tingis,hospital,hospital,35.770891,-5.807238,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,211974412,Clinique Tétouan,hospital,hospital,35.570662,-5.385507,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,211899564,Clinique an-Nakhil,hospital,hospital,35.569054,-5.382279,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789181764,Clinique croissant Rouge,hospital,hospital,35.571422,-5.387536,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,150999396,Clinique rif,hospital,hospital,35.586857,-5.346787,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789177945,Croissant Rouge,hospital,hospital,35.777716,-5.810067,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,10920276384,Health Center Imzouren,hospital,hospital,35.145575,-3.852558,,,,Al Hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789166411,Hopital Italien المستشفى الإيطالي,hospital,hospital,35.784509,-5.821213,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,293247182,Hopital Mohamed 6,hospital,hospital,35.69204,-5.32987,hopital,,,MDiq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,305583432,Hopital Mohamed V,hospital,hospital,35.168467,-5.271189,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789778445,Hopital Provincial de Ksar El Kébir,hospital,hospital,34.993932,-5.902968,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1242229574,Hospital Ben Karrich,hospital,hospital,35.510269,-5.423227,,,,Bni Karrich بن قريش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815618481,Hôpital,hospital,hospital,35.464775,-6.02694,hopital,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2193213076,Hôpital Espagnol,hospital,hospital,35.57235,-5.387751,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,564951388,Hôpital Espagnol,hospital,hospital,35.778308,-5.821993,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815701962,Hôpital Le Croissant Rouge d'Asilah,hospital,hospital,35.467711,-6.034408,hopital,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,297605167,Hôpital Mohamed V,hospital,hospital,35.168526,-5.270911,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789174103,Hôpital Mohamed V,hospital,hospital,35.238837,-3.938983,hopital,,,Al Hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3195514325,Hôpital Mohammed V,hospital,hospital,35.169051,-5.270316,,,+212 5 39 98 62 28,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,122398955,Hôpital Mohammed V,hospital,hospital,35.778232,-5.828275,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,475665966,Hôpital Mohammed VI,hospital,hospital,35.750814,-5.828489,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815056754,Hôpital Princesse Lalla Meriem,hospital,hospital,35.18577,-6.156831,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,484204214,Hôpital Sanyat Rmel,hospital,hospital,35.573345,-5.355885,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13779782207,Hôpital de Jour Martil,hospital,,35.619051,-5.28817,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,380117212,Hôpital psychiatrique,hospital,hospital,35.175043,-5.285444,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,363354239,Hôpital universitaire de Ceuta,hospital,hospital,35.880167,-5.34152,Ingesa,,+34 856907000,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1189867407,International Clinic of Tangier,hospital,hospital,35.771994,-5.785393,clinic,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13765658301,New Covenant Hospital,hospital,,35.624602,-5.290814,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,511059739,Polyclinique CNSS,hospital,hospital,35.775599,-5.770119,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815139758,Polyclinique Lixus,hospital,hospital,35.180661,-6.146331,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,hospital,34.803614,-5.559711,,,,Ouazzane ⵡⴰⵣⴰⵏ وزان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,358688501,hôpital al kortobi,hospital,hospital,35.789487,-5.81841,hopital,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13766599702,المركز الصحي القلعة,hospital,,35.680943,-5.329839,,Mo-Fr 08:00-16:00,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13760199101,مركز الزهراء للحجامة و العلاج البديل,hospital,,35.607998,-5.270488,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1547030549,مستشفى بني سعيد,hospital,hospital,35.422874,-5.121694,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,hospital,34.944727,-4.327538,ministere de la santé Maroc,,,Targuist ⵜⴰⵔⴳⵉⵙⵜ تارجيست,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13770363904,مصحة الرازي,hospital,,35.783576,-5.826432,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11283164353,El Razi,laboratory,laboratory,35.569583,-5.376243,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11284153030,Laboratoire,laboratory,laboratory,35.569244,-5.373604,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12140292510,Laboratoire d'Analyses Médicales,laboratory,laboratory,35.772566,-5.77008,,Mo-Sa 07:30-19:00,+212 5 39 30 46 16,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14045580375,Laboratorio Ceuta Medical Center,laboratory,laboratory,35.888468,-5.308669,,,+34956 51 32 78,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,554630866,,pharmacy,pharmacy,35.450982,-5.092094,,,,وادي لو,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,1088903274,,pharmacy,pharmacy,35.470193,-5.402679,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,1605983559,,pharmacy,pharmacy,35.007898,-3.543483,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4746016822,,pharmacy,pharmacy,35.890482,-5.304656,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4875948615,,pharmacy,pharmacy,35.88796,-5.311861,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6209757035,,pharmacy,pharmacy,35.115078,-5.287804,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6209786317,,pharmacy,pharmacy,35.448346,-5.091487,,,,وادي لو,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6898570088,,pharmacy,pharmacy,35.570372,-5.401656,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,10007507866,,pharmacy,pharmacy,34.889978,-3.728591,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11134693760,,pharmacy,pharmacy,35.195556,-3.894782,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11459967192,,pharmacy,pharmacy,35.03644,-5.771012,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11459977638,,pharmacy,pharmacy,35.006309,-5.892746,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11902448887,,pharmacy,pharmacy,34.913841,-4.569582,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12071098311,,pharmacy,pharmacy,35.888237,-5.320248,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14318526640,,pharmacy,pharmacy,35.006463,-3.540154,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13779781502,AlBahar,pharmacy,,35.410421,-5.067047,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2308136542,Alinkor Pharmacy,pharmacy,pharmacy,35.173295,-3.865176,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827370704,Avenue Youssef Ibn Tachfine,pharmacy,pharmacy,35.771052,-5.803102,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13767425404,Bni Maadan Pharmacy,pharmacy,,35.578593,-5.278541,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5608265105,Droguerie,pharmacy,pharmacy,35.733614,-5.881398,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13767425401,Droguerie,pharmacy,,35.616766,-5.27238,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5608265142,Droguerie Assalam,pharmacy,pharmacy,35.737397,-5.885764,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13815705198,El Majaze,pharmacy,,35.859653,-5.532137,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,1078695563,Farmacia Almadraba,pharmacy,pharmacy,35.879469,-5.336589,,,+34 956 504 247,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13821121202,Farmacia Del-Lero,pharmacy,,35.618809,-5.285155,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4124790990,Farmacia Hispania,pharmacy,pharmacy,35.888396,-5.307794,,"Mo-Fr 09:00-10:15, 12:45-20:30",+34 956512530,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,9107334247,Farmacia Militar,pharmacy,pharmacy,35.880874,-5.328984,,,+34956526602,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,9605226233,Farmacia Morte Ceuta,pharmacy,pharmacy,35.890081,-5.334229,,,,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12652599285,Farmacia Príncipe Alfonso,pharmacy,pharmacy,35.87995,-5.347647,Beatriz Ferrón Barba,,+34 956 502 694,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5035412723,Farmacia Príncipe Felipe,pharmacy,pharmacy,35.874952,-5.345014,,,+34 956 521 369,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7382868501,Farmacia Puya,pharmacy,pharmacy,35.885205,-5.330354,,24/7,+34 956 50 04 20,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13665634778,Farmacia Tomás Buenaventura,pharmacy,,35.895179,-5.327081,,,+34 956521111,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13665634777,Farmacia-Ortopedia Ruiz,pharmacy,pharmacy,35.88746,-5.31429,,,+34 956 51 22 18,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4875948614,Gabriel,pharmacy,pharmacy,35.88766,-5.31153,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812421496,Grande Pharmacie Assia صيدلية اسيا الكبرى,pharmacy,pharmacy,35.744446,-5.832843,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8833158375,Grande Pharmacie Branes صيدلية برانص الكبرى,pharmacy,pharmacy,35.762852,-5.824992,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8860531824,Grande Pharmacie Malabata صيدلية ملاباطا الكبرى,pharmacy,pharmacy,35.775734,-5.777002,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686056728,Grande Pharmacie Nouvelle,pharmacy,pharmacy,35.57118,-5.375605,,,,Tétouan ⵜⵉⵟⵟⴰⵡⵉⵏ تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8828049938,Grande Pharmacie Pasteur الصيدلية الكبرى باستور,pharmacy,pharmacy,35.781078,-5.81232,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791852156,Grande Pharmacie Rif صيدلية الريف الكبرى,pharmacy,pharmacy,35.753922,-5.810023,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8832680393,Grande Pharmacie Souani صيدلية السواني الكبرى,pharmacy,pharmacy,35.770155,-5.824221,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827981343,Grande Pharmacie Zeroual صيدلية زروال الكبرى,pharmacy,pharmacy,35.776036,-5.81401,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11480701270,Loukili,pharmacy,pharmacy,35.46723,-6.032137,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14045368393,María Jesús Rodríguez Cans,pharmacy,pharmacy,35.884933,-5.340637,,,+34956501752,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4160712290,Moulant Bouslam,pharmacy,pharmacy,34.87603,-6.29528,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12140292514,Moun Para,pharmacy,pharmacy,35.772508,-5.770498,,,+212 6 61 94 22 32,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13773572602,Mustapha,pharmacy,,34.997332,-4.889553,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13073835282,PHARMACIE EL MANHAJ,pharmacy,pharmacy,35.756588,-5.755107,,,+212 7 66 68 35 65,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13799495001,PHARMACIE TIDGHINE,pharmacy,,34.876847,-4.618693,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8435674279,ParaPharmacie Be,pharmacy,pharmacy,34.976157,-3.388717,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796214006,Parapharmacie Bassatine,pharmacy,,35.770265,-5.826452,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796156801,Parapharmacie Iberia,pharmacy,,35.782009,-5.820705,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13798247555,Pharmacie,pharmacy,,35.455318,-5.094947,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13793858601,Pharmacie 14 Novembre,pharmacy,,35.614213,-5.300412,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686055595,Pharmacie 2000 صيدلية,pharmacy,pharmacy,35.570315,-5.401787,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825773489,Pharmacie 2000 صيدلية,pharmacy,pharmacy,35.768961,-5.811551,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838759908,Pharmacie 6 Novembre صيدلية 6 نونبر,pharmacy,pharmacy,35.745349,-5.847618,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14124563153,Pharmacie 911,pharmacy,pharmacy,35.722586,-5.752936,,,+212 5 31 90 12 01,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821848895,Pharmacie AICHE,pharmacy,pharmacy,35.763499,-5.756338,,,+212 5 39 30 15 48,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3024937854,Pharmacie AL AMAL,pharmacy,pharmacy,34.941716,-3.534051,,,+212 5 36 36 42 89,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13786728103,Pharmacie ALFIDAE,pharmacy,,35.612368,-5.294472,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12670396463,Pharmacie ARIMAS,pharmacy,pharmacy,35.764353,-5.759934,,,+212 5 31 07 86 23,TANGER,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13788053205,Pharmacie ASSAHIL,pharmacy,,35.579569,-5.292324,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836286074,Pharmacie Abbes صيدلية عباس,pharmacy,pharmacy,35.756229,-5.844043,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662327688,Pharmacie Abdelkarim El Khattabi صيدلية عبد الكريم الخطابي,pharmacy,pharmacy,35.244296,-3.935391,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778878487,Pharmacie Abdelmajid Al Atia صيدلية عبد المجيد العطية,pharmacy,pharmacy,35.72799,-5.788079,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8833171558,Pharmacie Abi Abass Sebti صيدلية العباس السبتي,pharmacy,pharmacy,35.767531,-5.828763,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5077982419,Pharmacie Abi Al Mahassin صيدلية أبي المحاسن,pharmacy,pharmacy,35.004483,-5.911742,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635316616,Pharmacie Abi Labass Annabati صيدلية أبي العباس النباتي,pharmacy,pharmacy,34.975918,-3.391247,,,,Driouch ⴷⵔⵉⵡⴻⵛ الدريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676744627,Pharmacie Abou Bakr Essedik صيدلية أبو بكر الصديق,pharmacy,pharmacy,35.575657,-5.376719,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674521462,Pharmacie Achaab صيدلية الشعب,pharmacy,pharmacy,35.574595,-5.382249,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686039934,Pharmacie Achahbar صيدلية أشاهبار,pharmacy,pharmacy,35.578482,-5.346328,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773573965,Pharmacie Achakkar صيدلية أشقار,pharmacy,pharmacy,35.7448,-5.884561,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818041098,Pharmacie Achennad صيدلية أشناد,pharmacy,pharmacy,35.740421,-5.828672,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3024846124,Pharmacie Achifa,pharmacy,pharmacy,34.939171,-3.534554,,,+212 5 36 36 40 98,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8614708168,Pharmacie Achifae Zerktouni صيدلية الشفاء الزرقطوني,pharmacy,pharmacy,35.465817,-6.024561,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5610334781,Pharmacie Achour,pharmacy,pharmacy,35.702759,-5.912325,,,,Gueznaia كزناية,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778882613,Pharmacie Adam صيدلية اًدم,pharmacy,pharmacy,35.732061,-5.788205,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779098639,Pharmacie Addoha Rif صيدلية الضحى ريف,pharmacy,pharmacy,35.708814,-5.901959,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8626415233,Pharmacie Adel صيدلية عادل,pharmacy,pharmacy,35.631781,-5.285532,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6907320316,Pharmacie Afassi صيدلية عفاسي,pharmacy,pharmacy,35.578946,-5.349381,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5620338133,Pharmacie Afilal,pharmacy,pharmacy,35.76199,-5.799823,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8790144029,Pharmacie Afriquia صيدلية إفريقيا,pharmacy,pharmacy,35.752572,-5.807012,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812993151,Pharmacie Ahlan صيدلية أهلا,pharmacy,pharmacy,35.747581,-5.840446,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8626475686,Pharmacie Ahrik صيدلية أحريق,pharmacy,pharmacy,35.627712,-5.283257,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825610857,Pharmacie Aida صيدلية عايدة,pharmacy,pharmacy,35.775314,-5.795214,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8612625586,Pharmacie Ain Al Hamra صيدلية عين الحمراء,pharmacy,pharmacy,35.459598,-6.035912,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12285899714,Pharmacie Ain Assel,pharmacy,pharmacy,35.694495,-5.846697,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779024484,Pharmacie Ain Echifae صيدلية عين الشفاء,pharmacy,pharmacy,35.735267,-5.851032,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674501608,Pharmacie Ain Khabbaz صيدلية عين خباز,pharmacy,pharmacy,35.568301,-5.381268,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684836558,Pharmacie Ain Melloul صيدلية عين ملول,pharmacy,pharmacy,35.584191,-5.341259,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13794542905,Pharmacie Ajiad,pharmacy,,35.607662,-5.334781,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695010,Pharmacie Ajiad,pharmacy,,35.607656,-5.334792,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8774909985,Pharmacie Ajial صيدلية أجيال,pharmacy,pharmacy,35.730454,-5.845817,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821789165,Pharmacie Akalai صيدلية أكلاعي,pharmacy,pharmacy,35.767913,-5.752346,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4986555027,Pharmacie Akbat El Hallouf صيدلية عقبة الحلوف,pharmacy,pharmacy,35.562805,-5.367271,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676808546,Pharmacie Al Abawaine صيدلية الأبوين,pharmacy,pharmacy,35.583764,-5.363052,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629191411,Pharmacie Al Abrar صيدلية الأبرار,pharmacy,pharmacy,35.616686,-5.291773,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640006291,Pharmacie Al Abrar صيدلية الأبرار,pharmacy,pharmacy,35.154485,-3.849166,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8626544951,Pharmacie Al Ahd Al Jadid صيدلية العهد الجديد,pharmacy,pharmacy,35.624761,-5.289644,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6779084688,Pharmacie Al Amal صيدلية الأمل,pharmacy,pharmacy,35.584495,-5.358308,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664650458,Pharmacie Al Amal صيدلية الأمل,pharmacy,pharmacy,35.17104,-6.148146,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827335717,Pharmacie Al Amal صيدلية الأمل,pharmacy,pharmacy,35.762238,-5.819422,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8849297942,Pharmacie Al Amana صيدلية الأمانة,pharmacy,pharmacy,35.734006,-5.876525,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680038211,Pharmacie Al Amine,pharmacy,pharmacy,35.611775,-5.3355,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617525965,Pharmacie Al Amira,pharmacy,pharmacy,35.841873,-5.36219,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3770569372,Pharmacie Al Andalous صيدلية الأندلس,pharmacy,pharmacy,35.165932,-5.266019,,,,Chefchaouen ⵛⴼⵛⴰⵡⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8670112137,Pharmacie Al Andalous صيدلية الأندلس,pharmacy,pharmacy,35.194253,-6.159753,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825642480,Pharmacie Al Andalous صيدلية الأندلس,pharmacy,pharmacy,35.775781,-5.801562,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617611608,Pharmacie Al Andalus صيدلية الأندلس,pharmacy,pharmacy,35.850668,-5.354734,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4793814321,Pharmacie Al Aouama Al Gharbia صيدلية العوامة الغربية,pharmacy,pharmacy,35.726182,-5.80389,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779025841,Pharmacie Al Aouama Charkia,pharmacy,pharmacy,35.724095,-5.79953,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789329017,Pharmacie Al Aouda صيدلية العودة,pharmacy,pharmacy,35.747034,-5.805747,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688081385,Pharmacie Al Aqsa صيدلية الأقصى,pharmacy,pharmacy,35.565298,-5.355567,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778913209,Pharmacie Al Assil,pharmacy,pharmacy,35.731532,-5.766186,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851442959,Pharmacie Al Azhar,pharmacy,pharmacy,35.755077,-5.824449,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838704489,Pharmacie Al Balsam صيدلية البلسم,pharmacy,pharmacy,35.750931,-5.842056,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5593629055,Pharmacie Al Baraka صيدلية البركة,pharmacy,pharmacy,35.781525,-5.821129,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839215869,Pharmacie Al Bayrouni صيدلية البيروني,pharmacy,pharmacy,35.751497,-5.847975,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629240063,Pharmacie Al Bayt Al Atiq صيدلية البيت العتيق,pharmacy,pharmacy,35.616175,-5.288221,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13073820503,Pharmacie Al Boraq,pharmacy,pharmacy,35.766621,-5.786537,,,+212 6 66 96 46 91,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851405395,Pharmacie Al Boughaz صيدلية البوغاز,pharmacy,pharmacy,35.779951,-5.81575,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851294283,Pharmacie Al Boustane صيدلية البستان,pharmacy,pharmacy,35.776572,-5.861141,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792466181,Pharmacie Al Fahs,pharmacy,pharmacy,35.750358,-5.814757,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850635958,Pharmacie Al Fajr صيدلية الفجر,pharmacy,pharmacy,35.752155,-5.859372,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827576257,Pharmacie Al Farabi صيدلية الفرابي,pharmacy,pharmacy,35.77231,-5.807662,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773070627,Pharmacie Al Faraj صيدلية الفرج,pharmacy,pharmacy,35.737473,-5.883591,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811803855,Pharmacie Al Fath صيدلية الفتح,pharmacy,pharmacy,35.742135,-5.812565,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814638987,Pharmacie Al Firdaous صيدلية الفردوس,pharmacy,pharmacy,35.754373,-5.827742,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8832663748,Pharmacie Al Ghazali صيدلية الغزالي,pharmacy,pharmacy,35.769756,-5.821138,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664620427,Pharmacie Al Ghofrane صيدلية الغفران,pharmacy,pharmacy,35.166819,-6.136578,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3154322977,Pharmacie Al Hafa صيدلية الحافة,pharmacy,pharmacy,35.167479,-5.268832,,,,Chefchaouen ⵛⴼⵛⴰⵡⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674505592,Pharmacie Al Hamama صيدلية الحمامة,pharmacy,pharmacy,35.570146,-5.386917,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789247117,Pharmacie Al Hambra صيدلية الحمراء,pharmacy,pharmacy,35.738988,-5.805545,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664523661,Pharmacie Al Hambra صيدلية الهمبرة,pharmacy,pharmacy,35.168471,-6.150522,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773605926,Pharmacie Al Hamd صيدلية الحمد,pharmacy,pharmacy,35.735507,-5.858777,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3191421810,Pharmacie Al Hamra صيدلية الحمرة,pharmacy,pharmacy,35.169487,-5.265584,,,,Chefchaouen شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4793814421,Pharmacie Al Hanae صيدلية الهناء,pharmacy,pharmacy,35.730843,-5.802976,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792374279,Pharmacie Al Hikma صيدلية الحكمة,pharmacy,pharmacy,35.759181,-5.804835,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662182881,Pharmacie Al Hilal صيدلية الهلال,pharmacy,pharmacy,35.252069,-3.934277,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812218181,Pharmacie Al Hilal صيدلية الهلال,pharmacy,pharmacy,35.754275,-5.830283,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5720737791,Pharmacie Al Hoceima صيدلية الحسيمة,pharmacy,pharmacy,35.249679,-3.936429,,,,الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662339313,Pharmacie Al Hoda صيدلية الهدى,pharmacy,pharmacy,35.251517,-3.940621,,,,الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789860257,Pharmacie Al Houria صيدلية الحرية,pharmacy,pharmacy,35.746747,-5.800338,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635273383,Pharmacie Al Ibtissama صيدلية الابتسامة,pharmacy,pharmacy,34.973166,-3.383354,,,,Driouch ⴷⵔⵉⵡⵛ ادريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814925622,Pharmacie Al Idrissi صيدلية الإدريسي,pharmacy,pharmacy,35.746261,-5.817013,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840252271,Pharmacie Al Ihssane صيدلية الإحسان,pharmacy,pharmacy,35.757753,-5.852766,Dr.Kawtar El Khamar,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8831916725,Pharmacie Al Imam Malik صيدلية إمام مالك,pharmacy,pharmacy,35.762117,-5.822223,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635332833,Pharmacie Al Inaya صيدلية العناية,pharmacy,pharmacy,34.977095,-3.39181,,,,Driouch ⴷⵔⵉⵡⴻⵛ الدريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773229205,Pharmacie Al Irfane صيدلية العرفان,pharmacy,pharmacy,35.732413,-5.881921,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824433366,Pharmacie Al Issrae صيدلية الإسراء,pharmacy,pharmacy,35.758834,-5.786493,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8815036421,Pharmacie Al Jamae صيدلية الجامع,pharmacy,pharmacy,35.743283,-5.82036,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811694650,Pharmacie Al Kantara صيدلية القنطرة,pharmacy,pharmacy,35.758978,-5.821487,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664876411,Pharmacie Al Kaoutar صيدلي الكوثر,pharmacy,pharmacy,35.18548,-6.14494,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812445282,Pharmacie Al Kaoutar صيدلية الكوثر,pharmacy,pharmacy,35.74503,-5.839348,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8842023373,Pharmacie Al Kawacim صيدلية القواسم,pharmacy,pharmacy,35.765107,-5.85543,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8663151162,Pharmacie Al Khair صيدلية الخير,pharmacy,pharmacy,35.249031,-3.947656,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8860575616,Pharmacie Al Khair صيدلية الخير,pharmacy,pharmacy,35.749863,-5.82063,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640004392,Pharmacie Al Khouzama صيدلية الخزامة,pharmacy,pharmacy,35.145192,-3.852663,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792433383,Pharmacie Al Kodss صيدلية القدس,pharmacy,pharmacy,35.762562,-5.806555,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4793814726,Pharmacie Al Machkouri صيدلية المشكوري,pharmacy,pharmacy,35.732993,-5.815216,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8841985068,Pharmacie Al Madina صيدلية المدينة,pharmacy,pharmacy,35.76735,-5.85287,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5620814122,Pharmacie Al Madkhal Al Karim صيدلية المدخل الكريم,pharmacy,pharmacy,35.769857,-5.789374,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664588014,Pharmacie Al Maghreb Al Jadid صيدلية المغرب الجديد,pharmacy,pharmacy,35.164689,-6.138613,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2328216145,Pharmacie Al Maghrib صيدلية المغرب,pharmacy,pharmacy,35.782601,-5.812969,,,,طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656058343,Pharmacie Al Mahatta صيدلية المحطة,pharmacy,pharmacy,34.996382,-5.902622,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4972519321,Pharmacie Al Mahkama صيدلية المحكمة,pharmacy,pharmacy,35.189839,-6.149686,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779164833,Pharmacie Al Majd صيدلية المجد,pharmacy,pharmacy,35.745073,-5.796322,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664458386,Pharmacie Al Manar صيدلية المنار,pharmacy,pharmacy,35.163572,-6.156293,,,,Laarache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662320139,Pharmacie Al Manzah صيدلية المنزه,pharmacy,pharmacy,35.244837,-3.933721,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672154552,Pharmacie Al Marssa صيدلية المرسة,pharmacy,pharmacy,35.197937,-6.148118,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640021769,Pharmacie Al Masjid صيدلية المسجد,pharmacy,pharmacy,35.149045,-3.849314,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8670125253,Pharmacie Al Masjid صيدلية المسجد,pharmacy,pharmacy,35.192376,-6.157038,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838691517,Pharmacie Al Masjid صيدلية المسجد,pharmacy,pharmacy,35.752083,-5.836855,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5077982405,Pharmacie Al Massira صيدلية المسيرة,pharmacy,pharmacy,35.004223,-5.90835,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8849294045,Pharmacie Al Moujahidine صيدلية المجاهدين,pharmacy,pharmacy,35.777783,-5.836847,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814814829,Pharmacie Al Mouna,pharmacy,pharmacy,35.749182,-5.817465,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4198802828,Pharmacie Al Moustain,pharmacy,pharmacy,34.877039,-6.294474,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773542427,Pharmacie Al Moustakbal صيدلية المستقبل,pharmacy,pharmacy,35.7338,-5.868625,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6418186093,Pharmacie Al Omouma صيدلية الأمومة,pharmacy,pharmacy,35.166718,-5.273575,,,,Chefchaouen ⵜⵛⴻⴼⵜⵛⴰⵡⴻⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656139630,Pharmacie Al Oroba صيدلية العروبة,pharmacy,pharmacy,35.001592,-5.895703,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817977526,Pharmacie Al Ouroud Malika صيدلية الورود مليكة,pharmacy,pharmacy,35.726479,-5.809366,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8670137671,Pharmacie Al Plazza صيدلية البلاصة,pharmacy,pharmacy,35.194871,-6.156454,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2193206360,Pharmacie Al Qods صيدلية القدس,pharmacy,pharmacy,35.572933,-5.379448,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5721177654,Pharmacie Al Qods صيدلية القدس,pharmacy,pharmacy,35.237431,-3.939339,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632185091,Pharmacie Al Qods صيدلية القدس,pharmacy,pharmacy,34.802175,-5.593222,,,,Ouazzane ⵡⴰⵣⴰⵏ وزان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659237746,Pharmacie Al Qods صيدلية القدس,pharmacy,pharmacy,35.008262,-5.910251,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791780067,Pharmacie Al Raha صيدلية الراحة,pharmacy,pharmacy,35.766006,-5.804913,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662115008,Pharmacie Al Wafa صيدلية الوفاء,pharmacy,pharmacy,35.240489,-3.933582,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656059674,Pharmacie Al Wafae صيدلية الوفاء,pharmacy,pharmacy,34.995204,-5.904455,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779160924,Pharmacie Al Yakine صيدلية اليقين,pharmacy,pharmacy,35.75219,-5.796311,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664640278,Pharmacie Al Yakout صيدلية الياقوت,pharmacy,pharmacy,35.172583,-6.140721,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836057774,Pharmacie Al Yasmine صيدلية الياسمين,pharmacy,pharmacy,35.757179,-5.840478,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789213297,Pharmacie Al Zahara صيدلية الزهارة,pharmacy,pharmacy,35.740812,-5.801238,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778936613,Pharmacie Al karam صيدلية الكرم,pharmacy,pharmacy,35.727464,-5.768369,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622734366,Pharmacie Alami صيدلية علمي,pharmacy,pharmacy,35.683596,-5.326137,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672527931,Pharmacie Alexandrie صيدلية الإسكندرية,pharmacy,pharmacy,35.567643,-5.40994,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818265538,Pharmacie Alharrarine صيدلية الحرارين,pharmacy,pharmacy,35.730116,-5.83927,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821496001,Pharmacie Ali Atifi صيدلية علي العاطيفي,pharmacy,pharmacy,35.749799,-5.775042,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812272864,Pharmacie Anas صيدلية أنس,pharmacy,pharmacy,35.751932,-5.831845,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656035795,Pharmacie Andalouss صيدلية الأندلس,pharmacy,pharmacy,34.998525,-5.91104,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817949327,Pharmacie Andalucia صيدلية الأندلسية,pharmacy,pharmacy,35.731227,-5.807009,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2328215997,Pharmacie Anegay صيدلية أنغاي,pharmacy,pharmacy,35.785117,-5.812452,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8832649901,Pharmacie Anfa صيدلية أنفا,pharmacy,pharmacy,35.768905,-5.817163,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632436794,Pharmacie Annahda صيدلية النهضة,pharmacy,pharmacy,34.800322,-5.5711,,,,Ouazzane,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839436512,Pharmacie Annajat صيدلية النجاة,pharmacy,pharmacy,35.769961,-5.831943,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8666079848,Pharmacie Annasiha صيدلية النصيحة,pharmacy,pharmacy,35.190296,-6.156769,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622650130,Pharmacie Annasr صيدلية النصر,pharmacy,pharmacy,35.689527,-5.330266,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812951614,Pharmacie Annasr صيدلية النصر,pharmacy,pharmacy,35.750408,-5.82953,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640208131,Pharmacie Annassiha صيدلية النصيحة,pharmacy,pharmacy,34.943974,-4.315392,,,,Targuist ⵜⴰⵔⴳⵉⵙⵜ تارجيست,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635374865,Pharmacie Annassim صيدلية النسيم,pharmacy,pharmacy,35.049007,-3.458848,,,,Ben Taib,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8655901267,Pharmacie Annassim صيدلية النسيم,pharmacy,pharmacy,35.000391,-5.914393,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789866011,Pharmacie Annour صيدلية النور,pharmacy,pharmacy,35.744719,-5.801777,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615171856,Pharmacie Anoual صيدلية أنوال,pharmacy,pharmacy,35.836789,-5.361362,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662101512,Pharmacie Anoual صيدلية أنوال,pharmacy,pharmacy,35.241546,-3.927709,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789797362,Pharmacie Anoual صيدلية أنوال,pharmacy,pharmacy,35.750137,-5.799391,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827810948,Pharmacie Ariha صيدلية أريحا,pharmacy,pharmacy,35.771005,-5.811386,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836291651,Pharmacie Arrabie صيدلية الربيع,pharmacy,pharmacy,35.75374,-5.845463,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615240735,Pharmacie Arrachad صيدلية الرشاد,pharmacy,pharmacy,35.838798,-5.358694,,,,Fnideq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664738282,Pharmacie Arrahma صيدلية الرحمة,pharmacy,pharmacy,35.177512,-6.152277,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851297019,Pharmacie Arrahman صيدلية الرحمان,pharmacy,pharmacy,35.774095,-5.863829,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839416124,Pharmacie Arrazi صيدلية الرازي,pharmacy,pharmacy,35.76371,-5.837892,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821874640,Pharmacie Arreda,pharmacy,pharmacy,35.762459,-5.762591,,,+212 5 39 30 12 82,طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821854329,Pharmacie Assabr,pharmacy,pharmacy,35.758011,-5.760478,,,+212 5 31 18 92 72,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850692577,Pharmacie Assafwa صيدلية الصفوة,pharmacy,pharmacy,35.76585,-5.858742,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792466392,Pharmacie Assalam,pharmacy,pharmacy,35.751818,-5.811612,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3106996137,Pharmacie Assalam صيدلية السلام,pharmacy,pharmacy,35.168629,-5.263295,,,,Chefchaouen شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8638207583,Pharmacie Assalam صيدلية السلام,pharmacy,pharmacy,35.140788,-3.854962,,,,Imzouren إمزورن,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659298055,Pharmacie Assalam صيدلية السلام,pharmacy,pharmacy,34.993851,-5.904741,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8665954967,Pharmacie Assalam صيدلية السلام,pharmacy,pharmacy,35.181762,-6.143968,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672420814,Pharmacie Assalam صيدلية السلام,pharmacy,pharmacy,35.567608,-5.421996,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5308000552,Pharmacie Aswak Assalam صيدلية أسواق السلام,pharmacy,pharmacy,35.737961,-5.873693,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851211243,Pharmacie Ataallah صيدلية عطاء الله,pharmacy,pharmacy,35.76846,-5.862602,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680240638,Pharmacie Atlas صيدلية أطلس,pharmacy,pharmacy,35.569561,-5.351692,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8835944289,Pharmacie Atlas صيدلية أطلس,pharmacy,pharmacy,35.765093,-5.827934,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817818953,Pharmacie Avenue Koweït,pharmacy,pharmacy,35.739342,-5.812083,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13791942903,Pharmacie Avenue des FAR,pharmacy,,35.573908,-5.360559,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5720737781,Pharmacie Avicena,pharmacy,pharmacy,35.247828,-3.932819,,,,Al-hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676802087,Pharmacie Azahra صيدلية الزهرة,pharmacy,pharmacy,35.582983,-5.359299,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776913641,Pharmacie Azhar Chifae صيدلية أزهار الشفاء,pharmacy,pharmacy,35.720398,-5.7979,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688268145,Pharmacie Azhar صيدلية الأزهر,pharmacy,pharmacy,35.574969,-5.357067,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662187025,Pharmacie Azir صيدلية أزير,pharmacy,pharmacy,35.254011,-3.934748,,,,الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8665004122,Pharmacie Azouagh صيدلية أزواغ,pharmacy,pharmacy,35.186121,-6.146845,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818916484,Pharmacie Aïn Al Jadida صيدلية عين الجديدة,pharmacy,pharmacy,35.746142,-5.775426,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776932682,Pharmacie Aïn Dalya صيدلية عين دالية,pharmacy,pharmacy,35.720104,-5.804439,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839346756,Pharmacie Aïn Hayani صيدلية عين الحياني,pharmacy,pharmacy,35.782889,-5.828225,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8612677975,Pharmacie Bab Al Homar,pharmacy,pharmacy,35.464722,-6.037772,,,,Assilah أصيلة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2328216020,Pharmacie Bab Bhar صيدلية باب البحر,pharmacy,pharmacy,35.787891,-5.811769,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4026742699,Pharmacie Bab El Okla صيدلية باب العقلة,pharmacy,pharmacy,35.570672,-5.363303,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688319732,Pharmacie Bab Saida صيدلية باب سعيدة,pharmacy,pharmacy,35.573005,-5.364077,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635350019,Pharmacie Bab Souk صيدلية باب سوق,pharmacy,pharmacy,34.979087,-3.394299,,,,Driouch ⴷⵔⵉⵡⵛ ادريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676572915,Pharmacie Bab Tout صيدلية باب التوت,pharmacy,pharmacy,35.570769,-5.371462,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640036050,Pharmacie Bades صيدلية بادس,pharmacy,pharmacy,35.145358,-3.849684,,,,Imzouren ⵉⵎⵣⵓⵔⵏ إمزورن,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811814167,Pharmacie Badr,pharmacy,pharmacy,35.745074,-5.809412,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659243708,Pharmacie Badre صيدلية بدر,pharmacy,pharmacy,35.020721,-5.917996,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1098937129,Pharmacie Badriouene,pharmacy,pharmacy,35.70918,-5.878305,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676646167,Pharmacie Baghdad صيدلية بغداد,pharmacy,pharmacy,35.577369,-5.40005,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659258303,Pharmacie Bahja صيدلية البهجة,pharmacy,pharmacy,35.018189,-5.909172,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617566812,Pharmacie Baisa,pharmacy,pharmacy,35.847227,-5.360556,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686032123,Pharmacie Bakkali صيدلية البقالي,pharmacy,pharmacy,35.571221,-5.412002,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851370927,Pharmacie Banafsaj صيدلية البنفسج,pharmacy,pharmacy,35.787525,-5.835289,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674515585,Pharmacie Barrio Malaga صيدلية باريو مالغا,pharmacy,pharmacy,35.574475,-5.387796,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772883528,Pharmacie Bassam,pharmacy,pharmacy,35.709048,-5.915646,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818058974,Pharmacie Bayt Al Makdisse صيدلية بيت المقدس,pharmacy,pharmacy,35.73848,-5.83192,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8774058323,Pharmacie Bayti صيدلية بيتي,pharmacy,pharmacy,35.73152,-5.848763,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829787356,Pharmacie Bel Air صيدلية بيلير,pharmacy,pharmacy,35.774169,-5.826114,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811885979,Pharmacie Belkacem,pharmacy,pharmacy,35.747257,-5.811415,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13736072301,Pharmacie Belmfedel,pharmacy,,35.569695,-5.360204,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664649391,Pharmacie Ben Ali صيدلية بن علي,pharmacy,pharmacy,35.172289,-6.144902,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13773572603,Pharmacie Ben Arafa,pharmacy,,34.997454,-4.889577,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821966651,Pharmacie Ben Ayad,pharmacy,pharmacy,35.770422,-5.771912,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8679986421,Pharmacie Ben El Haddad صيدلية بن الحداد,pharmacy,pharmacy,35.596363,-5.339928,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635322659,Pharmacie Ben Taib صيدلية بن الطيب,pharmacy,pharmacy,35.044537,-3.456461,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796266805,Pharmacie Ben Taieb,pharmacy,,35.767448,-5.81792,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791853805,Pharmacie Benallal صيدلية ابن علال,pharmacy,pharmacy,35.75543,-5.802076,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814630363,Pharmacie Bendibane,pharmacy,pharmacy,35.755942,-5.820942,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811617405,Pharmacie Beni Makada صيدلية بني مكادة,pharmacy,pharmacy,35.759175,-5.812816,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812961026,Pharmacie Beni Ouriaghel صيدلية بني ورياغل,pharmacy,pharmacy,35.746192,-5.829853,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818146617,Pharmacie Beni Said صيدلية بني سعيد,pharmacy,pharmacy,35.732817,-5.831857,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773556962,Pharmacie Bennani صيدلية بناني,pharmacy,pharmacy,35.740343,-5.877849,Kamelia Bennani,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674568705,Pharmacie Bentaouit صيدلية بن تاويت,pharmacy,pharmacy,35.566665,-5.380985,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818326887,Pharmacie Bhrayen صيدلية البحريين,pharmacy,pharmacy,35.732335,-5.826118,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846960502,Pharmacie Biladi صيدلية بلادي,pharmacy,pharmacy,35.767232,-5.848008,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817736187,Pharmacie Bir Chifae صيدلية بير الشفاء,pharmacy,pharmacy,35.742818,-5.82595,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776717252,Pharmacie Bir El Ghazi,pharmacy,pharmacy,35.713271,-5.810908,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8619111656,Pharmacie Bismillah,pharmacy,pharmacy,35.853059,-5.358332,,,,Fnideq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8852944506,Pharmacie Bismillah,pharmacy,pharmacy,35.771716,-5.799334,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3024761761,Pharmacie Bni Touzine,pharmacy,pharmacy,34.93646,-3.537246,,,+212 5 36 36 40 50,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812296468,Pharmacie Bni Touzine صيدلية بني توزين,pharmacy,pharmacy,35.736116,-5.843601,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13793859202,Pharmacie Boras,pharmacy,,35.583742,-5.352747,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8843257271,Pharmacie Bouarraquia صيدلية بوعراقية,pharmacy,pharmacy,35.782579,-5.817989,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689010126,Pharmacie Bouatyaoui صيدلية بوعطياوي,pharmacy,pharmacy,35.583549,-5.34413,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851296795,Pharmacie Boubana صيدلية بوبانة,pharmacy,pharmacy,35.771602,-5.860625,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818248960,Pharmacie Boughlala صيدلية بوغلالة,pharmacy,pharmacy,35.729563,-5.835043,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680144350,Pharmacie Boujarrah صيدلية بوجراح,pharmacy,pharmacy,35.59187,-5.352785,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5608265122,Pharmacie Boukhalef صيدلية بوخالف,pharmacy,pharmacy,35.735275,-5.879864,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825181780,Pharmacie Boulevard Mohamed VI,pharmacy,pharmacy,35.77422,-5.784187,,,+212 5 39 94 21 81,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680153555,Pharmacie Boussafou صيدلية بوصافو,pharmacy,pharmacy,35.594293,-5.348444,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2693794836,Pharmacie Boutaina صيدلية بثينة,pharmacy,pharmacy,35.192878,-6.155325,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5595191913,Pharmacie Branes 2 صيدلية برانس,pharmacy,pharmacy,35.761425,-5.836041,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850583406,Pharmacie Branes Kedima صيدلية البرانص القديمة,pharmacy,pharmacy,35.74519,-5.869803,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8843359217,Pharmacie Brooks,pharmacy,pharmacy,35.78392,-5.821479,,,,Tánger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659468076,Pharmacie Calabonita صيدلية كلابونيتا,pharmacy,pharmacy,35.233606,-3.927406,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8853004512,Pharmacie California صيدلية كليفورنيا,pharmacy,pharmacy,35.781667,-5.842339,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829858194,Pharmacie Camelia صيدلية كاميليا,pharmacy,pharmacy,35.773029,-5.829641,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773079122,Pharmacie Cap Spartel صيدلية كاب سبارطيل,pharmacy,pharmacy,35.737151,-5.887532,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8832041793,Pharmacie Casabarata صيدلية كازاباراتا,pharmacy,pharmacy,35.767018,-5.8213,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615275831,Pharmacie Centrale,pharmacy,pharmacy,35.841531,-5.360354,,,,Fnideq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8660640116,Pharmacie Centrale du Rif صيدلية الريف المركزية,pharmacy,pharmacy,35.241021,-3.930731,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5718270667,Pharmacie Centrale الصيدلية المركزية,pharmacy,pharmacy,35.1469,-3.849409,,,,Imzouren ⵉⵎⵣⵓⵔⵏ إمزورن,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672098857,Pharmacie Centrale الصيدلية المركزية,pharmacy,pharmacy,35.196572,-6.15242,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676582891,Pharmacie Centrale الصيدلية المركزية,pharmacy,pharmacy,35.56963,-5.369999,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8828063163,Pharmacie Centrale الصيدلية المركزية,pharmacy,pharmacy,35.780116,-5.810099,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8954903167,Pharmacie Centrale الصيدلية المركزية,pharmacy,pharmacy,35.176743,-5.273219,,,,Chefchaouen ⵜⵛⴻⴼⵜⵛⴰⵡⴻⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3118757839,Pharmacie Cervantes صيدلية سيرفانطيس,pharmacy,pharmacy,35.782671,-5.810439,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664526689,Pharmacie Chaabane صيدلية شعبان,pharmacy,pharmacy,35.166672,-6.148144,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680033884,Pharmacie Chaachoo صيدلية الشعشوع,pharmacy,pharmacy,35.599654,-5.325559,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8842055919,Pharmacie Chair صيدلية الشاعر,pharmacy,pharmacy,35.762633,-5.844857,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825173122,Pharmacie Charf صيدلية شرف,pharmacy,pharmacy,35.766472,-5.794072,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3103846175,Pharmacie Chefchaouen صيدلية شفشاون,pharmacy,pharmacy,35.167648,-5.266054,,,,Chefchaouen ⵛⴼⵛⴰⵡⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676489412,Pharmacie Chellal صيدلية الشلال,pharmacy,pharmacy,35.569699,-5.378956,,,,Tétouan ⵜⵉⵟⵟⴰⵡⵉⵏ تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812391021,Pharmacie Chems Ahlan صيدلية شمس أهلا,pharmacy,pharmacy,35.742371,-5.838426,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8665969850,Pharmacie Cherkaoui صيدلية الشرقاوي,pharmacy,pharmacy,35.179258,-6.141895,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622659277,Pharmacie Chifae صيدلية الشفاء,pharmacy,pharmacy,35.686589,-5.325616,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829816556,Pharmacie Chifae صيدلية الشفاء,pharmacy,pharmacy,35.77894,-5.825752,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839214794,Pharmacie Chorafa صيدلية الشرفاء,pharmacy,pharmacy,35.747556,-5.858992,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13793843205,Pharmacie Coelma,pharmacy,,35.564988,-5.347691,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2689650719,Pharmacie Coliseo صيدلية كوليسيو,pharmacy,pharmacy,35.194761,-6.154364,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818370201,Pharmacie Complexe Al Baraka 1 صيدلية مجمع البركة,pharmacy,pharmacy,35.731719,-5.818444,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615240608,Pharmacie Condessa صيدلية كنديسة,pharmacy,pharmacy,35.841321,-5.356412,,,,Fnideq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12286288205,Pharmacie Dar Chaoui,pharmacy,pharmacy,35.532322,-5.715209,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629153122,Pharmacie Dar D'Mana صيدلية دار ضمانة,pharmacy,pharmacy,35.62489,-5.274907,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677754230,Pharmacie Dar Dmana صيدلية دار الضمانة,pharmacy,pharmacy,35.588524,-5.355107,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684720420,Pharmacie Dar Mourssia صيدلية دار مورسيا,pharmacy,pharmacy,35.585431,-5.37148,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779150287,Pharmacie Dar Tounsi صيدلية دار التونسي,pharmacy,pharmacy,35.752572,-5.79888,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5043501022,Pharmacie De La Plage صيدلية الشاطئ,pharmacy,pharmacy,35.778779,-5.802527,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5622479810,Pharmacie De Tanger صيدلية طنجة,pharmacy,pharmacy,35.75467,-5.792783,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629190904,Pharmacie Del-Lero صيدلية ديل ليرو,pharmacy,pharmacy,35.618852,-5.28514,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684597479,Pharmacie Derdabi صيدلية الدردابي,pharmacy,pharmacy,35.570706,-5.366307,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676752402,Pharmacie Dersa Principale صيدلية ضرسة الرئيسية,pharmacy,pharmacy,35.578328,-5.377627,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664561236,Pharmacie Des Cliniques صيدلية المصحات,pharmacy,pharmacy,35.16446,-6.14467,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674487019,Pharmacie Destin صيدلية القدر,pharmacy,pharmacy,35.571776,-5.391432,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635744034,Pharmacie Dhar Ben Ayad صيدلية ضهر بن عياد,pharmacy,pharmacy,35.154063,-5.270077,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8822008757,Pharmacie Dhar El Mers صيدلية ظهر المرس,pharmacy,pharmacy,35.7668,-5.765074,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846104977,Pharmacie Dina صيدلية دينا,pharmacy,pharmacy,35.786089,-5.833369,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676718726,Pharmacie Dior El Makhzen صيدلية ديور المخزن,pharmacy,pharmacy,35.576576,-5.386257,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8786431369,Pharmacie Doha Louama صيدلية الضحى العوامة,pharmacy,pharmacy,35.724395,-5.806841,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5622479731,Pharmacie Doha صيدلية الضحى,pharmacy,pharmacy,35.760181,-5.791339,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659208532,Pharmacie Douha صيدلية الضحى,pharmacy,pharmacy,34.993021,-5.897953,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684759615,Pharmacie Dream صيدلية دريم,pharmacy,pharmacy,35.583969,-5.336979,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792399569,Pharmacie Drissia,pharmacy,pharmacy,35.7623,-5.803479,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13793858502,Pharmacie Drissia,pharmacy,,35.619114,-5.299062,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5575040835,Pharmacie EL YOUSR,pharmacy,pharmacy,35.778649,-5.807936,,,,TANGER,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629413315,Pharmacie El Aghrass صيدلية الأغراس,pharmacy,pharmacy,35.614159,-5.282831,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824569028,Pharmacie El Alia صيدلية العالية,pharmacy,pharmacy,35.763639,-5.794075,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789946332,Pharmacie El Aouama,pharmacy,pharmacy,35.743335,-5.799767,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8786573447,Pharmacie El Attabi,pharmacy,pharmacy,35.737058,-5.802973,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676808816,Pharmacie El Azami صيدلية الأزمي,pharmacy,pharmacy,35.586618,-5.359737,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632174498,Pharmacie El Bidaoui صيدلية البيضاوي,pharmacy,pharmacy,34.80137,-5.584506,,,,Ouazzane ⵡⴰⵣⴰⵏ وزان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629351154,Pharmacie El Borj صيدلية البرج,pharmacy,pharmacy,35.615251,-5.275377,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7300052485,Pharmacie El Feddane صيدلية الفدان,pharmacy,pharmacy,35.570208,-5.369564,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779106742,Pharmacie El Filali صيدلية الفيلالي,pharmacy,pharmacy,35.709702,-5.898788,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695601,Pharmacie El Ftouh صيدلية الفتوح,pharmacy,,35.598904,-5.340773,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824392750,Pharmacie El Ghandouri,pharmacy,pharmacy,35.782356,-5.761244,,,+212 5 39 30 13 88,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629148738,Pharmacie El Hadj صيدلية الحاج,pharmacy,pharmacy,35.624422,-5.274222,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818047798,Pharmacie El Hadri صيدلية الحضري,pharmacy,pharmacy,35.736057,-5.830642,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8853283505,Pharmacie El Houda صيدلية الهدى,pharmacy,pharmacy,35.771151,-5.823206,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772996282,Pharmacie El Irfane صيدلية العرفان 2,pharmacy,pharmacy,35.741298,-5.886864,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829742776,Pharmacie El Kindy صيدلية الكندي,pharmacy,pharmacy,35.773001,-5.821878,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3191421821,Pharmacie El Machichi صيدلية المشيشي,pharmacy,pharmacy,35.170529,-5.268611,,,+212 5 39 98 71 49,Chefchaouen ⵜⵛⴻⴼⵜⵛⴰⵡⴻⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818039511,Pharmacie El Mers صيدلية المرس,pharmacy,pharmacy,35.739168,-5.825225,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818324411,Pharmacie El Mesnaoui صيدلية المسناوي,pharmacy,pharmacy,35.734801,-5.827446,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5605589527,Pharmacie El Moufid صيدلية المفيد,pharmacy,pharmacy,35.746836,-5.835475,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8655915812,Pharmacie El Moussalah صيدلية المصلى,pharmacy,pharmacy,35.002131,-5.909692,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662142052,Pharmacie El Moustachfa صيدلية المستشفى,pharmacy,pharmacy,35.241571,-3.938597,,,,الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8636730821,Pharmacie El Moustapha صيدلية المصطفى,pharmacy,pharmacy,35.167866,-5.2617,,,,Chefchaouen شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640296397,Pharmacie El Ouakili,pharmacy,pharmacy,34.977937,-3.393125,,,,Driouch ⴷⵔⵉⵡⴻⵛ الدريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8623705458,Pharmacie El Ouazzani Taibi صيدلية الوزاني الطيبي,pharmacy,pharmacy,35.683655,-5.322087,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688003700,Pharmacie El Oued Kouilma صيدلية الواد كويلمة,pharmacy,pharmacy,35.562374,-5.349517,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8653702388,Pharmacie El Oued صيدلية باب الواد,pharmacy,pharmacy,34.988605,-5.908015,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635362306,Pharmacie El Wahda صيدلية الوحدة,pharmacy,pharmacy,35.043363,-3.45558,,,,Ben Taib,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13119295227,Pharmacie El Yamouni,pharmacy,pharmacy,35.767102,-5.769692,,,+212 6 64 02 60 41,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8813009404,Pharmacie Erradi صيدلية الراضي,pharmacy,pharmacy,35.748633,-5.837662,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640028591,Pharmacie Errahma صيدلية الرحمة,pharmacy,pharmacy,35.151259,-3.849025,,,,Imzouren إمزورن,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8639989380,Pharmacie Espagne صيدلية اسبانيا,pharmacy,pharmacy,35.143256,-3.852768,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5589273898,Pharmacie Europharm,pharmacy,pharmacy,35.715096,-5.804307,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629486445,Pharmacie F.Zahra صيدلية ف.زهرة,pharmacy,pharmacy,35.610682,-5.276315,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629422338,Pharmacie Faculté des Lettres صيدلية كلية الآداب,pharmacy,pharmacy,35.609387,-5.293022,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689094061,Pharmacie Faculté des Sciences صيدلية كلية العلوم,pharmacy,pharmacy,35.564619,-5.36468,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689097591,Pharmacie Fadil صيدلية فاضل,pharmacy,pharmacy,35.60485,-5.335634,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615182529,Pharmacie Fadl Llah صيدلية فضل الله,pharmacy,pharmacy,35.835933,-5.357156,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8790182886,Pharmacie Fares صيدلية فارس,pharmacy,pharmacy,35.755529,-5.794899,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836267235,Pharmacie Fayna صيدلية فاينة,pharmacy,pharmacy,35.760728,-5.839683,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635515508,Pharmacie Ferassi صيدلية فراسي,pharmacy,pharmacy,35.044893,-3.448825,,,,Ben Taieb,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839199293,Pharmacie Fleming صيدلية فلمينغ,pharmacy,pharmacy,35.744515,-5.854914,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617631206,Pharmacie Fnideq صيدلية الفنيدق,pharmacy,pharmacy,35.849178,-5.354189,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779047104,Pharmacie Gare Routière صيدلية المحطة الطرقية,pharmacy,pharmacy,35.72289,-5.861041,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814761689,Pharmacie Ghailane صيدلية غيلان,pharmacy,pharmacy,35.751688,-5.818493,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8670159773,Pharmacie Gharnata صيدلية غرناطة,pharmacy,pharmacy,35.194564,-6.151875,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5885963785,Pharmacie Ghorghiz صيدلية غرغيز,pharmacy,pharmacy,35.563241,-5.375297,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617683373,Pharmacie Granada صيدلية غرناطة,pharmacy,pharmacy,35.851936,-5.354614,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662193567,Pharmacie Granada صيدلية غرناطة,pharmacy,pharmacy,35.248515,-3.934732,,,,AL HOCEIMA,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827956926,Pharmacie Granada صيدلية غرناطة,pharmacy,pharmacy,35.776039,-5.808003,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8786375529,Pharmacie Grand Maghreb صيدلية المغرب الكبير,pharmacy,pharmacy,35.728395,-5.806163,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617614338,Pharmacie Gualinus,pharmacy,pharmacy,35.850904,-5.356544,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851217851,Pharmacie Hadia صيدلية هادية,pharmacy,pharmacy,35.762883,-5.86071,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676797376,Pharmacie Hamza صيدلية حمزة,pharmacy,pharmacy,35.588577,-5.361336,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789330443,Pharmacie Hamza صيدلية حمزة,pharmacy,pharmacy,35.748256,-5.80172,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676713880,Pharmacie Haoumat Issaoua صيدلية حومة عيساوة,pharmacy,pharmacy,35.579033,-5.388037,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622714821,Pharmacie Harras صيدلية الهراس,pharmacy,pharmacy,35.684453,-5.324584,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773963115,Pharmacie Hassani صيدلية الحسني,pharmacy,pharmacy,35.737136,-5.85562,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811747157,Pharmacie Hay Al Boughaz صيدلية حي البوغاز,pharmacy,pharmacy,35.761128,-5.814105,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850569808,Pharmacie Hay Al Inara صيدلية حي الإنارة,pharmacy,pharmacy,35.751109,-5.862102,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622719405,Pharmacie Hay Al Kalaa صيدلية حي القلعة,pharmacy,pharmacy,35.680597,-5.330265,,,,M'Diq,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840302271,Pharmacie Hay Al Manar صيدلية حي المنار,pharmacy,pharmacy,35.75959,-5.849555,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824469932,Pharmacie Hay Benkirane صيدلية حي بنكيران,pharmacy,pharmacy,35.760199,-5.78885,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791867819,Pharmacie Hay Bouhout صيدلية حي بوحوت,pharmacy,pharmacy,35.755335,-5.805576,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664815500,Pharmacie Hay El Jadid صيدلية الحي الجديد,pharmacy,pharmacy,35.181143,-6.156097,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8670113113,Pharmacie Hay Nador صيدلية حي الناضور,pharmacy,pharmacy,35.191698,-6.161977,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814684096,Pharmacie Hay Ouarda صيدلية حي الوردة,pharmacy,pharmacy,35.753814,-5.818627,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617568022,Pharmacie Hay Rass Lota,pharmacy,pharmacy,35.844938,-5.367597,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629223844,Pharmacie Hiba صيدلية هبة,pharmacy,pharmacy,35.621328,-5.282218,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776884470,Pharmacie Hjar Sfar صيدلية حجر الصفر,pharmacy,pharmacy,35.723082,-5.789199,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684805075,Pharmacie Hopital des Spécialités صيدلية مستشفى التخصصات,pharmacy,pharmacy,35.581784,-5.333577,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689236864,Pharmacie Houmat Tanjaoua صيدلية حومة طنجاوة,pharmacy,pharmacy,35.588455,-5.351735,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779085499,Pharmacie Houssam صيدلية حسام,pharmacy,pharmacy,35.711874,-5.893819,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640106793,Pharmacie Hôpital Senhaja صيدلية مستشفى صنهاجة,pharmacy,pharmacy,34.93607,-4.313975,,,,Targuist ⵜⴰⵔⴳⵉⵙⵜ تارجيست,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779115801,Pharmacie Ibn Al Arabi صيدلية ابن العربي,pharmacy,pharmacy,35.740263,-5.86771,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811706507,Pharmacie Ibn Annafis صيدلية بن النفيس,pharmacy,pharmacy,35.761362,-5.817239,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615176719,Pharmacie Ibn Baja,pharmacy,pharmacy,35.834,-5.361639,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8835940978,Pharmacie Ibn Barrajan صيدلية ابن برجان,pharmacy,pharmacy,35.757717,-5.83293,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13763531701,Pharmacie Ibn Batouta,pharmacy,,35.686407,-5.328452,,24/7,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8835929408,Pharmacie Ibn Batouta صيدلية ابن بطوطة,pharmacy,pharmacy,35.762818,-5.832019,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2693794844,Pharmacie Ibn Khaldoun صيدلية ابن خلدون,pharmacy,pharmacy,35.191297,-6.154129,,,,Larache العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656019922,Pharmacie Ibn Khaldoun صيدلية ابن خلدون,pharmacy,pharmacy,35.004913,-5.905492,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779150093,Pharmacie Ibn Khaldoun صيدلية ابن خلدون,pharmacy,pharmacy,35.74695,-5.795674,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8636669485,Pharmacie Ibn Nafiss صيدلية ابن النفيس,pharmacy,pharmacy,35.179579,-5.27701,,,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2689650716,Pharmacie Ibn Rochd صيدلية ابن رشد,pharmacy,pharmacy,35.189014,-6.151599,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659259543,Pharmacie Ibn Rochd صيدلية ابن رشد,pharmacy,pharmacy,35.020027,-5.914149,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688331734,Pharmacie Ibn Rochd صيدلية بن رشد,pharmacy,pharmacy,35.587425,-5.339294,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8828345028,Pharmacie Ibn Rochd صيدلية بن رشد,pharmacy,pharmacy,35.778412,-5.819122,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3206035259,Pharmacie Ibn Sina صيدلية ابن سينا,pharmacy,pharmacy,35.169211,-5.269923,,09:00-20:00,+212 5 39 98 61 58,Chefchaouen ⵛⴼⵛⴰⵡⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8614768243,Pharmacie Ibn Sina صيدلية ابن سينا,pharmacy,pharmacy,35.468526,-6.032271,,,,Assilah أصيلة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664762390,Pharmacie Ibn Sina صيدلية ابن سينا,pharmacy,pharmacy,35.175156,-6.152626,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8843349956,Pharmacie Ibn Sina صيدلية ابن سينا,pharmacy,pharmacy,35.786617,-5.820818,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8815065286,Pharmacie Ibn Toufail صيدلية بن طفيل,pharmacy,pharmacy,35.745004,-5.823353,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8612617779,Pharmacie Ibn Toumert صيدلية ابن تومرت,pharmacy,pharmacy,35.463064,-6.033359,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684880895,Pharmacie Ibn Zaydoun صيدلية بن زيدون,pharmacy,pharmacy,35.581572,-5.349259,,,,113,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829713219,Pharmacie Ibn khatib صيدلية ابن الخطيب,pharmacy,pharmacy,35.775351,-5.820183,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821992612,Pharmacie Ibouyen,pharmacy,pharmacy,35.771125,-5.764848,,,+212 5 31 31 37 48,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838737973,Pharmacie Ibrahim Al Khalil صيدلية إبراهيم الخليل,pharmacy,pharmacy,35.746165,-5.850965,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8681187439,Pharmacie Ichara Dersa صيدلية إشارة درسة,pharmacy,pharmacy,35.578817,-5.38139,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817963539,Pharmacie Imam Ali صيدلية إمام علي,pharmacy,pharmacy,35.729424,-5.812478,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840258457,Pharmacie Imam Chadili صيدلية إمام الشاذلي,pharmacy,pharmacy,35.755853,-5.850325,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8612627846,Pharmacie Imam Malek صيدلية الإمام مالك,pharmacy,pharmacy,35.457898,-6.036393,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839372759,Pharmacie Imam Mouslim صيدلية إمام مسلم,pharmacy,pharmacy,35.785409,-5.829372,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8853624201,Pharmacie Imam Nafie صيدلية الإمام نافع,pharmacy,pharmacy,35.74893,-5.805535,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684766152,Pharmacie Inara صيدلية الإنارة,pharmacy,pharmacy,35.579084,-5.334417,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8833275716,Pharmacie Inas صيدلية إيناس,pharmacy,pharmacy,35.759992,-5.830995,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8681241878,Pharmacie Ingenieros صيدلية أنجنيروس,pharmacy,pharmacy,35.566284,-5.372206,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791671580,Pharmacie Irchad صيدلية الإرشاد,pharmacy,pharmacy,35.755399,-5.798972,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680108629,Pharmacie Ismailia صيدلية إسماعيلية,pharmacy,pharmacy,35.595884,-5.345705,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2192541806,Pharmacie Jaber Ibn Hayyan صيدلي جابر بن حيان,pharmacy,pharmacy,35.569183,-5.384448,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676769119,Pharmacie Jaber صيدلية جابر,pharmacy,pharmacy,35.576905,-5.373222,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827390649,Pharmacie Jade,pharmacy,pharmacy,35.772407,-5.805333,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677760189,Pharmacie Jamaa Afailal صيدلية جامع أفيلال,pharmacy,pharmacy,35.579113,-5.35979,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689112365,Pharmacie Jamaa Mezouak صيدلية جامع المزواق,pharmacy,pharmacy,35.574651,-5.392194,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851381018,Pharmacie Jamaâ Mekraa صيدلية جامع مقراع,pharmacy,pharmacy,35.786414,-5.843398,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827856238,Pharmacie Jamila صيدلية جميلة,pharmacy,pharmacy,35.772953,-5.813897,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672159509,Pharmacie Jaoui صيدلية الجاوي,pharmacy,pharmacy,35.191907,-6.147686,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850629241,Pharmacie Jebari صيدلية جباري,pharmacy,pharmacy,35.752169,-5.866291,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818900253,Pharmacie Jihane صيدلية جيهان,pharmacy,pharmacy,35.741885,-5.77545,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8790084574,Pharmacie Jirari,pharmacy,pharmacy,35.748817,-5.80866,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838786262,Pharmacie Jnan Marjane صيدلية جنان مرجان,pharmacy,pharmacy,35.747822,-5.845931,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8665003445,Pharmacie Jnane Bacha صيدلية جنان باشا,pharmacy,pharmacy,35.186158,-6.149402,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635504602,Pharmacie Kaoutar صيدلية كوثر,pharmacy,pharmacy,35.045673,-3.454809,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12800261401,Pharmacie Kasbah,pharmacy,pharmacy,35.788309,-5.81531,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776859991,Pharmacie Khadak Dir صيدلية خضر دير,pharmacy,pharmacy,35.722962,-5.791802,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662137653,Pharmacie Khalid Ibn Al Walid صيدلية خالد بن الوليد,pharmacy,pharmacy,35.244031,-3.936318,,,,الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8857383241,Pharmacie Khalil صيدلية خليل,pharmacy,pharmacy,35.750023,-5.833729,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674355343,Pharmacie Khandak Zerbouh صيدلية خندق الزربوح,pharmacy,pharmacy,35.566578,-5.395797,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8777040972,Pharmacie Khandaq El Ward,pharmacy,pharmacy,35.727878,-5.793047,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622694404,Pharmacie Kharkhour صيدلية خرخور,pharmacy,pharmacy,35.683068,-5.323845,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8843343490,Pharmacie Khosafat صيدلية خوصافات,pharmacy,pharmacy,35.785796,-5.816158,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779080480,Pharmacie L'Amitié صيدلية الصداقة,pharmacy,pharmacy,35.723227,-5.878017,Amrani Mohamed,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8614729285,Pharmacie L'Hopital صيدلية المستشفى,pharmacy,pharmacy,35.466373,-6.029515,,,,Assilah أصيلة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8614679265,Pharmacie L'Océan صيدلية المحيط,pharmacy,pharmacy,35.46653,-6.035752,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632387885,Pharmacie La Belle Vue صيدلية المنظر الجميل,pharmacy,pharmacy,34.801488,-5.565931,,,,Ouazzane,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2788629843,Pharmacie La Cité Universitaire صيدلية الحي الجامعي,pharmacy,pharmacy,35.73381,-5.884663,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13762863701,Pharmacie La Corniche,pharmacy,,35.622075,-5.272309,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3835663970,Pharmacie La Mosquée صيدلية المسجد,pharmacy,pharmacy,35.179028,-5.281306,,09:00-20:00,,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776742036,Pharmacie La Perle du Boughaz صيدلية جوهرة البوغاز,pharmacy,pharmacy,35.70965,-5.806645,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629187325,Pharmacie La Playa صيدلية الشاطئ,pharmacy,pharmacy,35.620369,-5.271935,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779185690,Pharmacie La Source صيدلية المنبع,pharmacy,pharmacy,35.742106,-5.796641,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13765658201,Pharmacie La Vida,pharmacy,,35.626062,-5.300901,,Mo-Su 09:00-02:00,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827725016,Pharmacie La Wilaya,pharmacy,pharmacy,35.772594,-5.811393,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664500463,Pharmacie La Zone Industrielle صيدلية الحي الصناعي,pharmacy,pharmacy,35.165868,-6.152119,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672439874,Pharmacie Laamrani صيدلية العمراني,pharmacy,pharmacy,35.565845,-5.413729,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850549754,Pharmacie Laaouini Ziaten صيدلية لعويني زياتن,pharmacy,pharmacy,35.744515,-5.875338,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825407656,Pharmacie Laaziza,pharmacy,pharmacy,35.772023,-5.795102,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8612587471,Pharmacie Laila صيدلية ليلى,pharmacy,pharmacy,35.454444,-6.034122,,,,Assilah,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8857451363,Pharmacie Lalla Chafia صيدلية لالة شافية,pharmacy,pharmacy,35.771485,-5.817246,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672161500,Pharmacie Lalla Mennana صيدلية لالة منانة,pharmacy,pharmacy,35.193359,-6.149985,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796652501,Pharmacie Lamrani,pharmacy,,35.840641,-5.558103,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846509181,Pharmacie Lamtafi صيدلية لمطافي,pharmacy,pharmacy,35.78827,-5.824861,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672439847,Pharmacie Laouzienne صيدلية لاوزيين,pharmacy,pharmacy,35.563421,-5.427727,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8666119957,Pharmacie Larache صيدلي العرائش,pharmacy,pharmacy,35.189294,-6.148077,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689262090,Pharmacie Lawada صيدلية لوادعة,pharmacy,pharmacy,35.572395,-5.382956,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617563333,Pharmacie Laymouna صيدلية الليمونة,pharmacy,pharmacy,35.845594,-5.372689,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821486092,Pharmacie Leila صيدلية ليلى,pharmacy,pharmacy,35.748295,-5.777874,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3154323896,Pharmacie Les Parents صيدلية الوالدين,pharmacy,pharmacy,35.16852,-5.271969,,"09:00-13:00,16:00-21:00",,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779076650,Pharmacie Lilia صيدلية ليليا,pharmacy,pharmacy,35.715347,-5.88464,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677836899,Pharmacie Lina صيدلية لينة,pharmacy,pharmacy,35.583552,-5.354867,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672153230,Pharmacie Lixus صيدلية ليكسوس,pharmacy,pharmacy,35.192844,-6.151419,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8659128043,Pharmacie Loukkous صيدلية اللوكوس,pharmacy,pharmacy,34.996871,-5.907797,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8435674270,Pharmacie L´Hôpital صيدلية المستشفى,pharmacy,pharmacy,34.976427,-3.385661,,,,Driouch ⴷⵔⵉⵡⵛ ادريوش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622724563,Pharmacie M'Diq صيدلية المضيق,pharmacy,pharmacy,35.68487,-5.322335,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821588212,Pharmacie M'Ghogha Kbira صيدلية مغوغة الكبرى,pharmacy,pharmacy,35.750606,-5.780386,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818917918,Pharmacie M'Ghogha صيدلية مغوغة,pharmacy,pharmacy,35.743601,-5.778044,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829698794,Pharmacie M'sallah صيدلية المصلى,pharmacy,pharmacy,35.774324,-5.817564,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811650131,Pharmacie Mabrouka صيدلية مبروكة,pharmacy,pharmacy,35.758263,-5.814793,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8857467009,Pharmacie Mabrouki,pharmacy,pharmacy,35.753877,-5.813321,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776895421,Pharmacie Madcher Al Aouama,pharmacy,pharmacy,35.721843,-5.794929,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814699761,Pharmacie Madrid,pharmacy,pharmacy,35.752733,-5.822047,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,585202603,Pharmacie Maha صيدلية مها,pharmacy,pharmacy,35.736319,-5.821903,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5592855434,Pharmacie Makarim صيدلية مكارم,pharmacy,pharmacy,35.741162,-5.831418,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635352345,Pharmacie Makka صيدلية مكة,pharmacy,pharmacy,35.045091,-3.453357,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821723302,Pharmacie Malabata Hills,pharmacy,pharmacy,35.78084,-5.753001,,,+212 5 26 01 29 24,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688202114,Pharmacie Mall Tétouan صيدلية مول تطوان,pharmacy,pharmacy,35.586542,-5.335471,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13937029683,Pharmacie Mama Sanae,pharmacy,pharmacy,35.747449,-5.768112,,,+212 6 01 18 88 31,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5018122422,Pharmacie Marbella,pharmacy,pharmacy,35.726459,-5.756423,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8857512239,Pharmacie Marché de Gros Aouama صيدلية سوق الجملة,pharmacy,pharmacy,35.749872,-5.794385,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838784762,Pharmacie Marjane Tanger صيدلية مرجان طنجة,pharmacy,pharmacy,35.74645,-5.844033,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684654659,Pharmacie Marjane صيدلية مرجان,pharmacy,pharmacy,35.602528,-5.334983,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779143922,Pharmacie Marshan صيدلية مرشان,pharmacy,pharmacy,35.740923,-5.866356,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629496160,Pharmacie Martil صيدلية مارتيل,pharmacy,pharmacy,35.61829,-5.272926,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4660303464,Pharmacie Masjid Al Azhar صيدلية مسجد الأزهر,pharmacy,pharmacy,35.760634,-5.825484,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8842067032,Pharmacie Masjid Al Mouhit صيدلية مسجد المحيط,pharmacy,pharmacy,35.762107,-5.848576,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824526679,Pharmacie Masjid El Fath,pharmacy,pharmacy,35.764475,-5.783231,,,+212 5 39 35 31 98,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811615542,Pharmacie Masjid Mabrouka صيدلية مسجد مبروكة,pharmacy,pharmacy,35.757292,-5.813248,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846498250,Pharmacie Masjid Marchan صيدلية مسجد مرشان,pharmacy,pharmacy,35.789985,-5.826779,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4013390707,Pharmacie Masrah Al Wilaya صيدلية مسرح الولاية,pharmacy,pharmacy,35.589604,-5.335097,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850636559,Pharmacie Massira صيدلية المسيرة,pharmacy,pharmacy,35.753879,-5.86234,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8822009723,Pharmacie Meftah El Khair,pharmacy,pharmacy,35.76791,-5.773336,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8842008086,Pharmacie Mehdia Golf صيدلية مهدية كولف,pharmacy,pharmacy,35.76408,-5.851852,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635348908,Pharmacie Melilla صيدلية مليلية,pharmacy,pharmacy,34.979222,-3.392322,,,,Driouch,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851236466,Pharmacie Mesnana صيدلية مسنانة,pharmacy,pharmacy,35.754724,-5.854767,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688121099,Pharmacie Mestassi صيدلية مستاسي,pharmacy,pharmacy,35.562888,-5.362377,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5620813889,Pharmacie Metioui صيدلية المتيوي,pharmacy,pharmacy,35.774829,-5.798037,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3024838003,Pharmacie Midar,pharmacy,pharmacy,34.938392,-3.534246,,,+212 5 36 36 43 81,midar,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818408000,Pharmacie Mikou صيدلية ميكو,pharmacy,pharmacy,35.724882,-5.813342,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629172652,Pharmacie Miramar صيدلية ميرامار,pharmacy,pharmacy,35.622941,-5.273823,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829854252,Pharmacie Mister Khouch صيدلية مستر خوش,pharmacy,pharmacy,35.773824,-5.832777,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2907705733,Pharmacie Moderne صيدلية العصرية,pharmacy,pharmacy,35.784065,-5.812687,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635353161,Pharmacie Mohamed El Amin صيدلية محمد الأمين,pharmacy,pharmacy,35.043447,-3.456768,,,,Ben Taib,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8626515354,Pharmacie Moltaka Oussar صيدلية ملتقى الأسر,pharmacy,pharmacy,35.628693,-5.274923,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8838704488,Pharmacie Moncef صيدلية منصف,pharmacy,pharmacy,35.750578,-5.83894,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13773563411,Pharmacie Mont Bleu,pharmacy,,35.176917,-5.273648,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688185259,Pharmacie Mosquée Al Oumma صيدلية مسجد الأمة,pharmacy,pharmacy,35.573541,-5.35232,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811771540,Pharmacie Mouadafine صيدلية الموظفين,pharmacy,pharmacy,35.758739,-5.818606,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8790161332,Pharmacie Moulay Ali Cherif صيدلية مولي علي الشريف,pharmacy,pharmacy,35.751598,-5.802073,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617585676,Pharmacie Moulay Rachid,pharmacy,pharmacy,35.8483,-5.356925,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825782900,Pharmacie Moulay Youssef صيدلية مولاي يوسف,pharmacy,pharmacy,35.770016,-5.805708,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629232738,Pharmacie Mouncif صيدلية منصف,pharmacy,pharmacy,35.619515,-5.28859,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779200042,Pharmacie Mountassir صيدلية منتصر,pharmacy,pharmacy,35.737985,-5.799059,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2193213072,Pharmacie Moussa Ibn Noussair صيدلية موسى ابن نصير,pharmacy,pharmacy,35.572298,-5.386275,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850561071,Pharmacie Moustaghfir صيدلية مستغفر,pharmacy,pharmacy,35.74492,-5.866885,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684552208,Pharmacie Msalah Kdima صيدلية مصلى القديمة,pharmacy,pharmacy,35.567925,-5.367557,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8822017841,Pharmacie Méditerranée,pharmacy,pharmacy,35.769154,-5.767407,,,+212 5 39 94 50 46,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12324364996,Pharmacie NORAN,pharmacy,pharmacy,35.760232,-5.757969,,,+212 5 39 30 28 74,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772938630,Pharmacie Nadia صيدلية نادية,pharmacy,pharmacy,35.69763,-5.917013,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818925768,Pharmacie Najah صيدلية النجاح,pharmacy,pharmacy,35.7477,-5.772726,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,587312060,Pharmacie Najid,pharmacy,pharmacy,35.703491,-5.900754,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674530848,Pharmacie Nakhil صيدلية النخيل,pharmacy,pharmacy,35.568408,-5.3763,,,,Tétouan ⵜⵉⵟⵟⴰⵡⵉⵏ تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836095369,Pharmacie Narjiss صيدلية نرجيس,pharmacy,pharmacy,35.755607,-5.834461,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8660515453,Pharmacie Noumidia صيدلية نوميديا,pharmacy,pharmacy,35.239171,-3.927433,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8774009433,Pharmacie Nour Moujamma Hassani صيدلية نور المجمع الحسني,pharmacy,pharmacy,35.730989,-5.852477,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635321540,Pharmacie Nour صيدلية النور,pharmacy,pharmacy,35.044797,-3.457209,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640144100,Pharmacie Nouvelle الصيدلية الجديدة,pharmacy,pharmacy,34.936592,-4.316076,,,,Targuist ⵜⴰⵔⴳⵉⵙⵜ تارجيست,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812208759,Pharmacie Nouvelle الصيدلية الجديدة,pharmacy,pharmacy,35.757333,-5.824289,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676794499,Pharmacie Omar Ibn Abdelaziz صيدلية عمر بن عبد العزيز,pharmacy,pharmacy,35.58112,-5.360385,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850671374,Pharmacie Omar Ibn Khattab صيدلية عمر بن الخطاب,pharmacy,pharmacy,35.758663,-5.859285,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8858650201,Pharmacie Ouahabi,pharmacy,pharmacy,35.781397,-5.846575,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8851213703,Pharmacie Ouahid صيدلية وحيد,pharmacy,pharmacy,35.75654,-5.855827,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12280396816,Pharmacie Oued Alyene,pharmacy,pharmacy,35.817176,-5.636867,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5077982406,Pharmacie Oued El Makhazine صيدلية واد المخازن,pharmacy,pharmacy,35.001618,-5.906638,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821817942,Pharmacie Oued Sania,pharmacy,pharmacy,35.768927,-5.757194,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680220672,Pharmacie Ouiriaghli صيدلية وريغلي,pharmacy,pharmacy,35.574736,-5.346047,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811910202,Pharmacie Ouled Allal صيدلية أولاد علال,pharmacy,pharmacy,35.743583,-5.815288,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629442934,Pharmacie Oum Keltoum صيدلية أم كلثوم,pharmacy,pharmacy,35.611047,-5.300695,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635881366,Pharmacie Oum Saad صيدلية أم سعد,pharmacy,pharmacy,35.166863,-5.267144,,,,Chefchaouen ⵛⴼⵛⴰⵡⵏ شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677800668,Pharmacie Palestine صيدلية فلسطين,pharmacy,pharmacy,35.578728,-5.356049,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8824606750,Pharmacie Palestine صيدلية فلسطين,pharmacy,pharmacy,35.764087,-5.790921,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8791808232,Pharmacie Passadena,pharmacy,pharmacy,35.766079,-5.799568,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5721289153,Pharmacie Pasteur,pharmacy,pharmacy,35.240259,-3.928565,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632328608,Pharmacie Pasteur صيدلية باستور,pharmacy,pharmacy,34.805695,-5.571332,,,,Ouazzane ⵡⴰⵣⴰⵏ وزان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821980831,Pharmacie Perle de Méditerranée صيدلية لؤلؤة المتوسط,pharmacy,pharmacy,35.767365,-5.761096,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825811268,Pharmacie Phardet صيدلية فارضت,pharmacy,pharmacy,35.770572,-5.814199,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5620697251,Pharmacie Place Des Arômes صيدلية العبير,pharmacy,pharmacy,35.760861,-5.795886,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8827367780,Pharmacie Place du Maroc صيدلية ساحة المغرب,pharmacy,pharmacy,35.765738,-5.816338,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676776544,Pharmacie Polvorin Dersa صيدلية بولفوران ضرسة,pharmacy,pharmacy,35.580314,-5.372421,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672101945,Pharmacie Populaire الصيدلية الشعبية,pharmacy,pharmacy,35.196509,-6.150666,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8832704750,Pharmacie Populaire الصيدلية الشعبية,pharmacy,pharmacy,35.76822,-5.82491,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13757399901,Pharmacie Principale,pharmacy,,35.614317,-5.281189,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8666109057,Pharmacie Principale الصيدلية الرئيسية,pharmacy,pharmacy,35.19086,-6.151415,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836337726,Pharmacie Principale الصيدلية الرئيسية,pharmacy,pharmacy,35.753931,-5.841641,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792431649,Pharmacie Province,pharmacy,pharmacy,35.764384,-5.808264,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8811798586,Pharmacie Préfecture Beni Makada صيدلية عمالة بني مكادة,pharmacy,pharmacy,35.741841,-5.809778,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14101637101,Pharmacie Qabiliya,pharmacy,,35.623857,-5.279082,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8640175984,Pharmacie Qortoba صيدلية قرطبة,pharmacy,pharmacy,34.935125,-4.315952,,,,Targuist ⵜⴰⵔⴳⵉⵙⵜ تارجيست,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8831957801,Pharmacie Rabea El Adaouia صيدلية رابعة العدوية,pharmacy,pharmacy,35.765276,-5.824776,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818895821,Pharmacie Rahhali صيدلية الرحالي,pharmacy,pharmacy,35.740138,-5.765085,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14355576083,Pharmacie Rahmouni,pharmacy,pharmacy,35.772851,-5.792514,,,+212 5 39 94 57 88,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818382645,Pharmacie Ramses صيدلية رمسيس,pharmacy,pharmacy,35.728851,-5.81803,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3836100628,Pharmacie Ras El Ma صيدلية رأس الماء,pharmacy,pharmacy,35.163816,-5.261529,,"09:00-13:00,15:00-20:00",,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818095842,Pharmacie Riad Achifaa صيدلية رياض الشفاء,pharmacy,pharmacy,35.735227,-5.834199,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629424047,Pharmacie Riad Sofia صيدلية رياض صوفيا,pharmacy,pharmacy,35.623489,-5.30058,,Mo-Su 09:00-03:00,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676653862,Pharmacie Riad Taboula صيدلية رياض طابولة,pharmacy,pharmacy,35.57493,-5.405065,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812298747,Pharmacie Riad ahlen صيدلية رياض أهلا,pharmacy,pharmacy,35.742425,-5.843168,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8672187924,Pharmacie Riad صيدلية رياض,pharmacy,pharmacy,35.19344,-6.153965,,,,Larache ⵍⵄⵔⴰⵢⵛ العرائش,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8690739113,Pharmacie Riad صيدلية رياض,pharmacy,pharmacy,35.594116,-5.357548,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850676755,Pharmacie Riad صيدلية رياض,pharmacy,pharmacy,35.758504,-5.856233,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635378157,Pharmacie Rif صيدلية الريف,pharmacy,pharmacy,35.045993,-3.452219,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677847723,Pharmacie Rif صيدلية الريف,pharmacy,pharmacy,35.587012,-5.346829,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2689650712,Pharmacie Rihabe صيدلية رحاب,pharmacy,pharmacy,35.188249,-6.155194,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622716275,Pharmacie Rincon صيدلية الرينكون,pharmacy,pharmacy,35.684522,-5.323412,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8626429616,Pharmacie Rio Martin صيدلية ريو مرتين,pharmacy,pharmacy,35.627404,-5.291721,,,,Martil,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635365678,Pharmacie Rochdi صيدلية رشدي,pharmacy,pharmacy,35.045837,-3.456656,,,,Ben Taïeb ⴱⵏ ⵟⵢⵢⴱ بن الطيب,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13794542904,Pharmacie Rokn Seha,pharmacy,,35.615408,-5.327978,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695801,Pharmacie Rokn Seha,pharmacy,,35.615404,-5.327972,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4930616421,Pharmacie Rommana صيدلية الرمانة,pharmacy,pharmacy,35.567298,-5.393038,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8786480316,Pharmacie Route El Aouama صيدلية طريق العوامة,pharmacy,pharmacy,35.733953,-5.801848,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8773284487,Pharmacie Route de Rabat صيدلية طريق الرباط,pharmacy,pharmacy,35.72962,-5.8803,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629324662,Pharmacie Réda صيدلية رضا,pharmacy,pharmacy,35.615508,-5.273636,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825161696,Pharmacie Saada صيدلية السعادة,pharmacy,pharmacy,35.763233,-5.795839,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846524853,Pharmacie Sabila Jmaa صيدلية سبيلة الجماعة,pharmacy,pharmacy,35.788439,-5.829366,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684808978,Pharmacie Sabri صيدلية صبري,pharmacy,pharmacy,35.579793,-5.344862,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850628064,Pharmacie Safae صيدلية صفاء,pharmacy,pharmacy,35.746318,-5.868599,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677852113,Pharmacie Safir صيدلية سفير,pharmacy,pharmacy,35.58496,-5.349367,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836101798,Pharmacie Salaheddine صيدلية صلاح الدين,pharmacy,pharmacy,35.754479,-5.837661,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818121482,Pharmacie Salama صيدلية السلامة,pharmacy,pharmacy,35.737648,-5.827829,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776845088,Pharmacie Salima صيدلية سليمة,pharmacy,pharmacy,35.720501,-5.79199,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680069383,Pharmacie Samadi صيدلية الصمادي,pharmacy,pharmacy,35.61336,-5.332574,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635520782,Pharmacie Samia صيدلية سامية,pharmacy,pharmacy,35.039405,-3.45963,,,,Ben Taieb,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839316729,Pharmacie San Francisco,pharmacy,pharmacy,35.78075,-5.824077,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8836010982,Pharmacie Sanawbar صيدلية الصنوبر,pharmacy,pharmacy,35.757491,-5.836944,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14182914512,Pharmacie Sania Malabata,pharmacy,pharmacy,35.778019,-5.754131,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8789935713,Pharmacie Sania صيدلية السانيا,pharmacy,pharmacy,35.742986,-5.806032,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825275806,Pharmacie Santé City Center صيدلية الصحة سيتي سنتر,pharmacy,pharmacy,35.770652,-5.782364,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812304602,Pharmacie Sara صيدلية سارة,pharmacy,pharmacy,35.738153,-5.835706,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839626481,Pharmacie Sat Filage صيدلية سات فيلاج,pharmacy,pharmacy,35.759761,-5.843287,Dr.Asmae Benazzouz,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778927255,Pharmacie Sekka Aouama صيدلية السكة العوامة,pharmacy,pharmacy,35.732238,-5.794407,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8622712862,Pharmacie Sekka صيدلية السكة,pharmacy,pharmacy,35.682569,-5.327813,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8193863900,Pharmacie Semsa صيدلية سمسة,pharmacy,pharmacy,35.575827,-5.396399,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684523500,Pharmacie Sidi Abdellah El Fakhar صيدلية سيدي عبد الله الفخار,pharmacy,pharmacy,35.564814,-5.360491,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8617604341,Pharmacie Sidi Boghaba,pharmacy,pharmacy,35.850172,-5.358142,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5595586684,Pharmacie Sidi Boukhari,pharmacy,pharmacy,35.782905,-5.831913,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5618527218,Pharmacie Sidi Bouwafi صيدلية سيدي بوافي,pharmacy,pharmacy,35.765006,-5.823516,,,+212 5 39 34 22 34,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656060993,Pharmacie Sidi El Beyati صيدلية سيدي البياتي,pharmacy,pharmacy,34.998134,-5.893878,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680237142,Pharmacie Sidi El Mandri صيدلية سيدي المنظري,pharmacy,pharmacy,35.575807,-5.34276,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656068605,Pharmacie Sidi Makhlouf صيدلية سيدي مخلوف,pharmacy,pharmacy,34.995897,-5.900311,,,,Kser-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676740457,Pharmacie Sidi Talha صيدلية سيدي طلحة,pharmacy,pharmacy,35.576508,-5.379672,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8850687269,Pharmacie Sofia صيدلية صوفيا,pharmacy,pharmacy,35.76119,-5.857965,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8680006858,Pharmacie Souani صيدلية الصواني,pharmacy,pharmacy,35.600266,-5.327541,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829838789,Pharmacie Souk El Bakar صيدلية سوق البقر,pharmacy,pharmacy,35.779074,-5.830846,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8684642336,Pharmacie Souk El Fouki صيدلية سوق الفوقي,pharmacy,pharmacy,35.572404,-5.368413,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8860291633,Pharmacie Souk M'Sallah صيدلية سوق المصلى,pharmacy,pharmacy,35.757843,-5.812068,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6251848199,Pharmacie Souk صيدلية السوق,pharmacy,pharmacy,35.617908,-5.274979,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8842011925,Pharmacie Soussia صيدلية سوسية,pharmacy,pharmacy,35.761814,-5.853586,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8619146510,Pharmacie Séville,pharmacy,pharmacy,35.856366,-5.355082,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686022573,Pharmacie Taboula صيدلية طابولة,pharmacy,pharmacy,35.567812,-5.399886,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812469308,Pharmacie Taferssiti صيدلية تافرسيتي,pharmacy,pharmacy,35.741433,-5.833619,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792346916,Pharmacie Tafilalet,pharmacy,pharmacy,35.757143,-5.8103,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821677717,Pharmacie Taissir صيدلية التيسير,pharmacy,pharmacy,35.751573,-5.787066,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8623528640,Pharmacie Tamuda Bay صيدلية تامودا باي,pharmacy,pharmacy,35.683112,-5.32276,,,,M'Diq ⵎⴹⵢⴰⵇ المضيق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8839260234,Pharmacie Tanja Al Koubra صيدلية طنجة الكبرى,pharmacy,pharmacy,35.752513,-5.85226,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8818883564,Pharmacie Tanmia صيدلية التنمية,pharmacy,pharmacy,35.737411,-5.765725,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8853593540,Pharmacie Tarik Ben Ziad صيدلية طارق بن زياد,pharmacy,pharmacy,35.777293,-5.804933,,,,Tanger ⵟⴰⵏⵊⴰ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840219414,Pharmacie Tarik El Moujahidin صيدلية طريق المجاهدين,pharmacy,pharmacy,35.769989,-5.843755,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8638182899,Pharmacie Tarik Ibnou Ziad صيدلية طارق بن زياد,pharmacy,pharmacy,35.135946,-3.858878,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13762861103,Pharmacie Tarik صيدلية طارق,pharmacy,,35.450701,-5.091701,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8657173485,Pharmacie Tatoft صيدلية تطفت,pharmacy,pharmacy,35.000687,-5.89874,,,,Ksar-el-Kebir ⵍⵇⵚⵔ ⵍⴽⴱⵉⵔ القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688349289,Pharmacie Teknia صيدلية التقنية,pharmacy,pharmacy,35.575482,-5.349735,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688073809,Pharmacie Thami Ouazzani صيدلية التهامي الوزاني,pharmacy,pharmacy,35.569094,-5.36104,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8638215453,Pharmacie Thaziri صيدلية التازيري,pharmacy,pharmacy,35.142545,-3.849141,,,,Imzouren,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846093197,Pharmacie Tingis صيدلية طنجيس,pharmacy,pharmacy,35.785583,-5.825596,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8686063413,Pharmacie Touabel صيدلية طوابل,pharmacy,pharmacy,35.58132,-5.35698,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674362524,Pharmacie Touebla صيدلية طويبلة,pharmacy,pharmacy,35.564737,-5.398816,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676775225,Pharmacie Touelah صيدلية طويلع,pharmacy,pharmacy,35.580706,-5.36344,,,,Tétouan تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689364022,Pharmacie Touta صيدلية التوتة,pharmacy,pharmacy,35.568216,-5.356096,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5622780145,Pharmacie Touzani صيدلية التوزاني,pharmacy,pharmacy,35.758604,-5.793335,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,9909622893,Pharmacie Tufarma,pharmacy,pharmacy,35.734837,-5.889701,,"Mo-Th 09:00-13:00,16:00-20:00",,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3106913993,Pharmacie Utaa Hammam صيدلية وطاء الحمام,pharmacy,pharmacy,35.168965,-5.261181,,,,Chefchaouen شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8829760068,Pharmacie Val Fleuri صيدلية فال فلوري,pharmacy,pharmacy,35.776902,-5.828385,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772821201,Pharmacie Vidal صيدلية فيدال,pharmacy,pharmacy,35.706476,-5.918072,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8656048715,Pharmacie Wahrani صيدلية وهراني,pharmacy,pharmacy,34.996148,-5.897722,,,,Ksar-el-Kebir,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8778886367,Pharmacie Ward El Aouama صيدلية ورد العوامة,pharmacy,pharmacy,35.730511,-5.785047,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688104267,Pharmacie Wilaya Centre صيدلية مركز الولاية,pharmacy,pharmacy,35.587305,-5.34264,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8774028204,Pharmacie Wissal صيدلية وصال,pharmacy,pharmacy,35.732356,-5.855774,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629212836,Pharmacie Yahya صيدلية يحيى,pharmacy,pharmacy,35.621126,-5.277339,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5610334736,Pharmacie Yanit,pharmacy,pharmacy,35.705966,-5.904148,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5603177820,Pharmacie Yassine,pharmacy,pharmacy,35.769678,-5.827593,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8629343979,Pharmacie Youness صيدلية يونس,pharmacy,pharmacy,35.616704,-5.275811,,,,Martil ⵎⴰⵔⵜⵉⵍ مرتيل,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8689323657,Pharmacie Zamzam صيدلية زمزم,pharmacy,pharmacy,35.566129,-5.358699,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8795156062,Pharmacie Zaoudia,pharmacy,pharmacy,35.755598,-5.81661,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8674476481,Pharmacie Zekri صيدلية زكري,pharmacy,pharmacy,35.569352,-5.394921,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8814945174,Pharmacie Zemzem صيدلية زمزم,pharmacy,pharmacy,35.746,-5.820725,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8677848490,Pharmacie Ziana صيدلية زيانة,pharmacy,pharmacy,35.575413,-5.363392,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8786530032,Pharmacie Zineb,pharmacy,pharmacy,35.734434,-5.805223,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8615206377,Pharmacie Zohour صيدلية زهور,pharmacy,pharmacy,35.83928,-5.356236,,,,Fnideq ⴼⵏⵉⴷⴰⵇ الفنيدق,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772890615,Pharmacie Zone Franche صيدلية المنطقة الحرة,pharmacy,pharmacy,35.709094,-5.90922,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8821512586,Pharmacie Zone Industrielle صيدلية الحي الصناعي,pharmacy,pharmacy,35.745634,-5.782647,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8676709230,Pharmacie Zoubairi صيدلية الزبيري,pharmacy,pharmacy,35.576584,-5.389787,Ph ZB,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8817836946,Pharmacie Zouitina صيدلية الزويتينة,pharmacy,pharmacy,35.732901,-5.811635,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13791919710,Pharmacie athar tamouda,pharmacy,,35.557662,-5.407718,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13789269503,Pharmacie centro targha,pharmacy,,35.393991,-5.014167,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,2197266996,Pharmacie de La Mosquée Hassan II صيدلية المسجد الحسن,pharmacy,pharmacy,35.569872,-5.377985,,,,Tétouan ⵜⵉⵟⵟⴰⵡⵉⵏ تطوان,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8828065054,Pharmacie de Paris صيدلية باريس,pharmacy,pharmacy,35.78087,-5.812274,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8825311022,Pharmacie de la Gare,pharmacy,pharmacy,35.771336,-5.78587,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792314823,Pharmacie de la Santé صيدلية الصحة,pharmacy,pharmacy,35.758175,-5.801553,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772783465,Pharmacie de la Ville Nouvelle صيدلية المدينة الجديدة,pharmacy,pharmacy,35.703319,-5.93598,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13295331559,Pharmacie de lhopital provincial,pharmacy,pharmacy,35.193621,-3.910752,,,,alhoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13806703504,Pharmacie delivre07,pharmacy,,35.777206,-5.798989,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664812830,Pharmacie des FAR صيدلية القوات المسلحة الملكية,pharmacy,pharmacy,35.183046,-6.157094,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13295480266,Pharmacie des Facultés,pharmacy,pharmacy,35.17101,-3.86136,,,,alhoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5591112169,Pharmacie du Conseil صيدلية النصيحة,pharmacy,pharmacy,35.737734,-5.808557,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8846945430,Pharmacie du Golf صيدلية الكولف,pharmacy,pharmacy,35.775918,-5.85483,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8779052697,Pharmacie du Grand Stade صيدلية الملعب الكبير,pharmacy,pharmacy,35.738258,-5.847701,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8828006544,Pharmacie du Lycée صيدلية الليسي,pharmacy,pharmacy,35.778123,-5.809673,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8665990198,Pharmacie du Nord صيدلية الشمال,pharmacy,pharmacy,35.178024,-6.144975,,"Mo-Fr 10:00-17:00; Sa 10:00-14:00
+",,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8812234114,Pharmacie du Nord صيدلية الشمال,pharmacy,pharmacy,35.758448,-5.828027,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,6418186095,Pharmacie du Nord صيدلية الشمال الكبرى,pharmacy,pharmacy,35.569964,-5.371495,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8792404870,Pharmacie du Parc صيدلية الروض,pharmacy,pharmacy,35.763011,-5.812644,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8790225817,Pharmacie du Quartier صيدلية الحي,pharmacy,pharmacy,35.757274,-5.796516,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,5577523877,Pharmacie du Soleil صيدلية الشمس,pharmacy,pharmacy,35.774866,-5.810182,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8664813616,Pharmacie du Stade Municipal صيدلية الملعب البلدي,pharmacy,pharmacy,35.180475,-6.147885,,,,Larache,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7674870594,Pharmacie et Laboratoire Al Andalous صيدلية و مختبر الأندلس,pharmacy,pharmacy,35.245169,-3.930928,,Mo-Fr 09:00-19:30; Sa 09:00-13:00,+212 5 39 98 28 99,Al Hoceïma ⵍⵃⵓⵙⵉⵎⴰ الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8657173532,Pharmacie et Laboratoire Es-Saada صيدلية و مختبر السعادة,pharmacy,pharmacy,34.994485,-5.902213,,,,Ksar-el-Kebir القصر الكبير,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8632414324,Pharmacie l'Espoir صيدلية الأمل,pharmacy,pharmacy,34.801082,-5.572908,,,,Ouazzane,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8688325359,Pharmacie l'Hopital صيدلية المستشفى,pharmacy,pharmacy,35.570957,-5.354137,,,,Tétouan,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662351816,Pharmacie la Méditerranée صيدلية المتوسط,pharmacy,pharmacy,35.246561,-3.941539,,,,Al Hoceima الحسيمة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3195477404,Pharmacie la Province صيدلية العمالة,pharmacy,pharmacy,35.170554,-5.273098,,09:00-20:00,+212 5 39 88 38 55,Chefchaouen,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840225643,Pharmacie la Raison صيدلية النهى,pharmacy,pharmacy,35.76718,-5.844818,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,3178706017,Pharmacie la Santé صيدلية الصحة,pharmacy,pharmacy,35.166457,-5.264218,,,,Chefchaouen شفشاون,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8776767321,Pharmacie la Vie,pharmacy,pharmacy,35.712167,-5.804804,,,,Tanger ⵜⵉⵏ ⵉⴳⴳⵉ طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8662291493,Pharmacie le Port صيدلية الميناء,pharmacy,pharmacy,35.248292,-3.931791,,,,Al-hoceima,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8772801476,Pharmacie les Jardins de l’Atlantique صيدلية حدائق الأطلسي,pharmacy,pharmacy,35.705458,-5.930959,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8857053792,Pharmacie les Palmiers صيدلية النخيل,pharmacy,pharmacy,35.780345,-5.805571,,,,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8840290759,Pharmacie les Parents صيدلية الأبوين,pharmacy,pharmacy,35.757888,-5.846803,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695503,Pharmacie sad asmir,pharmacy,,35.698374,-5.347376,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13788053006,Pharmacie sidi abdessalam صيدلية سيدي عبد السلام,pharmacy,,35.57224,-5.263951,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13073783841,Pharmacie tafaoul tanja balya,pharmacy,pharmacy,35.753934,-5.756365,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695302,Pharmacie tetouan shore,pharmacy,,35.651805,-5.309657,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13796156401,Pharmacy Imam Mouslim,pharmacy,,35.785437,-5.829062,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,8635352344,Pharmcie Mowahidine صيدلية الموحدين,pharmacy,pharmacy,35.043078,-3.452527,,,,Ben Taib,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,4746018224,Zurita,pharmacy,pharmacy,35.88697,-5.307771,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+way,1265873234,pharmacie benkiran,pharmacy,pharmacy,35.760373,-5.788433,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13765658002,pharmacie essaddiki,pharmacy,,35.623317,-5.295608,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,7876409139,pharmacy Tijani Zineb,pharmacy,pharmacy,35.611353,-5.919008,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,9906682517,صيدلية,pharmacy,pharmacy,35.573026,-5.374946,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13424662712,صيدلية أنفاس,pharmacy,pharmacy,35.773035,-5.78137,,,+212 5 39 30 11 85,Tanger طنجة,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13794543803,صيدلية اسكندينافية,pharmacy,,35.620952,-5.328947,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13793858402,صيدلية الحرية,pharmacy,,35.684777,-5.32991,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,14070866481,صيدلية السوق,pharmacy,pharmacy,35.422771,-5.122095,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12728393149,صيدلية الشجيرات,pharmacy,pharmacy,35.765585,-5.74914,,,+212 6 25 38 94 86,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13798222002,صيدلية الطود,pharmacy,,35.004293,-5.895656,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,12728400894,صيدلية بوتور,pharmacy,pharmacy,35.763663,-5.769766,,,,Tanger,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13791931008,صيدلية تمودة,pharmacy,,35.555654,-5.413407,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13057634944,صيدلية جبل طارق,pharmacy,pharmacy,35.779698,-5.75681,,,+212 5 39 32 59 31,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13791931006,صيدلية حومة اللوحة,pharmacy,,35.553787,-5.416834,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13830695207,صيدلية سوق دار مورسيا,pharmacy,,35.588851,-5.370836,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13196560344,صيدلية طنجة البالية,pharmacy,pharmacy,35.771639,-5.769113,,,+212 5 39 94 35 17,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13779781804,صيدلية قاع أسراس,pharmacy,,35.413441,-5.068629,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,11228103721,صيدلية قلب طنجة,pharmacy,pharmacy,35.759992,-5.751852,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13799494202,صيدلية كتامة,pharmacy,,34.876436,-4.619625,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13818690402,صيدلية مسجد الفرقان,pharmacy,,35.177463,-6.155837,,,,,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
+node,13256801468,Jesús Alba Barquero,physiotherapist,physiotherapist,35.883812,-5.326092,Real Federación de Fútbol de Ceuta,,,Ceuta,OpenStreetMap (Geofabrik Maroc 2026-11-12),ODbL
