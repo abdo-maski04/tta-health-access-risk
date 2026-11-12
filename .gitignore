@@ -1,10 +1,18 @@
+# Environnement Python
 .env
 __pycache__/
 *.pyc
 .venv/
 .ipynb_checkpoints/
 .pytest_cache/
+
+# Airflow
 airflow/logs/
+
+# Donnees locales non versionnees
 data/interim/*
 !data/interim/.gitkeep
+data/raw_downloads/
+
+# Systeme
 .DS_Store
