@@ -1,0 +1,35 @@
+# ==============================================================================
+# TTA Health Access Risk — requirements/base.txt
+# Dépendances communes du noyau : Traitement de données, SIG, API et Base SQL
+# ==============================================================================
+
+# Traitement de données & Sérialisation
+pandas>=2.1.0,<3.0.0
+numpy>=1.26.0,<2.1.0
+pyarrow>=14.0.0,<18.0.0
+openpyxl>=3.1.0,<4.0.0
+
+# Traitement géospatial & SIG
+# Note de compatibilité : GeoPandas 0.14+ utilise Shapely 2.0 (GEOS compilé dans les wheels).
+# Aucun besoin de compilation manuelle de GDAL/GEOS sur Windows ou en CI Linux.
+shapely>=2.0.0,<3.0.0
+geopandas>=0.14.0,<1.1.0
+pyproj>=3.6.0,<4.0.0
+
+# Clients API externes (OpenRouteService, Open-Meteo)
+requests>=2.31.0,<3.0.0
+urllib3>=2.0.0,<3.0.0
+
+# Base de données PostgreSQL & Accès données
+sqlalchemy>=2.0.0,<3.0.0
+psycopg2-binary>=2.9.9,<3.0.0
+
+# Utilitaires système & Configuration
+python-dotenv>=1.0.0,<2.0.0
+
+# ------------------------------------------------------------------------------
+# NOTE D'ARCHITECTURE SUR APACHE AIRFLOW :
+# Apache Airflow requiert un ensemble strict de contraintes (constraints file).
+# Pour éviter tout conflit de version avec Streamlit et GeoPandas, les dépendances
+# Airflow sont isolées dans le conteneur Docker dédié (airflow/Dockerfile).
+# ------------------------------------------------------------------------------

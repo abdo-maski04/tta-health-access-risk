@@ -1,18 +1,65 @@
-# Environnement Python
-.env
+# ==============================
+# Python
+# ==============================
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environnements virtuels
 .venv/
+venv/
+env/
+
+# Variables d'environnement et secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
 .ipynb_checkpoints/
+
+# Tests et couverture
 .pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
 
+# Outils qualité
+.ruff_cache/
+.mypy_cache/
+
+# ==============================
 # Airflow
+# ==============================
 airflow/logs/
+airflow/plugins/__pycache__/
 
-# Donnees locales non versionnees
+# ==============================
+# Données
+# ==============================
 data/interim/*
 !data/interim/.gitkeep
-data/raw_downloads/
 
-# Systeme
+data/raw_downloads/
+data/external/
+
+# Fichiers temporaires
+*.tmp
+*.log
+
+# ==============================
+# Système
+# ==============================
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# IDE
+# ==============================
+.vscode/
+.idea/
