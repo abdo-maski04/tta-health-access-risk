@@ -1,0 +1,17 @@
+# ==============================================================================
+# TTA Health Access Risk — requirements/app.txt
+# Dépendances pour le Dashboard interactif Streamlit et la Cartographie
+# ==============================================================================
+
+# Hérite du socle de données
+-r base.txt
+
+# Interface web & Dashboard
+streamlit>=1.35.0,<2.0.0
+
+# Cartographie interactive
+folium>=0.16.0,<1.0.0
+streamlit-folium>=0.19.0,<1.0.0
+
+# Graphiques de synthèse & KPIs
+plotly>=5.20.0,<6.0.0

@@ -26,9 +26,8 @@ from __future__ import annotations
 import csv
 import json
 import re
-import unicodedata
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import openpyxl
@@ -154,7 +153,7 @@ def main() -> None:
     incoh_code = [c for c in controle_code_geo if not c["coherent"]]
 
     qc = {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "methode": "Somme de la population des douars (milieu rural uniquement) comparée à la population légale totale",
         "source_douars": str(DOUARS.relative_to(ROOT)),
         "communes_rurales_dans_fichier_douars": len(pop_rural),

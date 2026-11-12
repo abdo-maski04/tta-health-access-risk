@@ -22,7 +22,7 @@ import csv
 import json
 import math
 import unicodedata
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from shapely.geometry import shape
@@ -155,7 +155,7 @@ def main() -> None:
                 "geom_type": geom_obj.get("type"),
                 "geometry": geom_obj,
                 "source": "RGPH 2024 — limites communales (rgphapps.ma via Morocco-Geospatial-Visualisations)",
-                "source_retrieved": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                "source_retrieved": datetime.now(UTC).strftime("%Y-%m-%d"),
             }
         )
 
@@ -184,7 +184,7 @@ def main() -> None:
     n_hcp = len(set(hcp_codes))
 
     qc = {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "region": REGION_NAME,
         "source_file": str(RAW.relative_to(ROOT)),
         "niveau_geometries": len(rows),
