@@ -1,0 +1,147 @@
+commune_code,province_code,province,name_fr,name_ar,name_norm,start_point_lon,start_point_lat,area_km2,nb_entites_geometriques,codes_geometries
+MA-01-051-0901,MA-01-051,Al Hoceima,Abdelghaya Souahel,عبد الغاية السواحل,abdelghaya souahel,-4.633904,34.785893,227.4,1,MA-01-051-0901
+MA-01-051-1101,MA-01-051,Al Hoceima,Ait Kamra,آيت قمرة,ait kamra,-4.004116,35.148547,90.6,1,MA-01-051-1101
+MA-01-051-1303,MA-01-051,Al Hoceima,Ait Youssef Ou Ali,آيت يوسف وعلي,ait youssef ou ali,-3.878453,35.166231,62.75,1,MA-01-051-1303
+MA-01-051-0109,MA-01-051,Al Hoceima,Ajdir,أجدير,ajdir,-3.912077,35.196817,15.3,1,MA-01-051-0109
+MA-01-051-0101,MA-01-051,Al Hoceima,Al Hoceima,الحسيمة,al hoceima,-3.94362,35.236366,15.66,1,MA-01-051-0101
+MA-01-051-1305,MA-01-051,Al Hoceima,Arbaa Taourirt,اربعاء تاوريرت,arbaa taourirt,-3.879333,34.905361,121.43,1,MA-01-051-1305
+MA-01-051-1107,MA-01-051,Al Hoceima,Bni Abdellah,بني عبد الله,bni abdellah,-4.070452,35.04377,126.51,1,MA-01-051-1107
+MA-01-051-0703,MA-01-051,Al Hoceima,Bni Ahmed Imoukzan,بني احمد اموكزان,bni ahmed imoukzan,-4.443729,34.762487,83.46,1,MA-01-051-0703
+MA-01-051-0705,MA-01-051,Al Hoceima,Bni Ammart,بني عمارت,bni ammart,-4.195919,34.808729,139.15,1,MA-01-051-0705
+MA-01-051-0707,MA-01-051,Al Hoceima,Bni Bchir,بني ابشير,bni bchir,-4.339209,34.779972,117.37,1,MA-01-051-0707
+MA-01-051-0103,MA-01-051,Al Hoceima,Bni Bouayach,بني بوعياش,bni bouayach,-3.845641,35.104743,26.25,1,MA-01-051-0103
+MA-01-051-0909,MA-01-051,Al Hoceima,Bni Bouchibet,بني بوشيبت,bni bouchibet,-4.50745,34.708034,91.22,1,MA-01-051-0909
+MA-01-051-0301,MA-01-051,Al Hoceima,Bni Boufrah,بني بوفراح,bni boufrah,-4.306881,35.07075,138.85,1,MA-01-051-0301
+MA-01-051-0711,MA-01-051,Al Hoceima,Bni Bounsar,بني بونصار,bni bounsar,-4.436474,34.86537,106.78,1,MA-01-051-0711
+MA-01-051-0303,MA-01-051,Al Hoceima,Bni Gmil,بني اكميل,bni gmil,-4.3717,35.064849,149.49,1,MA-01-051-0303
+MA-01-051-0305,MA-01-051,Al Hoceima,Bni Gmil Maksouline,بني جميل مكصولين,bni gmil maksouline,-4.448639,35.02353,100.0,1,MA-01-051-0305
+MA-01-051-1109,MA-01-051,Al Hoceima,Bni Hadifa,بني حذيفة,bni hadifa,-4.173162,34.996254,75.83,1,MA-01-051-1109
+MA-01-051-1311,MA-01-051,Al Hoceima,Chakrane,شقران,chakrane,-3.984677,34.910147,170.97,1,MA-01-051-1311
+MA-01-051-1313,MA-01-051,Al Hoceima,Imrabten,امرابطن,imrabten,-3.966182,35.045457,99.8,1,MA-01-051-1313
+MA-01-051-0105,MA-01-051,Al Hoceima,Imzouren,امزورن,imzouren,-3.85035,35.142371,15.01,1,MA-01-051-0105
+MA-01-051-0913,MA-01-051,Al Hoceima,Issaguen,اساكن,issaguen,-4.565255,34.901419,126.25,1,MA-01-051-0913
+MA-01-051-1115,MA-01-051,Al Hoceima,Izemmouren,ازمورن,izemmouren,-4.01104,35.197939,71.63,1,MA-01-051-1115
+MA-01-051-0915,MA-01-051,Al Hoceima,Ketama,كتامة,ketama,-4.679852,34.888466,117.43,1,MA-01-051-0915
+MA-01-051-1317,MA-01-051,Al Hoceima,Louta,لوطا,louta,-3.90041,35.11036,30.83,1,MA-01-051-1317
+MA-01-051-0917,MA-01-051,Al Hoceima,Moulay Ahmed Cherif,مولاي احمد الشريف,moulay ahmed cherif,-4.479923,34.929008,96.61,1,MA-01-051-0917
+MA-01-051-1319,MA-01-051,Al Hoceima,Nekkour,النكور,nekkour,-3.853649,35.013408,85.65,1,MA-01-051-1319
+MA-01-051-1121,MA-01-051,Al Hoceima,Rouadi,ارواضي,rouadi,-4.172012,35.159495,184.93,1,MA-01-051-1121
+MA-01-051-0307,MA-01-051,Al Hoceima,Senada,سنادة,senada,-4.191284,35.083956,265.1,1,MA-01-051-0307
+MA-01-051-0719,MA-01-051,Al Hoceima,Sidi Boutmim,سيدي بوتميم,sidi boutmim,-4.246412,34.924786,118.98,1,MA-01-051-0719
+MA-01-051-0721,MA-01-051,Al Hoceima,Sidi Bouzineb,سيدي بوزينب,sidi bouzineb,-4.090713,34.819159,96.18,1,MA-01-051-0721
+MA-01-051-0923,MA-01-051,Al Hoceima,Taghzout,تاغزوت,taghzout,-4.532999,34.766153,52.55,1,MA-01-051-0923
+MA-01-051-0925,MA-01-051,Al Hoceima,Tamsaout,تامساوت,tamsaout,-4.759312,34.827332,71.83,1,MA-01-051-0925
+MA-01-051-0107,MA-01-051,Al Hoceima,Targuist,تارجيست,targuist,-4.324232,34.942518,5.58,1,MA-01-051-0107
+MA-01-051-1323,MA-01-051,Al Hoceima,Tifarouine,تيفروين,tifarouine,-3.901563,35.025217,68.34,1,MA-01-051-1323
+MA-01-051-1125,MA-01-051,Al Hoceima,Zaouiat Sidi Abdelkader,زاوية سيدي عبد القادر,zaouiat sidi abdelkader,-4.138787,34.930979,135.19,1,MA-01-051-1125
+MA-01-051-0727,MA-01-051,Al Hoceima,Zarkt,زرقت,zarkt,-4.344625,34.900011,124.08,1,MA-01-051-0727
+MA-01-151-0901,MA-01-151,Chefchaouen,Amtar,امتار,amtar,-4.784106,35.189242,102.02,1,MA-01-151-0901
+MA-01-151-0303,MA-01-151,Chefchaouen,Bab Berred,باب برد,bab berred,-4.908314,34.983878,194.58,1,MA-01-151-0303
+MA-01-151-0501,MA-01-151,Chefchaouen,Bab Taza,باب تازة,bab taza,-5.215122,35.059229,233.02,1,MA-01-151-0501
+MA-01-151-0605,MA-01-151,Chefchaouen,Bni Ahmed Cherqia,بني احمد الشرقية,bni ahmed cherqia,-5.064124,34.851002,88.37,1,MA-01-151-0605
+MA-01-151-0607,MA-01-151,Chefchaouen,Bni Ahmed Gharbia,بني احمد الغربية,bni ahmed gharbia,-5.13731,34.817186,63.78,1,MA-01-151-0607
+MA-01-151-0701,MA-01-151,Chefchaouen,Bni Bouzra,بني بوزرة,bni bouzra,-4.905653,35.267206,148.97,1,MA-01-151-0701
+MA-01-151-0503,MA-01-151,Chefchaouen,Bni Darkoul,بني دركول,bni darkoul,-5.113363,35.093788,119.71,1,MA-01-151-0503
+MA-01-151-0505,MA-01-151,Chefchaouen,Bni Faghloum,بني فغلوم,bni faghloum,-5.136145,34.903953,85.31,1,MA-01-151-0505
+MA-01-151-1103,MA-01-151,Chefchaouen,Bni Mansour,بني منصور,bni mansour,-4.899559,35.148547,157.28,1,MA-01-151-1103
+MA-01-151-0909,MA-01-151,Chefchaouen,Bni Rzine,بني رزين,bni rzine,-4.681435,35.045738,152.86,1,MA-01-151-0909
+MA-01-151-0507,MA-01-151,Chefchaouen,Bni Salah,بني صالح,bni salah,-5.058531,34.988378,81.02,1,MA-01-151-0507
+MA-01-151-1105,MA-01-151,Chefchaouen,Bni Selmane,بني سلمان,bni selmane,-5.014057,35.163705,198.74,1,MA-01-151-1105
+MA-01-151-0911,MA-01-151,Chefchaouen,Bni Smih,بني سميح,bni smih,-4.738361,35.139283,129.75,1,MA-01-151-0911
+MA-01-151-0101,MA-01-151,Chefchaouen,Chefchaouen,شفشاون,chefchaouen,-5.273122,35.17016,10.91,1,MA-01-151-0101
+MA-01-151-0509,MA-01-151,Chefchaouen,Derdara,الدردارة,derdara,-5.340924,35.126648,197.64,1,MA-01-151-0509
+MA-01-151-0511,MA-01-151,Chefchaouen,Fifi,فيفي,fifi,-5.215924,34.953775,110.49,1,MA-01-151-0511
+MA-01-151-0313,MA-01-151,Chefchaouen,Iounane,اونان,iounane,-4.831032,35.037305,151.92,1,MA-01-151-0313
+MA-01-151-0513,MA-01-151,Chefchaouen,Laghdir,لغدير,laghdir,-5.380783,35.038149,113.58,1,MA-01-151-0513
+MA-01-151-0917,MA-01-151,Chefchaouen,M'tioua,متيوة,m tioua,-4.583086,35.144336,173.09,1,MA-01-151-0917
+MA-01-151-0615,MA-01-151,Chefchaouen,Mansoura,المنصورة,mansoura,-4.952625,34.846212,93.65,1,MA-01-151-0615
+MA-01-151-0919,MA-01-151,Chefchaouen,Ouaouzgane,ووزكان,ouaouzgane,-4.562066,35.033932,209.23,1,MA-01-151-0919
+MA-01-151-0621,MA-01-151,Chefchaouen,Oued Malha,واد ملحة,oued malha,-5.02216,34.915778,101.41,1,MA-01-151-0621
+MA-01-151-0707,MA-01-151,Chefchaouen,Steha,اسطيحة,steha,-5.028743,35.303078,92.93,1,MA-01-151-0707
+MA-01-151-0709,MA-01-151,Chefchaouen,Talambote,تلمبوط,talambote,-5.17586,35.194011,238.57,1,MA-01-151-0709
+MA-01-151-0323,MA-01-151,Chefchaouen,Tamorot,تمروت,tamorot,-4.831324,34.896069,206.41,1,MA-01-151-0323
+MA-01-151-0515,MA-01-151,Chefchaouen,Tanaqoub,تنقوب,tanaqoub,-5.46417,35.147986,221.83,1,MA-01-151-0515
+MA-01-151-0711,MA-01-151,Chefchaouen,Tassift,تاسيفت,tassift,-5.144042,35.340895,132.97,1,MA-01-151-0711
+MA-01-151-0713,MA-01-151,Chefchaouen,Tizgane,تزكان,tizgane,-5.044785,35.371415,85.93,1,MA-01-151-0713
+MA-01-227-0501,MA-01-227,Fahs-Anjra,Al Bahraoyine,البحراويين,al bahraoyine,-5.704375,35.7571,39.94,1,MA-01-227-0501
+MA-01-227-0305,MA-01-227,Fahs-Anjra,Anjra,أنجرة,anjra,-5.529213,35.691322,100.99,1,MA-01-227-0305
+MA-01-227-0311,MA-01-227,Fahs-Anjra,Jouamaa,جوامعة,jouamaa,-5.643539,35.651717,95.34,1,MA-01-227-0311
+MA-01-227-0313,MA-01-227,Fahs-Anjra,Ksar El Majaz,القصر المجاز,ksar el majaz,-5.531371,35.826165,82.89,1,MA-01-227-0313
+MA-01-227-0505,MA-01-227,Fahs-Anjra,Ksar Sghir,القصر الصغير,ksar sghir,-5.626316,35.800829,84.61,1,MA-01-227-0505
+MA-01-227-0509,MA-01-227,Fahs-Anjra,Malloussa,ملوسة,malloussa,-5.637437,35.733415,128.75,1,MA-01-227-0509
+MA-01-227-0321,MA-01-227,Fahs-Anjra,Taghramt,تغرامت,taghramt,-5.444348,35.807512,131.42,1,MA-01-227-0321
+MA-01-331-0901,MA-01-331,Larache,Ayacha,عياشة,ayacha,-5.830178,35.385971,185.46,1,MA-01-331-0901
+MA-01-331-0903,MA-01-331,Larache,Bni Arouss,بني عروس,bni arouss,-5.63694,35.317927,189.75,1,MA-01-331-0903
+MA-01-331-0905,MA-01-331,Larache,Bni Garfett,بني كرفط,bni garfett,-5.85022,35.255152,226.73,1,MA-01-331-0905
+MA-01-331-0701,MA-01-331,Larache,Boujedyane,بوجديان,boujedyane,-5.738382,35.092103,190.99,1,MA-01-331-0701
+MA-01-331-0703,MA-01-331,Larache,Ksar Bjir,قصر بجير,ksar bjir,-5.85798,34.982472,87.6,1,MA-01-331-0703
+MA-01-331-0101,MA-01-331,Larache,Ksar El Kebir,القصر الكبير,ksar el kebir,-5.90501,35.005534,21.42,1,MA-01-331-0101
+MA-01-331-0705,MA-01-331,Larache,Laouamra,العوامرة,laouamra,-6.145828,35.073279,208.23,1,MA-01-331-0705
+MA-01-331-0103,MA-01-331,Larache,Larache,العرائش,larache,-6.134364,35.17914,68.12,1,MA-01-331-0103
+MA-01-331-1103,MA-01-331,Larache,Oulad Ouchih,أولاد اوشيح,oulad ouchih,-5.951075,35.069626,61.25,1,MA-01-331-1103
+MA-01-331-1107,MA-01-331,Larache,Rissana Chamalia,ريصانة الشمالية,rissana chamalia,-5.944347,35.267206,104.8,1,MA-01-331-1107
+MA-01-331-1109,MA-01-331,Larache,Rissana Janoubia,ريصانة الجنوبية,rissana janoubia,-5.961309,35.171563,103.62,1,MA-01-331-1109
+MA-01-331-1111,MA-01-331,Larache,Sahel,الساحل,sahel,-6.066309,35.247301,171.77,1,MA-01-331-1111
+MA-01-331-1112,MA-01-331,Larache,Souaken,السواكن,souaken,-5.951157,35.115977,73.61,1,MA-01-331-1112
+MA-01-331-0711,MA-01-331,Larache,Souk L'qolla,سوق القلة,souk l qolla,-5.607319,35.112607,305.76,1,MA-01-331-0711
+MA-01-331-1113,MA-01-331,Larache,Souk Tolba,سوق الطلبة,souk tolba,-5.857322,35.077775,94.69,1,MA-01-331-1113
+MA-01-331-0715,MA-01-331,Larache,Tatoft,تطفت,tatoft,-5.754464,34.983034,144.64,1,MA-01-331-0715
+MA-01-331-0913,MA-01-331,Larache,Tazroute,تازروت,tazroute,-5.505995,35.308962,157.93,1,MA-01-331-0913
+MA-01-331-0915,MA-01-331,Larache,Zaaroura,زعرورة,zaaroura,-5.706545,35.228794,209.84,1,MA-01-331-0915
+MA-01-331-0717,MA-01-331,Larache,Zouada,زوادة,zouada,-6.031172,35.052484,127.5,1,MA-01-331-0717
+MA-01-405-0901,MA-01-405,Ouezzane,Ain Beida,عين بيضاء,ain beida,-5.462041,34.934075,221.21,1,MA-01-405-0901
+MA-01-405-0903,MA-01-405,Ouezzane,Asjen,اسجن,asjen,-5.670125,34.885086,169.41,1,MA-01-405-0903
+MA-01-405-0701,MA-01-405,Ouezzane,Bni Quolla,بني كلة,bni quolla,-5.522587,34.754871,183.77,1,MA-01-405-0701
+MA-01-405-0905,MA-01-405,Ouezzane,Brikcha,ابريكشة,brikcha,-5.566434,34.943644,142.7,1,MA-01-405-0905
+MA-01-405-1107,MA-01-405,Ouezzane,Kalaat Bouqorra,قلعة بوقرة,kalaat bouqorra,-5.223387,34.775742,110.55,1,MA-01-405-1107
+MA-01-405-1303,MA-01-405,Ouezzane,Lamjaara,لمجاعرة,lamjaara,-5.3113,34.618235,94.25,1,MA-01-405-1303
+MA-01-405-0705,MA-01-405,Ouezzane,Masmouda,مصمودة,masmouda,-5.686412,34.764461,157.8,1,MA-01-405-0705
+MA-01-405-0909,MA-01-405,Ouezzane,Moqrissat,مقريصات,moqrissat,-5.325465,34.92929,192.81,1,MA-01-405-0909
+MA-01-405-0707,MA-01-405,Ouezzane,Mzefroune,امزفرون,mzefroune,-5.721057,34.854946,91.58,1,MA-01-405-0707
+MA-01-405-1309,MA-01-405,Ouezzane,Ouannana,ونانة,ouannana,-5.359604,34.665123,76.81,1,MA-01-405-1309
+MA-01-405-0109,MA-01-405,Ouezzane,Ouezzane,وزان,ouezzane,-5.586205,34.797453,21.34,1,MA-01-405-0109
+MA-01-405-1311,MA-01-405,Ouezzane,Sidi Ahmed Cherif,سيدي أحمد الشريف,sidi ahmed cherif,-5.287893,34.559163,68.92,1,MA-01-405-1311
+MA-01-405-1313,MA-01-405,Ouezzane,Sidi Bousber,سيدي بوصبر,sidi bousber,-5.380898,34.572451,64.16,1,MA-01-405-1313
+MA-01-405-0715,MA-01-405,Ouezzane,Sidi Redouane,سيدي رضوان,sidi redouane,-5.462111,34.674159,113.27,1,MA-01-405-0715
+MA-01-405-1317,MA-01-405,Ouezzane,Teroual,تروال,teroual,-5.251404,34.687428,62.32,1,MA-01-405-1317
+MA-01-405-1319,MA-01-405,Ouezzane,Zghira,ازغيرة,zghira,-5.214515,34.653262,57.68,1,MA-01-405-1319
+MA-01-405-1111,MA-01-405,Ouezzane,Zoumi,زومي,zoumi,-5.376434,34.80281,309.49,1,MA-01-405-1111
+MA-01-511-0501,MA-01-511,Tanger-Assilah,Al Manzla,المنزلة,al manzla,-5.85686,35.542842,90.87,1,MA-01-511-0501
+MA-01-511-0303,MA-01-511,Tanger-Assilah,Aquouass Briech,اقواس برييش,aquouass briech,-5.969877,35.551502,60.87,1,MA-01-511-0303
+MA-01-511-0101,MA-01-511,Tanger-Assilah,Assilah,أصيلة,assilah,-6.009334,35.47549,33.64,1,MA-01-511-0101
+MA-01-511-0507,MA-01-511,Tanger-Assilah,Dar Chaoui,دار الشاوي,dar chaoui,-5.756953,35.570494,97.54,1,MA-01-511-0507
+MA-01-511-0109,MA-01-511,Tanger-Assilah,Gueznaia,اكزناية,gueznaia,-5.966352,35.65088,67.34,1,MA-01-511-0109
+MA-01-511-0315,MA-01-511,Tanger-Assilah,Had Al Gharbia,حد الغربية,had al gharbia,-5.927879,35.48807,136.88,1,MA-01-511-0315
+MA-01-511-0519,MA-01-511,Tanger-Assilah,Hjar Ennhal,حجر النحل,hjar ennhal,-5.897375,35.635256,105.43,1,MA-01-511-0519
+MA-01-511-0517,MA-01-511,Tanger-Assilah,Laaouama,العوامة,laaouama,-5.788242,35.681283,54.01,1,MA-01-511-0517
+MA-01-511-0311,MA-01-511,Tanger-Assilah,Sahel Chamali,الساحل الشمالي,sahel chamali,-6.052509,35.386251,84.4,1,MA-01-511-0311
+MA-01-511-0505,MA-01-511,Tanger-Assilah,Sebt Azzinate,سبت الزينات,sebt azzinate,-5.793022,35.631907,66.46,1,MA-01-511-0505
+MA-01-511-0313,MA-01-511,Tanger-Assilah,Sidi Lyamani,سيدي اليمني,sidi lyamani,-5.97105,35.372815,77.37,1,MA-01-511-0313
+MA-01-511-0100,MA-01-511,Tanger-Assilah,Tanger,طنجة,tanger,-5.827096,35.732579,463.76,4,MA-01-511-0103|MA-01-511-0107|MA-01-511-0105|MA-01-511-0106
+MA-01-571-0301,MA-01-571,Tétouan,Ain Lahsan,عين لحصن,ain lahsan,-5.565434,35.561557,89.76,1,MA-01-571-0301
+MA-01-571-0501,MA-01-571,Tétouan,Al Hamra,الحمراء,al hamra,-5.360659,35.348456,124.92,1,MA-01-571-0501
+MA-01-571-0303,MA-01-571,Tétouan,Al Kharroub,الخروب,al kharroub,-5.689913,35.405282,63.43,1,MA-01-571-0303
+MA-01-571-0505,MA-01-571,Tétouan,Al Oued,الواد,al oued,-5.300278,35.268607,149.49,1,MA-01-571-0505
+MA-01-571-0507,MA-01-571,Tétouan,Azla,أزلا,azla,-5.277418,35.535299,70.78,1,MA-01-571-0507
+MA-01-571-0305,MA-01-571,Tétouan,Bghaghza,بغاغزة,bghaghza,-5.643208,35.461788,99.43,1,MA-01-571-0305
+MA-01-571-0307,MA-01-571,Tétouan,Bni Harchen,بني حرشن,bni harchen,-5.670163,35.518535,156.6,1,MA-01-571-0307
+MA-01-571-0311,MA-01-571,Tétouan,Bni Idder,بني يدر,bni idder,-5.550556,35.441932,72.56,1,MA-01-571-0311
+MA-01-571-0513,MA-01-571,Tétouan,Bni Leit,بني ليت,bni leit,-5.418125,35.303358,96.47,1,MA-01-571-0513
+MA-01-571-0515,MA-01-571,Tétouan,Bni Said,بني سعيد,bni said,-5.186577,35.416754,70.32,1,MA-01-571-0515
+MA-01-571-0517,MA-01-571,Tétouan,Dar Bni Karrich,دار بني قريش,dar bni karrich,-5.42455,35.514623,28.62,1,MA-01-571-0517
+MA-01-571-0309,MA-01-571,Tétouan,Jbel Lahbib,جبل لحبيب,jbel lahbib,-5.781097,35.458712,64.03,1,MA-01-571-0309
+MA-01-571-0315,MA-01-571,Tétouan,Mallalienne,الملاليين,mallalienne,-5.379783,35.634698,73.37,1,MA-01-571-0315
+MA-01-571-0107,MA-01-571,Tétouan,Oued Laou,واد لو,oued laou,-5.124018,35.458992,32.74,1,MA-01-571-0107
+MA-01-571-0519,MA-01-571,Tétouan,Oulad Ali Mansour,أولاد علي منصور,oulad ali mansour,-5.248441,35.371975,105.24,1,MA-01-571-0519
+MA-01-571-0317,MA-01-571,Tétouan,Saddina,صدينة,saddina,-5.464282,35.630233,75.17,1,MA-01-571-0317
+MA-01-571-0321,MA-01-571,Tétouan,Sahtryine,السحتريين,sahtryine,-5.480495,35.486672,105.94,1,MA-01-571-0321
+MA-01-571-0319,MA-01-571,Tétouan,Souk Kdim,سوق القديم,souk kdim,-5.534213,35.606231,71.96,1,MA-01-571-0319
+MA-01-571-0111,MA-01-571,Tétouan,Tétouan,تطوان,tetouan,-5.340455,35.581105,55.53,1,MA-01-571-0111
+MA-01-571-0523,MA-01-571,Tétouan,Zaitoune,الزيتون,zaitoune,-5.358393,35.51071,67.21,1,MA-01-571-0523
+MA-01-571-0525,MA-01-571,Tétouan,Zaouiat Sidi Kacem,زاوية سيدي قاسم,zaouiat sidi kacem,-5.222417,35.482199,125.19,1,MA-01-571-0525
+MA-01-571-0527,MA-01-571,Tétouan,Zinat,الزينات,zinat,-5.3679,35.427106,113.11,1,MA-01-571-0527
+MA-01-573-0107,MA-01-573,M'diq-Fnideq,Allyene,عليين,allyene,-5.415805,35.729792,93.32,1,MA-01-573-0107
+MA-01-573-0109,MA-01-573,M'diq-Fnideq,Belyounech,بليونش,belyounech,-5.397797,35.879036,30.76,1,MA-01-573-0109
+MA-01-573-0101,MA-01-573,M'diq-Fnideq,Fnideq,الفنيدق,fnideq,-5.371994,35.830062,34.76,1,MA-01-573-0101
+MA-01-573-0105,MA-01-573,M'diq-Fnideq,M'diq,المضيق,m diq,-5.359044,35.730628,147.64,1,MA-01-573-0105
+MA-01-573-0103,MA-01-573,M'diq-Fnideq,Martil,مرتيل,martil,-5.300579,35.63386,30.52,1,MA-01-573-0103
