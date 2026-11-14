@@ -1,5 +1,8 @@
 """Test d'intégration : les API Open-Meteo répondent avec les bonnes données."""
+import pytest
 import requests
+
+pytestmark = pytest.mark.external
 
 FORECAST_URL = "https://api.open-meteo.com/v1/forecast"
 ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
