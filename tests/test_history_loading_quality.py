@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from src.tta_risk.db.database import get_connection
+from tta_risk.db.database import get_connection
 
 pytestmark = pytest.mark.integration
 

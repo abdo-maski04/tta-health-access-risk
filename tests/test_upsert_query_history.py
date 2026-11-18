@@ -1,4 +1,4 @@
-from src.tta_risk.db.database import get_connection, load_weather_rows
+from tta_risk.db.database import get_connection, load_weather_rows
 
 
 def test_upsert_query_history():
