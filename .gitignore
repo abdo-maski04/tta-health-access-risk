@@ -63,3 +63,4 @@ desktop.ini
 # ==============================
 .vscode/
 .idea/
+coverage.xml
