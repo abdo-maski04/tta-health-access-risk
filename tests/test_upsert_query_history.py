@@ -2,7 +2,6 @@ import pytest
 
 from tta_risk.db.database import get_connection, load_weather_rows
 
-
 pytestmark = pytest.mark.integration
 
 
