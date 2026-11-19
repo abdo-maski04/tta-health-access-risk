@@ -1,5 +1,6 @@
 import os
 
+import pandas as pd
 import psycopg
 from dotenv import load_dotenv
 
@@ -42,4 +43,38 @@ def load_weather_rows(rows):
         with conn.cursor() as cursor: # sert à
             cursor.executemany(upsert_query, rows)
             conn.commit()
+    return len(rows)
+
+def read_weather_daily():
+    query = """
+        SELECT commune_code, date, precipitation_sum, temperature_2m_max
+        FROM weather.weather_daily
+    """
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query)
+            columns = [col.name for col in cursor.description]
+            data = cursor.fetchall()
+    return pd.DataFrame(data, columns=columns)
+
+
+replace_thresholds_query = """
+INSERT INTO weather.thresholds
+    (commune_code, month,
+     rain_p65, rain_p80, rain_p90,
+     heat_p65, heat_p80, heat_p90)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
+"""
+
+def replace_thresholds(df):
+    """Remplace tout le contenu de la table dans une seule transaction."""
+    # NaN pandas -> None (sinon Postgres stocke 'NaN' au lieu de NULL)
+    clean = df.astype(object).where(df.notna(), None)
+    rows = list(clean.itertuples(index=False, name=None))
+
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("DELETE FROM weather.thresholds")
+            cursor.executemany(replace_thresholds_query, rows)
+        conn.commit()
     return len(rows)
