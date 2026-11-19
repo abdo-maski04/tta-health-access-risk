@@ -79,4 +79,3 @@ def replace_thresholds(df):
             cursor.executemany(replace_thresholds_query, rows)
         conn.commit()
     return len(rows)
-
