@@ -45,6 +45,7 @@ def load_weather_rows(rows):
             conn.commit()
     return len(rows)
 
+
 def read_weather_daily():
     query = """
         SELECT commune_code, date, precipitation_sum, temperature_2m_max
