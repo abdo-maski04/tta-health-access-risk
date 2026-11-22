@@ -154,19 +154,19 @@
 ## D-015 — Bornes de trajet : 15 / 45 min conservées (provisoire)
 **Date :** 2026-11-22 · **Décideur :** Membre A · **Statut :** 🟡 provisoire
 
-**Contexte.** La table `travel_time` provisoire (146 communes, méthode `DETOUR_1.4`) donne : médiane **23,6 min**, minimum 0,4 min, maximum 77,7 min.
+**Contexte.** La table `travel_time` (146 communes, temps routiers réels, méthode `ORS_DRIVING_CAR`) donne : médiane **36,7 min**, minimum 1,0 min, maximum 120,2 min (Tamorot).
 
 **Répartition observée :**
 
 | Classe | Nombre de communes | Part |
 |---|---|---|
-| 1 — moins de 15 min | **38** | 26 % |
-| 2 — 15 à 45 min | **78** | 53 % |
-| 3 — plus de 45 min | **30** | 21 % |
+| 1 — moins de 15 min | **22** | 15 % |
+| 2 — 15 à 45 min | **66** | 45 % |
+| 3 — plus de 45 min | **58** | 40 % |
 
-**Décision.** Les bornes **15 et 45 minutes sont conservées** : elles séparent les 146 communes en trois groupes non vides et équilibrés, sans valeur limite collée à une borne.
+**Décision.** Les bornes **15 et 45 minutes sont conservées** : elles séparent les 146 communes en trois groupes non vides. Avec les temps réels, la classe 3 atteint **40 %** des communes (contre 21 % avec l'estimation) : c'est un **résultat**, pas un défaut — l'enclavement de la région est réellement plus fort que ne le laisse croire le vol d'oiseau. Les bornes restent provisoires jusqu'à l'analyse de sensibilité (semaine 3), qui testera des variantes (terciles, 20/60).
 
-**Suite.** Réexamen après remplacement des temps estimés par les temps routiers OpenRouteService (les temps réels sont plus longs, la classe 3 augmentera), puis analyse de sensibilité en semaine 3.
+**Suite.** Fait le 2026-11-22 : temps estimés remplacés par les temps routiers réels (ORS, 146/146 communes, 0 échec). Réexamen des bornes reporté à l'analyse de sensibilité de la semaine 3.
 
 ---
 
