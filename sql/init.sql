@@ -18,3 +18,13 @@ CREATE TABLE IF NOT EXISTS weather.thresholds (
     computed_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
     PRIMARY KEY (commune_code, month)
 );
+
+CREATE TABLE IF NOT EXISTS weather.forecast_daily (
+    commune_code        TEXT NOT NULL,
+    forecast_issued_on  DATE NOT NULL,
+    target_date         DATE NOT NULL,
+    precip_mm           REAL,
+    tmax_c              REAL,
+    ingested_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (commune_code, forecast_issued_on, target_date)
+);
