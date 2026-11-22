@@ -79,3 +79,29 @@ def replace_thresholds(df):
             cursor.executemany(replace_thresholds_query, rows)
         conn.commit()
     return len(rows)
+
+
+upsert_forecast_query = """
+INSERT INTO weather.forecast_daily
+    (commune_code, forecast_issued_on, target_date, precip_mm, tmax_c)
+VALUES (%s, %s, %s, %s, %s)
+ON CONFLICT (commune_code, forecast_issued_on, target_date) DO UPDATE
+SET precip_mm   = EXCLUDED.precip_mm,
+    tmax_c      = EXCLUDED.tmax_c,
+    ingested_at = now();
+"""
+
+def convert_forecast_df_to_rows(df):
+    # NaN pandas -> None, sinon Postgres stocke 'NaN' au lieu de NULL
+    clean = df.astype(object).where(df.notna(), None)
+    return list(
+        clean[["commune_code", "forecast_issued_on", "target_date",
+               "precip_mm", "tmax_c"]].itertuples(index=False, name=None)
+    )
+
+def load_forecast_rows(rows):
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.executemany(upsert_forecast_query, rows)
+        conn.commit()
+    return len(rows)
