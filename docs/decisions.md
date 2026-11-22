@@ -123,3 +123,73 @@
 | D-009 | Épisodes météo du cas d'étude : lesquels ? | Semaine 3 (avec C) | Rapport | Choisir un épisode **documenté** (presse, bulletins) et vérifiable |
 | D-010 | Licence HCP : usage et redistribution autorisés ? | Cette semaine (encadrant) | Publication du dataset | Traiter comme bloquant |
 | D-011 | Tanger : score unique ou 4 scores d'arrondissement ? | Semaine 2 (avec B et C) | Carte et classement | **Score unique** au niveau 146 ; les 4 polygones n'affectent que l'affichage |
+
+---
+
+## D-014 — Seuils météo : p65 / p80 / p90 (écart assumé)
+**Date :** 2026-11-22 · **Décideur :** Membre A · **Statut :** ✅ adoptée
+
+**Contexte.** Le Membre B a calculé et chargé en base les seuils `rain_p65/p80/p90` et `heat_p65/p80/p90` (1 752 lignes, 146 communes × 12 mois). Le guide (p.8) définit les trois niveaux de danger sur p90/p95/p99.
+
+**Décision.** Les trois niveaux de danger du scoring utilisent **les seuils déjà en base** :
+
+| Niveau | Pluie | Chaleur |
+|---|---|---|
+| 1 | `rain_p65` | `heat_p65` |
+| 2 | `rain_p80` | `heat_p80` |
+| 3 | `rain_p90` | `heat_p90` |
+
+**Motif.** Ces seuils sont calculés, testés, chargés et documentés. Les adopter rend le scoring disponible immédiatement et évite une reprise du pipeline de B.
+
+**Conséquence assumée et chiffrée.** Le niveau 3 se déclenche sur **10 % des jours** (35 % / 20 % / 10 % pour les niveaux 1 / 2 / 3). Une commune éloignée (classe 3) sera donc en rouge **environ 20 jours sur 100 jours de pluie**, contre 5 avec des seuils d'exception. La carte est plus souvent colorée ; le rouge ne signifie plus « exceptionnel » mais « nettement au-dessus de la normale pour cette commune ».
+
+**Alternatives écartées.**
+- Demander p90/p95/p99 (conforme au guide) : reprise du code de B (5 fichiers, 16 lignes) et reconstruction de la table des seuils → écarté pour la semaine 2.
+- Utiliser p65/p90/p99 : rouge rare, mais carte colorée un jour sur trois (chaleur permanente en été).
+
+**Mitigation.** (1) La raison principale et les personnes exposées restent affichées pour hiérarchiser. (2) Le rouge peut être resserré à `score = 9` dans `config/scoring_config.yaml` (une ligne), ce qui divise par deux le nombre de communes rouges. (3) Le cas d'étude de la semaine 3 utilisera un **seuil absolu de pluie (mm/24 h)** et non le niveau de danger, pour rester indépendant du choix des percentiles.
+
+---
+
+## D-015 — Bornes de trajet : 15 / 45 min conservées (provisoire)
+**Date :** 2026-11-22 · **Décideur :** Membre A · **Statut :** 🟡 provisoire
+
+**Contexte.** La table `travel_time` provisoire (146 communes, méthode `DETOUR_1.4`) donne : médiane **23,6 min**, minimum 0,4 min, maximum 77,7 min.
+
+**Répartition observée :**
+
+| Classe | Nombre de communes | Part |
+|---|---|---|
+| 1 — moins de 15 min | **38** | 26 % |
+| 2 — 15 à 45 min | **78** | 53 % |
+| 3 — plus de 45 min | **30** | 21 % |
+
+**Décision.** Les bornes **15 et 45 minutes sont conservées** : elles séparent les 146 communes en trois groupes non vides et équilibrés, sans valeur limite collée à une borne.
+
+**Suite.** Réexamen après remplacement des temps estimés par les temps routiers OpenRouteService (les temps réels sont plus longs, la classe 3 augmentera), puis analyse de sensibilité en semaine 3.
+
+---
+
+## D-016 — Établissements retenus : hôpitaux seuls, livrés par A
+**Date :** 2026-11-22 · **Décideur :** Membre A · **Statut :** ✅ adoptée
+
+**Décision.** Le calcul du temps de trajet utilise uniquement les établissements de `facility_type = hospital` (**66 points** dans `health_facilities_TTA.csv`, 892 lignes au total). Les cliniques (22), pharmacies (776), cabinets (20), laboratoires (4) sont exclus.
+
+**Vérification.** Le calcul a été refait avec `hospital + clinic` (88 points) : **écart médian 0,0 min**, écart maximal 0,0 min, **une seule commune** change de classe. Le choix n'a donc aucun effet mesurable sur le score.
+
+**Décision associée.** La couche des établissements de santé est **livrée par le Membre A**. Le croisement avec la liste officielle du ministère (24 hôpitaux, 16 retrouvés par le nom) reste à compléter et sera consigné séparément.
+
+**Alternative écartée.** Attendre une définition « officielle » de l'hôpital : aucune liste officielle géolocalisée n'est disponible, et le choix n'a pas d'impact chiffré.
+
+---
+
+## D-017 — Les routes (OpenRouteService, `travel_time`) passent de C à A
+**Date :** 2026-11-22 · **Décideur :** Membre A · **Statut :** ✅ adoptée
+
+**Contexte.** Le guide attribue à C la clé OpenRouteService et le calcul `commune → hôpital`. Cette tâche est le chemin critique du projet : sans `travel_time`, ni le score d'éloignement, ni la carte, ni les tests ne peuvent exister.
+
+**Décision.** Le Membre A prend en charge la clé ORS, le script `build_travel_time.py`, la table `travel_time` et les tracés. Le Membre C conserve l'application Streamlit et le pitch.
+
+**Conséquence.** Les fichiers utilisés sont : `data/processed/communes_TTA_2024.csv` (`start_lat`, `start_lon`) et `data/processed/health_facilities_TTA.csv` (`osm_type`, `osm_id`, `facility_type`, `lat`, `lon`). Aucun fichier parallèle ne doit circuler.
+
+**Plan B documenté.** En cas d'indisponibilité de la clé : `temps = distance × 1,4 ÷ 50 km/h`, colonne `methode = DETOUR_1.4`, déjà produit pour les 146 communes.
