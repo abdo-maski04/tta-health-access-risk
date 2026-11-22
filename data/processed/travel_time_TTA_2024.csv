@@ -1,0 +1,147 @@
+commune_code,name_fr,province,milieu,start_lat,start_lon,hospital_osm_type,hospital_osm_id,hospital_name,hospital_type,hospital_lat,hospital_lon,distance_km,temps_min,classe_trajet,methode
+MA-01-051-0901,Abdelghaya Souahel,Al Hoceima,Rural,34.785893,-4.633904,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,33.06,55.5,3,DETOUR_1.4
+MA-01-051-1101,Ait Kamra,Al Hoceima,Mixte,35.148547,-4.004116,way,789174103,Hôpital Mohamed V,hospital,35.238837,-3.938983,11.65,19.6,2,DETOUR_1.4
+MA-01-051-1303,Ait Youssef Ou Ali,Al Hoceima,Mixte,35.166231,-3.878453,way,1206485292,Centre Sante Ait Youssef Ou Ali,hospital,35.173827,-3.871146,1.07,1.8,1,DETOUR_1.4
+MA-01-051-0109,Ajdir,Al Hoceima,Urbain,35.196817,-3.912077,node,8377190516,Centre Hospitalier Provincial Mohammed VI,hospital,35.195741,-3.887508,2.24,3.8,1,DETOUR_1.4
+MA-01-051-0101,Al Hoceima,Al Hoceima,Urbain,35.236366,-3.94362,way,789174103,Hôpital Mohamed V,hospital,35.238837,-3.938983,0.5,0.8,1,DETOUR_1.4
+MA-01-051-1305,Arbaa Taourirt,Al Hoceima,Mixte,34.905361,-3.879333,way,478960842,,hospital,35.103748,-3.840558,22.34,37.5,2,DETOUR_1.4
+MA-01-051-1107,Bni Abdellah,Al Hoceima,Mixte,35.04377,-4.070452,way,478960842,,hospital,35.103748,-3.840558,21.96,36.9,2,DETOUR_1.4
+MA-01-051-0703,Bni Ahmed Imoukzan,Al Hoceima,Rural,34.762487,-4.443729,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,22.87,38.4,2,DETOUR_1.4
+MA-01-051-0705,Bni Ammart,Al Hoceima,Mixte,34.808729,-4.195919,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,19.31,32.4,2,DETOUR_1.4
+MA-01-051-0707,Bni Bchir,Al Hoceima,Rural,34.779972,-4.339209,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,18.35,30.8,2,DETOUR_1.4
+MA-01-051-0103,Bni Bouayach,Al Hoceima,Urbain,35.104743,-3.845641,way,478960842,,hospital,35.103748,-3.840558,0.48,0.8,1,DETOUR_1.4
+MA-01-051-0909,Bni Bouchibet,Al Hoceima,Rural,34.708034,-4.50745,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,31.02,52.1,3,DETOUR_1.4
+MA-01-051-0301,Bni Boufrah,Al Hoceima,Mixte,35.07075,-4.306881,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,14.14,23.8,2,DETOUR_1.4
+MA-01-051-0711,Bni Bounsar,Al Hoceima,Mixte,34.86537,-4.436474,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,13.29,22.3,2,DETOUR_1.4
+MA-01-051-0303,Bni Gmil,Al Hoceima,Mixte,35.064849,-4.3717,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,13.95,23.4,2,DETOUR_1.4
+MA-01-051-0305,Bni Gmil Maksouline,Al Hoceima,Rural,35.02353,-4.448639,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,14.09,23.7,2,DETOUR_1.4
+MA-01-051-1109,Bni Hadifa,Al Hoceima,Mixte,34.996254,-4.173162,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,15.19,25.5,2,DETOUR_1.4
+MA-01-051-1311,Chakrane,Al Hoceima,Mixte,34.910147,-3.984677,way,478960842,,hospital,35.103748,-3.840558,25.21,42.4,2,DETOUR_1.4
+MA-01-051-1313,Imrabten,Al Hoceima,Mixte,35.045457,-3.966182,way,478960842,,hospital,35.103748,-3.840558,13.14,22.1,2,DETOUR_1.4
+MA-01-051-0105,Imzouren,Al Hoceima,Urbain,35.142371,-3.85035,node,10920276384,Health Center Imzouren,hospital,35.145575,-3.852558,0.41,0.7,1,DETOUR_1.4
+MA-01-051-0913,Issaguen,Al Hoceima,Mixte,34.901419,-4.565255,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,22.2,37.3,2,DETOUR_1.4
+MA-01-051-1115,Izemmouren,Al Hoceima,Mixte,35.197939,-4.01104,way,789174103,Hôpital Mohamed V,hospital,35.238837,-3.938983,7.97,13.4,1,DETOUR_1.4
+MA-01-051-0915,Ketama,Al Hoceima,Mixte,34.888466,-4.679852,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,32.73,55.0,3,DETOUR_1.4
+MA-01-051-1317,Louta,Al Hoceima,Rural,35.11036,-3.90041,way,478960842,,hospital,35.103748,-3.840558,5.49,9.2,1,DETOUR_1.4
+MA-01-051-0917,Moulay Ahmed Cherif,Al Hoceima,Rural,34.929008,-4.479923,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,14.0,23.5,2,DETOUR_1.4
+MA-01-051-1319,Nekkour,Al Hoceima,Mixte,35.013408,-3.853649,way,478960842,,hospital,35.103748,-3.840558,10.12,17.0,2,DETOUR_1.4
+MA-01-051-1121,Rouadi,Al Hoceima,Mixte,35.159495,-4.172012,way,789174103,Hôpital Mohamed V,hospital,35.238837,-3.938983,22.94,38.5,2,DETOUR_1.4
+MA-01-051-0307,Senada,Al Hoceima,Rural,35.083956,-4.191284,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,19.84,33.3,2,DETOUR_1.4
+MA-01-051-0719,Sidi Boutmim,Al Hoceima,Mixte,34.924786,-4.246412,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,7.72,13.0,1,DETOUR_1.4
+MA-01-051-0721,Sidi Bouzineb,Al Hoceima,Rural,34.819159,-4.090713,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,25.72,43.2,2,DETOUR_1.4
+MA-01-051-0923,Taghzout,Al Hoceima,Rural,34.766153,-4.532999,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,27.31,45.9,3,DETOUR_1.4
+MA-01-051-0925,Tamsaout,Al Hoceima,Rural,34.827332,-4.759312,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,41.49,69.7,3,DETOUR_1.4
+MA-01-051-0107,Targuist,Al Hoceima,Urbain,34.942518,-4.324232,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,0.39,0.7,1,DETOUR_1.4
+MA-01-051-1323,Tifarouine,Al Hoceima,Rural,35.025217,-3.901563,way,478960842,,hospital,35.103748,-3.840558,10.35,17.4,2,DETOUR_1.4
+MA-01-051-1125,Zaouiat Sidi Abdelkader,Al Hoceima,Rural,34.930979,-4.138787,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,17.27,29.0,2,DETOUR_1.4
+MA-01-051-0727,Zarkt,Al Hoceima,Rural,34.900011,-4.344625,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,5.21,8.8,1,DETOUR_1.4
+MA-01-151-0901,Amtar,Chefchaouen,Rural,35.189242,-4.784106,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,40.17,67.5,3,DETOUR_1.4
+MA-01-151-0303,Bab Berred,Chefchaouen,Mixte,34.983878,-4.908314,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,38.85,65.3,3,DETOUR_1.4
+MA-01-151-0501,Bab Taza,Chefchaouen,Mixte,35.059229,-5.215122,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,13.17,22.1,2,DETOUR_1.4
+MA-01-151-0605,Bni Ahmed Cherqia,Chefchaouen,Rural,34.851002,-5.064124,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,40.02,67.2,3,DETOUR_1.4
+MA-01-151-0607,Bni Ahmed Gharbia,Chefchaouen,Rural,34.817186,-5.13731,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,38.59,64.8,3,DETOUR_1.4
+MA-01-151-0701,Bni Bouzra,Chefchaouen,Rural,35.267206,-4.905653,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,26.15,43.9,2,DETOUR_1.4
+MA-01-151-0503,Bni Darkoul,Chefchaouen,Rural,35.093788,-5.113363,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,16.55,27.8,2,DETOUR_1.4
+MA-01-151-0505,Bni Faghloum,Chefchaouen,Rural,34.903953,-5.136145,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,31.88,53.6,3,DETOUR_1.4
+MA-01-151-1103,Bni Mansour,Chefchaouen,Rural,35.148547,-4.899559,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,33.78,56.8,3,DETOUR_1.4
+MA-01-151-0909,Bni Rzine,Chefchaouen,Rural,35.045738,-4.681435,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,34.14,57.4,3,DETOUR_1.4
+MA-01-151-0507,Bni Salah,Chefchaouen,Rural,34.988378,-5.058531,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,27.83,46.8,3,DETOUR_1.4
+MA-01-151-1105,Bni Selmane,Chefchaouen,Rural,35.163705,-5.014057,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,23.3,39.1,2,DETOUR_1.4
+MA-01-151-0911,Bni Smih,Chefchaouen,Rural,35.139283,-4.738361,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,43.21,72.6,3,DETOUR_1.4
+MA-01-151-0101,Chefchaouen,Chefchaouen,Urbain,35.17016,-5.273122,way,305583432,Hopital Mohamed V,hospital,35.168467,-5.271189,0.26,0.4,1,DETOUR_1.4
+MA-01-151-0509,Derdara,Chefchaouen,Rural,35.126648,-5.340924,way,380117212,Hôpital psychiatrique,hospital,35.175043,-5.285444,7.38,12.4,1,DETOUR_1.4
+MA-01-151-0511,Fifi,Chefchaouen,Rural,34.953775,-5.215924,way,305583432,Hopital Mohamed V,hospital,35.168467,-5.271189,24.4,41.0,2,DETOUR_1.4
+MA-01-151-0313,Iounane,Chefchaouen,Rural,35.037305,-4.831032,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,42.56,71.5,3,DETOUR_1.4
+MA-01-151-0513,Laghdir,Chefchaouen,Rural,35.038149,-5.380783,way,380117212,Hôpital psychiatrique,hospital,35.175043,-5.285444,17.52,29.4,2,DETOUR_1.4
+MA-01-151-0917,M'tioua,Chefchaouen,Mixte,35.144336,-4.583086,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,32.15,54.0,3,DETOUR_1.4
+MA-01-151-0615,Mansoura,Chefchaouen,Rural,34.846212,-4.952625,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,46.1,77.4,3,DETOUR_1.4
+MA-01-151-0919,Ouaouzgane,Chefchaouen,Rural,35.033932,-4.562066,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,23.56,39.6,2,DETOUR_1.4
+MA-01-151-0621,Oued Malha,Chefchaouen,Rural,34.915778,-5.02216,way,297605167,Hôpital Mohamed V,hospital,35.168526,-5.270911,36.09,60.6,3,DETOUR_1.4
+MA-01-151-0707,Steha,Chefchaouen,Mixte,35.303078,-5.028743,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,15.76,26.5,2,DETOUR_1.4
+MA-01-151-0709,Talambote,Chefchaouen,Rural,35.194011,-5.17586,node,3195514325,Hôpital Mohammed V,hospital,35.169051,-5.270316,9.02,15.2,2,DETOUR_1.4
+MA-01-151-0323,Tamorot,Chefchaouen,Rural,34.896069,-4.831324,way,789267614,مستشفى حمان الفطواكي ايت عزة,hospital,34.944727,-4.327538,46.25,77.7,3,DETOUR_1.4
+MA-01-151-0515,Tanaqoub,Chefchaouen,Rural,35.147986,-5.46417,way,380117212,Hôpital psychiatrique,hospital,35.175043,-5.285444,16.52,27.8,2,DETOUR_1.4
+MA-01-151-0711,Tassift,Chefchaouen,Rural,35.340895,-5.144042,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,9.34,15.7,2,DETOUR_1.4
+MA-01-151-0713,Tizgane,Chefchaouen,Mixte,35.371415,-5.044785,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,9.02,15.2,2,DETOUR_1.4
+MA-01-227-0501,Al Bahraoyine,Fahs-Anjra,Mixte,35.7571,-5.704375,way,511059739,Polyclinique CNSS,hospital,35.775599,-5.770119,6.28,10.6,1,DETOUR_1.4
+MA-01-227-0305,Anjra,Fahs-Anjra,Mixte,35.691322,-5.529213,way,736805477,Centre De sante Saadina,hospital,35.606703,-5.449787,11.83,19.9,2,DETOUR_1.4
+MA-01-227-0311,Jouamaa,Fahs-Anjra,Mixte,35.651717,-5.643539,way,511059739,Polyclinique CNSS,hospital,35.775599,-5.770119,17.9,30.1,2,DETOUR_1.4
+MA-01-227-0313,Ksar El Majaz,Fahs-Anjra,Mixte,35.826165,-5.531371,way,363354239,Hôpital universitaire de Ceuta,hospital,35.880167,-5.34152,18.13,30.5,2,DETOUR_1.4
+MA-01-227-0505,Ksar Sghir,Fahs-Anjra,Mixte,35.800829,-5.626316,way,511059739,Polyclinique CNSS,hospital,35.775599,-5.770119,13.27,22.3,2,DETOUR_1.4
+MA-01-227-0509,Malloussa,Fahs-Anjra,Mixte,35.733415,-5.637437,way,511059739,Polyclinique CNSS,hospital,35.775599,-5.770119,12.86,21.6,2,DETOUR_1.4
+MA-01-227-0321,Taghramt,Fahs-Anjra,Mixte,35.807512,-5.444348,way,363354239,Hôpital universitaire de Ceuta,hospital,35.880167,-5.34152,12.3,20.7,2,DETOUR_1.4
+MA-01-331-0901,Ayacha,Larache,Rural,35.385971,-5.830178,node,12815618481,Hôpital,hospital,35.464775,-6.02694,19.87,33.4,2,DETOUR_1.4
+MA-01-331-0903,Bni Arouss,Larache,Mixte,35.317927,-5.63694,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,28.85,48.5,3,DETOUR_1.4
+MA-01-331-0905,Bni Garfett,Larache,Mixte,35.255152,-5.85022,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,28.15,47.3,3,DETOUR_1.4
+MA-01-331-0701,Boujedyane,Larache,Mixte,35.092103,-5.738382,way,789778445,Hopital Provincial de Ksar El Kébir,hospital,34.993932,-5.902968,18.54,31.1,2,DETOUR_1.4
+MA-01-331-0703,Ksar Bjir,Larache,Rural,34.982472,-5.85798,way,789778445,Hopital Provincial de Ksar El Kébir,hospital,34.993932,-5.902968,4.29,7.2,1,DETOUR_1.4
+MA-01-331-0101,Ksar El Kebir,Larache,Urbain,35.005534,-5.90501,way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,34.995493,-5.90619,1.12,1.9,1,DETOUR_1.4
+MA-01-331-0705,Laouamra,Larache,Mixte,35.073279,-6.145828,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,11.94,20.1,2,DETOUR_1.4
+MA-01-331-0103,Larache,Larache,Urbain,35.17914,-6.134364,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,1.1,1.8,1,DETOUR_1.4
+MA-01-331-1103,Oulad Ouchih,Larache,Mixte,35.069626,-5.951075,way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,34.995493,-5.90619,9.2,15.5,2,DETOUR_1.4
+MA-01-331-1107,Rissana Chamalia,Larache,Rural,35.267206,-5.944347,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,20.72,34.8,2,DETOUR_1.4
+MA-01-331-1109,Rissana Janoubia,Larache,Mixte,35.171563,-5.961309,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,16.85,28.3,2,DETOUR_1.4
+MA-01-331-1111,Sahel,Larache,Mixte,35.247301,-6.066309,node,12815139758,Polyclinique Lixus,hospital,35.180661,-6.146331,10.38,17.4,2,DETOUR_1.4
+MA-01-331-1112,Souaken,Larache,Rural,35.115977,-5.951157,way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,34.995493,-5.90619,14.01,23.5,2,DETOUR_1.4
+MA-01-331-0711,Souk L'qolla,Larache,Mixte,35.112607,-5.607319,way,789778445,Hopital Provincial de Ksar El Kébir,hospital,34.993932,-5.902968,29.97,50.3,3,DETOUR_1.4
+MA-01-331-1113,Souk Tolba,Larache,Mixte,35.077775,-5.857322,way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,34.995493,-5.90619,10.17,17.1,2,DETOUR_1.4
+MA-01-331-0715,Tatoft,Larache,Rural,34.983034,-5.754464,way,789778445,Hopital Provincial de Ksar El Kébir,hospital,34.993932,-5.902968,13.58,22.8,2,DETOUR_1.4
+MA-01-331-0913,Tazroute,Larache,Mixte,35.308962,-5.505995,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,23.61,39.7,2,DETOUR_1.4
+MA-01-331-0915,Zaaroura,Larache,Mixte,35.228794,-5.706545,way,789778445,Hopital Provincial de Ksar El Kébir,hospital,34.993932,-5.902968,31.64,53.2,3,DETOUR_1.4
+MA-01-331-0717,Zouada,Larache,Mixte,35.052484,-6.031172,way,789300603,"Centre de Santé Urbain ""Oulad Hmaid""",hospital,34.995493,-5.90619,13.03,21.9,2,DETOUR_1.4
+MA-01-405-0901,Ain Beida,Ouezzane,Mixte,34.934075,-5.462041,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,17.02,28.6,2,DETOUR_1.4
+MA-01-405-0903,Asjen,Ouezzane,Rural,34.885086,-5.670125,node,12815486727,Centre de Santé Urbain 9 Juillet,hospital,34.80178,-5.576777,12.58,21.1,2,DETOUR_1.4
+MA-01-405-0701,Bni Quolla,Ouezzane,Rural,34.754871,-5.522587,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,6.39,10.7,1,DETOUR_1.4
+MA-01-405-0905,Brikcha,Ouezzane,Mixte,34.943644,-5.566434,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,15.58,26.2,2,DETOUR_1.4
+MA-01-405-1107,Kalaat Bouqorra,Ouezzane,Rural,34.775742,-5.223387,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,30.87,51.9,3,DETOUR_1.4
+MA-01-405-1303,Lamjaara,Ouezzane,Mixte,34.618235,-5.3113,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,30.67,51.5,3,DETOUR_1.4
+MA-01-405-0705,Masmouda,Ouezzane,Rural,34.764461,-5.686412,node,12815486727,Centre de Santé Urbain 9 Juillet,hospital,34.80178,-5.576777,10.84,18.2,2,DETOUR_1.4
+MA-01-405-0909,Moqrissat,Ouezzane,Mixte,34.92929,-5.325465,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,25.53,42.9,2,DETOUR_1.4
+MA-01-405-0707,Mzefroune,Ouezzane,Rural,34.854946,-5.721057,node,12815486727,Centre de Santé Urbain 9 Juillet,hospital,34.80178,-5.576777,14.44,24.3,2,DETOUR_1.4
+MA-01-405-1309,Ouannana,Ouezzane,Rural,34.665123,-5.359604,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,23.91,40.2,2,DETOUR_1.4
+MA-01-405-0109,Ouezzane,Ouezzane,Urbain,34.797453,-5.586205,node,12815486727,Centre de Santé Urbain 9 Juillet,hospital,34.80178,-5.576777,0.99,1.7,1,DETOUR_1.4
+MA-01-405-1311,Sidi Ahmed Cherif,Ouezzane,Rural,34.559163,-5.287893,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,36.83,61.9,3,DETOUR_1.4
+MA-01-405-1313,Sidi Bousber,Ouezzane,Mixte,34.572451,-5.380898,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,30.46,51.2,3,DETOUR_1.4
+MA-01-405-0715,Sidi Redouane,Ouezzane,Mixte,34.674159,-5.462111,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,16.93,28.4,2,DETOUR_1.4
+MA-01-405-1317,Teroual,Ouezzane,Rural,34.687428,-5.251404,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,30.99,52.1,3,DETOUR_1.4
+MA-01-405-1319,Zghira,Ouezzane,Rural,34.653262,-5.214515,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,35.7,60.0,3,DETOUR_1.4
+MA-01-405-1111,Zoumi,Ouezzane,Mixte,34.80281,-5.376434,node,12815486724,Projet Centre Hospitalier Provincial d'Ouezzane,hospital,34.803614,-5.559711,16.73,28.1,2,DETOUR_1.4
+MA-01-511-0501,Al Manzla,Tanger-Assilah,Rural,35.542842,-5.85686,way,587335799,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,hospital,35.683029,-5.921931,16.66,28.0,2,DETOUR_1.4
+MA-01-511-0303,Aquouass Briech,Tanger-Assilah,Mixte,35.551502,-5.969877,node,12815618481,Hôpital,hospital,35.464775,-6.02694,10.94,18.4,2,DETOUR_1.4
+MA-01-511-0101,Assilah,Tanger-Assilah,Urbain,35.47549,-6.009334,node,12815618481,Hôpital,hospital,35.464775,-6.02694,1.99,3.3,1,DETOUR_1.4
+MA-01-511-0507,Dar Chaoui,Tanger-Assilah,Mixte,35.570494,-5.756953,way,587335799,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,hospital,35.683029,-5.921931,19.47,32.7,2,DETOUR_1.4
+MA-01-511-0109,Gueznaia,Tanger-Assilah,Urbain,35.65088,-5.966352,way,871505068,CHU de Tanger-Tétouan-Al Hoceima,hospital,35.683432,-5.925265,5.18,8.7,1,DETOUR_1.4
+MA-01-511-0315,Had Al Gharbia,Tanger-Assilah,Mixte,35.48807,-5.927879,node,12815618481,Hôpital,hospital,35.464775,-6.02694,9.34,15.7,2,DETOUR_1.4
+MA-01-511-0519,Hjar Ennhal,Tanger-Assilah,Mixte,35.635256,-5.897375,way,587335799,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,hospital,35.683029,-5.921931,5.76,9.7,1,DETOUR_1.4
+MA-01-511-0517,Laaouama,Tanger-Assilah,Mixte,35.681283,-5.788242,way,475665966,Hôpital Mohammed VI,hospital,35.750814,-5.828489,8.54,14.3,1,DETOUR_1.4
+MA-01-511-0311,Sahel Chamali,Tanger-Assilah,Rural,35.386251,-6.052509,node,12815618481,Hôpital,hospital,35.464775,-6.02694,9.03,15.2,2,DETOUR_1.4
+MA-01-511-0505,Sebt Azzinate,Tanger-Assilah,Mixte,35.631907,-5.793022,way,587335799,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,hospital,35.683029,-5.921931,12.96,21.8,2,DETOUR_1.4
+MA-01-511-0313,Sidi Lyamani,Tanger-Assilah,Mixte,35.372815,-5.97105,node,12815618481,Hôpital,hospital,35.464775,-6.02694,11.41,19.2,2,DETOUR_1.4
+MA-01-511-0100,Tanger,Tanger-Assilah,Urbain,35.732579,-5.827096,way,475665966,Hôpital Mohammed VI,hospital,35.750814,-5.828489,2.03,3.4,1,DETOUR_1.4
+MA-01-571-0301,Ain Lahsan,Tétouan,Rural,35.561557,-5.565434,way,736805477,Centre De sante Saadina,hospital,35.606703,-5.449787,11.6,19.5,2,DETOUR_1.4
+MA-01-571-0501,Al Hamra,Tétouan,Rural,35.348456,-5.360659,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,18.86,31.7,2,DETOUR_1.4
+MA-01-571-0303,Al Kharroub,Tétouan,Rural,35.405282,-5.689913,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,26.83,45.1,3,DETOUR_1.4
+MA-01-571-0505,Al Oued,Tétouan,Rural,35.268607,-5.300278,way,380117212,Hôpital psychiatrique,hospital,35.175043,-5.285444,10.49,17.6,2,DETOUR_1.4
+MA-01-571-0507,Azla,Tétouan,Rural,35.535299,-5.277418,node,13760199101,مركز الزهراء للحجامة و العلاج البديل,hospital,35.607998,-5.270488,8.11,13.6,1,DETOUR_1.4
+MA-01-571-0305,Bghaghza,Tétouan,Rural,35.461788,-5.643208,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,20.63,34.7,2,DETOUR_1.4
+MA-01-571-0307,Bni Harchen,Tétouan,Rural,35.518535,-5.670163,way,736805477,Centre De sante Saadina,hospital,35.606703,-5.449787,22.21,37.3,2,DETOUR_1.4
+MA-01-571-0311,Bni Idder,Tétouan,Rural,35.441932,-5.550556,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,13.81,23.2,2,DETOUR_1.4
+MA-01-571-0513,Bni Leit,Tétouan,Rural,35.303358,-5.418125,way,380117212,Hôpital psychiatrique,hospital,35.175043,-5.285444,18.68,31.4,2,DETOUR_1.4
+MA-01-571-0515,Bni Said,Tétouan,Rural,35.416754,-5.186577,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,5.92,9.9,1,DETOUR_1.4
+MA-01-571-0517,Dar Bni Karrich,Tétouan,Mixte,35.514623,-5.42455,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,0.5,0.8,1,DETOUR_1.4
+MA-01-571-0309,Jbel Lahbib,Tétouan,Mixte,35.458712,-5.781097,node,12815618481,Hôpital,hospital,35.464775,-6.02694,22.28,37.4,2,DETOUR_1.4
+MA-01-571-0315,Mallalienne,Tétouan,Rural,35.634698,-5.379783,way,737744536,Centre Médical Boujarrah,hospital,35.590099,-5.351683,5.57,9.4,1,DETOUR_1.4
+MA-01-571-0107,Oued Laou,Tétouan,Urbain,35.458992,-5.124018,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,4.02,6.8,1,DETOUR_1.4
+MA-01-571-0519,Oulad Ali Mansour,Tétouan,Rural,35.371975,-5.248441,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,12.81,21.5,2,DETOUR_1.4
+MA-01-571-0317,Saddina,Tétouan,Rural,35.630233,-5.464282,way,736805477,Centre De sante Saadina,hospital,35.606703,-5.449787,2.93,4.9,1,DETOUR_1.4
+MA-01-571-0321,Sahtryine,Tétouan,Rural,35.486672,-5.480495,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,5.81,9.8,1,DETOUR_1.4
+MA-01-571-0319,Souk Kdim,Tétouan,Rural,35.606231,-5.534213,way,736805477,Centre De sante Saadina,hospital,35.606703,-5.449787,7.63,12.8,1,DETOUR_1.4
+MA-01-571-0111,Tétouan,Tétouan,Urbain,35.581105,-5.340455,way,150999624,Centre de dialyse Arrayane,hospital,35.58449,-5.346729,0.68,1.1,1,DETOUR_1.4
+MA-01-571-0523,Zaitoune,Tétouan,Mixte,35.51071,-5.358393,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,5.87,9.9,1,DETOUR_1.4
+MA-01-571-0525,Zaouiat Sidi Kacem,Tétouan,Rural,35.482199,-5.222417,way,1547030549,مستشفى بني سعيد,hospital,35.422874,-5.121694,11.26,18.9,2,DETOUR_1.4
+MA-01-571-0527,Zinat,Tétouan,Rural,35.427106,-5.3679,way,1242229574,Hospital Ben Karrich,hospital,35.510269,-5.423227,10.52,17.7,2,DETOUR_1.4
+MA-01-573-0107,Allyene,M'diq-Fnideq,Mixte,35.729792,-5.415805,way,293247182,Hopital Mohamed 6,hospital,35.69204,-5.32987,8.82,14.8,1,DETOUR_1.4
+MA-01-573-0109,Belyounech,M'diq-Fnideq,Mixte,35.879036,-5.397797,way,363354239,Hôpital universitaire de Ceuta,hospital,35.880167,-5.34152,5.07,8.5,1,DETOUR_1.4
+MA-01-573-0101,Fnideq,M'diq-Fnideq,Urbain,35.830062,-5.371994,way,363354239,Hôpital universitaire de Ceuta,hospital,35.880167,-5.34152,6.21,10.4,1,DETOUR_1.4
+MA-01-573-0105,M'diq,M'diq-Fnideq,Urbain,35.730628,-5.359044,way,293247182,Hopital Mohamed 6,hospital,35.69204,-5.32987,5.03,8.5,1,DETOUR_1.4
+MA-01-573-0103,Martil,M'diq-Fnideq,Urbain,35.63386,-5.300579,node,13765658301,New Covenant Hospital,hospital,35.624602,-5.290814,1.36,2.3,1,DETOUR_1.4
