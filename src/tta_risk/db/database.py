@@ -80,7 +80,6 @@ def replace_thresholds(df):
         conn.commit()
     return len(rows)
 
-
 upsert_forecast_query = """
 INSERT INTO weather.forecast_daily
     (commune_code, forecast_issued_on, target_date, precip_mm, tmax_c)
@@ -105,3 +104,4 @@ def load_forecast_rows(rows):
             cursor.executemany(upsert_forecast_query, rows)
         conn.commit()
     return len(rows)
+
