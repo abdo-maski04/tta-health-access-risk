@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 from config.settings import REGION_NAME
 
-from components.sidebar import NAVIGATION_ICON_SVGS
+from components.sidebar import DASHBOARDS, NAVIGATION_ICON_SVGS
 
 HEADER_ICONS = {
     **NAVIGATION_ICON_SVGS,
@@ -29,10 +29,47 @@ LOGO_PATH = Path(__file__).resolve().parents[1] / "assets" / "geovulnera_tta_log
 
 def _global_header(title: str) -> None:
     with st.container(key="tta-global-header"):
-        logo_col, region_col, page_col = st.columns(
-            [1, 1, 1],
+        menu_col, logo_col, region_col, page_col = st.columns(
+            [0.55, 1.3, 1.1, 1.1],
             vertical_alignment="center",
         )
+        with menu_col:
+            with st.popover("☰ Menu", help="Ouvrir le menu de navigation"):
+                st.markdown("### 📋 Navigation")
+                current_page = st.session_state.get("selected_page", "Overview Dashboard")
+                for key, label in DASHBOARDS:
+                    is_current = (current_page == key)
+                    btn_text = f"● {label}" if is_current else label
+                    if st.button(
+                        btn_text,
+                        key=f"hdr_nav_{key}",
+                        type="primary" if is_current else "secondary",
+                        use_container_width=True,
+                    ):
+                        st.session_state["pending_navigation_page"] = key
+                        st.session_state["selected_page"] = key
+                        st.rerun()
+                st.divider()
+                st.markdown(
+                    """
+                    <button onclick="
+                        const doc = window.parent.document;
+                        const btn = doc.querySelector('[data-testid=\\'stSidebarCollapseButton\\'] button, [data-testid=\\'stExpandSidebarButton\\'] button, button[aria-label*=\\'sidebar\\' i]');
+                        if (btn) btn.click();
+                    " style="
+                        width: 100%;
+                        padding: 7px 10px;
+                        background: #0D5C75;
+                        color: #FFFFFF;
+                        border: none;
+                        border-radius: 6px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        font-size: 12px;
+                    ">⮂ Volet latéral</button>
+                    """,
+                    unsafe_allow_html=True,
+                )
         logo_col.image(str(LOGO_PATH), width="stretch")
         territory = st.session_state.get("overview_territory", "Région TTA")
         risk_province = st.session_state.get(

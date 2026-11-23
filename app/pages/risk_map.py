@@ -35,6 +35,9 @@ from map_utils import (
     render_map,
 )
 from pyproj import Geod
+from pages.health_map import render_health_map
+from pages.territorial_risk_map import render_territorial_risk_map
+from pages.hospital_routes_map import render_hospital_routes_map
 
 REGION_NAME = "Tanger-Tétouan-Al Hoceïma"
 BASE_MAP_CHOICES = {
@@ -272,13 +275,21 @@ body:has(.tta-map-screen) .st-key-risk-map-drag-bridge {
     display: none !important;
 }
 body:has(.tta-map-screen) [data-testid="stHeader"] {
-    height: 0 !important;
+    height: auto !important;
     background: transparent !important;
+    pointer-events: none !important;
+    z-index: 999990 !important;
 }
-body:has(.tta-map-screen):has([data-testid="stSidebar"][data-collapsed="false"]) {
+body:has(.tta-map-screen) [data-testid="stHeader"] [data-testid="stToolbar"],
+body:has(.tta-map-screen) [data-testid="stHeader"] button {
+    pointer-events: auto !important;
+}
+body:has(.tta-map-screen):has([data-testid="stSidebar"][data-collapsed="false"]),
+body:has(.tta-map-screen):has([data-testid="stSidebar"][aria-expanded="true"]) {
     --tta-map-left: 250px;
 }
-body:has(.tta-map-screen):has([data-testid="stSidebar"][data-collapsed="true"]) {
+body:has(.tta-map-screen):has([data-testid="stSidebar"][data-collapsed="true"]),
+body:has(.tta-map-screen):has([data-testid="stSidebar"][aria-expanded="false"]) {
     --tta-map-left: 0px;
 }
 @media(max-width:1050px) {
@@ -902,6 +913,40 @@ def render_interactive_risk_map(
     commune_geojson: dict,
     facilities: list[dict],
 ) -> None:
+    st.markdown(
+        """
+        <style>
+        div[data-testid="stRadio"] label p {
+            font-size: 0.92rem !important;
+            font-weight: 600 !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    map_tabs = st.radio(
+        "Sélectionnez la carte interactive :",
+        [
+            "🏥 Carte 1 : Sanitaire & Démographique (RSC-TTA)",
+            "⚠️ Carte 2 : Risque & Vulnérabilité Territoriale",
+            "🛣️ Carte 3 : Itinéraires vers les Hôpitaux",
+            "🌐 Vue SIG Plein Écran (Historique)",
+        ],
+        horizontal=True,
+        key="geovulnera_active_map_selector",
+    )
+
+    if map_tabs == "🏥 Carte 1 : Sanitaire & Démographique (RSC-TTA)":
+        render_health_map(communes, commune_geojson, facilities)
+        return
+    elif map_tabs == "⚠️ Carte 2 : Risque & Vulnérabilité Territoriale":
+        render_territorial_risk_map(communes, commune_geojson, facilities)
+        return
+    elif map_tabs == "🛣️ Carte 3 : Itinéraires vers les Hôpitaux":
+        render_hospital_routes_map(communes, commune_geojson, facilities)
+        return
+
     st.markdown(MAP_SCREEN_CSS, unsafe_allow_html=True)
     st.markdown("<div class='tta-map-screen'></div>", unsafe_allow_html=True)
     from components.header import page_header
@@ -911,6 +956,7 @@ def render_interactive_risk_map(
         f"Exploration des communes et établissements de santé — {REGION_NAME}.",
         compact=True,
     )
+
 
     defaults = {
         "risk_map_search": "",

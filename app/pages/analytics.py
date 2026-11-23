@@ -1000,222 +1000,10 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
                     x=[row["Total établissements"] for row in bottom10],
                     y=[row["Commune"] for row in bottom10],
                     orientation="h",
-def render_commune_details(communes: list[dict], commune_geojson: dict, facilities: list[dict]) -> None:
-    """Dashboard 4: Détails Commune - profil démographique, territorial et infrastructures de santé."""
-    import html
-    import folium
-    from pathlib import Path
-    
-    # --- Session state initialization for commune navigation ---
-    if "selected_commune_code" not in st.session_state:
-        default_commune = min(communes, key=lambda c: str(c.get("name_fr", "")))
-        st.session_state.selected_commune_code = str(default_commune["commune_code"])
-        st.session_state.selected_commune_name = str(default_commune.get("name_fr", ""))
-    
-    selected_code = st.session_state.selected_commune_code
-    selected_commune = None
-    for c in communes:
-        if str(c["commune_code"]) == selected_code:
-            selected_commune = c
-            break
-    
-    if selected_commune is None:
-        default_commune = min(communes, key=lambda c: str(c.get("name_fr", "")))
-        selected_commune = default_commune
-        st.session_state.selected_commune_code = str(default_commune["commune_code"])
-        st.session_state.selected_commune_name = str(default_commune.get("name_fr", ""))
-        selected_code = str(default_commune["commune_code"])
-    
-    # --- Header with breadcrumb and commune selector ---
-    st.markdown("""<div style="margin: 1rem 0 0.5rem 0;">
-        <nav aria-label="breadcrumb" style="--tta-breadcrumb-gap: 0.5rem;">
-          <ol style="display: flex; align-items: center; list-style: none; padding: 0;">
-            <li style=""><a href="#" style="color: #64748B; font-size: 14px;">Accueil</a></li>
-            <li style="display: flex; align-items: center; gap: 0.3rem;">
-              <span style="color: #0D5C75; font-weight: 600; font-size: 14px;">▸</span>
-              <a href="#" style="color: #0D5C75; font-size: 14px; text-decoration: none;">Détails Commune</a>
-            </li>
-            <li style="color: #64748B; font-size: 14px;">▸</li>
-            <li style="font-weight: 600; color: #0F172A; font-size: 14px;" id="current-commune-link"></li>
-          </ol>
-        </nav>
-      </div>""", unsafe_allow_html=True)
-    
-    # Commune Selector in header area
-    col_selector, col_prev, col_next, col_clear = st.columns([4, 1, 1, 1])
-    
-    with col_selector:
-        commune_names = [str(c.get("name_fr", c.get("commune_code", "Inconnu"))) for c in communes]
-        current_idx = None
-        for i, c in enumerate(communes):
-            if str(c["commune_code"]) == selected_code:
-                current_idx = i
-                break
-        if current_idx is None:
-            current_idx = 0
-        
-        new_commune = st.selectbox(
-            "Sélectionner une commune :",
-            options=communes,
-            format_func=lambda c: str(c.get("name_fr", c.get("commune_code", "Inconnu"))),
-            index=current_idx,
-            key="commune_selector_dashboard4",
-            label_visibility="collapsed",
-        )
-        new_code = str(new_commune["commune_code"])
-        if new_code != selected_code:
-            st.session_state.selected_commune_code = new_code
-            st.session_state.selected_commune_name = str(new_commune.get("name_fr", ""))
-            st.rerun()
-    
-    with col_prev:
-        if st.button("◀ Précédent", type="secondary", use_container_width=True, key="prev_commune"):
-            if current_idx > 0:
-                new_code = str(communes[current_idx - 1]["commune_code"])
-                st.session_state.selected_commune_code = new_code
-                st.session_state.selected_commune_name = str(communes[current_idx - 1].get("name_fr", ""))
-                st.rerun()
-            else:
-                last_code = str(communes[-1]["commune_code"])
-# --- Hero Banner Card ---
-    milieu = selected_commune.get("milieu", "Mixte")
-    milieu_colors = {"Urbain": "#0D5C75", "Mixte": "#16A34A", "Rural": "#D97706"}
-    milieu_color = milieu_colors.get(milieu, "#64748B")
-    
-    st.markdown(f"""
-    <div style="
-        background: linear-gradient(135deg, #F0FDFA 0%, #E6F4F1 100%);
-        border: 1px solid #CCFBF1;
-        border-radius: 12px;
-        padding: 1rem 1.25rem;
-        margin: 0.5rem 0 1rem 0;
-        color: #0F172A;
-    ">
-      <div style="display: grid; grid-template-columns: [col1] 1fr [col2] auto; gap: 1rem 1rem; align-items: start;">
-        <div style="grid-column: col1; background: #FFFFFF; border-radius: 10px; padding: 0.75rem; min-height: 140px; display: flex; align-items: center; justify-content: center;">
-          <div style="width: 120px; height: 100px; background: #F1F5F9; border-radius: 8px; color: #64748B; font-size: 12px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 20px; color: #0D5C75;">🏘️</span>
-            <div style="margin-left: 4px;">Territoire</div>
-          </div>
-        </div>
-        <div style="grid-column: col2;">
-          <div style="font-size: 1.25rem; font-weight: 700; color: #0F172A; line-height: 1.2;">
-            {html.escape(str(selected_commune.get('name_fr', 'Commune')))}
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; color: #64748B; font-size: 0.95rem; margin-top: 0.25rem;">
-            <span>Code : {html.escape(str(selected_commune.get('commune_code', '')))}</span>
-            <span>•</span>
-            <span>Province : {html.escape(str(selected_commune.get('province', '')))}</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem;">
-            <span style="background: {milieu_color}; color: #FFFFFF; padding: 3px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
-                {milieu}
-            </span>
-            <span style="color: #64748B; font-size: 0.85;">·</span>
-            <span style="color: #64748B;">Région : Tanger-Tétouan-Al Hoceïma</span>
-          </div>
-        </div>
-      </div>
-    </div>
-# --- Row 1: 5 Equal-Width KPI Cards ---
-    pop_2024 = selected_commune.get("population_2024")
-    pop_2014 = selected_commune.get("population_2014")
-    area_km2 = selected_commune.get("area_km2")
-    densite = selected_commune.get("densite_hab_km2")
-    facility_count = sum(1 for f in facilities if f.get("commune_code") == selected_code)
-    
-    evol_pct = None
-    if pop_2014 is not None and pop_2024 is not None and pop_2014 != 0:
-        evol_pct = round(((pop_2024 - pop_2014) / abs(pop_2014)) * 100, 1)
-    
-    kpi_metric_1 = _fmt(pop_2024) if pop_2024 is not None else "Non disponible"
-    kpi_metric_2 = _fmt(evol_pct) + " %" if evol_pct is not None else "Non disponible"
-    kpi_metric_3 = _fmt(area_km2) if area_km2 is not None else "Non disponible"
-    kpi_metric_4 = _fmt(densite) if densite is not None else "Non disponible"
-    
-    st.markdown("""<div style="margin: 1rem 0;">""", unsafe_allow_html=True)
-    cols = st.columns(5)
-    kpis = [
-        ("Population (année récente, ex. 2024)", kpi_metric_1, "Habitants", "👥"),
-        ("Évolution démographique (%)", kpi_metric_2, "Période disponible (ex. 2014 → 2024)", "📈"),
-        ("Superficie territoriale (km²)", kpi_metric_3, "Kilomètres carrés", "📐"),
-        ("Densité de population (hab/km²)", kpi_metric_4, "Habitants par km²", "👥"),
-        ("Établissements de santé", _fmt(facility_count), "Total associés à la commune", "🏥"),
-    ]
-    for i, (label, value, subtitle, icon) in enumerate(kpis):
-        with cols[i]:
-
-            st.markdown(f"""
-            <div style="
-                border: 1px solid #E2E8F0;
-                border-radius: 10px;
-                background: #FFFFFF;
-                min-height: 92px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 8px 10px;">
-                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
-                  <span style="font-size: 16px; color: #0D5C75;">{icon}</span>
-                </div>
-                <div style="font-weight: 700; color: #0F172A; font-size: 18px;">{value}</div>
-                <div style="color: #64748B; font-size: 11px; line-height: 1.3;">{subtitle}</div>
-            </div>
-            """, unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-    
-    # --- Row 2: 3 Balanced Columns ---
-    cols_row2 = st.columns([1.35, 1, 1])
-    """, unsafe_allow_html=True)
-                st.session_state.selected_commune_code = last_code
-# --- Card 2.1: Localisation Géographique ---
-    with cols_row2[0]:
-        st.markdown("""<div style="margin-bottom: 0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D5C75" stroke-width="2" stroke-linecap="round" style="vertical-align: middle; margin-right: 4px;">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4a4 4 0 0 1-8 0V6a2 2 0 0 0-2 2h4"/>
-          </svg>
-          <span style="font-weight: 600; color: #0F172A; font-size: 1rem;">Localisation Géographique</span>
-        </div>""", unsafe_allow_html=True)
-                st.session_state.selected_commune_name = str(communes[-1].get("name_fr", ""))
-                st.rerun()
-    
-    with col_next:
-        if st.button("Suivant ▶", type="secondary", use_container_width=True, key="next_commune"):
-            if current_idx < len(communes) - 1:
-                new_code = str(communes[current_idx + 1]["commune_code"])
-                st.session_state.selected_commune_code = new_code
-                st.session_state.selected_commune_name = str(communes[current_idx + 1].get("name_fr", ""))
-                st.rerun()
-            else:
-                first_code = str(communes[0]["commune_code"])
-                st.session_state.selected_commune_code = first_code
-                st.session_state.selected_commune_name = str(communes[0].get("name_fr", ""))
-                st.rerun()
-    
-    with col_clear:
-        if st.button("Effacer", type="secondary", use_container_width=True, key="clear_commune"):
-            default_commune = min(communes, key=lambda c: str(c.get("name_fr", "")))
-            st.session_state.selected_commune_code = str(default_commune["commune_code"])
-            st.session_state.selected_commune_name = str(default_commune.get("name_fr", ""))
-# --- Card 2.2: Analyse Démographique ---
-    with cols_row2[1]:
-        st.markdown("""<div style="margin-bottom: 0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" style="vertical-align: middle; margin-right: 4px;">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            .. 3 18 3 21 3 21 3 18 3 15 3z"/>
-            <circle cx="3" cy="3" r="1"/>
-            <circle cx="21" cy="3" r="1"/>
-          </svg>
-          <span style="font-weight: 600; color: #0F172A; font-size: 1rem;">Analyse Démographique</span>
-        </div>""", unsafe_allow_html=True)
-            st.rerun()
-    
-    # --- Hero Banner Card (partial) ---
-    milieu = selected_commune.get("milieu", "Mixte")
-    milieu_colors = {"Urbain": "#0D5C75", "Mixte": "#16A34A", "Rural": "#D97706"}
-    milieu_color = milieu_colors.get(milieu, "#64748B")
-                    marker_color="#2B6CB0",
+                    marker_color=[
+                        f"rgba(217, 119, 6, {0.72 + 0.28 * index / max(1, len(bottom10) - 1):.2f})"
+                        for index in range(len(bottom10))
+                    ],
                     text=[row["Total établissements"] for row in bottom10],
                     textposition="outside",
                     cliponaxis=False,
@@ -1228,16 +1016,6 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 figure.update_xaxes(
                     range=[0, max(1, max_val * 1.15)],
                     rangemode="tozero",
-# --- Card 2.3: Répartition des Établissements ---
-    with cols_row2[2]:
-        st.markdown("""<div style="margin-bottom: 0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" style="vertical-align: middle; margin-right: 4px;">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 14s1.5 2 4 2s4-.5 4-2"/>
-            <path d="M16 14s1.5-2 4-2s4 .5 4 2"/>
-          </svg>
-          <span style="font-weight: 600; color: #0F172A; font-size: 1rem;">Répartition des Établissements</span>
-        </div>""", unsafe_allow_html=True)
                 )
                 _ranking_chart(figure)
             else:
@@ -1258,18 +1036,6 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
             provinces = sorted(
                 provincial,
                 key=lambda name: (-provincial[name]["facilities"], name.casefold()),
-# --- Row 3: 2 Columns ---
-    cols_row3 = st.columns([1.35, 1])
-    
-    # --- Card 3.1: Établissements de santé table ---
-    with cols_row3[0]:
-        st.markdown("""<div style="margin-bottom: 0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D5C75" stroke-width="2" stroke-linecap="round" style="vertical-align: middle; margin-right: 4px;">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <path d="M3 10c5 7 9 12 9 4s4-5 4-8a11 11 0 0 0-9 3.543 11 11 0 0 0-9-3.543A14.98 14.98 0 0 0 3 10z"/>
-          </svg>
-          <span style="font-weight: 600; color: #0F172A; font-size: 1rem;">Établissements de santé dans {html.escape(str(selected_commune.get('name_fr', 'Commune')))}</span>
-        </div>""", unsafe_allow_html=True)
             )
             if provinces:
                 figure = go.Figure()
@@ -1288,15 +1054,6 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                     marker_color="#0A3642",
                     text=[provincial[name]["hospitals"] for name in provinces],
                     textposition="outside",
-# --- Card 3.2: Contexte Régional ---
-    with cols_row3[1]:
-        st.markdown("""<div style="margin-bottom: 0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D5C75" stroke-width="2" stroke-linecap="round" style="vertical-align: middle; margin-right: 4px;">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <path d="M3 10c5 7 9 12 9 4s4-5 4-8a11 11 0 0 0-9 3.543 11 11 0 0 0-9-3.543A14.98 14.98 0 0 0 3 10z"/>
-          </svg>
-          <span style="font-weight: 600; color: #0F172A; font-size: 1rem;">Contexte Régional</span>
-        </div>""", unsafe_allow_html=True)
                 )
                 figure.update_layout(barmode="group")
                 _ranking_chart(figure, height=300)
@@ -1318,14 +1075,6 @@ def _ranking_chart(fig: go.Figure, height: int = 290) -> None:
     fig.update_layout(
         height=height,
         margin={"l": 10, "r": 20, "t": 30, "b": 20},
-# --- Bottom Info Banner ---
-    st.markdown("""
-    <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; font-size: 0.9rem; color: #334155; line-height: 1.5;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D5C75" stroke-width="2" stroke-linecap="round" style="margin-right: 6px; vertical-align: middle; flex-shrink: 0;">
-            <circle cx="12" cy="12" r="10"/><path d='M9 12l2 2L15 6'/></svg>
-        <span style='vertical-align: middle; font-weight: 500;'>Les indicateurs validés de risque et d'accessibilité aux soins ne sont pas encore disponibles pour cette commune. Ce profil présente uniquement les données démographiques et d'infrastructures vérifiées.</span>
-    </div>
-    """, unsafe_allow_html=True)
         paper_bgcolor="#FFFFFF",
         plot_bgcolor="#FFFFFF",
         font={"family": "Inter, Segoe UI, sans-serif", "size": 9, "color": "#334155"},
@@ -1352,31 +1101,6 @@ def _commune_picker(communes: list[dict], key: str) -> dict | None:
     choice = st.selectbox("Sélectionner une commune", list(options), key=key)
     return options.get(choice)
 
-
-def render_commune_details_first_chunk(communes: list[dict], commune_geojson: dict, facilities: list[dict]) -> None:
-    """Dashboard 4: Détails Commune - profil démographique, territorial et infrastructures de santé."""
-    import folium
-    from pathlib import Path
-    
-    # Session state initialization
-    if "selected_commune_code" not in st.session_state:
-        default_commune = min(communes, key=lambda c: str(c.get("name_fr", "")))
-        st.session_state.selected_commune_code = str(default_commune["commune_code"])
-        st.session_state.selected_commune_name = str(default_commune.get("name_fr", ""))
-    
-    selected_code = st.session_state.selected_commune_code
-    selected_commune = None
-    for c in communes:
-        if str(c["commune_code"]) == selected_code:
-            selected_commune = c
-            break
-    
-    if selected_commune is None:
-        default_commune = min(communes, key=lambda c: str(c.get("name_fr", "")))
-        selected_commune = default_commune
-        st.session_state.selected_commune_code = str(default_commune["commune_code"])
-        st.session_state.selected_commune_name = str(default_commune.get("name_fr", ""))
-        selected_code = str(default_commune["commune_code"])
 def render_commune_details(communes: list[dict], commune_geojson: dict, facilities: list[dict]) -> None:
     """Dashboard 4: Détails Commune - profil démographique, territorial et infrastructures de santé."""
     import folium
@@ -1768,7 +1492,7 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
         "<div class='tta-details-section-title'>Indicateurs clés</div>",
         unsafe_allow_html=True,
     )
-    kpi_cols = st.columns(5, gap="medium", key="details-kpi-cols")
+    kpi_cols = st.columns(5, gap="medium")
     for col, item in zip(kpi_cols, kpi_items, strict=True):
         with col:
             if item["icon"] == "population":
@@ -1819,7 +1543,7 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
         "<div class='tta-details-section-title'>Localisation et infrastructures</div>",
         unsafe_allow_html=True,
     )
-    row2_cols = st.columns([1.35, 1, 1], gap="medium", key="details-row2-cols")
+    row2_cols = st.columns([1.35, 1, 1], gap="medium")
 
     with row2_cols[0]:
         st.markdown(
@@ -1865,7 +1589,7 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 folium_map.location = [lat, lon]
                 folium_map.zoom_start = 14
             st.markdown("<div class='tta-details-map-wrap'>", unsafe_allow_html=True)
-            render_map(folium_map, height=380, key="details-map")
+            render_map(folium_map, height=380, key="details-map", returned_objects=[])
             st.markdown("</div>", unsafe_allow_html=True)
         except Exception as exc:
             st.error(f"Carte indisponible : {exc}")
@@ -2009,7 +1733,7 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 "<div class='tta-details-empty'>0 établissement enregistré dans OSM pour cette commune.</div>",
                 unsafe_allow_html=True,
             )
-    row3_cols = st.columns([1.35, 1], gap="medium", key="details-row3-cols")
+    row3_cols = st.columns([1.35, 1], gap="medium")
 
     with row3_cols[0]:
         st.markdown(

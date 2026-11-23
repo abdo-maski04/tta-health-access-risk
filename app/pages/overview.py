@@ -232,6 +232,7 @@ def _show_expanded_map(
         _build_map(communes, geojson, facilities, show_unassigned),
         height=760,
         key="overview-expanded-map",
+        returned_objects=[],
     )
 
 
@@ -629,6 +630,7 @@ def render_overview(
             ),
             height=295,
             key="overview-main-map",
+            returned_objects=[],
         )
 
     bottom_left_col, bottom_right_col = st.columns([1.8, 1.2], gap="small")

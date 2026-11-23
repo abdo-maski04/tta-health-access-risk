@@ -59,7 +59,11 @@ with page_root.container():
             st.error(f"Impossible de charger les données Overview: {exc}")
     elif selected_page == "Interactive Risk Map":
         try:
-            communes, commune_geojson, facilities = get_prepared_data()
+            try:
+                from data_loader import get_sanitary_prepared_data
+                communes, commune_geojson, facilities = get_sanitary_prepared_data()
+            except Exception:
+                communes, commune_geojson, facilities = get_prepared_data()
             render_interactive_risk_map(communes, commune_geojson, facilities)
         except (
             FileNotFoundError,

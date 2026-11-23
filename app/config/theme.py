@@ -822,76 +822,115 @@ body:has(.tta-map-screen) [data-testid="stSidebar"][aria-expanded="false"] {{
     min-width: 250px !important;
     max-width: 250px !important;
 }}
-[data-testid="stSidebar"][data-collapsed="true"] {{
+[data-testid="stSidebar"][data-collapsed="true"],
+[data-testid="stSidebar"][aria-expanded="false"] {{
     width: 0 !important;
     min-width: 0 !important;
     max-width: 0 !important;
 }}
-[data-testid="collapsedControl"],
-[data-testid="stSidebarCollapseButton"],
-[data-testid="stSidebarCollapsedControl"] {{
+[data-testid="stSidebar"][data-collapsed="false"],
+[data-testid="stSidebar"][aria-expanded="true"] {{
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+}}
+[data-testid="stToolbar"] {{
     display: flex !important;
     visibility: visible !important;
-    opacity: 1 !important;
-}}
-[data-testid="stSidebarCollapseButton"] button,
-[data-testid="collapsedControl"] button,
-[data-testid="stSidebarCollapsedControl"] button {{
-    border-radius: 8px !important;
-    background: #0A3642 !important;
-    color: #FFFFFF !important;
-}}
-[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"],
-[data-testid="collapsedControl"] [data-testid="stIconMaterial"],
-[data-testid="stSidebarCollapsedControl"] [data-testid="stIconMaterial"] {{
-    color: #FFFFFF !important;
-}}
-body:has([data-testid="stSidebar"][data-collapsed="true"])
-    :is([data-testid="collapsedControl"],
-        [data-testid="stSidebarCollapseButton"],
-        [data-testid="stSidebarCollapsedControl"]) {{
-    position: fixed !important;
-    top: 14px !important;
-    left: 14px !important;
+    background: transparent !important;
+    height: auto !important;
+    pointer-events: none !important;
     z-index: 999999 !important;
-    padding: 6px !important;
-    border-radius: 8px !important;
-    background: #0A3642 !important;
-    color: #FFFFFF !important;
 }}
-body:has([data-testid="stSidebar"][data-collapsed="true"])
-    :is([data-testid="collapsedControl"],
-        [data-testid="stSidebarCollapseButton"],
-        [data-testid="stSidebarCollapsedControl"]) svg {{
-    color: #FFFFFF !important;
-    fill: #FFFFFF !important;
-}}
-body:has([data-testid="stSidebar"][data-collapsed="true"])
-    button[aria-label="Expand sidebar"] {{
-    position: fixed !important;
-    top: 14px !important;
-    left: 14px !important;
-    z-index: 999999 !important;
-    padding: 6px !important;
-    margin: 0 !important;
-    border-radius: 8px !important;
-    background: #0A3642 !important;
-    color: #FFFFFF !important;
-}}
-body:has([data-testid="stSidebar"][data-collapsed="true"])
-    button[aria-label="Expand sidebar"] [data-testid="stIconMaterial"] {{
-    color: #FFFFFF !important;
-}}
-[data-testid="stToolbar"],
+[data-testid="stToolbarActions"],
+[data-testid="stStatusWidget"],
 [data-testid="stDecoration"],
 #MainMenu {{
     display: none !important;
 }}
+[data-testid="stExpandSidebarButton"],
+[data-testid="collapsedControl"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapsedControl"],
+button[aria-label="Expand sidebar"],
+button[aria-label="Collapse sidebar"],
+button[aria-label="Open sidebar"],
+button[aria-label="Close sidebar"] {{
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 1000000 !important;
+}}
+[data-testid="stExpandSidebarButton"] button,
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="collapsedControl"] button,
+[data-testid="stSidebarCollapsedControl"] button,
+button[aria-label="Expand sidebar"],
+button[aria-label="Collapse sidebar"],
+button[aria-label="Open sidebar"],
+button[aria-label="Close sidebar"] {{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    background: #0D5C75 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #0A3642 !important;
+    padding: 6px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+}}
+[data-testid="stExpandSidebarButton"] button:hover,
+[data-testid="stSidebarCollapseButton"] button:hover,
+[data-testid="collapsedControl"] button:hover,
+[data-testid="stSidebarCollapsedControl"] button:hover,
+button[aria-label="Expand sidebar"]:hover,
+button[aria-label="Collapse sidebar"]:hover,
+button[aria-label="Open sidebar"]:hover,
+button[aria-label="Close sidebar"]:hover {{
+    background: #0A3642 !important;
+    border-color: #07252D !important;
+}}
+[data-testid="stExpandSidebarButton"] svg,
+[data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"],
+[data-testid="stSidebarCollapseButton"] svg,
+[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"],
+[data-testid="collapsedControl"] svg,
+[data-testid="stSidebarCollapsedControl"] svg {{
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}}
+body:has([data-testid="stSidebar"][data-collapsed="true"]) [data-testid="stExpandSidebarButton"],
+body:has([data-testid="stSidebar"][aria-expanded="false"]) [data-testid="stExpandSidebarButton"],
+body:has([data-testid="stSidebar"][data-collapsed="true"]) [data-testid="collapsedControl"],
+body:has([data-testid="stSidebar"][aria-expanded="false"]) [data-testid="collapsedControl"],
+body:has([data-testid="stSidebar"][data-collapsed="true"]) [data-testid="stSidebarCollapsedControl"],
+body:has([data-testid="stSidebar"][aria-expanded="false"]) [data-testid="stSidebarCollapsedControl"],
+body:has([data-testid="stSidebar"][data-collapsed="true"]) button[aria-label="Expand sidebar"],
+body:has([data-testid="stSidebar"][aria-expanded="false"]) button[aria-label="Expand sidebar"],
+body:has([data-testid="stSidebar"][data-collapsed="true"]) button[aria-label="Open sidebar"],
+body:has([data-testid="stSidebar"][aria-expanded="false"]) button[aria-label="Open sidebar"] {{
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    z-index: 1000000 !important;
+}}
+body:has([data-testid="stSidebar"][data-collapsed="true"])
+    .st-key-tta-global-header [data-testid="stHorizontalBlock"],
+body:has([data-testid="stSidebar"][aria-expanded="false"])
+    .st-key-tta-global-header [data-testid="stHorizontalBlock"] {{
+    padding-left: 3.5rem !important;
+}}
 header[data-testid="stHeader"] {{
-    height: 0 !important;
+    height: auto !important;
     min-height: 0 !important;
     background: transparent !important;
     overflow: visible !important;
+    pointer-events: none !important;
+    z-index: 999990 !important;
 }}
 .block-container,
 [data-testid="stMainBlockContainer"] {{
@@ -944,6 +983,35 @@ body:has(.tta-map-screen) [data-testid="stMainBlockContainer"]
     max-height: 2.625rem;
     object-fit: contain;
     object-position: left center;
+}}
+.st-key-tta-global-header [data-testid="stPopover"] {{
+    display: flex !important;
+    align-items: center !important;
+}}
+.st-key-tta-global-header [data-testid="stPopover"] > button {{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0D5C75 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #0A3642 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    box-shadow: 0 2px 6px rgba(13, 92, 117, 0.25) !important;
+    cursor: pointer !important;
+}}
+.st-key-tta-global-header [data-testid="stPopover"] > button:hover {{
+    background: #0A3642 !important;
+    border-color: #07252D !important;
+}}
+.st-key-tta-global-header [data-testid="stPopover"] > button p {{
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
 }}
 body:has([data-testid="stSidebar"][data-collapsed="true"])
     .st-key-tta-global-header [data-testid="stHorizontalBlock"] {{

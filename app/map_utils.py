@@ -107,10 +107,36 @@ BASE_MAP_CONFIGS: dict[str, dict[str, str | int]] = {
         "subdomains": "abcd",
         "max_zoom": 20,
     },
+    "voyager": {
+        "name": "CartoDB Voyager (Élégant)",
+        "tiles": "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+        "attr": "&copy; OpenStreetMap contributors &copy; CARTO",
+        "subdomains": "abcd",
+        "max_zoom": 20,
+    },
     "standard": {
         "name": "Standard (OpenStreetMap)",
         "tiles": "OpenStreetMap",
         "attr": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        "max_zoom": 19,
+    },
+    "terrain": {
+        "name": "Relief / Topographique (OpenTopoMap)",
+        "tiles": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "attr": "Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap",
+        "subdomains": "abc",
+        "max_zoom": 19,
+    },
+    "esri_street": {
+        "name": "Esri World Street Map",
+        "tiles": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+        "attr": "Tiles &copy; Esri",
+        "max_zoom": 19,
+    },
+    "esri_topo": {
+        "name": "Esri World Topo Map",
+        "tiles": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+        "attr": "Tiles &copy; Esri",
         "max_zoom": 19,
     },
     "satellite": {
@@ -125,13 +151,6 @@ BASE_MAP_CONFIGS: dict[str, dict[str, str | int]] = {
         "attr": "Tiles &copy; Esri",
         "max_zoom": 19,
     },
-    "terrain": {
-        "name": "Relief / Topographique (OpenTopoMap)",
-        "tiles": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
-        "attr": "Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap",
-        "subdomains": "abc",
-        "max_zoom": 19,
-    },
     "dark": {
         "name": "Sombre (CartoDB Dark Matter)",
         "tiles": "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
@@ -139,7 +158,116 @@ BASE_MAP_CONFIGS: dict[str, dict[str, str | int]] = {
         "subdomains": "abcd",
         "max_zoom": 20,
     },
+    "neutral_gray": {
+        "name": "Fond Gris Neutre (Analytique)",
+        "tiles": "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
+        "attr": "&copy; OpenStreetMap contributors &copy; CARTO",
+        "subdomains": "abcd",
+        "max_zoom": 20,
+    },
 }
+
+FACILITY_SVG_ICONS = {
+    "pub_hospital": {
+        "color": "#DC2626",
+        "border": "#FFFFFF",
+        "icon": '<path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M12 6v6M9 16h2v5H9zM13 16h2v5h-2z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Hôpital Public",
+        "sector": "Public (Ministère)",
+    },
+    "pub_csu": {
+        "color": "#0284C7",
+        "border": "#FFFFFF",
+        "icon": '<path d="M19 14V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2M10 8h4M12 6v4M8 15h2v6H8zM14 15h2v6h-2z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Centre de Santé Urbain (CSU)",
+        "sector": "Public (Ministère)",
+    },
+    "pub_csr": {
+        "color": "#059669",
+        "border": "#FFFFFF",
+        "icon": '<path d="M3 21h18M4 21V10l8-6 8 6v11M10 13h4M12 11v4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Centre de Santé Rural (CSR)",
+        "sector": "Public (Ministère)",
+    },
+    "pub_dr": {
+        "color": "#D97706",
+        "border": "#FFFFFF",
+        "icon": '<rect x="3" y="7" width="18" height="14" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 14h4M12 12v4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Dispensaire Rural (DR)",
+        "sector": "Public (Ministère)",
+    },
+    "pharmacy": {
+        "color": "#16A34A",
+        "border": "#FFFFFF",
+        "icon": '<path d="M8 12h8M12 8v8M4 7h16M7 7a5 5 0 0 0 10 0M12 17v4M9 21h6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Pharmacie d\'Officine",
+        "sector": "Privé commercial",
+    },
+    "clinic": {
+        "color": "#7C3AED",
+        "border": "#FFFFFF",
+        "icon": '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 12h6M12 9v6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Clinique Privée",
+        "sector": "Privé commercial / conventionné",
+    },
+    "doctor": {
+        "color": "#2563EB",
+        "border": "#FFFFFF",
+        "icon": '<path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3M6 3h-3M12 3h3M9 12.5v3a4.5 4.5 0 0 0 9 0v-1M18 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Cabinet Médical / Spécialiste",
+        "sector": "Privé libéral",
+    },
+    "laboratory": {
+        "color": "#DB2777",
+        "border": "#FFFFFF",
+        "icon": '<path d="M10 2v7.31L4.35 19.5a1.5 1.5 0 0 0 1.3 2.5h12.7a1.5 1.5 0 0 0 1.3-2.5L14 9.31V2M8.5 2h7M7 16h10" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Laboratoire d\'Analyses",
+        "sector": "Privé libéral",
+    },
+    "other": {
+        "color": "#475569",
+        "border": "#FFFFFF",
+        "icon": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12h6M12 9v6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Autre Établissement Homologué",
+        "sector": "CNSS / Divers",
+    },
+    "unverified": {
+        "color": "#94A3B8",
+        "border": "#FFFFFF",
+        "icon": '<circle cx="12" cy="12" r="9" fill="none" stroke="#FFFFFF" stroke-width="2"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        "label": "Structure Non Vérifiée (Quarantaine)",
+        "sector": "OSM en attente",
+    },
+}
+
+
+def get_facility_div_icon(cat_key: str, size: int = 28):
+    """Génère un DivIcon Folium avec badge SVG vectoriel professionnel."""
+    import folium
+    cfg = FACILITY_SVG_ICONS.get(cat_key, FACILITY_SVG_ICONS["other"])
+    color = cfg["color"]
+    border = cfg["border"]
+    icon_svg = cfg["icon"]
+    inner_size = max(12, int(size * 0.58))
+    badge_html = (
+        f'<div style="width:{size}px; height:{size}px; border-radius:50%; background:{color}; '
+        f'border:2px solid {border}; box-shadow:0 3px 8px rgba(0,0,0,0.38); '
+        f'display:flex; align-items:center; justify-content:center; cursor:pointer;" '
+        f'title="{html.escape(cfg["label"])}">'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{inner_size}" height="{inner_size}" '
+        f'viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" '
+        f'stroke-linecap="round" stroke-linejoin="round">'
+        f'{icon_svg}'
+        f'</svg>'
+        f'</div>'
+    )
+    return folium.DivIcon(
+        html=badge_html,
+        icon_size=(size, size),
+        icon_anchor=(size // 2, size // 2),
+        popup_anchor=(0, -size // 2),
+        class_name="tta-gis-facility-pin",
+    )
 
 
 def get_initial_map(base_map: str = "light", add_tile_layers: bool = True):
@@ -154,16 +282,22 @@ def get_initial_map(base_map: str = "light", add_tile_layers: bool = True):
     selected_key = "light"
     if norm in BASE_MAP_CONFIGS:
         selected_key = norm
+    elif "voyager" in norm:
+        selected_key = "voyager"
     elif "openstreet" in norm or "osm" in norm or "standard" in norm:
         selected_key = "standard"
     elif "hybrid" in norm:
         selected_key = "hybrid"
     elif "satellit" in norm or "imagerie" in norm or "imagery" in norm:
         selected_key = "satellite"
-    elif "terrain" in norm or "topo" in norm or "relief" in norm:
+    elif "street" in norm:
+        selected_key = "esri_street"
+    elif "topo" in norm or "relief" in norm or "terrain" in norm:
         selected_key = "terrain"
     elif "dark" in norm or "sombre" in norm:
         selected_key = "dark"
+    elif "gris" in norm or "neutre" in norm or "gray" in norm or "analytique" in norm:
+        selected_key = "neutral_gray"
 
     folium_map = folium.Map(
         location=[35.20, -5.45],
@@ -1120,6 +1254,6 @@ def render_map(
         width=None,
         height=height,
         key=key,
-        returned_objects=returned_objects,
+        returned_objects=[] if returned_objects is None else returned_objects,
         use_container_width=True,
     )

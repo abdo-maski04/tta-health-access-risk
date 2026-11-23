@@ -17,8 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 COMMUNES_CSV = ROOT / "data" / "processed" / "communes_TTA_2024.csv"
 COMMUNES_GEOJSON = ROOT / "data" / "processed" / "communes_TTA.geojson"
 FACILITIES_CSV = ROOT / "data" / "processed" / "health_facilities_TTA.csv"
+HEALTH_PROFILE_CSV = ROOT / "data" / "interim" / "communes_health_profile_TTA.csv"
+HEALTH_FACILITIES_MASTER_CSV = ROOT / "data" / "interim" / "health_facilities_master_TTA.csv"
 COMMUNE_COUNT = 146
 FACILITY_COUNT = 892
+HEALTH_COMMUNES_COUNT = 146
+HEALTH_FACILITIES_MASTER_COUNT = 1215
 
 
 def _cache(func):
@@ -285,4 +289,128 @@ def get_prepared_data(
     commune_geojson = join_commune_properties(communes, geojson)
     assigned_facilities = assign_facility_communes(facilities, commune_geojson)
     return communes, commune_geojson, assigned_facilities
+
+
+@_cache
+def load_communes_health_profile(path: str | Path | None = None) -> list[dict]:
+    """Charge le profil sanitaire communal consolidé (146 communes) du RSC-TTA."""
+    source = Path(path) if path is not None else HEALTH_PROFILE_CSV
+    if not source.is_file():
+        raise FileNotFoundError(f"Fichier de profil sanitaire introuvable: {source}")
+
+    with source.open("r", encoding="utf-8-sig", newline="") as file:
+        rows = list(csv.DictReader(file))
+
+    integer_fields = {
+        "population_2024", "pub_csu", "pub_csr", "pub_csr2_maternite", "pub_dr",
+        "pub_primary_total", "pub_hospitals", "pub_specialized", "pub_total_official",
+        "osm_pharmacies_mapped", "osm_clinics_candidates", "osm_doctors_mapped",
+        "osm_health_points_total",
+    }
+    float_fields = {"part_rurale_pct", "primary_care_per_10k", "pharmacy_per_10k"}
+    bool_fields = {"is_public_healthcare_absent"}
+
+    for row in rows:
+        row["commune_code"] = str(row["commune_code"]).strip()
+        for field in integer_fields:
+            val = row.get(field)
+            row[field] = int(val.strip()) if val is not None and val.strip() else 0
+        for field in float_fields:
+            val = row.get(field)
+            row[field] = float(val.strip()) if val is not None and val.strip() else 0.0
+        for field in bool_fields:
+            val = row.get(field)
+            row[field] = str(val).strip().lower() in ("true", "1", "yes") if val is not None else False
+    return rows
+
+
+@_cache
+def load_health_facilities_master(path: str | Path | None = None) -> list[dict]:
+    """Charge le master individuel des établissements de santé du RSC-TTA (1 215 structures)."""
+    source = Path(path) if path is not None else HEALTH_FACILITIES_MASTER_CSV
+    if not source.is_file():
+        raise FileNotFoundError(f"Fichier master des infrastructures sanitaires introuvable: {source}")
+
+    with source.open("r", encoding="utf-8-sig", newline="") as file:
+        rows = list(csv.DictReader(file))
+
+    for row in rows:
+        row["facility_id"] = str(row.get("facility_id", "")).strip()
+        commune_code_raw = row.get("commune_code")
+        row["commune_code"] = str(commune_code_raw).strip() if commune_code_raw and str(commune_code_raw).strip() else None
+
+        has_gps_raw = str(row.get("has_gps", "")).strip().lower()
+        row["has_gps"] = has_gps_raw in ("true", "1", "yes")
+
+        lat_raw = str(row.get("lat", "")).strip()
+        lon_raw = str(row.get("lon", "")).strip()
+        if row["has_gps"] and lat_raw and lon_raw and lat_raw.lower() not in ("none", "nan", "null") and lon_raw.lower() not in ("none", "nan", "null"):
+            try:
+                row["lat"] = float(lat_raw)
+                row["lon"] = float(lon_raw)
+            except ValueError:
+                row["lat"] = None
+                row["lon"] = None
+                row["has_gps"] = False
+        else:
+            row["lat"] = None
+            row["lon"] = None
+            row["has_gps"] = False
+
+        if row.get("source_year") and str(row["source_year"]).strip().isdigit():
+            row["source_year"] = int(str(row["source_year"]).strip())
+        else:
+            row["source_year"] = None
+    return rows
+
+
+@_cache
+def get_sanitary_prepared_data(
+    profile_path: str | Path | None = None,
+    geojson_path: str | Path | None = None,
+    master_path: str | Path | None = None,
+    _cache_token: tuple | None = None,
+) -> tuple[list[dict], dict, list[dict]]:
+    """Charge et consolide les données sanitaires RSC-TTA pour les cartes et analyses.
+
+    Retourne:
+        - communes_enriched: liste de 146 communes avec profil sanitaire, démographique et géométrie.
+        - commune_geojson: FeatureCollection enrichie avec les données de profil sanitaire.
+        - facilities_master: liste de 1 215 structures individuelles avec typologie et statut de validation.
+    """
+    p_path = Path(profile_path) if profile_path is not None else HEALTH_PROFILE_CSV
+    g_path = Path(geojson_path) if geojson_path is not None else COMMUNES_GEOJSON
+    m_path = Path(master_path) if master_path is not None else HEALTH_FACILITIES_MASTER_CSV
+
+    if _cache_token is None:
+        _cache_token = (
+            _file_signature(p_path),
+            _file_signature(g_path),
+            _file_signature(m_path),
+        )
+
+    health_profiles = load_communes_health_profile(p_path)
+    base_communes = {row["commune_code"]: row for row in load_communes()}
+
+    enriched_communes = []
+    for hp in health_profiles:
+        code = hp["commune_code"]
+        row = dict(hp)
+        if code in base_communes:
+            bc = base_communes[code]
+            for geo_key in (
+                "centroid_lat", "centroid_lon", "start_lat", "start_lon",
+                "area_km2", "densite_hab_km2", "name_ar", "population_2014",
+                "osm_relation_id",
+            ):
+                if geo_key in bc and geo_key not in row:
+                    row[geo_key] = bc[geo_key]
+        enriched_communes.append(row)
+
+    geojson = load_communes_geojson(g_path)
+    commune_geojson = join_commune_properties(enriched_communes, geojson)
+    master_facilities = load_health_facilities_master(m_path)
+
+    return enriched_communes, commune_geojson, master_facilities
+
 
