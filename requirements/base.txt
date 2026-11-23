@@ -33,3 +33,4 @@ python-dotenv>=1.0.0,<2.0.0
 # Pour éviter tout conflit de version avec Streamlit et GeoPandas, les dépendances
 # Airflow sont isolées dans le conteneur Docker dédié (airflow/Dockerfile).
 # ------------------------------------------------------------------------------
+pyyaml>=6.0
