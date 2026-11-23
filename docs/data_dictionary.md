@@ -160,7 +160,7 @@ Source : extrait **OpenStreetMap** de Geofabrik (Maroc, 12/11/2026), filtré sur
 
 ---
 
-## 4. `accessibility` — temps de trajet *(semaine 2 — propriété C)*
+## 4. `accessibility` — temps de trajet *(semaine 2 — propriété A)*
 
 | Variable | Type | Unité | Source | Statut | Description / limites |
 |---|---|---|---|---|---|
