@@ -185,8 +185,8 @@ Source : extrait **OpenStreetMap** de Geofabrik (Maroc, 12/11/2026), filtré sur
 | `precipitation_probability_max` | entier | % | Open-Meteo | — | `PREVU` — sert à la **confiance** affichée |
 | `horizon_jours` | entier | jours | Dérivé | — | `forecast_target_date − date_récupération` |
 | `source_fetch_time` | horodatage | — | — | — | **Fraîcheur** de la prévision — affichée dans l'app |
-| `seuil_pluie_p90/p95/p99` | décimal | mm | Calculé | historique | `CALCULE` + `nb_observations` obligatoire |
-| `seuil_chaleur_p90/p95/p99` | décimal | °C | Calculé | historique | Par mois ou saison — **une seule règle pour le résultat officiel** |
+| `seuil_pluie_p65/p80/p90` | décimal | mm | Calculé | historique | `CALCULE` + `nb_observations` obligatoire |
+| `seuil_chaleur_p65/p80/p90` | décimal | °C | Calculé | historique | Par mois. Niveau 1 = p65, niveau 2 = p80, niveau 3 = p90 (D-014) |
 
 ---
 
@@ -196,10 +196,10 @@ Source : extrait **OpenStreetMap** de Geofabrik (Maroc, 12/11/2026), filtré sur
 |---|---|---|---|---|
 | `commune_code` | texte | — | — | Clé |
 | `date` | date | — | — | Date visée par la prévision |
-| `danger_meteo` | entier | 0–3 | `CALCULE` | Niveau issu des seuils p90/p95/p99 |
+| `danger_meteo` | entier | 0–3 | `CALCULE` | Niveau issu des seuils p65/p80/p90 (1 = p65, 2 = p80, 3 = p90) |
 | `composante_pluie` | entier | 0–3 | `CALCULE` | **Conservée séparément** |
 | `composante_chaleur` | entier | 0–3 | `CALCULE` | **Conservée séparément** |
-| `classe_trajet` | texte | — | `CALCULE` | `<15` / `15-45` / `>45` |
+| `classe_trajet` | entier | 1-3 | `CALCULE` | 1 = moins de 15 min, 2 = 15 à 45 min, 3 = plus de 45 min (D-015) |
 | `score` | entier | — | `CALCULE` | `danger_meteo × classe_trajet`. **Score expérimental, PAS une probabilité.** |
 | `niveau` | texte | — | `CALCULE` | `vert` / `jaune` / `orange` / `rouge` |
 | `raison` | texte | — | `CALCULE` | Facteur dominant. **Règle de départage unique**, identique dans le code, le rapport et l'interface. |

@@ -1,0 +1,25 @@
+# Configuration du scoring — TTA Health Access Risk
+# Les noms de colonnes sont ici et non dans le code : si la base change de nom,
+# on modifie CE fichier, pas score.py.
+# Reference : docs/methodology.md et docs/decisions.md (D-014).
+
+seuils:
+  pluie:
+    niveau_1: rain_p65      # 1 jour sur 3
+    niveau_2: rain_p80      # 1 jour sur 5
+    niveau_3: rain_p90      # 1 jour sur 10
+  chaleur:
+    niveau_1: heat_p65
+    niveau_2: heat_p80
+    niveau_3: heat_p90
+
+bornes_trajet:
+  classe_1_max_min: 15      # moins de 15 min    -> classe 1
+  classe_2_max_min: 45      # 15 a 45 min        -> classe 2 ; plus de 45 -> classe 3
+
+couleurs:
+  vert: [0]
+  jaune: [1, 2]
+  orange: [3, 4]
+  rouge: [6, 9]
+  # Pour rendre le rouge plus rare, mettre rouge: [9] (voir D-014).
