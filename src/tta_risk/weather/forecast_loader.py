@@ -12,6 +12,9 @@ PAUSE_SECONDS = 0.3
 def load_forecast(issued_on=None, csv_path=CSV_PATH):
     """Récupère les prévisions des communes du CSV et les charge dans weather.forecast_daily.
     Retourne (nombre de lignes écrites, nombre de communes du CSV, liste des communes en échec)."""
+
+    """Récupère les prévisions des 146 communes et les charge dans weather.forecast_daily.
+    Retourne le nombre de lignes écrites."""
     communes = pd.read_csv(
         csv_path,
         usecols=["commune_code", "centroid_lat", "centroid_lon"],
@@ -42,3 +45,18 @@ if __name__ == "__main__":
     print(f"{n} lignes insérées (attendu : {n_communes} communes x 3 jours = {n_communes * 3})")
     if failed:
         print(f"{len(failed)} communes en échec : {failed}")
+    for commune in communes.itertuples(index=False):
+        df = fetch_commune_forecast(
+            commune.commune_code,
+            commune.centroid_lat,
+            commune.centroid_lon,
+            issued_on,
+        )
+        total += load_forecast_rows(convert_forecast_df_to_rows(df))
+        time.sleep(PAUSE_SECONDS)
+        return total
+
+
+if __name__ == "__main__":
+    n = load_forecast()
+    print(f"{n} lignes insérées (attendu : 438)")

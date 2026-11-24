@@ -104,6 +104,7 @@ def replace_thresholds(df):
 # Prévisions (weather.forecast_daily)
 # ---------------------------------------------------------------------------
 
+ 
 upsert_forecast_query = """
 INSERT INTO weather.forecast_daily
     (commune_code, forecast_issued_on, target_date, precip_mm, tmax_c)
@@ -115,6 +116,7 @@ SET precip_mm   = EXCLUDED.precip_mm,
 """
 
 
+
 def convert_forecast_df_to_rows(df):
     # NaN pandas -> None, sinon Postgres stocke 'NaN' au lieu de NULL
     clean = df.astype(object).where(df.notna(), None)
@@ -122,6 +124,7 @@ def convert_forecast_df_to_rows(df):
         clean[["commune_code", "forecast_issued_on", "target_date",
                "precip_mm", "tmax_c"]].itertuples(index=False, name=None)
     )
+
 
 
 def load_forecast_rows(rows):

@@ -107,7 +107,7 @@ Le découpage administratif de 2015 (décret du 20 février 2015) donne, pour la
 |---|---|
 | **Jeu de données** | Open-Meteo Historical Weather API / ERA5 |
 | **URL** | `https://archive-api.open-meteo.com/v1/archive` |
-| **Période à retenir** | ⚠️ **À figer en équipe** (recommandation : ≥ 10 ans pour que les percentiles p90/p95/p99 soient robustes) |
+| **Période à retenir** | **10 ans** — période retenue pour le calcul des percentiles p65/p80/p90 (cf. D-014) |
 | **Licence** | ERA5 / Copernicus : attribution requise (« Contains modified Copernicus Climate Change Service information ») |
 | **Limites connues** | Réanalyse : biais possibles en zone côtière et de relief. Nombre d'observations à consigner pour chaque seuil. |
 
