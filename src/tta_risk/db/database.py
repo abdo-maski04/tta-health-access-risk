@@ -104,7 +104,7 @@ def replace_thresholds(df):
 # Prévisions (weather.forecast_daily)
 # ---------------------------------------------------------------------------
 
- 
+
 upsert_forecast_query = """
 INSERT INTO weather.forecast_daily
     (commune_code, forecast_issued_on, target_date, precip_mm, tmax_c)
