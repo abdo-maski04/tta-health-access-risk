@@ -1,0 +1,147 @@
+commune_code,name_fr,province,milieu,population_2024,temps_min,distance_km,hospital_name,zone_15_min,zone_30_min,zone_45_min,zone_60_min,zone
+MA-01-151-0323,Tamorot,Chefchaouen,Rural,24258,120.2,88.23,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-151-0313,Iounane,Chefchaouen,Rural,19494,114.7,81.31,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-151-1105,Bni Selmane,Chefchaouen,Rural,21413,109.3,80.63,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-151-0607,Bni Ahmed Gharbia,Chefchaouen,Rural,10623,106.5,71.54,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-151-1103,Bni Mansour,Chefchaouen,Rural,16660,106.2,75.18,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-151-0911,Bni Smih,Chefchaouen,Rural,13918,106.0,101.94,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-571-0303,Al Kharroub,Tétouan,Rural,2099,93.8,61.59,Hospital Ben Karrich,0,0,0,0,plus de 60 min
+MA-01-151-0615,Mansoura,Chefchaouen,Rural,13526,90.6,66.55,Hôpital Mohamed V,0,0,0,0,plus de 60 min
+MA-01-151-0909,Bni Rzine,Chefchaouen,Rural,16539,88.6,79.73,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-405-1107,Kalaat Bouqorra,Ouezzane,Rural,13999,82.8,59.04,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-151-0303,Bab Berred,Chefchaouen,Mixte,24743,81.9,70.67,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-051-0925,Tamsaout,Al Hoceima,Rural,12856,81.6,70.23,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-151-0901,Amtar,Chefchaouen,Rural,8568,80.0,68.33,مستشفى بني سعيد,0,0,0,0,plus de 60 min
+MA-01-051-1311,Chakrane,Al Hoceima,Mixte,3306,79.8,45.18,(sans nom),0,0,0,0,plus de 60 min
+MA-01-405-0909,Moqrissat,Ouezzane,Mixte,9413,79.4,61.76,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-331-0711,Souk L'qolla,Larache,Mixte,13592,78.7,63.84,Hopital Provincial de Ksar El Kébir,0,0,0,0,plus de 60 min
+MA-01-051-0901,Abdelghaya Souahel,Al Hoceima,Rural,24435,78.2,69.55,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-405-1319,Zghira,Ouezzane,Rural,13415,76.8,52.99,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-151-0917,M'tioua,Chefchaouen,Mixte,10336,74.6,69.2,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-151-0709,Talambote,Chefchaouen,Rural,8007,73.0,25.86,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-151-0605,Bni Ahmed Cherqia,Chefchaouen,Rural,10800,72.1,63.1,Hôpital Mohamed V,0,0,0,0,plus de 60 min
+MA-01-051-0707,Bni Bchir,Al Hoceima,Rural,5401,71.3,35.58,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-571-0309,Jbel Lahbib,Tétouan,Mixte,4126,69.0,42.54,Hôpital,0,0,0,0,plus de 60 min
+MA-01-051-0915,Ketama,Al Hoceima,Mixte,16690,68.4,58.77,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-151-0621,Oued Malha,Chefchaouen,Rural,12075,68.3,55.52,Hôpital Mohamed V,0,0,0,0,plus de 60 min
+MA-01-571-0305,Bghaghza,Tétouan,Rural,6238,67.9,52.79,Hospital Ben Karrich,0,0,0,0,plus de 60 min
+MA-01-405-1311,Sidi Ahmed Cherif,Ouezzane,Rural,7913,67.6,55.57,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-151-0919,Ouaouzgane,Chefchaouen,Rural,12766,66.5,52.84,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-405-1317,Teroual,Ouezzane,Rural,11673,66.1,47.65,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-051-0923,Taghzout,Al Hoceima,Rural,4116,65.7,61.65,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-331-0903,Bni Arouss,Larache,Mixte,7337,65.3,54.36,Hospital Ben Karrich,0,0,0,0,plus de 60 min
+MA-01-051-0909,Bni Bouchibet,Al Hoceima,Rural,8909,65.1,62.51,مستشفى حمان الفطواكي ايت عزة,0,0,0,0,plus de 60 min
+MA-01-571-0307,Bni Harchen,Tétouan,Rural,6423,64.1,46.71,Centre De sante Saadina,0,0,0,0,plus de 60 min
+MA-01-331-0915,Zaaroura,Larache,Mixte,8615,64.0,50.46,Hopital Provincial de Ksar El Kébir,0,0,0,0,plus de 60 min
+MA-01-331-0913,Tazroute,Larache,Mixte,5449,63.4,52.23,Hospital Ben Karrich,0,0,0,0,plus de 60 min
+MA-01-571-0311,Bni Idder,Tétouan,Rural,4659,62.0,42.41,Hospital Ben Karrich,0,0,0,0,plus de 60 min
+MA-01-151-0503,Bni Darkoul,Chefchaouen,Rural,13984,61.9,44.35,Hôpital Mohammed V,0,0,0,0,plus de 60 min
+MA-01-405-0901,Ain Beida,Ouezzane,Mixte,10368,60.7,39.83,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,0,plus de 60 min
+MA-01-151-0511,Fifi,Chefchaouen,Rural,6762,59.4,44.89,Hopital Mohamed V,0,0,0,1,moins de 60 min
+MA-01-051-0721,Sidi Bouzineb,Al Hoceima,Rural,2756,58.9,37.27,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-051-1121,Rouadi,Al Hoceima,Mixte,6858,58.7,42.59,Hôpital Mohamed V,0,0,0,1,moins de 60 min
+MA-01-151-0505,Bni Faghloum,Chefchaouen,Rural,9260,58.3,48.47,Hôpital Mohamed V,0,0,0,1,moins de 60 min
+MA-01-051-0705,Bni Ammart,Al Hoceima,Mixte,5583,58.3,27.51,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-151-0515,Tanaqoub,Chefchaouen,Rural,8097,57.8,39.95,Hôpital psychiatrique,0,0,0,1,moins de 60 min
+MA-01-151-0507,Bni Salah,Chefchaouen,Rural,10535,57.8,46.69,Hôpital Mohamed V,0,0,0,1,moins de 60 min
+MA-01-405-1303,Lamjaara,Ouezzane,Mixte,19162,56.4,44.92,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,1,moins de 60 min
+MA-01-051-0703,Bni Ahmed Imoukzan,Al Hoceima,Rural,7580,54.6,47.75,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-051-0307,Senada,Al Hoceima,Rural,8059,54.5,45.8,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-151-0701,Bni Bouzra,Chefchaouen,Rural,15888,53.3,40.04,مستشفى بني سعيد,0,0,0,1,moins de 60 min
+MA-01-405-1111,Zoumi,Ouezzane,Mixte,36573,53.2,41.78,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,1,moins de 60 min
+MA-01-051-0305,Bni Gmil Maksouline,Al Hoceima,Rural,7214,52.6,30.49,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-151-0707,Steha,Chefchaouen,Mixte,11452,51.9,35.33,مستشفى بني سعيد,0,0,0,1,moins de 60 min
+MA-01-405-1309,Ouannana,Ouezzane,Rural,12123,51.6,37.52,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,1,moins de 60 min
+MA-01-405-1313,Sidi Bousber,Ouezzane,Mixte,9671,51.2,41.73,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,0,1,moins de 60 min
+MA-01-051-0913,Issaguen,Al Hoceima,Mixte,17834,51.0,41.69,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-051-1125,Zaouiat Sidi Abdelkader,Al Hoceima,Rural,4150,47.8,29.23,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-331-0701,Boujedyane,Larache,Mixte,9624,46.9,26.76,Hopital Provincial de Ksar El Kébir,0,0,0,1,moins de 60 min
+MA-01-051-0303,Bni Gmil,Al Hoceima,Mixte,7752,46.7,40.63,مستشفى حمان الفطواكي ايت عزة,0,0,0,1,moins de 60 min
+MA-01-331-0901,Ayacha,Larache,Rural,6925,44.9,29.97,Hôpital,0,0,1,1,moins de 45 min
+MA-01-051-1305,Arbaa Taourirt,Al Hoceima,Mixte,3799,44.6,31.34,(sans nom),0,0,1,1,moins de 45 min
+MA-01-331-1107,Rissana Chamalia,Larache,Rural,12961,43.9,26.91,Polyclinique Lixus,0,0,1,1,moins de 45 min
+MA-01-571-0513,Bni Leit,Tétouan,Rural,5004,43.8,31.82,Hôpital psychiatrique,0,0,1,1,moins de 45 min
+MA-01-571-0519,Oulad Ali Mansour,Tétouan,Rural,4683,42.2,19.3,مستشفى بني سعيد,0,0,1,1,moins de 45 min
+MA-01-405-0905,Brikcha,Ouezzane,Mixte,8777,41.9,22.69,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,1,1,moins de 45 min
+MA-01-227-0313,Ksar El Majaz,Fahs-Anjra,Mixte,12703,41.4,33.22,Hôpital universitaire de Ceuta,0,0,1,1,moins de 45 min
+MA-01-331-1109,Rissana Janoubia,Larache,Mixte,19480,39.9,29.16,Polyclinique Lixus,0,0,1,1,moins de 45 min
+MA-01-051-0711,Bni Bounsar,Al Hoceima,Mixte,6498,39.8,34.44,مستشفى حمان الفطواكي ايت عزة,0,0,1,1,moins de 45 min
+MA-01-571-0525,Zaouiat Sidi Kacem,Tétouan,Rural,12851,38.5,30.79,مستشفى بني سعيد,0,0,1,1,moins de 45 min
+MA-01-331-0905,Bni Garfett,Larache,Mixte,11311,38.4,33.24,Polyclinique Lixus,0,0,1,1,moins de 45 min
+MA-01-051-1107,Bni Abdellah,Al Hoceima,Mixte,4939,38.3,33.11,(sans nom),0,0,1,1,moins de 45 min
+MA-01-511-0507,Dar Chaoui,Tanger-Assilah,Mixte,4471,38.2,35.1,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,0,0,1,1,moins de 45 min
+MA-01-151-0513,Laghdir,Chefchaouen,Rural,6454,37.8,28.48,Hôpital psychiatrique,0,0,1,1,moins de 45 min
+MA-01-051-1319,Nekkour,Al Hoceima,Mixte,7721,37.6,24.0,(sans nom),0,0,1,1,moins de 45 min
+MA-01-051-1323,Tifarouine,Al Hoceima,Rural,3318,35.7,16.18,(sans nom),0,0,1,1,moins de 45 min
+MA-01-151-0711,Tassift,Chefchaouen,Rural,6924,35.7,12.25,مستشفى بني سعيد,0,0,1,1,moins de 45 min
+MA-01-405-0705,Masmouda,Ouezzane,Rural,14594,35.2,21.69,Centre de Santé Urbain 9 Juillet,0,0,1,1,moins de 45 min
+MA-01-571-0301,Ain Lahsan,Tétouan,Rural,7450,34.3,25.4,Centre De sante Saadina,0,0,1,1,moins de 45 min
+MA-01-571-0523,Zaitoune,Tétouan,Mixte,13492,34.2,18.82,Hospital Ben Karrich,0,0,1,1,moins de 45 min
+MA-01-051-1313,Imrabten,Al Hoceima,Mixte,6983,33.9,25.55,(sans nom),0,0,1,1,moins de 45 min
+MA-01-571-0507,Azla,Tétouan,Rural,22985,33.6,24.64,مركز الزهراء للحجامة و العلاج البديل,0,0,1,1,moins de 45 min
+MA-01-405-0715,Sidi Redouane,Ouezzane,Mixte,17903,33.4,24.67,Projet Centre Hospitalier Provincial d'Ouezzane,0,0,1,1,moins de 45 min
+MA-01-331-0715,Tatoft,Larache,Rural,8657,33.4,22.49,Hopital Provincial de Ksar El Kébir,0,0,1,1,moins de 45 min
+MA-01-051-0917,Moulay Ahmed Cherif,Al Hoceima,Rural,9357,33.0,29.6,مستشفى حمان الفطواكي ايت عزة,0,0,1,1,moins de 45 min
+MA-01-511-0505,Sebt Azzinate,Tanger-Assilah,Mixte,7265,32.2,24.19,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,0,0,1,1,moins de 45 min
+MA-01-227-0509,Malloussa,Fahs-Anjra,Mixte,18854,31.8,24.14,Polyclinique CNSS,0,0,1,1,moins de 45 min
+MA-01-151-0713,Tizgane,Chefchaouen,Mixte,12292,30.6,17.59,مستشفى بني سعيد,0,0,1,1,moins de 45 min
+MA-01-051-0301,Bni Boufrah,Al Hoceima,Mixte,8401,30.3,25.05,مستشفى حمان الفطواكي ايت عزة,0,0,1,1,moins de 45 min
+MA-01-227-0311,Jouamaa,Fahs-Anjra,Mixte,10039,29.5,25.42,Polyclinique CNSS,0,1,1,1,moins de 30 min
+MA-01-571-0501,Al Hamra,Tétouan,Rural,11877,29.4,23.4,Hospital Ben Karrich,0,1,1,1,moins de 30 min
+MA-01-227-0505,Ksar Sghir,Fahs-Anjra,Mixte,17125,29.2,20.92,Polyclinique CNSS,0,1,1,1,moins de 30 min
+MA-01-511-0501,Al Manzla,Tanger-Assilah,Rural,2680,29.0,22.56,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,0,1,1,1,moins de 30 min
+MA-01-511-0519,Hjar Ennhal,Tanger-Assilah,Mixte,27204,28.7,16.49,Centre Ahmad Bin Zayed Al Nahyan De Traitement des Cancers,0,1,1,1,moins de 30 min
+MA-01-151-0501,Bab Taza,Chefchaouen,Mixte,29895,28.7,23.96,Hôpital Mohamed V,0,1,1,1,moins de 30 min
+MA-01-227-0305,Anjra,Fahs-Anjra,Mixte,17251,28.3,19.45,Centre De sante Saadina,0,1,1,1,moins de 30 min
+MA-01-405-0707,Mzefroune,Ouezzane,Rural,6226,27.5,21.65,Centre de Santé Urbain 9 Juillet,0,1,1,1,moins de 30 min
+MA-01-227-0321,Taghramt,Fahs-Anjra,Mixte,9326,27.4,19.88,Hôpital universitaire de Ceuta,0,1,1,1,moins de 30 min
+MA-01-405-0903,Asjen,Ouezzane,Rural,11479,27.1,16.84,Centre de Santé Urbain 9 Juillet,0,1,1,1,moins de 30 min
+MA-01-051-0727,Zarkt,Al Hoceima,Rural,5601,26.6,11.5,مستشفى حمان الفطواكي ايت عزة,0,1,1,1,moins de 30 min
+MA-01-331-0717,Zouada,Larache,Mixte,25289,26.5,18.22,"Centre de Santé Urbain ""Oulad Hmaid""",0,1,1,1,moins de 30 min
+MA-01-227-0501,Al Bahraoyine,Fahs-Anjra,Mixte,15491,25.2,8.43,Polyclinique CNSS,0,1,1,1,moins de 30 min
+MA-01-151-0509,Derdara,Chefchaouen,Rural,11276,25.1,16.66,Hôpital psychiatrique,0,1,1,1,moins de 30 min
+MA-01-331-1113,Souk Tolba,Larache,Mixte,12855,25.0,11.77,"Centre de Santé Urbain ""Oulad Hmaid""",0,1,1,1,moins de 30 min
+MA-01-571-0319,Souk Kdim,Tétouan,Rural,8699,25.0,12.64,Centre De sante Saadina,0,1,1,1,moins de 30 min
+MA-01-571-0321,Sahtryine,Tétouan,Rural,8733,24.9,11.15,Hospital Ben Karrich,0,1,1,1,moins de 30 min
+MA-01-571-0527,Zinat,Tétouan,Rural,8214,24.3,17.37,Hospital Ben Karrich,0,1,1,1,moins de 30 min
+MA-01-051-1101,Ait Kamra,Al Hoceima,Mixte,8269,24.3,19.26,Hôpital Mohamed V,0,1,1,1,moins de 30 min
+MA-01-571-0505,Al Oued,Tétouan,Rural,10875,24.3,16.81,Hôpital psychiatrique,0,1,1,1,moins de 30 min
+MA-01-331-1111,Sahel,Larache,Mixte,18258,23.2,16.21,Polyclinique Lixus,0,1,1,1,moins de 30 min
+MA-01-573-0107,Allyene,M'diq-Fnideq,Mixte,8111,23.2,11.77,Hopital Mohamed 6,0,1,1,1,moins de 30 min
+MA-01-051-1109,Bni Hadifa,Al Hoceima,Mixte,4723,22.7,21.47,مستشفى حمان الفطواكي ايت عزة,0,1,1,1,moins de 30 min
+MA-01-511-0313,Sidi Lyamani,Tanger-Assilah,Mixte,10616,22.4,17.0,Hôpital,0,1,1,1,moins de 30 min
+MA-01-331-1103,Oulad Ouchih,Larache,Mixte,13409,22.1,12.65,"Centre de Santé Urbain ""Oulad Hmaid""",0,1,1,1,moins de 30 min
+MA-01-331-1112,Souaken,Larache,Rural,12582,21.7,18.04,"Centre de Santé Urbain ""Oulad Hmaid""",0,1,1,1,moins de 30 min
+MA-01-571-0315,Mallalienne,Tétouan,Rural,10874,21.7,11.27,Centre Médical Boujarrah,0,1,1,1,moins de 30 min
+MA-01-051-0719,Sidi Boutmim,Al Hoceima,Mixte,8462,21.5,11.22,مستشفى حمان الفطواكي ايت عزة,0,1,1,1,moins de 30 min
+MA-01-331-0705,Laouamra,Larache,Mixte,48253,21.5,14.52,Polyclinique Lixus,0,1,1,1,moins de 30 min
+MA-01-571-0515,Bni Said,Tétouan,Rural,10465,21.4,9.29,مستشفى بني سعيد,0,1,1,1,moins de 30 min
+MA-01-051-1115,Izemmouren,Al Hoceima,Mixte,6365,20.4,11.3,Hôpital Mohamed V,0,1,1,1,moins de 30 min
+MA-01-511-0303,Aquouass Briech,Tanger-Assilah,Mixte,4981,18.6,14.56,Hôpital,0,1,1,1,moins de 30 min
+MA-01-511-0315,Had Al Gharbia,Tanger-Assilah,Mixte,12838,18.3,12.37,Hôpital,0,1,1,1,moins de 30 min
+MA-01-405-0701,Bni Quolla,Ouezzane,Rural,13551,18.1,11.14,Projet Centre Hospitalier Provincial d'Ouezzane,0,1,1,1,moins de 30 min
+MA-01-511-0517,Laaouama,Tanger-Assilah,Mixte,19187,17.2,11.4,Hôpital Mohammed VI,0,1,1,1,moins de 30 min
+MA-01-573-0109,Belyounech,M'diq-Fnideq,Mixte,5208,17.2,10.28,Hôpital universitaire de Ceuta,0,1,1,1,moins de 30 min
+MA-01-573-0101,Fnideq,M'diq-Fnideq,Urbain,77250,16.4,8.05,Hôpital universitaire de Ceuta,0,1,1,1,moins de 30 min
+MA-01-051-1317,Louta,Al Hoceima,Rural,4408,12.8,10.76,(sans nom),1,1,1,1,moins de 15 min
+MA-01-571-0107,Oued Laou,Tétouan,Urbain,11690,12.4,5.3,مستشفى بني سعيد,1,1,1,1,moins de 15 min
+MA-01-331-0703,Ksar Bjir,Larache,Rural,17182,12.2,6.32,Hopital Provincial de Ksar El Kébir,1,1,1,1,moins de 15 min
+MA-01-511-0311,Sahel Chamali,Tanger-Assilah,Rural,5028,12.1,10.02,Hôpital,1,1,1,1,moins de 15 min
+MA-01-573-0105,M'diq,M'diq-Fnideq,Urbain,67599,10.0,6.9,Hopital Mohamed 6,1,1,1,1,moins de 15 min
+MA-01-511-0109,Gueznaia,Tanger-Assilah,Urbain,88676,9.1,6.25,CHU de Tanger-Tétouan-Al Hoceima,1,1,1,1,moins de 15 min
+MA-01-571-0317,Saddina,Tétouan,Rural,7619,7.5,3.69,Centre De sante Saadina,1,1,1,1,moins de 15 min
+MA-01-511-0101,Assilah,Tanger-Assilah,Urbain,36039,7.5,3.44,Hôpital,1,1,1,1,moins de 15 min
+MA-01-331-0103,Larache,Larache,Urbain,133731,6.0,1.64,Polyclinique Lixus,1,1,1,1,moins de 15 min
+MA-01-051-0109,Ajdir,Al Hoceima,Urbain,5630,5.8,3.09,Centre Hospitalier Provincial Mohammed VI,1,1,1,1,moins de 15 min
+MA-01-511-0100,Tanger,Tanger-Assilah,Urbain,1275428,5.8,2.49,Hôpital Mohammed VI,1,1,1,1,moins de 15 min
+MA-01-573-0103,Martil,M'diq-Fnideq,Urbain,95896,5.0,2.3,New Covenant Hospital,1,1,1,1,moins de 15 min
+MA-01-051-1303,Ait Youssef Ou Ali,Al Hoceima,Mixte,13830,3.7,1.14,Centre Sante Ait Youssef Ou Ali,1,1,1,1,moins de 15 min
+MA-01-405-0109,Ouezzane,Ouezzane,Urbain,57737,3.2,1.32,Centre de Santé Urbain 9 Juillet,1,1,1,1,moins de 15 min
+MA-01-051-0101,Al Hoceima,Al Hoceima,Urbain,50225,3.1,1.23,Hôpital Mohamed V,1,1,1,1,moins de 15 min
+MA-01-051-0103,Bni Bouayach,Al Hoceima,Urbain,20013,3.0,1.05,(sans nom),1,1,1,1,moins de 15 min
+MA-01-331-0101,Ksar El Kebir,Larache,Urbain,124701,2.6,1.38,"Centre de Santé Urbain ""Oulad Hmaid""",1,1,1,1,moins de 15 min
+MA-01-571-0111,Tétouan,Tétouan,Urbain,422757,2.5,1.1,Centre de dialyse Arrayane,1,1,1,1,moins de 15 min
+MA-01-051-0105,Imzouren,Al Hoceima,Urbain,34848,2.0,0.55,Health Center Imzouren,1,1,1,1,moins de 15 min
+MA-01-571-0517,Dar Bni Karrich,Tétouan,Mixte,10115,1.7,0.73,Hospital Ben Karrich,1,1,1,1,moins de 15 min
+MA-01-051-0107,Targuist,Al Hoceima,Urbain,14638,1.4,0.57,مستشفى حمان الفطواكي ايت عزة,1,1,1,1,moins de 15 min
+MA-01-151-0101,Chefchaouen,Chefchaouen,Urbain,46168,1.0,0.47,Hopital Mohamed V,1,1,1,1,moins de 15 min
