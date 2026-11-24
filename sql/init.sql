@@ -28,3 +28,18 @@ CREATE TABLE IF NOT EXISTS weather.forecast_daily (
     ingested_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
     PRIMARY KEY (commune_code, forecast_issued_on, target_date)
 );
+
+-- Danger météo quotidien par commune (le score final s'ajoutera plus tard)
+CREATE TABLE IF NOT EXISTS weather.risk_daily (
+    commune_code        TEXT     NOT NULL,
+    forecast_issued_on  DATE     NOT NULL,
+    target_date         DATE     NOT NULL,
+    precip_mm           REAL,
+    tmax_c              REAL,
+    rain_level          SMALLINT NOT NULL CHECK (rain_level BETWEEN 0 AND 3),
+    heat_level          SMALLINT NOT NULL CHECK (heat_level BETWEEN 0 AND 3),
+    danger              SMALLINT NOT NULL CHECK (danger BETWEEN 0 AND 3),
+    dominant            TEXT     NOT NULL CHECK (dominant IN ('rain', 'heat', 'both', 'none')),
+    computed_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (commune_code, forecast_issued_on, target_date)
+);
