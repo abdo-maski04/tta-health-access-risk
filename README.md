@@ -87,7 +87,31 @@ pytest
 
 Sous PowerShell, remplacer `activate.bat` par `.venv\Scripts\Activate.ps1`.
 Linux/macOS : `source .venv/bin/activate` et `cp .env.example .env`.
-Les instructions pour Docker (Airflow, PostgreSQL) et Streamlit seront ajoutées ici.
+### Base de données (PostgreSQL)
+
+```bat
+copy .env.example .env
+docker compose up -d
+docker compose ps
+```
+
+La base écoute sur le port **5433** (et non 5432, pour ne pas gêner un PostgreSQL déjà
+installé). Les tables sont créées automatiquement au premier démarrage par `sql/init.sql`.
+Pour vérifier :
+
+```bat
+docker exec -it postgres_tta_risk psql -U user -d tta_risk -c "\dt weather.*"
+```
+
+> **Ne jamais lancer `docker compose down -v`** : l'option `-v` efface le volume, donc
+> les 10 ans d'historique météorologique et les seuils. Pour repartir de zéro sur les
+> seuils uniquement : `DROP TABLE weather.thresholds;` puis `psql -f sql/init.sql`.
+
+### Airflow et Streamlit
+
+Les deux sont **encore à écrire** (`airflow/dags/daily_risk_dag.py`,
+`airflow/Dockerfile` et `app/streamlit_app.py` sont vides). Les commandes seront ajoutées
+ici à leur livraison.
 
 ---
 

@@ -156,6 +156,7 @@ Source : extrait **OpenStreetMap** de Geofabrik (Maroc, 12/11/2026), filtré sur
 | OSM est **incomplet en milieu rural** | Les 299 établissements de santé primaire recensés par le Ministère de la Santé (fichier `essp-2025.xlsx`, non encore intégré) ne sont **presque pas** présents dans OSM : 0 `health_post` trouvé. |
 | **Pas de hiérarchie officielle** | OSM ne dit pas si un établissement est un hôpital de référence ou un dispensaire. |
 | Aucune **capacité** (lits, personnel) | Non disponible en open data à l'échelle de l'établissement. |
+| **5 hôpitaux sans nom** | Sur les 66 hôpitaux, **5 n'ont pas de `name`** dans OSM (identifiants `10558675910`, `363772898`, `411183375`, `478960842`, `908806511`). Ils sont conservés : leur position est valide et le temps de trajet ne dépend pas du nom. |
 | Recoupement Ministère | **16 des 24 hôpitaux officiels** de la région ont été retrouvés par leur nom dans OSM. Les 8 autres restent à géocoder. |
 
 ---
@@ -171,7 +172,7 @@ et devra contenir exactement les mêmes colonnes.
 | `commune_code` | texte | — | Référentiel §1 | — | Clé. Une seule ligne par commune. |
 | `name_fr` | texte | — | Référentiel §1 | `OFFICIEL` | Nom d'affichage. **Jamais utilisé pour une jointure.** |
 | `province` | texte | — | Référentiel §1 | `OFFICIEL` | Province ou préfecture (8 valeurs). |
-| `milieu` | texte | — | Référentiel §1 | `OFFICIEL` | `Urbain` / `Rural`. |
+| `milieu` | texte | — | Référentiel §1 | `OFFICIEL` | `Urbain` (17 communes) / `Mixte` (60) / `Rural` (69). `Mixte` = commune ayant à la fois des douars urbains et ruraux (D-006), catégorie propre au projet et non officielle. |
 | `start_lat` / `start_lon` | décimal | degrés | Référentiel §1 | `CALCULE` | Point de départ : point représentatif intérieur (D-002). Ordre lat puis lon. |
 | `hospital_osm_type` | texte | — | OpenStreetMap | `OBSERVE` | `node` / `way` / `relation` de l'établissement retenu. |
 | `hospital_osm_id` | texte | — | OpenStreetMap | `OBSERVE` | Identifiant OSM : clé stable de l'établissement. |

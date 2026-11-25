@@ -42,8 +42,10 @@ Temps vers **l'hôpital le plus proche** :
 | 3 | plus de 45 min |
 
 **Jamais 0** : même avec un hôpital sur place, il faut du temps pour y arriver.
-Les bornes 15 / 45 sont **provisoires** (D-015) : elles seront réexaminées quand les temps
-routiers OpenRouteService remplaceront l'estimation actuelle.
+Les bornes 15 / 45 sont **retenues** (D-015). L'analyse de sensibilité a été faite sur six
+variantes de bornes : 91 communes changent de classe, mais le **classement des communes par
+temps de trajet ne change jamais**. Les temps utilisés sont les temps routiers réels
+OpenRouteService, disponibles pour les **146 communes**.
 
 ### Étape 3 — Score
 
@@ -85,8 +87,8 @@ Sans cette séparation, les grandes villes seraient rouges tous les jours et la 
 | Limite | Conséquence |
 |---|---|
 | Niveau 3 = **p90** (1 jour sur 10) et non p99 | le rouge est **fréquent** (~36 jours/an). Écart assumé et chiffré en D-014 ; atténué en affichant la raison et les personnes exposées |
-| Bornes 15 / 45 min **provisoires** | classe de trajet sensible au choix de bornes ; analyse de sensibilité en semaine 3 |
-| Temps de trajet **estimés** (plan B : vol d'oiseau × 1,4 ÷ 50 km/h) | sous-estime les zones de montagne ; remplacés par OpenRouteService dès que possible |
+| Bornes 15 / 45 min **retenues** (D-015) | classe de trajet sensible au choix de bornes ; sensibilité calculée sur 6 variantes : 91 communes changent de classe, le classement non |
+| Temps de trajet **réels** OpenRouteService (146/146) | le plan B (vol d'oiseau × 1,4 ÷ 50 km/h) n'a pas été utilisé ; limite restante : pas de trafic réel, pas de route coupée |
 | Hôpitaux issus d'**OpenStreetMap** | source non officielle ; 16 des 24 hôpitaux de la liste MSPS retrouvés par le nom |
 | Population **légale 2014/2024** (HCP) | population présente ≠ population légale (saisonnalité non couverte) |
 
