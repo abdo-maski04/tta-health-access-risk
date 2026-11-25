@@ -195,11 +195,13 @@ Exemples : `feat: ajoute la carte Streamlit`, `fix: corrige la jointure sur le c
 
 ## 6. Sources et licences
 
-- **HCP 2024** : population, ménages, superficie par commune.
-- **GeoVulnera** : données géographiques des communes.
-- **© contributeurs OpenStreetMap** (licence ODbL) : hôpitaux, routes, contours.
-- **OpenRouteService** : temps de trajet.
-- **Open-Meteo** : prévisions et historique météo.
+- **HCP — RGPH 2024** : limites communales et population légale. Licence à confirmer (D-010).
+- **OpenStreetMap, extrait Geofabrik** : hôpitaux et réseau routier — licence ODbL,
+  « © contributeurs OpenStreetMap ». À citer dans toute publication.
+- **Ministère de la Santé (MSPS)** : liste de 24 hôpitaux, utilisée pour un croisement partiel
+  (16 retrouvés par leur nom).
+- **OpenRouteService** : temps de trajet routiers.
+- **Open-Meteo** : prévisions et historique météorologique.
 - Code : licence MIT (voir `LICENSE`).
 
 ## 7. Limites
