@@ -1,6 +1,6 @@
 # data_dictionary.md — Dictionnaire des variables
 
-> Tenu par le **Membre A**. Version 1.0 — 17 novembre 2026.
+> Tenu par le **Membre A**. Version 1.1 — 2026-11-25 (alignée sur le code de `main`).
 > Règle : chaque variable a une **source**, une **unité**, une **période** et un **statut de qualité**.
 >
 > **Ce dictionnaire décrit la version réellement livrée dans `main`.** Toute colonne listée ici existe dans le fichier ; toute colonne du fichier est listée ici. Contrôles automatiques : `tests/test_referentiel.py` et `tests/test_health_facilities.py`.
@@ -14,9 +14,9 @@
 | 1 | Référentiel communes | `data/processed/communes_TTA_2024.csv` | 146 × 25 |
 | 2 | Contours communaux | `data/processed/communes_TTA.geojson` | 146 × 8 |
 | 3 | Établissements de santé | `data/processed/health_facilities_TTA.csv` | 892 × 13 |
-| 4 | Accessibilité *(semaine 2 — C)* | `accessibility.parquet` | à venir |
-| 5 | Météo & seuils *(semaine 2 — B)* | `historical_weather` / `thresholds` | à venir |
-| 6 | Risque quotidien *(semaine 3)* | `risk_daily` | à venir |
+| 4 | Temps de trajet et zones | `data/processed/travel_time_TTA_2024.csv`, `data/processed/access_zones_TTA.csv` | 146 × 15 et 146 × 13 |
+| 5 | Météo & seuils *(B)* | `weather.weather_daily`, `weather.thresholds`, `weather.forecast_daily` | voir section 5 |
+| 6 | Risque quotidien | `weather.risk_daily` (PostgreSQL) | 10 colonnes, voir section 6 |
 
 ---
 
@@ -160,52 +160,129 @@ Source : extrait **OpenStreetMap** de Geofabrik (Maroc, 12/11/2026), filtré sur
 
 ---
 
-## 4. `accessibility` — temps de trajet *(semaine 2 — propriété A)*
+## 4. `travel_time` — temps de trajet *(propriété A)*
+
+**Fichier livré :** `data/processed/travel_time_TTA_2024.csv` — **146 lignes × 15 colonnes**, une ligne par commune.
+**Statut en base :** les temps sont aujourd'hui lus depuis ce CSV ; une table `accessibility.travel_time` est prévue
+et devra contenir exactement les mêmes colonnes.
 
 | Variable | Type | Unité | Source | Statut | Description / limites |
 |---|---|---|---|---|---|
-| `commune_code` | texte | — | Référentiel §1 | — | Clé |
-| `facility_id` | texte | — | §3 | — | Établissement **retenu** (le plus proche en temps) |
-| `minutes` | entier | minutes | OpenRouteService | `CALCULE` | Temps de trajet routier. **Ne vaut pas garantie en urgence.** |
-| `distance_km` | décimal | km | OpenRouteService | `CALCULE` | Distance routière |
-| `unpaved_share` | décimal | 0–1 | OSM (tag `surface`) | `CALCULE` | Part de route non goudronnée du trajet |
-| `methode` | texte | — | — | — | `ORS_DRIVING_CAR` / `DETOUR_1.4` (plan B) / `NON_CALCULE` |
-| `classe_trajet` | texte | — | Calculé | `CALCULE` | `<15` / `15-45` / `>45`. **Bornes provisoires** — à revoir après examen de la distribution. |
+| `commune_code` | texte | — | Référentiel §1 | — | Clé. Une seule ligne par commune. |
+| `name_fr` | texte | — | Référentiel §1 | `OFFICIEL` | Nom d'affichage. **Jamais utilisé pour une jointure.** |
+| `province` | texte | — | Référentiel §1 | `OFFICIEL` | Province ou préfecture (8 valeurs). |
+| `milieu` | texte | — | Référentiel §1 | `OFFICIEL` | `Urbain` / `Rural`. |
+| `start_lat` / `start_lon` | décimal | degrés | Référentiel §1 | `CALCULE` | Point de départ : point représentatif intérieur (D-002). Ordre lat puis lon. |
+| `hospital_osm_type` | texte | — | OpenStreetMap | `OBSERVE` | `node` / `way` / `relation` de l'établissement retenu. |
+| `hospital_osm_id` | texte | — | OpenStreetMap | `OBSERVE` | Identifiant OSM : clé stable de l'établissement. |
+| `hospital_name` | texte | — | OpenStreetMap | `OBSERVE` | Nom de l'hôpital (parfois en arabe). |
+| `hospital_lat` / `hospital_lon` | décimal | degrés | OpenStreetMap | `OBSERVE` | Coordonnées de l'hôpital. |
+| `distance_km` | décimal | km | OpenRouteService | `CALCULE` | Distance routière réelle. |
+| `temps_min` | décimal | minutes | OpenRouteService | `CALCULE` | Temps de trajet routier : 1,0 (min) / 36,7 (médiane) / 120,2 (max). **Ne vaut pas garantie en urgence.** |
+| `classe_trajet` | entier | 1-3 | Calculé | `CALCULE` | 1 = moins de 15 min, 2 = de 15 à 45 min, 3 = plus de 45 min (D-015). Distribution : 22 / 66 / 58. |
+| `methode` | texte | — | — | — | `ORS_DRIVING_CAR` sur les 146 lignes. Aucun `DETOUR_1.4` n'a été livré. |
+
+La population de la commune n'est **pas** dans ce fichier : elle se trouve dans `communes_TTA_2024.csv` (§1)
+et elle est reprise dans `access_zones_TTA.csv` (§4.1).
+
+### 4.1 Zones d'accessibilité — `access_zones_TTA.csv`
+
+**146 lignes × 13 colonnes**, dérivées du fichier ci-dessus par `scripts/build_access_zones.py` (PR #15) :
+`commune_code`, `name_fr`, `province`, `milieu`, `population_2024`, `temps_min`, `distance_km`, `hospital_name`,
+`zone_15_min`, `zone_30_min`, `zone_45_min`, `zone_60_min` (drapeaux 0/1) et `zone` (texte).
+
+| Zone | Communes | Part | Population | Part |
+|---|---|---|---|---|
+| ≤ 15 min | 22 | 15,1 % | 2 543 958 | 63,1 % |
+| ≤ 30 min | 59 | 40,4 % | 3 087 495 | 76,6 % |
+| ≤ 45 min | 88 | 60,3 % | 3 374 547 | 83,7 % |
+| ≤ 60 min | 108 | 74,0 % | 3 591 480 | 89,1 % |
+| > 60 min | 38 | 26,0 % | 438 742 | 10,9 % |
+
+**Colonnes retirées du dictionnaire v1 :** `facility_id` (remplacé par `hospital_osm_type` + `hospital_osm_id`),
+`minutes` (vrai nom : `temps_min`) et `unpaved_share` (jamais calculé : le tag OSM `surface` n'est pas disponible
+sur les 146 tracés).
 
 ---
 
-## 5. Météo & seuils *(semaine 2 — propriété B)*
+## 5. Météo & seuils *(propriété B)*
 
-| Variable | Type | Unité | Source | Période | Statut |
+Trois tables PostgreSQL du schéma `weather` (créées par `sql/init.sql`). Ce ne sont pas des fichiers livrés :
+elles sont alimentées par `src/tta_risk/weather/` et les scripts de `scripts/`.
+
+### 5.1 `weather.weather_daily` — historique météorologique
+
+| Variable | Type | Unité | Source | Statut | Description |
 |---|---|---|---|---|---|
-| `commune_code` | texte | — | Référentiel §1 | — | Clé |
-| `date` / `forecast_target_date` | date | — | — | — | Ne jamais confondre date d'observation et date visée par la prévision |
-| `precipitation_sum` | décimal | mm | Open-Meteo | — | `OBSERVE` ou `PREVU` |
-| `temperature_2m_max` | décimal | °C | Open-Meteo | — | `OBSERVE` ou `PREVU` |
-| `precipitation_probability_max` | entier | % | Open-Meteo | — | `PREVU` — sert à la **confiance** affichée |
-| `horizon_jours` | entier | jours | Dérivé | — | `forecast_target_date − date_récupération` |
-| `source_fetch_time` | horodatage | — | — | — | **Fraîcheur** de la prévision — affichée dans l'app |
-| `seuil_pluie_p65/p80/p90` | décimal | mm | Calculé | historique | `CALCULE` + `nb_observations` obligatoire |
-| `seuil_chaleur_p65/p80/p90` | décimal | °C | Calculé | historique | Par mois. Niveau 1 = p65, niveau 2 = p80, niveau 3 = p90 (D-014) |
+| `commune_code` | texte | — | Référentiel §1 | — | Clé, avec `date`. |
+| `date` | date | — | Open-Meteo | `OBSERVE` | Jour observé. |
+| `precipitation_sum` | décimal | mm | Open-Meteo | `OBSERVE` | Cumul de pluie du jour. |
+| `temperature_2m_max` | décimal | °C | Open-Meteo | `OBSERVE` | Température maximale du jour. |
+| `ingested_at` | horodatage | — | Base | — | Date d'écriture, automatique. |
+
+### 5.2 `weather.thresholds` — seuils mensuels
+
+| Variable | Type | Unité | Source | Statut | Description |
+|---|---|---|---|---|---|
+| `commune_code` | texte | — | Référentiel §1 | — | Clé, avec `month`. |
+| `month` | petit entier | 1-12 | — | — | Mois calendaire. |
+| `rain_p65` / `rain_p80` / `rain_p90` | décimal | mm | Historique calculé | `CALCULE` | Niveau 1 = p65, 2 = p80, 3 = p90 (D-014). |
+| `heat_p65` / `heat_p80` / `heat_p90` | décimal | °C | Historique calculé | `CALCULE` | Mêmes seuils appliqués à `temperature_2m_max`. |
+| `computed_at` | horodatage | — | Base | — | Date de calcul. |
+
+Une ligne par commune et par mois : 146 × 12 = 1 752 attendues.
+
+### 5.3 `weather.forecast_daily` — prévisions
+
+| Variable | Type | Unité | Source | Statut | Description |
+|---|---|---|---|---|---|
+| `commune_code` | texte | — | Référentiel §1 | — | Clé, avec les deux dates. |
+| `forecast_issued_on` | date | — | — | — | **Date de récupération** de la prévision. |
+| `target_date` | date | — | — | `PREVU` | **Jour visé** par la prévision (horizon de 3 jours). |
+| `precip_mm` | réel | mm | Open-Meteo | `PREVU` | Pluie prévue. |
+| `tmax_c` | réel | °C | Open-Meteo | `PREVU` | Température maximale prévue. |
+| `ingested_at` | horodatage | — | Base | — | Date d'écriture, automatique. |
+
+Clé : (`commune_code`, `forecast_issued_on`, `target_date`).
+
+> Piège : ne jamais confondre `forecast_issued_on` (quand on a récupéré) et `target_date` (le jour prévu).
+> C'était exactement le bug corrigé en PR #14.
+
+**Colonnes retirées du dictionnaire v1 :** `precipitation_probability_max` (non récupérée),
+`horizon_jours` (= `target_date` − `forecast_issued_on`, recalculable), `source_fetch_time` (= `ingested_at`),
+`nb_observations` (non stocké ; la fiabilité des seuils est contrôlée par `tests/test_thresholds.py`).
 
 ---
 
-## 6. `risk_daily` — sortie du scoring *(semaine 3)*
+## 6. `weather.risk_daily` — sortie du danger quotidien *(propriété B, complétée par A)*
+
+Table écrite par `scripts/run_risk_daily.py`. **État actuel : le danger météo est écrit, le score ne l'est pas
+encore** — les quatre colonnes du score sont ajoutées à l'étape suivante (dernière ligne de ce tableau).
 
 | Variable | Type | Unité | Statut | Description |
 |---|---|---|---|---|
-| `commune_code` | texte | — | — | Clé |
-| `date` | date | — | — | Date visée par la prévision |
-| `danger_meteo` | entier | 0–3 | `CALCULE` | Niveau issu des seuils p65/p80/p90 (1 = p65, 2 = p80, 3 = p90) |
-| `composante_pluie` | entier | 0–3 | `CALCULE` | **Conservée séparément** |
-| `composante_chaleur` | entier | 0–3 | `CALCULE` | **Conservée séparément** |
-| `classe_trajet` | entier | 1-3 | `CALCULE` | 1 = moins de 15 min, 2 = 15 à 45 min, 3 = plus de 45 min (D-015) |
-| `score` | entier | — | `CALCULE` | `danger_meteo × classe_trajet`. **Score expérimental, PAS une probabilité.** |
-| `niveau` | texte | — | `CALCULE` | `vert` / `jaune` / `orange` / `rouge` |
-| `raison` | texte | — | `CALCULE` | Facteur dominant. **Règle de départage unique**, identique dans le code, le rapport et l'interface. |
-| `population_exposee` | entier | hab. | `CALCULE` | **Indicateur séparé** — n'entre PAS dans le calcul du risque |
-| `qualite_donnees` | texte | — | — | `COMPLET` / `PARTIEL` / `DEGRADE` |
-| `statut_peremption` | texte | — | — | `FRAIS` / `PERIME` — **une donnée périmée ne doit jamais s'afficher comme fraîche** |
+| `commune_code` | texte | — | — | Clé, avec les deux dates. |
+| `forecast_issued_on` | date | — | — | Date de récupération de la prévision. |
+| `target_date` | date | — | — | Jour visé. |
+| `precip_mm` | réel | mm | `PREVU` | Pluie prévue. |
+| `tmax_c` | réel | °C | `PREVU` | Température maximale prévue. |
+| `rain_level` | petit entier | 0-3 | `CALCULE` | Niveau pluie : 0 si moins de 1 mm ; 1 si ≥ p65 ; 2 si ≥ p80 ; 3 si ≥ p90. |
+| `heat_level` | petit entier | 0-3 | `CALCULE` | Niveau chaleur, mêmes seuils appliqués à `tmax_c`. |
+| `danger` | petit entier | 0-3 | `CALCULE` | `max(rain_level, heat_level)`. C'est le `danger_meteo` de la méthodologie. |
+| `dominant` | texte | — | `CALCULE` | Météo dominante **uniquement** : `rain` / `heat` / `both` / `none`. Ne vaut jamais `eloignement` (D-018). |
+| `computed_at` | horodatage | — | — | Date d'écriture, automatique. |
+
+> Les quatre colonnes suivantes seront ajoutées par le module de scoring (décision D-018) :
+> `classe_trajet` (1-3), `score` (0, 1, 2, 3, 4, 6, 9), `niveau` (`vert` / `jaune` / `orange` / `rouge`)
+> et `raison` (`pluie` / `chaleur` / `eloignement`).
+> **`raison` est le facteur affiché ; `dominant` ne parle que de météo.** Les deux colonnes coexistent,
+> aucune ne remplace l'autre.
+
+**Colonnes retirées du dictionnaire v1 :** `danger_meteo` (nom réel : `danger`), `composante_pluie` et
+`composante_chaleur` (noms réels : `rain_level` et `heat_level`), `date` (nom réel : `target_date`),
+`population_exposee` (calculée à l'affichage et dans l'export, jamais stockée commune par commune),
+`qualite_donnees` et `statut_peremption` (jamais calculés : la fraîcheur se lit avec `forecast_issued_on`
+et `computed_at`).
 
 ---
 

@@ -35,30 +35,31 @@ Formule détaillée : `docs/methodology.md`.
 | `.gitignore` | Liste ce que Git ne doit jamais versionner (`.env`, `.venv`, logs, fichiers temporaires). |
 | `.env.example` | Modèle des variables secrètes attendues (ex. `ORS_API_KEY=`), **sans valeurs**. Chacun le copie en `.env` (jamais commité). |
 | `pytest.ini` | Configuration des tests (indique que le code est dans `src/`). |
-| `Makefile` | Raccourcis de commandes (installer, tester, lancer l'application, construire les données). |
-| `docker-compose.yml` | Lance Airflow et PostgreSQL ensemble en une commande. |
+| `Makefile` | **Encore vide.** Destiné aux raccourcis de commandes (installer, tester, lancer). |
+| `docker-compose.yml` | Lance PostgreSQL seul (service `postgres`, port 5433) et applique `sql/init.sql`. Le service Airflow n'est pas encore ajouté. |
 
 ### Dossiers
 
 | Dossier | Contenu et intérêt |
 |---|---|
 | `requirements/` | Dépendances Python, en trois fichiers : `base.txt` (communes, données, base), `app.txt` (Streamlit, cartes), `dev.txt` (tests). Séparés pour éviter les conflits de versions avec Airflow. |
-| `data/raw/` | Fichiers sources tels que reçus (HCP 2024, GeoVulnera). Ne pas modifier. |
+| `data/raw/` | Fichiers sources tels que reçus (HCP : population légale RGPH 2014 et 2024). Ne pas modifier. |
 | `data/interim/` | Résultats intermédiaires (ex. historique météo brut). **Non versionné** (lourd, régénérable). |
-| `data/processed/` | Jeu de données final livrable (CSV/Parquet/GeoJSON) et export de démo hors ligne. |
+| `data/processed/` | Jeu de données livrable : 4 CSV et 2 GeoJSON, tous construits par les scripts de `scripts/`. |
 | `src/tta_risk/` | **Le cœur du projet** : tout le code réutilisable. |
-| `src/tta_risk/config.py` | Paramètres centraux (chemins, URLs, lecture du `.env`). |
-| `src/tta_risk/ingest/` | Chargement des communes, des hôpitaux et des contours. |
-| `src/tta_risk/routing/` | Client OpenRouteService et calcul des temps de trajet. |
+| `src/tta_risk/config.py` | **Encore vide.** Destiné aux paramètres centraux (chemins, URLs, lecture du `.env`). |
+| `src/tta_risk/ingest/` | **Encore vide** : le chargement des communes, des hôpitaux et des contours se fait dans `src/tta_risk/reference/`. |
+| `src/tta_risk/routing/` | **Encore vide** : le client OpenRouteService est pour l'instant dans `scripts/build_travel_time.py`. |
 | `src/tta_risk/weather/` | Client Open-Meteo (prévisions, historique) et calcul des seuils. |
-| `src/tta_risk/scoring/` | Danger météo, classe de trajet, score, couleur, raison principale. |
+| `src/tta_risk/scoring/` | Danger météo (`danger.py`, B), classe de trajet, score, couleur et raison principale (`score.py`, A). |
+| `src/tta_risk/reference/` | Construction du référentiel, de la démographie, du milieu et du livrable (`build_referentiel.py`, `build_demographics.py`, `build_milieu.py`, `build_livrable.py`). |
 | `src/tta_risk/db/` | Accès à la base PostgreSQL (connexion, lecture, écriture). |
-| `scripts/` | Points d'entrée de la partie fixe, lancés une seule fois (`build_communes`, `build_hospitals`, `build_travel_time`, `build_thresholds`). |
-| `sql/schema.sql` | Création des tables (`communes`, `hospitals`, `travel_time`, `thresholds`, `forecast_daily`, `risk_daily`). |
-| `docker/postgres/init.sql` | Crée automatiquement la base `tta_risk` au premier démarrage de PostgreSQL. |
-| `airflow/dags/` | Le DAG quotidien (`daily_risk_dag.py`). Il reste **fin** : il appelle seulement des fonctions de `src/`. |
-| `airflow/Dockerfile` | Image Airflow avec nos dépendances et accès à `src/`. |
-| `app/streamlit_app.py` | Application web : carte, filtres, détail par commune. |
+| `scripts/` | Points d'entrée : partie fixe lancée une seule fois (`build_travel_time.py`, `build_access_zones.py`, `build_thresholds.py`) et partie quotidienne (`run_risk_daily.py`). |
+| `sql/init.sql` | Crée les tables au premier démarrage de PostgreSQL : `weather.weather_daily`, `weather.thresholds`, `weather.forecast_daily`, `weather.risk_daily`. |
+| `sql/upsert.sql` | Requête d'insertion avec mise à jour (`ON CONFLICT`) pour l'historique météo. |
+| `airflow/dags/` | Le DAG quotidien (`daily_risk_dag.py`). **Encore vide, à écrire** ; il restera **fin** : il appellera seulement des fonctions de `src/`. |
+| `airflow/Dockerfile` | Image Airflow avec nos dépendances et accès à `src/`. **Encore vide, à écrire.** |
+| `app/streamlit_app.py` | Application web : carte, filtres, détail par commune. **Encore vide, à écrire.** |
 | `notebooks/` | Exploration et essais. Le code final va dans `src/`, pas ici. |
 | `tests/` | Tests automatiques. `tests/fixtures/` contient de petites données fictives pour tester sans réseau. |
 | `docs/methodology.md` | La formule du risque, en une page. |
@@ -74,16 +75,17 @@ Formule détaillée : `docs/methodology.md`.
 
 ## 3. Installation
 
-```powershell
+```bat
 git clone https://github.com/abdo-maski04/tta-health-access-risk.git
 cd tta-health-access-risk
 python -m venv .venv
-.venv\Scripts\Activate.ps1
+.venv\Scripts\activate.bat
 pip install -r requirements/dev.txt
 copy .env.example .env
 pytest
 ```
 
+Sous PowerShell, remplacer `activate.bat` par `.venv\Scripts\Activate.ps1`.
 Linux/macOS : `source .venv/bin/activate` et `cp .env.example .env`.
 Les instructions pour Docker (Airflow, PostgreSQL) et Streamlit seront ajoutées ici.
 
@@ -93,8 +95,9 @@ Les instructions pour Docker (Airflow, PostgreSQL) et Streamlit seront ajoutées
 
 ### Les règles
 
-1. **Chacun a sa branche personnelle** : `abderrahmane`, `membre-b`, `membre-c`.
-   On ne commite **jamais** directement sur `main`.
+1. **`main` est protégée.** On ne commite **jamais** directement dessus : on travaille sur une
+   branche (`abderrahmane/dev` pour le pipeline, `feat/...` ou `fix/...` pour une modification
+   précise). **Une branche = une Pull Request.**
 2. **`main` doit toujours fonctionner.** On y fusionne seulement du code qui tourne.
 3. **On fusionne souvent** (au moins une fois par jour de travail) pour éviter les gros conflits.
 4. **Aucun secret dans Git** : clés API uniquement dans `.env`.
@@ -128,8 +131,8 @@ git pull origin main        # récupère le travail des autres
 # 2. Travailler, puis vérifier ce qui a changé
 git status
 
-# 3. Enregistrer
-git add .
+# 3. Enregistrer UN fichier a la fois (jamais git add .)
+git add scripts/build_thresholds.py
 git commit -m "feat: ajoute le calcul des seuils de pluie"
 
 # 4. Envoyer sur GitHub
@@ -150,7 +153,7 @@ git push
 |---|---|
 | `git status` | Montre les fichiers modifiés. |
 | `git pull origin main` | Récupère `main` dans ta branche actuelle. |
-| `git add .` | Prépare toutes les modifications pour le commit. |
+| `git add <fichier>` | Prépare **un** fichier pour le commit. Jamais `git add .` ni `git add -A` : ça ramasse des fichiers oubliés. |
 | `git commit -m "message"` | Enregistre un point de sauvegarde local. |
 | `git push` | Envoie tes commits sur GitHub. |
 | `git checkout <branche>` | Change de branche. |
@@ -173,7 +176,7 @@ Exemples : `feat: ajoute la carte Streamlit`, `fix: corrige la jointure sur le c
 ### En cas de problème
 
 - **Conflit au `git pull`** : ouvre les fichiers marqués, garde la bonne version
-  (supprime les lignes `<<<<<<<`, `=======`, `>>>>>>>`), puis `git add .` et `git commit`.
+  (supprime les lignes `<<<<<<<`, `=======`, `>>>>>>>`), puis `git add` sur chaque fichier corrigé et `git commit`.
   Bloqué plus de 30 minutes : demande à un coéquipier.
 - **Commit fait par erreur (pas encore poussé)** : `git reset --soft HEAD~1`.
 - **Clé API poussée par erreur** : la **régénérer immédiatement** (la supprimer de Git ne suffit pas).
