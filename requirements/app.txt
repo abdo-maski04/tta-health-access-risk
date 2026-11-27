@@ -12,6 +12,7 @@ streamlit>=1.35.0,<2.0.0
 # Cartographie interactive
 folium>=0.16.0,<1.0.0
 streamlit-folium>=0.19.0,<1.0.0
+pydeck>=0.8.0,<1.0.0
 
 # Graphiques de synthèse & KPIs
 plotly>=5.20.0,<6.0.0
