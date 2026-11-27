@@ -2,7 +2,6 @@ import sys
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "app"))
 
@@ -13,6 +12,7 @@ from data_loader import (  # noqa: E402
     load_communes_geojson,
     load_facilities,
 )
+from map_utils import commune_color_values, numeric_color_range  # noqa: E402
 from pages.risk_map import (  # noqa: E402
     commune_areas_km2,
     commune_code_from_map_event,
@@ -20,7 +20,6 @@ from pages.risk_map import (  # noqa: E402
     filter_map_communes,
     simplify_commune_geojson,
 )
-from map_utils import commune_color_values, numeric_color_range  # noqa: E402
 
 
 class AppRiskMapTests(unittest.TestCase):
@@ -169,6 +168,14 @@ class AppRiskMapTests(unittest.TestCase):
         navigation = app.radio(key="sidebar_navigation_radio")
         navigation.set_value(navigation.options[1])
         app.run(timeout=120)
+
+        self.assertEqual(list(app.exception), [])
+
+        # Switch to historical full screen SIG view to test its enterprise tabs and controls
+        map_selector = app.radio(key="geovulnera_active_map_selector")
+        if map_selector and len(map_selector.options) >= 4:
+            map_selector.set_value(map_selector.options[3])
+            app.run(timeout=120)
 
         self.assertEqual(list(app.exception), [])
         self.assertEqual(len(app.tabs), 2)

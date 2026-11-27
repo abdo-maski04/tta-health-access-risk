@@ -3,16 +3,15 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app"
 sys.path.insert(0, str(APP))
 
-from config.settings import APP_TITLE, REGION_NAME
-from config.theme import APP_CSS, COLORS, THEME
-from components.sidebar import DASHBOARDS, NAVIGATION_ICON_SVGS
-from components.kpi_card import kpi_card
-from components.states import unavailable_state
+from components.kpi_card import kpi_card  # noqa: E402
+from components.sidebar import DASHBOARDS, NAVIGATION_ICON_SVGS  # noqa: E402
+from components.states import unavailable_state  # noqa: E402
+from config.settings import APP_TITLE, REGION_NAME  # noqa: E402
+from config.theme import APP_CSS, COLORS, THEME  # noqa: E402
 
 
 class AppComponentTests(unittest.TestCase):

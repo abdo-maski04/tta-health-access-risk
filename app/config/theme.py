@@ -91,7 +91,7 @@ APP_CSS = f"""
     --tta-orange: {THEME.orange};
     --tta-red: {THEME.red};
     --tta-grey: {THEME.grey};
-    --tta-background: {THEME.background};
+    --tta-background: #F4F7F9;
     --tta-surface: {THEME.surface};
     --tta-border: {THEME.border};
     --tta-text: {THEME.text};
@@ -117,14 +117,17 @@ html, body {{
     background: transparent;
 }}
 
+[data-testid="stToolbar"] {{
+    display: none !important;
+}}
 [data-testid="stSidebar"][aria-expanded="true"] {{
     width: 230px !important;
     min-width: 230px !important;
     max-width: 230px !important;
 }}
 [data-testid="stSidebar"] {{
-    background: var(--tta-surface);
-    border-right: 1px solid var(--tta-border);
+    background: #FFFFFF !important;
+    border-right: 1px solid #E2E8F0 !important;
 }}
 [data-testid="stSidebar"] [data-testid="stImage"] {{
     margin: 8px 0 4px;
@@ -148,7 +151,7 @@ html, body {{
     min-height: 40px;
     margin: 0;
     padding: 9px 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--tta-navy-secondary);
     font-size: 13px;
     font-weight: 500;
@@ -162,14 +165,19 @@ html, body {{
     display: none !important;
 }}
 [data-testid="stSidebar"] [role="radiogroup"] label:hover {{
-    background: rgba(21, 155, 142, 0.08);
-    color: var(--tta-turquoise);
+    background: rgba(13, 92, 117, 0.08);
+    color: #0D5C75;
 }}
 [data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {{
-    background: #159B8E !important;
+    background: #0D5C75 !important;
     color: #FFFFFF !important;
+    border-radius: 10px !important;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(8, 127, 140, 0.35);
+    box-shadow: 0 4px 12px rgba(13, 92, 117, 0.35);
+}}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) img,
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) svg {{
+    filter: brightness(0) invert(1) !important;
 }}
 [data-testid="stSidebar"] [data-baseweb="select"] > div,
 [data-testid="stSidebar"] [data-baseweb="input"] > div,

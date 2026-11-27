@@ -1,0 +1,34 @@
+{
+  "method": "Empirical Regional Interpolation (146 validated ORS v2 routes)",
+  "total_regional_population": 4030222,
+  "tiers": [
+    {
+      "threshold_min": 15,
+      "category": "Zone d'urgence vitale immédiate",
+      "communes": 18,
+      "population": 2416022,
+      "pct": 59.95
+    },
+    {
+      "threshold_min": 30,
+      "category": "Golden Hour (Heure d'Or chirurgicale)",
+      "communes": 52,
+      "population": 3014844,
+      "pct": 74.81
+    },
+    {
+      "threshold_min": 45,
+      "category": "Accessibilité acceptable",
+      "communes": 83,
+      "population": 3342002,
+      "pct": 82.92
+    },
+    {
+      "threshold_min": 60,
+      "category": "Seuil critique d'isolement territorial (> 60 min)",
+      "communes": 107,
+      "population": 3587681,
+      "pct": 89.02
+    }
+  ]
+}

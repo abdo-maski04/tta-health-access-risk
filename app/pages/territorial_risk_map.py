@@ -7,10 +7,10 @@ et de sensibilité climatique par commune, sans score composite artificiel prém
 from __future__ import annotations
 
 import html
+
 import folium
-from folium.plugins import Fullscreen
 import streamlit as st
-from config.settings import REGION_NAME
+from folium.plugins import Fullscreen
 from map_utils import render_map
 
 
@@ -172,9 +172,16 @@ def render_territorial_risk_map(
     fmap = folium.Map(
         location=[35.25, -5.35],
         zoom_start=8,
-        tiles="cartodbpositron",
+        tiles=None,
         control_scale=True,
     )
+    folium.TileLayer(
+        tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        attr="&copy; OpenStreetMap contributors &copy; CARTO",
+        subdomains="abcd",
+        max_zoom=20,
+        control=False,
+    ).add_to(fmap)
 
     Fullscreen(
         position="topleft",

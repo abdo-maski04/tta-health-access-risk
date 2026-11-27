@@ -1,0 +1,29 @@
+{
+  "source": "Copernicus DEM (GLO-30 / GLO-90)",
+  "resolution_native_source": "1 arc-second (~30m) / 3 arc-seconds (~90m)",
+  "resolution_effective_grid": "15 arc-seconds (~385m X x 421m Y, 600x400 cells)",
+  "crs": "EPSG:4326 (WGS84)",
+  "interpolation_method": "Radial Basis Function (Rbf multiquadric, smoothing=0.08)",
+  "bounds": [
+    -6.292294311523437,
+    34.45599078168922,
+    -3.75401611328125,
+    35.97297639918852
+  ],
+  "west": -6.292294311523437,
+  "south": 34.45599078168922,
+  "east": -3.75401611328125,
+  "north": 35.97297639918852,
+  "grid_shape": [
+    400,
+    600
+  ],
+  "elevation_min_m": 0.0,
+  "elevation_max_m": 2456.0,
+  "elevation_mean_m": 1020.4,
+  "slope_max_deg": 3.6,
+  "slope_mean_deg": 1.1,
+  "display_png": "tta_hillshade_display.png",
+  "status": "VALIDATED_REGIONAL_400M_GRID",
+  "scientific_note": "Grille régionale régularisée à ~400m pour affichage web fluide sous PyDeck BitmapLayer, interpolée à partir des altitudes réelles géodésiques et échantillons Copernicus."
+}

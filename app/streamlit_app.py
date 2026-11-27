@@ -20,8 +20,6 @@ from components.sidebar import render_sidebar  # noqa: E402
 from components.states import unavailable_state  # noqa: E402
 from config.settings import APP_TITLE  # noqa: E402
 from config.theme import APP_CSS  # noqa: E402
-from pages.overview import render_overview  # noqa: E402
-from pages.risk_map import render_interactive_risk_map  # noqa: E402
 from pages.analytics import (  # noqa: E402
     render_alerts,
     render_commune_details,
@@ -29,6 +27,8 @@ from pages.analytics import (  # noqa: E402
     render_monitoring,
     render_trends,
 )
+from pages.overview import render_overview  # noqa: E402
+from pages.risk_map import render_interactive_risk_map  # noqa: E402
 
 try:
     from data_loader import get_prepared_data  # noqa: E402

@@ -3,7 +3,6 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "app"))
 
@@ -58,7 +57,6 @@ class AppMapTests(unittest.TestCase):
 
     def test_tooltip_escapes_javascript_template_delimiters(self):
         import folium
-
         from map_utils import build_unassigned_facility_layer
 
         folium_map = folium.Map(location=[35.20, -5.45], zoom_start=7)
@@ -79,7 +77,7 @@ class AppMapTests(unittest.TestCase):
 
     def test_folium_layer_contains_146_polygons_and_892_markers(self):
         import folium
-
+        from config.theme import THEME
         from data_loader import (
             assign_facility_communes,
             join_commune_properties,
@@ -87,7 +85,6 @@ class AppMapTests(unittest.TestCase):
             load_communes_geojson,
             load_facilities,
         )
-        from config.theme import THEME
         from map_utils import (
             build_commune_layer,
             build_facility_layer,
@@ -263,7 +260,6 @@ class AppMapTests(unittest.TestCase):
 
     def test_enterprise_facility_markers_use_typed_svg_badges(self):
         import folium
-
         from map_utils import build_facility_layer
 
         folium_map = folium.Map(location=[35.2, -5.45], zoom_start=7)
@@ -286,7 +282,6 @@ class AppMapTests(unittest.TestCase):
 
     def test_map_legend_uses_vector_facility_icons(self):
         import folium
-
         from map_utils import add_enterprise_map_controls
 
         folium_map = folium.Map(location=[35.2, -5.45], zoom_start=7)
@@ -304,13 +299,10 @@ class AppMapTests(unittest.TestCase):
         self.assertNotIn(">H</text>", rendered)
 
     def test_bubbles_heatmap_and_quick_controls_use_real_map_data(self):
-        import folium
-
         from map_utils import (
             add_enterprise_map_controls,
             build_heatmap_layer,
             build_proportional_bubble_layer,
-            geojson_bounds,
             get_initial_map,
         )
 

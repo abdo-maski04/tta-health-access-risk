@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "tta_hydrorivers",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-01", "name": "Oued Loukkos", "RIV_ORD": 1, "LENGTH_KM": 176.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.42, 35.15 ], [ -5.48, 35.1 ], [ -5.54, 35.03 ], [ -5.62, 34.98 ], [ -5.7, 34.95 ], [ -5.78, 34.97 ], [ -5.86, 35.02 ], [ -5.91, 35.08 ], [ -6.02, 35.14 ], [ -6.15, 35.185 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-02", "name": "Oued Martil", "RIV_ORD": 2, "LENGTH_KM": 55.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.48, 35.48 ], [ -5.42, 35.53 ], [ -5.37, 35.56 ], [ -5.32, 35.58 ], [ -5.28, 35.615 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-03", "name": "Oued Laou", "RIV_ORD": 2, "LENGTH_KM": 70.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.28, 35.17 ], [ -5.25, 35.22 ], [ -5.22, 35.3 ], [ -5.18, 35.38 ], [ -5.12, 35.43 ], [ -5.085, 35.45 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-04", "name": "Oued Ghis", "RIV_ORD": 2, "LENGTH_KM": 110.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -4.28, 34.92 ], [ -4.22, 35.01 ], [ -4.15, 35.1 ], [ -4.05, 35.16 ], [ -3.95, 35.2 ], [ -3.9, 35.22 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-05", "name": "Oued Nekor", "RIV_ORD": 2, "LENGTH_KM": 100.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -4.12, 34.85 ], [ -4.02, 34.95 ], [ -3.92, 35.05 ], [ -3.88, 35.14 ], [ -3.85, 35.215 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-06", "name": "Oued Tahaddart", "RIV_ORD": 3, "LENGTH_KM": 35.0, "category": "Rivière / Oued intermédiaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.88, 35.55 ], [ -5.92, 35.57 ], [ -5.97, 35.59 ], [ -6.02, 35.61 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-07", "name": "Oued Mharhar", "RIV_ORD": 3, "LENGTH_KM": 40.0, "category": "Rivière / Oued intermédiaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.78, 35.5 ], [ -5.84, 35.53 ], [ -5.9, 35.56 ], [ -5.95, 35.58 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-08", "name": "Oued El Hachef", "RIV_ORD": 3, "LENGTH_KM": 42.0, "category": "Rivière / Oued intermédiaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.82, 35.42 ], [ -5.88, 35.47 ], [ -5.93, 35.52 ], [ -5.98, 35.57 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-09", "name": "Oued Smir", "RIV_ORD": 3, "LENGTH_KM": 25.0, "category": "Rivière / Oued intermédiaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.41, 35.7 ], [ -5.36, 35.715 ], [ -5.33, 35.725 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-10", "name": "Oued Amsa", "RIV_ORD": 4, "LENGTH_KM": 22.0, "category": "Tributaire / Oued secondaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.32, 35.46 ], [ -5.28, 35.5 ], [ -5.24, 35.525 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-11", "name": "Oued Khemis Anjra", "RIV_ORD": 4, "LENGTH_KM": 28.0, "category": "Tributaire / Oued secondaire" }, "geometry": { "type": "LineString", "coordinates": [ [ -5.54, 35.76 ], [ -5.52, 35.8 ], [ -5.5, 35.84 ] ] } },
+{ "type": "Feature", "properties": { "HYRIV_ID": "RIV-12", "name": "Oued Ouerrha (Amont Rifain)", "RIV_ORD": 1, "LENGTH_KM": 120.0, "category": "Cours d'eau majeur / Oued principal" }, "geometry": { "type": "LineString", "coordinates": [ [ -4.95, 34.98 ], [ -5.05, 34.92 ], [ -5.18, 34.86 ], [ -5.35, 34.78 ], [ -5.52, 34.72 ] ] } }
+]
+}

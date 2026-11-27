@@ -1103,7 +1103,6 @@ def _commune_picker(communes: list[dict], key: str) -> dict | None:
 
 def render_commune_details(communes: list[dict], commune_geojson: dict, facilities: list[dict]) -> None:
     """Dashboard 4: Détails Commune - profil démographique, territorial et infrastructures de santé."""
-    import folium
 
     def _commune_label(row: dict) -> str:
         return f"{row.get('name_fr', '')} · {row.get('province', '')} · {row.get('commune_code', '')}"
@@ -1309,8 +1308,8 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
             "stroke='currentColor' stroke-width='1.5' stroke-linecap='round' "
             "stroke-linejoin='round' aria-hidden='true'>"
             "<path d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z'/><circle cx='12' cy='10' r='2.5'/></svg>"
-            f"<div><h1>Détails Commune</h1>"
-            f"<p>Explorer le profil démographique, les caractéristiques territoriales et les infrastructures de santé de chaque commune</p></div>"
+            "<div><h1>Détails Commune</h1>"
+            "<p>Explorer le profil démographique, les caractéristiques territoriales et les infrastructures de santé de chaque commune</p></div>"
             "</div>",
             unsafe_allow_html=True,
         )

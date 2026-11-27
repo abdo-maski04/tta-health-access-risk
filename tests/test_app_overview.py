@@ -2,7 +2,6 @@ import sys
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app"
 sys.path.insert(0, str(APP))
@@ -15,10 +14,10 @@ from data_loader import (  # noqa: E402
     load_facilities,
 )
 from pages.overview import (  # noqa: E402
+    _build_map,
     available_population_years,
     build_provincial_summary,
     filter_overview_communes,
-    _build_map,
 )
 from visualization.overview_charts import (  # noqa: E402
     associated_facilities_by_province,

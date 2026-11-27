@@ -6,9 +6,9 @@ Génère de manière déterministe, traçable et reproductible depuis le dépôt
 3. data/interim/health_facility_matching_audit_TTA.csv
 """
 
-import os
 import csv
 import json
+import os
 from collections import defaultdict
 from difflib import SequenceMatcher
 
@@ -50,13 +50,13 @@ def normalize_commune_name(raw_name: str) -> str:
 
 # 3. Chargement des référentiels communaux et géométries
 print("[1/6] Chargement des communes et géométries...")
-with open(COMMUNES_CSV, "r", encoding="utf-8") as f:
+with open(COMMUNES_CSV, encoding="utf-8") as f:
     communes_raw = list(csv.DictReader(f))
 
 communes_by_code = {c["commune_code"]: c for c in communes_raw}
 communes_by_name = {c["name_fr"].strip().lower(): c for c in communes_raw}
 
-with open(COMMUNES_GEOJSON, "r", encoding="utf-8") as f:
+with open(COMMUNES_GEOJSON, encoding="utf-8") as f:
     geojson_data = json.load(f)
 
 # Index spatial optimisé avec Bounding Box
@@ -78,7 +78,8 @@ for feature in geojson_data["features"]:
 def _point_in_ring(lon, lat, ring):
     inside = False
     points = list(ring)
-    if len(points) < 3: return False
+    if len(points) < 3:
+        return False
     for index in range(len(points)):
         x1, y1 = points[index]
         x2, y2 = points[(index + 1) % len(points)]
@@ -96,23 +97,26 @@ def _point_in_geometry(lon, lat, geom, bbox):
         polys = [geom["coordinates"]]
     elif geom["type"] == "MultiPolygon":
         polys = geom["coordinates"]
-    else: return False
+    else:
+        return False
     for poly in polys:
-        if not poly: continue
+        if not poly:
+            continue
         if _point_in_ring(lon, lat, poly[0]):
             in_hole = any(_point_in_ring(lon, lat, hole) for hole in poly[1:])
-            if not in_hole: return True
+            if not in_hole:
+                return True
     return False
 
 # 4. Chargement des données sanitaires
 print("[2/6] Chargement des sources sanitaires...")
-with open(FILE_COMMUNES_PUBLIC, "r", encoding="utf-8") as f:
+with open(FILE_COMMUNES_PUBLIC, encoding="utf-8") as f:
     pub_communes_raw = list(csv.DictReader(f))
 
-with open(FILE_FACILITIES_PUBLIC, "r", encoding="utf-8") as f:
+with open(FILE_FACILITIES_PUBLIC, encoding="utf-8") as f:
     pub_facilities_raw = list(csv.DictReader(f))
 
-with open(OSM_FACILITIES_CSV, "r", encoding="utf-8") as f:
+with open(OSM_FACILITIES_CSV, encoding="utf-8") as f:
     osm_facilities_raw = list(csv.DictReader(f))
 
 # Attribution spatiale stricte des établissements OSM aux communes
@@ -161,21 +165,21 @@ VERIFIED_MATCHES = {
     "PUB-TTA-MA-01-051-019": ("789174103", "MATCH_MANUAL_VERIFIED", "Exact name & location match", "Hôpital Mohamed V Al Hoceima"),
     "PUB-TTA-MA-01-051-043": ("10920276384", "MATCH_CANDIDATE", "Candidate name similarity", "Health Center Imzouren - Nécessite confirmation terrain HPr vs CSU"),
     "PUB-TTA-MA-01-051-065": ("789267614", "MATCH_MANUAL_VERIFIED", "Bilingual toponymic verification", "مستشفى حمان الفطواكي ايت عزة - Nom officiel de l'Hôpital de Proximité de Targuist"),
-    
+
     # Chefchaouen (1 hôpital)
     "PUB-TTA-MA-01-151-100": ("305583432", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hôpital Mohamed V Chefchaouen (nœud principal, doublons 297605167/3195514325 tracés)"),
-    
+
     # Larache (2 hôpitaux)
     "PUB-TTA-MA-01-331-143": ("789778445", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hopital Provincial de Ksar El Kébir"),
     "PUB-TTA-MA-01-331-156": ("12815056754", "MATCH_MANUAL_VERIFIED", "Official title match", "Hôpital Princesse Lalla Meriem à Larache"),
-    
+
     # M'diq-Fnideq (2 hôpitaux)
     "PUB-TTA-MA-01-573-178": (None, "NO_MATCH", "Spatial vacancy", "Hôpital Hassan II Fnideq - Aucun hôpital OSM recensé sur Fnideq"),
     "PUB-TTA-MA-01-573-182": ("293247182", "MATCH_MANUAL_VERIFIED", "Name & commune match", "Hopital Mohamed 6 à M'Diq"),
-    
+
     # Ouezzane (1 hôpital)
     "PUB-TTA-MA-01-405-206": ("12815486724", "MATCH_MANUAL_VERIFIED", "Official project match", "Projet Centre Hospitalier Provincial d'Ouezzane (Abou Kacem Zahraoui)"),
-    
+
     # Tanger-Assilah (10 hôpitaux)
     "PUB-TTA-MA-01-511-230": ("12815618481", "MATCH_MANUAL_VERIFIED", "Single municipal hospital match", "Hôpital d'Assilah (nœud OSM 12815618481)"),
     "PUB-TTA-MA-01-511-235": ("871505068", "MATCH_MANUAL_VERIFIED", "Campus level match", "Pôle hospitalier CHU Mohammed VI Tanger (spécialités, way OSM 871505068)"),
@@ -187,7 +191,7 @@ VERIFIED_MATCHES = {
     "PUB-TTA-MA-01-511-260": ("564951388", "MATCH_CANDIDATE", "Historical toponymic match", "Hôpital Duc de Tovar / Hôpital Espagnol - Nécessite confirmation cadastrale"),
     "PUB-TTA-MA-01-511-270": ("122398955", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hôpital Mohammed V Tanger"),
     "PUB-TTA-MA-01-511-271": ("475665966", "MATCH_MANUAL_VERIFIED", "Exact name & arrondissement match", "Hôpital Mohammed VI Bni Makada"),
-    
+
     # Tétouan (3 hôpitaux)
     "PUB-TTA-MA-01-571-290": ("1242229574", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hospital Ben Karrich"),
     "PUB-TTA-MA-01-571-306": (None, "NO_MATCH", "Absence in OSM", "Hôpital psychiatrique Errazi Tétouan - Non répertorié dans OSM"),
@@ -204,7 +208,7 @@ for h in hospitals_ministry:
     fid = h["facility_id"]
     match_info = VERIFIED_MATCHES.get(fid, (None, "NO_MATCH", "No candidate", "Non traité"))
     osm_id, status, method, comment = match_info
-    
+
     osm_name = ""
     sim_score = 0.0
     if osm_id and osm_id in osm_by_id:
@@ -274,7 +278,7 @@ for c in communes_raw:
     code = c["commune_code"]
     pop = int(c["population_2024"]) if c.get("population_2024") else 0
     f2 = f2_by_code[code]
-    
+
     pub_csu = int(f2["CSU"])
     pub_csr = int(f2["CSR"])
     pub_csr2 = csr2_by_code[code]
@@ -283,19 +287,19 @@ for c in communes_raw:
     pub_hospitals = int(f2["Hospitals"])
     pub_spec = int(f2["Specialized"])
     pub_total = int(f2["Total_Public_Official"])
-    
+
     # Indicateurs OSM dans le polygone communal
     osm_list = osm_by_commune[code]
     osm_pharmacies = sum(1 for o in osm_list if o["facility_type"] == "pharmacy")
     osm_clinics = sum(1 for o in osm_list if o["facility_type"] == "clinic")
     osm_doctors = sum(1 for o in osm_list if o["facility_type"] == "doctors")
     osm_total_points = len(osm_list)
-    
+
     # Ratios sanitaires
     primary_care_per_10k = round((pub_primary / pop) * 10000, 4) if pop > 0 else ""
     pharmacy_per_10k = round((osm_pharmacies / pop) * 10000, 4) if pop > 0 else ""
     is_public_healthcare_absent = (pub_total == 0)
-    
+
     row = {
         "commune_code": code,
         "name_fr": c["name_fr"],
@@ -378,13 +382,13 @@ for fac in osm_facilities_raw:
     c_code = fac.get("commune_code")
     lat = fac["lat"]
     lon = fac["lon"]
-    
+
     c_name = communes_by_code[c_code]["name_fr"] if c_code and c_code in communes_by_code else ""
     c_prov = communes_by_code[c_code]["province"] if c_code and c_code in communes_by_code else ""
     c_mil = communes_by_code[c_code]["milieu"] if c_code and c_code in communes_by_code else ""
-    
+
     fid = f"OSM-TTA-{fac['osm_type'].upper()[:1]}-{osm_id}"
-    
+
     # 1. Hôpital public réconcilié (neutralisation du doublon)
     if osm_id in matched_osm_ids:
         tier = "PUBLIC_CORE"

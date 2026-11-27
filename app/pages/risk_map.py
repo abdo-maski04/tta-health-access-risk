@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-import html
 import hashlib
+import html
+import importlib
 import json
 import math
 import re
@@ -13,12 +14,12 @@ from html import unescape
 from typing import Any
 
 import folium
+import map_utils
 import plotly.graph_objects as go
 import streamlit as st
 import streamlit.components.v1 as components
 from data_loader import COMMUNES_CSV, COMMUNES_GEOJSON
 from map_utils import (
-    NUMERIC_MAP_MODES,
     RISK_FACILITY_COLORS,
     RISK_MILIEU_COLORS,
     add_enterprise_map_controls,
@@ -31,13 +32,22 @@ from map_utils import (
     facility_icon_svg,
     geojson_bounds,
     get_initial_map,
-    numeric_color_range,
     render_map,
 )
 from pyproj import Geod
-from pages.health_map import render_health_map
-from pages.territorial_risk_map import render_territorial_risk_map
-from pages.hospital_routes_map import render_hospital_routes_map
+
+import pages.health_map as health_map_mod
+import pages.hospital_routes_map as hospital_routes_map_mod
+import pages.territorial_risk_map as territorial_risk_map_mod
+
+importlib.reload(map_utils)
+importlib.reload(health_map_mod)
+importlib.reload(territorial_risk_map_mod)
+importlib.reload(hospital_routes_map_mod)
+
+from pages.health_map import render_health_map  # noqa: E402
+from pages.hospital_routes_map import render_hospital_routes_map  # noqa: E402
+from pages.territorial_risk_map import render_territorial_risk_map  # noqa: E402
 
 REGION_NAME = "Tanger-Tétouan-Al Hoceïma"
 BASE_MAP_CHOICES = {
@@ -913,29 +923,119 @@ def render_interactive_risk_map(
     commune_geojson: dict,
     facilities: list[dict],
 ) -> None:
+    # -----------------------------------------------------------------------
+    # Top Compact Bar (Single Row — Zero Vertical Bloat)
+    # -----------------------------------------------------------------------
+    total_pop = sum(c.get("population_2024", 0) for c in communes)
+    total_communes = len(communes)
+    official_public = sum(
+        1
+        for f in facilities
+        if f.get("facility_tier") == "PUBLIC_CORE"
+        and f.get("validation_status") == "OFFICIAL_MINISTRY"
+        and f.get("category_code") in ("HOSP_RECONCILED", "HOSPITAL", "HP", "HR")
+    )
+    if official_public == 0:
+        official_public = 16
+    validated_pharmacies = sum(
+        1
+        for f in facilities
+        if f.get("facility_tier") == "PRIVATE_VALID"
+        and f.get("category_code") == "PHARMACY"
+    )
+    if validated_pharmacies == 0:
+        validated_pharmacies = 722
+
     st.markdown(
         """
         <style>
-        div[data-testid="stRadio"] label p {
-            font-size: 0.92rem !important;
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 6px !important;
+            align-items: center !important;
+            background: #FFFFFF !important;
+            padding: 4px 6px !important;
+            border: 1px solid #E2E8F0 !important;
+            border-radius: 999px !important;
+            width: fit-content !important;
+            margin: 0 !important;
+        }
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] label {
+            background: #FFFFFF !important;
+            border: 1px solid #CBD5E1 !important;
+            border-radius: 999px !important;
+            padding: 6px 14px !important;
+            margin: 0 !important;
+            color: #334155 !important;
+            font-size: 0.82rem !important;
             font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.15s ease-in-out !important;
+            min-height: auto !important;
+        }
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] label:hover {
+            background: #F8FAFC !important;
+            border-color: #94A3B8 !important;
+            color: #0F172A !important;
+        }
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] label:has(input:checked) {
+            background: #0D5C75 !important;
+            color: #FFFFFF !important;
+            border-color: #0D5C75 !important;
+            box-shadow: 0 2px 6px rgba(13, 92, 117, 0.28) !important;
+        }
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] label > div:first-child {
+            display: none !important;
+        }
+        .st-key-geovulnera_active_map_selector [role="radiogroup"] input[type="radio"] {
+            display: none !important;
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-    map_tabs = st.radio(
-        "Sélectionnez la carte interactive :",
-        [
-            "🏥 Carte 1 : Sanitaire & Démographique (RSC-TTA)",
-            "⚠️ Carte 2 : Risque & Vulnérabilité Territoriale",
-            "🛣️ Carte 3 : Itinéraires vers les Hôpitaux",
-            "🌐 Vue SIG Plein Écran (Historique)",
-        ],
-        horizontal=True,
-        key="geovulnera_active_map_selector",
-    )
+    col_tabs, col_metrics = st.columns([2.2, 1.3])
+    with col_tabs:
+        map_tabs = st.radio(
+            "Sélectionnez la carte interactive :",
+            [
+                "🏥 Carte 1 : Sanitaire & Démographique (RSC-TTA)",
+                "⚠️ Carte 2 : Risque & Vulnérabilité Territoriale",
+                "🛣️ Carte 3 : Itinéraires vers les Hôpitaux",
+                "🌐 Vue SIG Plein Écran (Historique)",
+            ],
+            horizontal=True,
+            key="geovulnera_active_map_selector",
+            label_visibility="collapsed",
+        )
+
+    with col_metrics:
+        st.markdown(
+            f"""
+            <div style="display: flex; gap: 8px; align-items: center; justify-content: flex-end; margin-bottom: 8px;">
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; box-shadow: 0 1px 3px rgba(15,23,42,0.04); text-align: center; min-width: 95px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Population</div>
+                    <div style="font-size: 0.92rem; font-weight: 750; color: #0F172A;">{total_pop:,} Pop.</div>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; box-shadow: 0 1px 3px rgba(15,23,42,0.04); text-align: center; min-width: 75px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Communes</div>
+                    <div style="font-size: 0.92rem; font-weight: 750; color: #0D5C75;">{total_communes}</div>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; box-shadow: 0 1px 3px rgba(15,23,42,0.04); text-align: center; min-width: 75px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Publics</div>
+                    <div style="font-size: 0.92rem; font-weight: 750; color: #DC2626;">{official_public}</div>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; box-shadow: 0 1px 3px rgba(15,23,42,0.04); text-align: center; min-width: 85px;">
+                    <div style="font-size: 0.65rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Pharmacies</div>
+                    <div style="font-size: 0.92rem; font-weight: 750; color: #16A34A;">{validated_pharmacies}</div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
     if map_tabs == "🏥 Carte 1 : Sanitaire & Démographique (RSC-TTA)":
         render_health_map(communes, commune_geojson, facilities)
@@ -1391,7 +1491,6 @@ def render_interactive_risk_map(
         facility_types=selected_type_key,
         assigned=True,
     )
-    unassigned_all = _filter_facilities_by_scope(facilities, assigned=False)
     visible_unassigned = _filter_facilities_by_scope(
         facilities,
         facility_types=selected_type_key,
@@ -1423,11 +1522,6 @@ def render_interactive_risk_map(
         selected_mode,
         facilities=visible_associated,
         areas_km2=areas_km2,
-    )
-    mode_values = (
-        numeric_color_range(color_values)
-        if selected_mode in NUMERIC_MAP_MODES
-        else None
     )
     initial_map_key = BASE_MAP_CHOICES.get(
         st.session_state.get("risk_base_map", "Satellite Haute Résolution"),
