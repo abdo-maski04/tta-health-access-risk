@@ -113,7 +113,7 @@ class CommuneRankingTests(unittest.TestCase):
         self.assertEqual(list(app.exception), [])
         self.assertEqual(app.session_state["selected_page"], "Commune Details")
         self.assertTrue(
-            app.selectbox(key="details_commune").value.endswith(selected_code)
+            app.selectbox(key="details_commune_selector").value.endswith(selected_code)
         )
 
 
