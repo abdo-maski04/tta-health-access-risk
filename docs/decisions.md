@@ -221,3 +221,47 @@ Le dictionnaire des variables (§6) documente la différence.
 
 **Alternative écartée.** Renommer `dominant` en `raison` et y mettre les valeurs françaises : cela casse
 la contrainte `CHECK` existante et impose une migration des lignes déjà écrites par B, pour un gain nul.
+
+## D-019 — Le choix de l'hôpital de destination suit la liste officielle (v2)
+**Date :** 2026-11-27 · **Décideur :** Membre A · **Statut :** ✅ adoptée
+
+**Contexte.** Deux versions des temps de trajet coexistent. La v1
+(`travel_time_TTA_2024.csv`, D-015) retenait l'établissement OSM le plus proche
+parmi les 892 établissements du référentiel : un dispensaire ou un centre de
+santé pouvait donc devenir la « destination hospitalière » d'une commune, avec
+un temps de trajet très court. La v2 (`data/processed/v2/travel_time_TTA_2024.csv`,
+PR #20) restreint la destination aux **hôpitaux officiels** listés dans
+`config/hospital_whitelist.json`, complétés de candidats locaux. Contrôle
+effectué : pour Bni Bouayach, la v2 retient le *Centre Hospitalier Provincial
+Mohammed VI* à 14,3 km / 20,3 min (méthode `ORS_DRIVING_CAR`), là où la v1
+retenait un établissement à 3,0 min.
+
+**Décision.** La **v2 fait foi**. Le fichier canonique
+`data/processed/travel_time_TTA_2024.csv` prend le contenu de la v2 ; la v2
+reste archivée dans `data/processed/v2/`. Les bornes de classe ne changent pas :
+1 = moins de 15 min, 2 = de 15 à 45 min, 3 = plus de 45 min (D-015).
+
+**Effet mesuré.** 50 des 146 communes changent d'hôpital de destination, donc de
+temps de trajet (+5,5 min en moyenne), et **8 communes changent de classe** :
+
+| Commune | v1 (min) | v2 (min) | Classe |
+|---|---|---|---|
+| MA-01-571-0317 Saddina | 7,5 | 28,6 | 1 → 2 |
+| MA-01-051-0103 Bni Bouayach | 3,0 | 20,3 | 1 → 2 |
+| MA-01-573-0103 Martil | 5,0 | 17,0 | 1 → 2 |
+| MA-01-051-1317 Louta | 12,8 | 19,2 | 1 → 2 |
+| MA-01-051-1305 Arbaa Taourirt | 44,6 | 62,8 | 2 → 3 |
+| MA-01-051-1319 Nekkour | 37,6 | 55,8 | 2 → 3 |
+| MA-01-051-1323 Tifarouine | 35,7 | 45,5 | 2 → 3 |
+| MA-01-571-0513 Bni Leit | 43,8 | 45,2 | 2 → 3 |
+
+Répartition des classes : 22 / 66 / 58 (v1) → **18 / 66 / 62** (v2).
+
+**Conséquence.** La sensibilité des bornes et le score quotidien sont recalculés
+sur la v2. Deux runs ne sont comparables que si le même fichier de temps de
+trajet a servi.
+
+**Limite assumée.** La v2 augmente mécaniquement le nombre de communes
+« éloignées » : c'est le prix d'une définition plus stricte de la destination
+(aller à l'hôpital, pas au poste de santé le plus proche). Un temps plus long
+mais plus juste est préférable pour un indicateur d'accès aux soins.
