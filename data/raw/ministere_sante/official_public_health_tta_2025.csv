@@ -1,0 +1,324 @@
+﻿commune_code,commune_name_official,commune_name_matched,arrondissement,province,facility_name,category_code,facility_category_label,facility_group,sector,source_year,has_gps
+,Abdelghaya Souahel,Abdelghaya Souahel,,Al Hoceima,Beni Ahmed,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Abdelghaya Souahel,Abdelghaya Souahel,,Al Hoceima,Ikaouen,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Kamra,Ait Kamra,,Al Hoceima,Ait Kamra,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Kamra,Ait Kamra,,Al Hoceima,Ait Zekri,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Kamra,Ait Kamra,,Al Hoceima,Tazaghine,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Youssef Ou Ali,Ait Youssef Ou Ali,,Al Hoceima,Ait youssef ou Ali(S.Bouafif),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Youssef Ou Ali,Ait Youssef Ou Ali,,Al Hoceima,Azaghar (A. Youssef Ouali),DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ait Youssef Ou Ali,Ait Youssef Ou Ali,,Al Hoceima,Mohammed VI,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Ajdir (Mun.),Ajdir,,Al Hoceima,Ajdir (Azghar),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Abdellah Hamou,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Al Harchi,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Bades,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Bir Anzarane,CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Bir Anzarane,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Bir Anzarane,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,C. d'oncologie d'Al Hoceima,CRO,Hôpital Public – Centre Régional d'Oncologie,Hôpitaux,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,CALABONITA,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Laboratoire (Siaap),LSP,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Mohamed V,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Sidi Abid,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Hoceima (Mun.),Al Hoceima,,Al Hoceima,Thanaoui,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Arbaa Taourirt,Arbaa Taourirt,,Al Hoceima,Arbaa Taourirt,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Arbaa Taourirt,Arbaa Taourirt,,Al Hoceima,Ouaadia,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Abdallah,Bni Abdallah,,Al Hoceima,Bni Abdellah,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Abdallah,Bni Abdallah,,Al Hoceima,Bousalah,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Ahmed Imoukzan,Bni Ahmed Imoukzan,,Al Hoceima,Bni Ahmed Imougzen (Admam),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Ammart,Bni Ammart,,Al Hoceima,Bni Ammart,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Bchir,Bni Bchir,,Al Hoceima,Bni Bchir (Bab Stot),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Bouayach (Mun.),Bni Bouayach,,Al Hoceima,Bni Bouayach,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Bouayach (Mun.),Bni Bouayach,,Al Hoceima,Bni Bouayach-II,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Bouchibet,Bni Bouchibet,,Al Hoceima,Tabarrant,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Boufrah,Bni Boufrah,,Al Hoceima,Agni,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Boufrah,Bni Boufrah,,Al Hoceima,Bni Boufrah,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Bounsar,Bni Bounsar,,Al Hoceima,Bni Bounsar,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Gmil,Bni Gmil,,Al Hoceima,B. Gmil Mestassa,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Gmil,Bni Gmil,,Al Hoceima,Ibarranen,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Gmil Maksouline,Bni Gmil Maksouline,,Al Hoceima,Bni Gmil Maksouline,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Gmil Maksouline,Bni Gmil Maksouline,,Al Hoceima,El Hamri Omar,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Hadifa,Bni Hadifa,,Al Hoceima,Bni Hadifa,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Chakrane,Chakrane,,Al Hoceima,Chakrane,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Imrabten,Imrabten,,Al Hoceima,Tamassint,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Imzouren (Mun.),Imzouren,,Al Hoceima,Imzouren,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Imzouren (Mun.),Imzouren,,Al Hoceima,Imzouren,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Issaguen,Issaguen,,Al Hoceima,Azila,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Issaguen,Issaguen,,Al Hoceima,Issaguen,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Izemmouren,Izemmouren,,Al Hoceima,Izemmouren,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Izemmouren,Izemmouren,,Al Hoceima,Tala Youssef,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ketama,Ketama,,Al Hoceima,Attout,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ketama,Ketama,,Al Hoceima,Tamlouguit,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ketama,Ketama,,Al Hoceima,Tlet Ketama,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Louta,Louta,,Al Hoceima,Louta,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Moulay Ahmed Cherif,Moulay Ahmed Cherif,,Al Hoceima,My Ahmed cherif,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Nekkour,Nekkour,,Al Hoceima,Nekkour,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Nekkour,Nekkour,,Al Hoceima,Tazourakht,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Rouadi,Rouadi,,Al Hoceima,Rouadi,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Rouadi,Rouadi,,Al Hoceima,Tawasarte,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Senada,Senada,,Al Hoceima,Senada,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Senada,Senada,,Al Hoceima,Toufist,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Boutmim,Sidi Boutmim,,Al Hoceima,Sidi Boutmim,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Bouzineb,Sidi Bouzineb,,Al Hoceima,Sidi Bouzineb,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Taghzout,Taghzout,,Al Hoceima,Taghzout,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tamsaout,Tamsaout,,Al Hoceima,Tamsaout,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Targuist (Mun.),Targuist,,Al Hoceima,Hommane El Fatouaki,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Targuist (Mun.),Targuist,,Al Hoceima,Targuist,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Targuist (Mun.),Targuist,,Al Hoceima,Targuist,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Tifarouine,Tifarouine,,Al Hoceima,Tifarouine (Ait Taa),CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zaouiat Sidi Abdelkader,Zaouiat Sidi Abdelkader,,Al Hoceima,S.Abdelkader,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zaouiat Sidi Abdelkader,Zaouiat Sidi Abdelkader,,Al Hoceima,Zaouyat Sidi Abdelkader,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zarkt,Zarkt,,Al Hoceima,Zarkat,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Amtar,Amtar,,Chefchaouen,Amtar,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bab Berred,Bab Berred,,Chefchaouen,Bab Berred,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bab Berred,Bab Berred,,Chefchaouen,Laanacer,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bab Taza,Bab Taza,,Chefchaouen,Bab Taza,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bab Taza,Bab Taza,,Chefchaouen,Magou,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bab Taza,Bab Taza,,Chefchaouen,khezana,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Ahmed Cherqia,Bni Ahmed Cherqia,,Chefchaouen,Bni Ahmed,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Ahmed Gharbia,Bni Ahmed Gharbia,,Chefchaouen,Bni Mizar,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Ahmed Gharbia,Bni Ahmed Gharbia,,Chefchaouen,Ksibat,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Bouzra,Bni Bouzra,,Chefchaouen,Anaray,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Bouzra,Bni Bouzra,,Chefchaouen,Bou Ahmed,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Darkoul,Bni Darkoul,,Chefchaouen,Bni Darkoul,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Darkoul,Bni Darkoul,,Chefchaouen,Chrafat,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Faghloum,Bni Faghloum,,Chefchaouen,Doukala,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Mansour,Bni Mansour,,Chefchaouen,Ain Lahjar,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Rzine,Bni Rzine,,Chefchaouen,Aoufas,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Rzine,Bni Rzine,,Chefchaouen,Azaghar,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Rzine,Bni Rzine,,Chefchaouen,Bni Rzine,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Salah,Bni Salah,,Chefchaouen,Barkok,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Selmane,Bni Selmane,,Chefchaouen,Assifane,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Selmane,Bni Selmane,,Chefchaouen,Khmis Louta,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Selmane,Bni Selmane,,Chefchaouen,Medieq,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Smih,Bni Smih,,Chefchaouen,Bni Smih,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Smih,Bni Smih,,Chefchaouen,Boumazigh,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Ain El Houzi,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Ain el houzi,CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Bab El Ain,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Chafchaouen,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,El Haouta,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Gharouzime,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Chefchaouen (Mun.),Chefchaouen,,Chefchaouen,Mohamed V,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Derdara,Derdara,,Chefchaouen,Derdara,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Fifi,Fifi,,Chefchaouen,Bni Yarzine,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Fifi,Fifi,,Chefchaouen,Fifi,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Iounane,Iounane,,Chefchaouen,Aaloui,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Iounane,Iounane,,Chefchaouen,Iounane,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Laghdir,Laghdir,,Chefchaouen,Aghran Kadi,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Laghdir,Laghdir,,Chefchaouen,Souk Lhad,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,M'tioua,M'tioua,,Chefchaouen,Jabha,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,M'tioua,M'tioua,,Chefchaouen,Taglit,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Mansoura,Mansoura,,Chefchaouen,Aydi,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Mansoura,Mansoura,,Chefchaouen,Mansoura,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ouaouzgane,Ouaouzgane,,Chefchaouen,Aguersif,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ouaouzgane,Ouaouzgane,,Chefchaouen,Ouaouzgane,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Oued Malha,Oued Malha,,Chefchaouen,Malha,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Steha,Steha,,Chefchaouen,Steha,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Talambote,Talambote,,Chefchaouen,Kalaa,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Talambote,Talambote,,Chefchaouen,Talambot,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tamorot,Tamorot,,Chefchaouen,Hadaka,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Tamorot,Tamorot,,Chefchaouen,Maouassif,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Tamorot,Tamorot,,Chefchaouen,Tamorot,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tanaqoub,Tanaqoub,,Chefchaouen,Tanaqoub,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tanaqoub,Tanaqoub,,Chefchaouen,Zaouite S. Youssef,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Tassift,Tassift,,Chefchaouen,Tasift,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tizgane,Tizgane,,Chefchaouen,Kaa Assrass,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tizgane,Tizgane,,Chefchaouen,Targha,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Al Bahraoyine,Al Bahraoyine,,Fahs-Anjra,Bni Ouassine,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Al Bahraoyine,Al Bahraoyine,,Fahs-Anjra,Nouinouich,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Anjra,Anjra,,Fahs-Anjra,Khmiss Anjra,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Jouamaa,Jouamaa,,Fahs-Anjra,Hakkama,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ksar El Majaz,Ksar El Majaz,,Fahs-Anjra,Ksar El Majaz,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ksar Sghir,Ksar Sghir,,Fahs-Anjra,Ksar Sghir,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Malloussa,Malloussa,,Fahs-Anjra,Malloussa,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Taghramt,Taghramt,,Fahs-Anjra,Taghramt,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ayacha,Ayacha,,Larache,Ain Kssab,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ayacha,Ayacha,,Larache,Ayacha,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Arouss,Bni Arouss,,Larache,Bni Arouss,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Garfett,Bni Garfett,,Larache,Bni Garfett,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bou Jedyane,Bou Jedyane,,Larache,Bou-Jedyane,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ksar Bjir,Ksar Bjir,,Larache,Ksar Bjir,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Bouchouika,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Khalkhali,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Ksar El Kbir,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Ksar El Kebir,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Moaskar,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,My Ali Boughaleb,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Oulad Hmid,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ksar El Kebir (Mun.),Ksar El Kebir,,Larache,Sidi Kamel,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Laouamra,Laouamra,,Larache,Laouamra,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Laouamra,Laouamra,,Larache,Zlaoula,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Alwafaa,CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Alwafaa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Hay El Jadid,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Hay Nador,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Kassaba,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Laboratoire (Siaap),LSP,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Lalla Meriem,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Larache (Mun.),Larache,,Larache,Larache,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Oulad Ouchih,Oulad Ouchih,,Larache,Oulad Ouchih,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Oulad Ouchih,Oulad Ouchih,,Larache,Snaija,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Rissana Chamalia,Rissana Chamalia,,Larache,Rissana Chamalia,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Rissana Janoubia,Rissana Janoubia,,Larache,Rissana Janoubia,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sahel,Sahel,,Larache,Sahel,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Souaken,Souaken,,Larache,Souaken,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Souk L'Qolla,Souk L'Qolla,,Larache,L'qolla,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Souk L'Qolla,Souk L'Qolla,,Larache,Souk Tlet,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Souk Tolba,Souk Tolba,,Larache,Oulad Lharti,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tatoft,Tatoft,,Larache,Tatoft,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tazroute,Tazroute,,Larache,Tazroute,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tazroute,Tazroute,,Larache,Tazroute,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zaaroura,Zaaroura,,Larache,Aouarmout,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zaaroura,Zaaroura,,Larache,Zaaroura,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zouada,Zouada,,Larache,Snadla,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zouada,Zouada,,Larache,Zouada,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Allyene,Allyene,,Mdiq-Fnideq,Allyine,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Belyounech,Belyounech,,Mdiq-Fnideq,Belyounech,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Fnideq (Mun.),Fnideq,,Mdiq-Fnideq,Al Massira (Condessa),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Fnideq (Mun.),Fnideq,,Mdiq-Fnideq,Fnideq,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Fnideq (Mun.),Fnideq,,Mdiq-Fnideq,Hassan II,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Fnideq (Mun.),Fnideq,,Mdiq-Fnideq,Mdiq Fnideq (My Rachid),CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Fnideq (Mun.),Fnideq,,Mdiq-Fnideq,Mdiq Fnideq (My Rachid),CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,M'Diq (Mun.),M'Diq,,Mdiq-Fnideq,El kelaa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,M'Diq (Mun.),M'Diq,,Mdiq-Fnideq,Mohammed VI,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,M'Diq (Mun.),M'Diq,,Mdiq-Fnideq,Quartier Istiqlal,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Martil (Mun.),Martil,,Mdiq-Fnideq,Ahrik,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Martil (Mun.),Martil,,Mdiq-Fnideq,Diza,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Martil (Mun.),Martil,,Mdiq-Fnideq,Miramar,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ain Beida,Ain Beida,,Ouezzane,Ain Beida,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ain Beida,Ain Beida,,Ouezzane,Bni Routen,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Asjen,Asjen,,Ouezzane,Amezou,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Asjen,Asjen,,Ouezzane,Asjen,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Asjen,Asjen,,Ouezzane,Zaytouna,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Quolla,Bni Quolla,,Ouezzane,Bni Quolla,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Quolla,Bni Quolla,,Ouezzane,Rmila,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Brikcha,Brikcha,,Ouezzane,Brikcha,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Brikcha,Brikcha,,Ouezzane,Jabriene (Ferha),DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Kalaat Bouqorra,Kalaat Bouqorra,,Ouezzane,Bni Kaoulech,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Kalaat Bouqorra,Kalaat Bouqorra,,Ouezzane,Bouqorra,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Lamjaara,Lamjaara,,Ouezzane,Ain Dorrij,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Lamjaara,Lamjaara,,Ouezzane,Lmghessel,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Masmouda,Masmouda,,Ouezzane,Fersiou,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Masmouda,Masmouda,,Ouezzane,Masmouda,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Moqrisset,Moqrisset,,Ouezzane,Asserdoune,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Moqrisset,Moqrisset,,Ouezzane,Moqrissat,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Mzefroune,Mzefroune,,Ouezzane,Mzefroune,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,9 Juillet,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,Abou Kacem Zahraoui,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,Al Massira,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,Bouhlal,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,My Abdelleh Chrif,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,My Thami,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ouezzane (Mun.),Ouezzane,,Ouezzane,S.Ahmed Bouhediane,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Ounnana,Ounnana,,Ouezzane,Fraoua,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Ounnana,Ounnana,,Ouezzane,Ouanana,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ounnana,Ounnana,,Ouezzane,Ouled Bder,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Ahmed Cherif,Sidi Ahmed Cherif,,Ouezzane,Sidi Ahmed Cherif,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Bousber,Sidi Bousber,,Ouezzane,Mesker,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Bousber,Sidi Bousber,,Ouezzane,Sidi Bousber,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Redouane,Sidi Redouane,,Ouezzane,Sidi Redouane,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Redouane,Sidi Redouane,,Ouezzane,Tmalous,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Redouane,Sidi Redouane,,Ouezzane,Zouakine,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Teroual,Teroual,,Ouezzane,Lalla Aicha,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Teroual,Teroual,,Ouezzane,Teroual,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zghira,Zghira,,Ouezzane,Mestitef,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zghira,Zghira,,Ouezzane,Zghira,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zoumi,Zoumi,,Ouezzane,Hamrya,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zoumi,Zoumi,,Ouezzane,Johra,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Zoumi,Zoumi,,Ouezzane,Zoumi,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Al Manzla,Al Manzla,,Tanger Assilah,El Menzla ( Barr. El Hachef),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Aquouass Briech,Aquouass Briech,,Tanger Assilah,Briech,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Assilah (Mun.),Assilah,,Tanger Assilah,Assilah,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Assilah (Mun.),Assilah,,Tanger Assilah,El Marsa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Assilah (Mun.),Assilah,,Tanger Assilah,Merj Boutayeb,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Dar Chaoui,Dar Chaoui,,Tanger Assilah,Dar Chaoui,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Gueznaia (Mun.),Gueznaia,,Tanger Assilah,Gzenaya,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Gueznaia (Mun.),Gueznaia,,Tanger Assilah,Hôpital des spécialité Mohamed VI,HIR,Hôpital Public – Hôpital Interrégional,Hôpitaux,Public,2025,False
+,Gueznaia (Mun.),Gueznaia,,Tanger Assilah,Hôpital mère enfant Mohamed VI,HIR,Hôpital Public – Hôpital Interrégional,Hôpitaux,Public,2025,False
+,Gueznaia (Mun.),Gueznaia,,Tanger Assilah,Hôpital psychiatrique Mohamed VI,CPU,Hôpital Public – Centre Psychiatrique Universitaire,Hôpitaux,Public,2025,False
+,HJAR ENNHAL,HJAR ENNHAL,,Tanger Assilah,Hjar Nhal,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Had Al Gharbia,Had Al Gharbia,,Tanger Assilah,Had Gharbia,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Laaouama,Laaouama,,Tanger Assilah,Gouaret,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sahel Chamali,Sahel Chamali,,Tanger Assilah,Mejlaou,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sebt Azzinate,Sebt Azzinate,,Tanger Assilah,Zinate,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sidi Lyamani,Sidi Lyamani,,Tanger Assilah,Sidi Lyamani,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,ACHENAD,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Al Amal (2),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Al Kortobi,HR,Hôpital Public – Hôpital Régional,Hôpitaux,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Aouama Gharbia,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Arrazi,HPsyR,Hôpital Public – Hôpital Psychiatrique Régional,Hôpitaux,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Ben Dibane,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Bir Chifa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Bni Makada (Souani),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Bni Ouriaghel,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Bni Touzine,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Branes,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,C. Diagnostic Tuberculose,CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Centre De Reference,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Centre d'oncologie,HIR,Hôpital Public – Hôpital Interrégional,Hôpitaux,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Dhar Kanfoud,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Dradeb,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Duc De Tovar,HR,Hôpital Public – Hôpital Régional,Hôpitaux,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,El mers Aouma,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Emsallah,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Hay Jadid,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Jirari,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Jules Cot,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Labo. Epidemiologique,LSP,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Lkhreb,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Mesnana,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Mghogha,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Mohamed V,HR,Hôpital Public – Hôpital Régional,Hôpitaux,Public,2025,False
+,Bni Makada (Arrond.),Tanger,Bni Makada,Tanger Assilah,Mohammed Vi,HPr,Hôpital Public – Hôpital de Proximité,Hôpitaux,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Mozart,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Place Des Arenes,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Roi Fahd,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Souani (Arrond.),Tanger,Souani,Tanger Assilah,Said Nouceiri (Bni Makada),CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Mghogha (Arrond.),Tanger,Mghogha,Tanger Assilah,Tanja Ballia,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Al Madina (Arrond.),Tanger,Al Madina,Tanger Assilah,Val Fleury,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,AL Kharroub,AL Kharroub,,Tetouan,Dchar Tnine,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Ain Lahsan,Ain Lahsan,,Tetouan,Fondaq,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Al Hamra,Al Hamra,,Tetouan,Beni Hassan,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Al Oued,Al Oued,,Tetouan,Khazzan Laou,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Azla,Azla,,Tetouan,Azla,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Azla,Azla,,Tetouan,Dar Allalou,DR,Dispensaire Rural,Soins de Santé Primaires,Public,2025,False
+,Bghaghza,Bghaghza,,Tetouan,Had Bghaghza,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Harchen,Bni Harchen,,Tetouan,Bni Harchen,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Idder,Bni Idder,,Tetouan,Bni Idder,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Leit,Bni Leit,,Tetouan,Timizar,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Bni Said,Bni Said,,Tetouan,Bni Said (Chrouda),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Dar Bni Karrich,Dar Bni Karrich,,Tetouan,Ben Karrich,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Dar Bni Karrich,Dar Bni Karrich,,Tetouan,Ben Karrich,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Jbel Lahbib,Jbel Lahbib,,Tetouan,Jbel Hbib,CSR-2,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Mallalienne,Mallalienne,,Tetouan,Mallalienne,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Oued Laou (Mun.),Oued Laou,,Tetouan,Oued Laou,CSU-2,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Oulad Ali Mansour,Oulad Ali Mansour,,Tetouan,Ichouchen,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Saddina,Saddina,,Tetouan,Saddina,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Sahtryine,Sahtryine,,Tetouan,Amzal,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Souk Kdim,Souk Kdim,,Tetouan,Souk Kdim,CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Bab Tout,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Boujara (Aviation),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,CDTMR,CDTMR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Cite Scolaire,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Coelma,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Dar Morsya,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Dersa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Dersa Iii (Balinio),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Errazi,HPsyP,Hôpital Public – Hôpital Psychiatrique Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Hôpital.Civil,HP,Hôpital Public – Hôpital Provincial/Préfectoral,Hôpitaux,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Kassabah (Dersa Ii),CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Koratt Sebat,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Mallah,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Mhannech,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,My Hassan,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Nakkata,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Samsa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Sidi Frij,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Sidi Talha,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Tabola,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Tetouan,CRSR,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Tetouan (Hôpital),LSP,Centre Spécialisé / Laboratoire,Centres Spécialisés / Laboratoires,Public,2025,False
+,Tétouan (Mun.),Tétouan,,Tetouan,Touilaa,CSU-1,Centre de Santé Urbain,Soins de Santé Primaires,Public,2025,False
+,Zaitoune,Zaitoune,,Tetouan,Zaitoun (Beni Salah),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zaouiat Sidi Kacem,Zaouiat Sidi Kacem,,Tetouan,Tassift (Amsa),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
+,Zinat,Zinat,,Tetouan,Zinate (Dar En-Nia),CSR-1,Centre de Santé Rural,Soins de Santé Primaires,Public,2025,False
