@@ -40,6 +40,10 @@ CREATE TABLE IF NOT EXISTS weather.risk_daily (
     heat_level          SMALLINT NOT NULL CHECK (heat_level BETWEEN 0 AND 3),
     danger              SMALLINT NOT NULL CHECK (danger BETWEEN 0 AND 3),
     dominant            TEXT     NOT NULL CHECK (dominant IN ('rain', 'heat', 'both', 'none')),
+    classe_trajet       SMALLINT          CHECK (classe_trajet BETWEEN 1 AND 3),
+    score               SMALLINT          CHECK (score IN (0, 1, 2, 3, 4, 6, 9)),
+    niveau              TEXT              CHECK (niveau IN ('vert', 'jaune', 'orange', 'rouge')),
+    raison              TEXT              CHECK (raison IN ('pluie', 'chaleur', 'eloignement')),
     computed_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
     PRIMARY KEY (commune_code, forecast_issued_on, target_date)
 );
