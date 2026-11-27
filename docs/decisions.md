@@ -119,7 +119,7 @@
 
 | # | Question | Échéance | Impact | Recommandation provisoire |
 |---|---|---|---|---|
-| D-008 | Seuils de trajet : garder 15/45 min ou ajuster ? | Semaine 2 (avec B) | Classes du score | **Examiner la distribution d'abord**, puis figer par écrit |
+| D-008 | Seuils de trajet : garder 15/45 min ou ajuster ? | **Tranchée** | Classes du score | Voir **D-015** : bornes 15/45 conservées après analyse de sensibilité |
 | D-009 | Épisodes météo du cas d'étude : lesquels ? | Semaine 3 (avec C) | Rapport | Choisir un épisode **documenté** (presse, bulletins) et vérifiable |
 | D-010 | Licence HCP : usage et redistribution autorisés ? | Cette semaine (encadrant) | Publication du dataset | Traiter comme bloquant |
 | D-011 | Tanger : score unique ou 4 scores d'arrondissement ? | Semaine 2 (avec B et C) | Carte et classement | **Score unique** au niveau 146 ; les 4 polygones n'affectent que l'affichage |
@@ -193,3 +193,31 @@
 **Conséquence.** Les fichiers utilisés sont : `data/processed/communes_TTA_2024.csv` (`start_lat`, `start_lon`) et `data/processed/health_facilities_TTA.csv` (`osm_type`, `osm_id`, `facility_type`, `lat`, `lon`). Aucun fichier parallèle ne doit circuler.
 
 **Plan B documenté.** En cas d'indisponibilité de la clé : `temps = distance × 1,4 ÷ 50 km/h`, colonne `methode = DETOUR_1.4`, déjà produit pour les 146 communes.
+
+---
+
+## D-018 — Deux champs, deux rôles : `dominant` (météo) et `raison` (facteur affiché)
+**Date :** 2026-11-25 · **Décideur :** Membre A (validée avec B) · **Statut :** ✅ adoptée
+
+**Contexte.** Deux vocabulaires coexistent et ne décrivent pas la même chose :
+`score.py` renvoie une `raison` en français (`pluie`, `chaleur`, `eloignement`), alors que la table
+`weather.risk_daily` stocke `dominant` en anglais (`rain`, `heat`, `both`, `none`) avec une contrainte
+`CHECK`. Écrire `eloignement` dans `dominant` fait **rejeter la ligne par PostgreSQL**.
+
+**Décision.** On garde les deux colonnes, chacune avec son rôle :
+
+| Champ | Où | Valeurs | Ce qu'il dit |
+|---|---|---|---|
+| `dominant` | `weather.risk_daily` (B) | `rain` / `heat` / `both` / `none` | Quelle **météo** domine, et rien d'autre |
+| `raison` | `weather.risk_daily` (A) | `pluie` / `chaleur` / `eloignement` | Quel **facteur est affiché** à l'utilisateur |
+
+**Règle de départage de `raison`.** On compare les trois composantes (`rain_level`, `heat_level`,
+`classe_trajet`) et on garde la plus grande ; en cas d'égalité, l'ordre est **pluie**, puis **chaleur**,
+puis **éloignement**. Une commune sans danger météo (`dominant = none`) a donc toujours
+`raison = eloignement` : le seul facteur qui reste est la distance.
+
+**Conséquence.** Aucun renommage, aucune donnée existante ne bouge, aucune contrainte SQL ne casse.
+Le dictionnaire des variables (§6) documente la différence.
+
+**Alternative écartée.** Renommer `dominant` en `raison` et y mettre les valeurs françaises : cela casse
+la contrainte `CHECK` existante et impose une migration des lignes déjà écrites par B, pour un gain nul.

@@ -44,7 +44,7 @@ jobs:
 
       - name: 6. Execute unit tests with pytest
         run: |
-          pytest -m "not integration and not external" --cov=src --cov-report=term-missing --cov-report=xml
+          pytest -m "not integration and not external" --cov=src --cov-fail-under=10 --cov-report=term-missing --cov-report=xml
 
       - name: 7. CI Summary
         if: always()
