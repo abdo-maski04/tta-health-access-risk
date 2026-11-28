@@ -1,5 +1,6 @@
 
 import logging
+from datetime import timedelta
 from pathlib import Path
 
 import pendulum
@@ -15,18 +16,27 @@ CONFIG_FILE = PROJECT_ROOT / "config/scoring_config.yaml"
 
 TIMEZONE = "Africa/Casablanca"
 
+# Default task configuration
+DEFAULT_ARGS = {
+    "retries": 3,
+    "retry_delay": timedelta(minutes=5),
+    "execution_timeout": timedelta(minutes=10),
+}
+
 
 @dag(
     dag_id="daily_health_access_risk",
     description="Daily health access risk pipeline",
     start_date=pendulum.datetime(2026, 11, 28, tz=TIMEZONE),
-    schedule=None,
+    schedule="0 6 * * *",
     catchup=False,
     max_active_runs=1,
+    default_args=DEFAULT_ARGS,
     tags=["tta", "weather", "risk"],
 )
 def daily_health_access_risk():
 
+    # TASK 1: Check prerequisites
     @task
     def check_prerequisites():
         from src.tta_risk.db.database import get_connection
@@ -58,8 +68,8 @@ def daily_health_access_risk():
 
         return issued_on
 
-
-    @task
+    # TASK 2: Extract and load weather forecasts
+    @task(execution_timeout=timedelta(minutes=30))
     def load_weather_forecast(issued_on: str):
         from datetime import date
 
@@ -101,10 +111,10 @@ def daily_health_access_risk():
             "n_communes": n_communes,
         }
 
-
-    @task
+    # TASK 3: Validate forecast data quality
+    @task(retries=0)
     def validate_forecast(metadata: dict):
-        from datetime import date, timedelta
+        from datetime import date
 
         import pandas as pd
 
@@ -184,7 +194,7 @@ def daily_health_access_risk():
 
         return metadata
 
-
+    # TASK 4: Compute daily health access risk
     @task
     def compute_daily_risk(metadata: dict):
         from datetime import date
@@ -214,8 +224,8 @@ def daily_health_access_risk():
             "risk_rows": total,
         }
 
-
-    @task
+    # TASK 5: Validate final risk results
+    @task(retries=0)
     def validate_risk_results(metadata: dict):
         from datetime import date
 
@@ -305,6 +315,7 @@ def daily_health_access_risk():
 
         return metadata
 
+    # Task dependencies and XCom communication
     issued_on = check_prerequisites()
     forecast_metadata = load_weather_forecast(issued_on)
     validated_metadata = validate_forecast(forecast_metadata)
@@ -313,4 +324,3 @@ def daily_health_access_risk():
 
 
 daily_health_access_risk()
-
