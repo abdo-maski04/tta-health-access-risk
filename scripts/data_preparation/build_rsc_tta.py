@@ -25,9 +25,17 @@ FILE_COMMUNES_PUBLIC = os.path.join(DIR_MINISTERE, "official_public_health_by_co
 FILE_FACILITIES_PUBLIC = os.path.join(DIR_MINISTERE, "official_public_health_tta_2025.csv")
 
 # Contrôle strict de l'existence des fichiers d'entrée
-for required_path in [COMMUNES_CSV, COMMUNES_GEOJSON, OSM_FACILITIES_CSV, FILE_COMMUNES_PUBLIC, FILE_FACILITIES_PUBLIC]:
+for required_path in [
+    COMMUNES_CSV,
+    COMMUNES_GEOJSON,
+    OSM_FACILITIES_CSV,
+    FILE_COMMUNES_PUBLIC,
+    FILE_FACILITIES_PUBLIC,
+]:
     if not os.path.exists(required_path):
-        raise FileNotFoundError(f"[ERREUR CRITIQUE] Fichier source indispensable manquant : {required_path}")
+        raise FileNotFoundError(
+            f"[ERREUR CRITIQUE] Fichier source indispensable manquant : {required_path}"
+        )
 
 # Chemins des sorties
 OUT_DIR = os.path.join(BASE_DIR, "data", "interim")
@@ -44,9 +52,11 @@ COMMUNE_ALIASES = {
     "ounnana": "Ouannana",
 }
 
+
 def normalize_commune_name(raw_name: str) -> str:
     cleaned = raw_name.strip().lower()
     return COMMUNE_ALIASES.get(cleaned, raw_name.strip())
+
 
 # 3. Chargement des référentiels communaux et géométries
 print("[1/6] Chargement des communes et géométries...")
@@ -75,6 +85,7 @@ for feature in geojson_data["features"]:
     max_y = max(pt[1] for pt in all_coords)
     geometries.append((code, geom, (min_x, min_y, max_x, max_y)))
 
+
 def _point_in_ring(lon, lat, ring):
     inside = False
     points = list(ring)
@@ -88,6 +99,7 @@ def _point_in_ring(lon, lat, ring):
             if lon < crossing_x:
                 inside = not inside
     return inside
+
 
 def _point_in_geometry(lon, lat, geom, bbox):
     min_x, min_y, max_x, max_y = bbox
@@ -107,6 +119,7 @@ def _point_in_geometry(lon, lat, geom, bbox):
             if not in_hole:
                 return True
     return False
+
 
 # 4. Chargement des données sanitaires
 print("[2/6] Chargement des sources sanitaires...")
@@ -138,7 +151,9 @@ for fac in osm_facilities_raw:
     else:
         osm_outside.append(fac)
 
-print(f"       OSM assignés dans TTA: {sum(len(v) for v in osm_by_commune.values())} | Hors limites territoriales: {len(osm_outside)}")
+print(
+    f"       OSM assignés dans TTA: {sum(len(v) for v in osm_by_commune.values())} | Hors limites territoriales: {len(osm_outside)}"
+)
 
 # 5. Rapprochement et audit des 24 Hôpitaux Publics avec OSM
 print("[4/6] Audit et rapprochement des 24 hôpitaux publics avec OSM...")
@@ -154,48 +169,162 @@ for idx, r in enumerate(pub_facilities_raw):
     r["province"] = c["province"]
     r["milieu"] = c["milieu"]
     # Identifiant unique pérenne
-    r["facility_id"] = f"PUB-TTA-{c['province_code']}-{idx+1:03d}"
+    r["facility_id"] = f"PUB-TTA-{c['province_code']}-{idx + 1:03d}"
 
 # Dictionnaire corrigé et vérifié des correspondances hospitalières
 # Chaque association est vérifiée dans les données sources OSM
 VERIFIED_MATCHES = {
     # Al Hoceima (5 hôpitaux)
-    "PUB-TTA-MA-01-051-008": ("8377190516", "MATCH_MANUAL_VERIFIED", "Exact name & location match", "Centre Hospitalier Provincial Mohammed VI à Ait Youssef Ou Ali"),
-    "PUB-TTA-MA-01-051-016": ("12846726229", "MATCH_MANUAL_VERIFIED", "Exact name & location match", "C. d'oncologie d'Al Hoceima"),
-    "PUB-TTA-MA-01-051-019": ("789174103", "MATCH_MANUAL_VERIFIED", "Exact name & location match", "Hôpital Mohamed V Al Hoceima"),
-    "PUB-TTA-MA-01-051-043": ("10920276384", "MATCH_CANDIDATE", "Candidate name similarity", "Health Center Imzouren - Nécessite confirmation terrain HPr vs CSU"),
-    "PUB-TTA-MA-01-051-065": ("789267614", "MATCH_MANUAL_VERIFIED", "Bilingual toponymic verification", "مستشفى حمان الفطواكي ايت عزة - Nom officiel de l'Hôpital de Proximité de Targuist"),
-
+    "PUB-TTA-MA-01-051-008": (
+        "8377190516",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name & location match",
+        "Centre Hospitalier Provincial Mohammed VI à Ait Youssef Ou Ali",
+    ),
+    "PUB-TTA-MA-01-051-016": (
+        "12846726229",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name & location match",
+        "C. d'oncologie d'Al Hoceima",
+    ),
+    "PUB-TTA-MA-01-051-019": (
+        "789174103",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name & location match",
+        "Hôpital Mohamed V Al Hoceima",
+    ),
+    "PUB-TTA-MA-01-051-043": (
+        "10920276384",
+        "MATCH_CANDIDATE",
+        "Candidate name similarity",
+        "Health Center Imzouren - Nécessite confirmation terrain HPr vs CSU",
+    ),
+    "PUB-TTA-MA-01-051-065": (
+        "789267614",
+        "MATCH_MANUAL_VERIFIED",
+        "Bilingual toponymic verification",
+        "مستشفى حمان الفطواكي ايت عزة - Nom officiel de l'Hôpital de Proximité de Targuist",
+    ),
     # Chefchaouen (1 hôpital)
-    "PUB-TTA-MA-01-151-100": ("305583432", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hôpital Mohamed V Chefchaouen (nœud principal, doublons 297605167/3195514325 tracés)"),
-
+    "PUB-TTA-MA-01-151-100": (
+        "305583432",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name match",
+        "Hôpital Mohamed V Chefchaouen (nœud principal, doublons 297605167/3195514325 tracés)",
+    ),
     # Larache (2 hôpitaux)
-    "PUB-TTA-MA-01-331-143": ("789778445", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hopital Provincial de Ksar El Kébir"),
-    "PUB-TTA-MA-01-331-156": ("12815056754", "MATCH_MANUAL_VERIFIED", "Official title match", "Hôpital Princesse Lalla Meriem à Larache"),
-
+    "PUB-TTA-MA-01-331-143": (
+        "789778445",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name match",
+        "Hopital Provincial de Ksar El Kébir",
+    ),
+    "PUB-TTA-MA-01-331-156": (
+        "12815056754",
+        "MATCH_MANUAL_VERIFIED",
+        "Official title match",
+        "Hôpital Princesse Lalla Meriem à Larache",
+    ),
     # M'diq-Fnideq (2 hôpitaux)
-    "PUB-TTA-MA-01-573-178": (None, "NO_MATCH", "Spatial vacancy", "Hôpital Hassan II Fnideq - Aucun hôpital OSM recensé sur Fnideq"),
-    "PUB-TTA-MA-01-573-182": ("293247182", "MATCH_MANUAL_VERIFIED", "Name & commune match", "Hopital Mohamed 6 à M'Diq"),
-
+    "PUB-TTA-MA-01-573-178": (
+        None,
+        "NO_MATCH",
+        "Spatial vacancy",
+        "Hôpital Hassan II Fnideq - Aucun hôpital OSM recensé sur Fnideq",
+    ),
+    "PUB-TTA-MA-01-573-182": (
+        "293247182",
+        "MATCH_MANUAL_VERIFIED",
+        "Name & commune match",
+        "Hopital Mohamed 6 à M'Diq",
+    ),
     # Ouezzane (1 hôpital)
-    "PUB-TTA-MA-01-405-206": ("12815486724", "MATCH_MANUAL_VERIFIED", "Official project match", "Projet Centre Hospitalier Provincial d'Ouezzane (Abou Kacem Zahraoui)"),
-
+    "PUB-TTA-MA-01-405-206": (
+        "12815486724",
+        "MATCH_MANUAL_VERIFIED",
+        "Official project match",
+        "Projet Centre Hospitalier Provincial d'Ouezzane (Abou Kacem Zahraoui)",
+    ),
     # Tanger-Assilah (10 hôpitaux)
-    "PUB-TTA-MA-01-511-230": ("12815618481", "MATCH_MANUAL_VERIFIED", "Single municipal hospital match", "Hôpital d'Assilah (nœud OSM 12815618481)"),
-    "PUB-TTA-MA-01-511-235": ("871505068", "MATCH_MANUAL_VERIFIED", "Campus level match", "Pôle hospitalier CHU Mohammed VI Tanger (spécialités, way OSM 871505068)"),
-    "PUB-TTA-MA-01-511-236": (None, "MATCH_CANDIDATE", "Campus level cluster", "Hôpital mère-enfant Mohammed VI Tanger - inclus dans l'emprise CHU"),
-    "PUB-TTA-MA-01-511-237": (None, "MATCH_CANDIDATE", "Campus level cluster", "Hôpital psychiatrique Mohammed VI Tanger - inclus dans l'emprise CHU"),
-    "PUB-TTA-MA-01-511-246": ("358688501", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hôpital Al Kortobi Tanger"),
-    "PUB-TTA-MA-01-511-248": ("13770363904", "MATCH_CANDIDATE", "Ambiguous toponymic match", "HPsyR Arrazi Mghogha - مصحة الرازي nécessite confirmation de statut public vs privé"),
-    "PUB-TTA-MA-01-511-257": ("587335799", "MATCH_CANDIDATE", "Name variation match", "Centre d'oncologie de Tanger (way 587335799 Centre Ahmad Bin Zayed Al Nahyan)"),
-    "PUB-TTA-MA-01-511-260": ("564951388", "MATCH_CANDIDATE", "Historical toponymic match", "Hôpital Duc de Tovar / Hôpital Espagnol - Nécessite confirmation cadastrale"),
-    "PUB-TTA-MA-01-511-270": ("122398955", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hôpital Mohammed V Tanger"),
-    "PUB-TTA-MA-01-511-271": ("475665966", "MATCH_MANUAL_VERIFIED", "Exact name & arrondissement match", "Hôpital Mohammed VI Bni Makada"),
-
+    "PUB-TTA-MA-01-511-230": (
+        "12815618481",
+        "MATCH_MANUAL_VERIFIED",
+        "Single municipal hospital match",
+        "Hôpital d'Assilah (nœud OSM 12815618481)",
+    ),
+    "PUB-TTA-MA-01-511-235": (
+        "871505068",
+        "MATCH_MANUAL_VERIFIED",
+        "Campus level match",
+        "Pôle hospitalier CHU Mohammed VI Tanger (spécialités, way OSM 871505068)",
+    ),
+    "PUB-TTA-MA-01-511-236": (
+        None,
+        "MATCH_CANDIDATE",
+        "Campus level cluster",
+        "Hôpital mère-enfant Mohammed VI Tanger - inclus dans l'emprise CHU",
+    ),
+    "PUB-TTA-MA-01-511-237": (
+        None,
+        "MATCH_CANDIDATE",
+        "Campus level cluster",
+        "Hôpital psychiatrique Mohammed VI Tanger - inclus dans l'emprise CHU",
+    ),
+    "PUB-TTA-MA-01-511-246": (
+        "358688501",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name match",
+        "Hôpital Al Kortobi Tanger",
+    ),
+    "PUB-TTA-MA-01-511-248": (
+        "13770363904",
+        "MATCH_CANDIDATE",
+        "Ambiguous toponymic match",
+        "HPsyR Arrazi Mghogha - مصحة الرازي nécessite confirmation de statut public vs privé",
+    ),
+    "PUB-TTA-MA-01-511-257": (
+        "587335799",
+        "MATCH_CANDIDATE",
+        "Name variation match",
+        "Centre d'oncologie de Tanger (way 587335799 Centre Ahmad Bin Zayed Al Nahyan)",
+    ),
+    "PUB-TTA-MA-01-511-260": (
+        "564951388",
+        "MATCH_CANDIDATE",
+        "Historical toponymic match",
+        "Hôpital Duc de Tovar / Hôpital Espagnol - Nécessite confirmation cadastrale",
+    ),
+    "PUB-TTA-MA-01-511-270": (
+        "122398955",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name match",
+        "Hôpital Mohammed V Tanger",
+    ),
+    "PUB-TTA-MA-01-511-271": (
+        "475665966",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name & arrondissement match",
+        "Hôpital Mohammed VI Bni Makada",
+    ),
     # Tétouan (3 hôpitaux)
-    "PUB-TTA-MA-01-571-290": ("1242229574", "MATCH_MANUAL_VERIFIED", "Exact name match", "Hospital Ben Karrich"),
-    "PUB-TTA-MA-01-571-306": (None, "NO_MATCH", "Absence in OSM", "Hôpital psychiatrique Errazi Tétouan - Non répertorié dans OSM"),
-    "PUB-TTA-MA-01-571-307": ("484204214", "MATCH_MANUAL_VERIFIED", "Universal local toponymy", "Hôpital Sanyat Rmel (Hôpital Civil Provincial de Tétouan)")
+    "PUB-TTA-MA-01-571-290": (
+        "1242229574",
+        "MATCH_MANUAL_VERIFIED",
+        "Exact name match",
+        "Hospital Ben Karrich",
+    ),
+    "PUB-TTA-MA-01-571-306": (
+        None,
+        "NO_MATCH",
+        "Absence in OSM",
+        "Hôpital psychiatrique Errazi Tétouan - Non répertorié dans OSM",
+    ),
+    "PUB-TTA-MA-01-571-307": (
+        "484204214",
+        "MATCH_MANUAL_VERIFIED",
+        "Universal local toponymy",
+        "Hôpital Sanyat Rmel (Hôpital Civil Provincial de Tétouan)",
+    ),
 }
 
 osm_by_id = {o["osm_id"]: o for o in osm_facilities_raw}
@@ -214,7 +343,9 @@ for h in hospitals_ministry:
     if osm_id and osm_id in osm_by_id:
         osm_entry = osm_by_id[osm_id]
         osm_name = osm_entry.get("name", "")
-        sim_score = round(SequenceMatcher(None, h["facility_name"].lower(), osm_name.lower()).ratio(), 2)
+        sim_score = round(
+            SequenceMatcher(None, h["facility_name"].lower(), osm_name.lower()).ratio(), 2
+        )
         if status == "MATCH_MANUAL_VERIFIED":
             matched_osm_ids.add(osm_id)
             # Transmission des coordonnées GPS exactes à la structure publique ministérielle
@@ -236,26 +367,37 @@ for h in hospitals_ministry:
         h["geocode_precision"] = "UNLOCATED"
         h["source_ids"] = "MINISTRY_2025"
 
-    audit_rows.append({
-        "ministry_facility_id": fid,
-        "ministry_facility_name": h["facility_name"],
-        "commune_code": h["commune_code"],
-        "osm_id": osm_id if osm_id else "",
-        "osm_name": osm_name,
-        "similarity_score": sim_score if osm_id else "",
-        "matching_status": status,
-        "validation_method": method,
-        "validation_comment": comment
-    })
+    audit_rows.append(
+        {
+            "ministry_facility_id": fid,
+            "ministry_facility_name": h["facility_name"],
+            "commune_code": h["commune_code"],
+            "osm_id": osm_id if osm_id else "",
+            "osm_name": osm_name,
+            "similarity_score": sim_score if osm_id else "",
+            "matching_status": status,
+            "validation_method": method,
+            "validation_comment": comment,
+        }
+    )
 
 print(f"       Hôpitaux vérifiés avec GPS : {len(matched_osm_ids)} sur {len(hospitals_ministry)}")
 print(f"       Écriture du journal d'audit : {OUT_MATCHING_AUDIT}...")
 with open(OUT_MATCHING_AUDIT, "w", encoding="utf-8", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=[
-        "ministry_facility_id", "ministry_facility_name", "commune_code",
-        "osm_id", "osm_name", "similarity_score", "matching_status",
-        "validation_method", "validation_comment"
-    ])
+    writer = csv.DictWriter(
+        f,
+        fieldnames=[
+            "ministry_facility_id",
+            "ministry_facility_name",
+            "commune_code",
+            "osm_id",
+            "osm_name",
+            "similarity_score",
+            "matching_status",
+            "validation_method",
+            "validation_comment",
+        ],
+    )
     writer.writeheader()
     writer.writerows(audit_rows)
 
@@ -298,7 +440,7 @@ for c in communes_raw:
     # Ratios sanitaires
     primary_care_per_10k = round((pub_primary / pop) * 10000, 4) if pop > 0 else ""
     pharmacy_per_10k = round((osm_pharmacies / pop) * 10000, 4) if pop > 0 else ""
-    is_public_healthcare_absent = (pub_total == 0)
+    is_public_healthcare_absent = pub_total == 0
 
     row = {
         "commune_code": code,
@@ -321,22 +463,43 @@ for c in communes_raw:
         "osm_health_points_total": osm_total_points,
         "primary_care_per_10k": primary_care_per_10k,
         "pharmacy_per_10k": pharmacy_per_10k,
-        "is_public_healthcare_absent": is_public_healthcare_absent
+        "is_public_healthcare_absent": is_public_healthcare_absent,
     }
     communes_profile_rows.append(row)
 
 with open(OUT_COMMUNES_PROFILE, "w", encoding="utf-8", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=[
-        "commune_code", "name_fr", "province", "milieu", "population_2024", "part_rurale_pct",
-        "pub_csu", "pub_csr", "pub_csr2_maternite", "pub_dr", "pub_primary_total",
-        "pub_hospitals", "pub_specialized", "pub_total_official",
-        "osm_pharmacies_mapped", "osm_clinics_candidates", "osm_doctors_mapped", "osm_health_points_total",
-        "primary_care_per_10k", "pharmacy_per_10k", "is_public_healthcare_absent"
-    ])
+    writer = csv.DictWriter(
+        f,
+        fieldnames=[
+            "commune_code",
+            "name_fr",
+            "province",
+            "milieu",
+            "population_2024",
+            "part_rurale_pct",
+            "pub_csu",
+            "pub_csr",
+            "pub_csr2_maternite",
+            "pub_dr",
+            "pub_primary_total",
+            "pub_hospitals",
+            "pub_specialized",
+            "pub_total_official",
+            "osm_pharmacies_mapped",
+            "osm_clinics_candidates",
+            "osm_doctors_mapped",
+            "osm_health_points_total",
+            "primary_care_per_10k",
+            "pharmacy_per_10k",
+            "is_public_healthcare_absent",
+        ],
+    )
     writer.writeheader()
     writer.writerows(communes_profile_rows)
 
-print(f"       Écriture réussie : {len(communes_profile_rows)} communes dans {OUT_COMMUNES_PROFILE}")
+print(
+    f"       Écriture réussie : {len(communes_profile_rows)} communes dans {OUT_COMMUNES_PROFILE}"
+)
 
 # 7. Construction du Référentiel Établissements Master (1 215 structures)
 print("[6/6] Construction de health_facilities_master_TTA.csv...")
@@ -370,7 +533,7 @@ for r in pub_facilities_raw:
         "has_gps": r["has_gps"],
         "lat": r["lat"],
         "lon": r["lon"],
-        "geocode_precision": r["geocode_precision"]
+        "geocode_precision": r["geocode_precision"],
     }
     master_rows.append(row)
 
@@ -461,7 +624,15 @@ for fac in osm_facilities_raw:
             grp = "Inconnu"
             precision = "EXACT_GPS"
         else:
-            tier = "PRIVATE_VALID" if ("privé" in fname.lower() or "clinique" in fname.lower() or "akdital" in fname.lower()) else "UNVERIFIED"
+            tier = (
+                "PRIVATE_VALID"
+                if (
+                    "privé" in fname.lower()
+                    or "clinique" in fname.lower()
+                    or "akdital" in fname.lower()
+                )
+                else "UNVERIFIED"
+            )
             v_status = "OSM_HOSPITAL_UNRECONCILED"
             sector = "Privé" if tier == "PRIVATE_VALID" else "Indéterminé"
             cat_code = "HOSP_OSM_OTHER"
@@ -497,15 +668,30 @@ for fac in osm_facilities_raw:
         "has_gps": True,
         "lat": lat,
         "lon": lon,
-        "geocode_precision": precision
+        "geocode_precision": precision,
     }
     master_rows.append(row)
 
 master_fields = [
-    "facility_id", "name", "commune_code", "commune_name_official", "province",
-    "category_code", "facility_category_label", "facility_group", "milieu",
-    "sector", "facility_tier", "validation_status", "source_primary", "source_ids",
-    "source_year", "has_gps", "lat", "lon", "geocode_precision"
+    "facility_id",
+    "name",
+    "commune_code",
+    "commune_name_official",
+    "province",
+    "category_code",
+    "facility_category_label",
+    "facility_group",
+    "milieu",
+    "sector",
+    "facility_tier",
+    "validation_status",
+    "source_primary",
+    "source_ids",
+    "source_year",
+    "has_gps",
+    "lat",
+    "lon",
+    "geocode_precision",
 ]
 
 with open(OUT_FACILITIES_MASTER, "w", encoding="utf-8", newline="") as f:

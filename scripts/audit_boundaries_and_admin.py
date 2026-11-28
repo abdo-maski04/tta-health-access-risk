@@ -38,7 +38,9 @@ def main():
     minx, miny, maxx, maxy = gdf_gj.total_bounds
     print(f"   - Emprise totale : Lon [{minx:.4f}, {maxx:.4f}], Lat [{miny:.4f}, {maxy:.4f}]")
     coord_order_ok = (-6.5 <= minx <= -3.5) and (34.5 <= miny <= 36.2)
-    print(f"   - Ordre des coordonnées (Lon/Lat WGS84) : {'CONFORME' if coord_order_ok else 'ANOMALIE'}")
+    print(
+        f"   - Ordre des coordonnées (Lon/Lat WGS84) : {'CONFORME' if coord_order_ok else 'ANOMALIE'}"
+    )
     report["coord_order_ok"] = coord_order_ok
     report["bounds"] = [float(minx), float(miny), float(maxx), float(maxy)]
 
@@ -76,8 +78,12 @@ def main():
     codes_v2 = set(df_v2["commune_code"].astype(str).str.strip())
     codes_hakima = set(df_hakima["commune_code"].astype(str).str.strip())
 
-    print(f"\n5. travel_time_TTA_2024.csv v2 : {len(df_v2)} lignes, codes uniques = {len(codes_v2)}")
-    print(f"   travel_time_TTA_2024.csv Hakima : {len(df_hakima)} lignes, codes uniques = {len(codes_hakima)}")
+    print(
+        f"\n5. travel_time_TTA_2024.csv v2 : {len(df_v2)} lignes, codes uniques = {len(codes_v2)}"
+    )
+    print(
+        f"   travel_time_TTA_2024.csv Hakima : {len(df_hakima)} lignes, codes uniques = {len(codes_hakima)}"
+    )
     print(f"   - Différence v2 vs GeoJSON : {len(codes_v2.symmetric_difference(codes_gj))}")
     print(f"   - Différence Hakima vs GeoJSON : {len(codes_hakima.symmetric_difference(codes_gj))}")
 
@@ -107,11 +113,13 @@ def main():
             if idx < match_idx:
                 inter = row.geometry.intersection(match_row.geometry)
                 if inter.area > 1e4:  # plus de 0.01 km² de chevauchement surfacique
-                    overlaps.append({
-                        "com1": row["name_fr"],
-                        "com2": match_row["name_fr"],
-                        "overlap_area_km2": round(inter.area / 1e6, 3)
-                    })
+                    overlaps.append(
+                        {
+                            "com1": row["name_fr"],
+                            "com2": match_row["name_fr"],
+                            "overlap_area_km2": round(inter.area / 1e6, 3),
+                        }
+                    )
     print(f"   - Nombre de chevauchements surfaciques anormaux (> 0.01 km²) : {len(overlaps)}")
     report["overlaps_count"] = len(overlaps)
     report["overlaps"] = overlaps[:5]

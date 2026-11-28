@@ -1,4 +1,4 @@
-﻿"""
+"""
 TTA Health Access Risk — Membre A
 Étape 1 : construction du référentiel territorial communal (région TTA).
 
@@ -51,7 +51,9 @@ EXPECTED_COMMUNES = 146
 
 # --- Écarts connus entre le fichier de géométries et le niveau communal officiel HCP ---
 # 1) Ceuta : polygone présent dans le jeu national, hors souveraineté marocaine -> exclu du périmètre.
-HORS_PERIMETRE = {"MA-01-573-0100": "Sebta (Ceuta) — territoire hors souveraineté marocaine, exclu du périmètre"}
+HORS_PERIMETRE = {
+    "MA-01-573-0100": "Sebta (Ceuta) — territoire hors souveraineté marocaine, exclu du périmètre"
+}
 # 2) Tanger : le HCP dénombre la commune de Tanger (4 arrondissements agrégés) comme 1 commune.
 #    Le fichier de géométries livre les 4 arrondissements séparément -> agrégés sous une clé unique.
 # Commune de Tanger : code officiel HCP '01.511.01.0' -> MA-01-511-0100 (série 0 = commune entière).
@@ -100,7 +102,9 @@ def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     raw = json.loads(RAW.read_text(encoding="utf-8"))
-    features = [f for f in raw["features"] if str(f["properties"].get("code", "")).startswith(REGION_CODE)]
+    features = [
+        f for f in raw["features"] if str(f["properties"].get("code", "")).startswith(REGION_CODE)
+    ]
 
     rows: list[dict] = []
     problems: list[dict] = []
@@ -121,7 +125,9 @@ def main() -> None:
             continue
 
         if code in HORS_PERIMETRE:
-            excluded.append({"commune_code": code, "name_fr": name_fr, "raison": HORS_PERIMETRE[code]})
+            excluded.append(
+                {"commune_code": code, "name_fr": name_fr, "raison": HORS_PERIMETRE[code]}
+            )
             continue
 
         geom = shape(geom_obj)
@@ -178,7 +184,11 @@ def main() -> None:
         per_prov[r["province"]] = per_prov.get(r["province"], 0) + 1
     for prov_code, (prov_name, expected) in PROVINCES.items():
         got_hcp = len({r["commune_code_hcp"] for r in rows if r["province_code"] == prov_code})
-        expected_prov[prov_name] = {"hcp_attendu": expected, "geometries": per_prov.get(prov_name, 0), "niveau_hcp": got_hcp}
+        expected_prov[prov_name] = {
+            "hcp_attendu": expected,
+            "geometries": per_prov.get(prov_name, 0),
+            "niveau_hcp": got_hcp,
+        }
 
     total_area = round(sum(r["area_km2"] for r in rows), 1)
     n_hcp = len(set(hcp_codes))
@@ -205,7 +215,8 @@ def main() -> None:
         "problems": problems,
         "checks": {
             "cle_unique_geometries": len(dup) == 0,
-            "cle_unique_niveau_hcp": len(set(hcp_codes)) == n_hcp,  # unicité des 146 clés après agrégation
+            "cle_unique_niveau_hcp": len(set(hcp_codes))
+            == n_hcp,  # unicité des 146 clés après agrégation
             "noms_presents": len(missing_names) == 0,
             "provinces_reconnues": len(unknown_prov) == 0,
             "coordonnees_dans_emprise": len(out_of_extent) == 0,
@@ -233,9 +244,22 @@ def main() -> None:
     )
 
     cols = [
-        "commune_code", "commune_code_hcp", "est_arrondissement", "province_code", "province",
-        "name_fr", "name_ar", "name_norm", "start_point_lon", "start_point_lat",
-        "centroid_lon", "centroid_lat", "area_km2", "geom_type", "source", "source_retrieved",
+        "commune_code",
+        "commune_code_hcp",
+        "est_arrondissement",
+        "province_code",
+        "province",
+        "name_fr",
+        "name_ar",
+        "name_norm",
+        "start_point_lon",
+        "start_point_lat",
+        "centroid_lon",
+        "centroid_lat",
+        "area_km2",
+        "geom_type",
+        "source",
+        "source_retrieved",
     ]
     with (OUT_DIR / "communes_TTA.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols)
@@ -267,8 +291,17 @@ def main() -> None:
 
     agg_rows = sorted(agg.values(), key=lambda r: (r["province_code"], r["name_norm"]))
     cols2 = [
-        "commune_code", "province_code", "province", "name_fr", "name_ar", "name_norm",
-        "start_point_lon", "start_point_lat", "area_km2", "nb_entites_geometriques", "codes_geometries",
+        "commune_code",
+        "province_code",
+        "province",
+        "name_fr",
+        "name_ar",
+        "name_norm",
+        "start_point_lon",
+        "start_point_lat",
+        "area_km2",
+        "nb_entites_geometriques",
+        "codes_geometries",
     ]
     with (OUT_DIR / "communes_TTA_146.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols2)
@@ -281,24 +314,52 @@ def main() -> None:
     # ---- Squelette de jointure démographique (à remplir depuis le HCP) -----
     with (OUT_DIR / "population_TEMPLATE.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow([
-            "commune_code", "name_fr", "province",
-            "population_2024", "population_2014", "menages_2024",
-            "milieu", "annee_reference", "source", "statut_valeur",
-        ])
+        w.writerow(
+            [
+                "commune_code",
+                "name_fr",
+                "province",
+                "population_2024",
+                "population_2014",
+                "menages_2024",
+                "milieu",
+                "annee_reference",
+                "source",
+                "statut_valeur",
+            ]
+        )
         for r in agg_rows:
-            w.writerow([r["commune_code"], r["name_fr"], r["province"], "", "", "", "", "2024", "HCP RGPH 2024", "A_REMPLIR"])
+            w.writerow(
+                [
+                    r["commune_code"],
+                    r["name_fr"],
+                    r["province"],
+                    "",
+                    "",
+                    "",
+                    "",
+                    "2024",
+                    "HCP RGPH 2024",
+                    "A_REMPLIR",
+                ]
+            )
 
-    (OUT_DIR / "qc_referentiel.json").write_text(json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT_DIR / "qc_referentiel.json").write_text(
+        json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     print(json.dumps(qc["checks"], ensure_ascii=False, indent=2))
-    print(f"\nGéométries : {len(rows)}   |   Niveau officiel HCP : {n_hcp} (attendu {EXPECTED_COMMUNES}, écart {qc['ecart_vs_hcp']:+d})")
+    print(
+        f"\nGéométries : {len(rows)}   |   Niveau officiel HCP : {n_hcp} (attendu {EXPECTED_COMMUNES}, écart {qc['ecart_vs_hcp']:+d})"
+    )
     print(f"Surface totale : {total_area} km²")
     print(f"Exclus : {[(e['commune_code'], e['name_fr']) for e in excluded]}")
     print("\nPar province (HCP / géométries) :")
     for p, d in expected_prov.items():
         flag = "OK " if d["niveau_hcp"] == d["hcp_attendu"] else "ECART"
-        print(f"  {flag} {p:16s} HCP={d['hcp_attendu']:3d}  niveau_hcp={d['niveau_hcp']:3d}  geometries={d['geometries']:3d}")
+        print(
+            f"  {flag} {p:16s} HCP={d['hcp_attendu']:3d}  niveau_hcp={d['niveau_hcp']:3d}  geometries={d['geometries']:3d}"
+        )
 
 
 if __name__ == "__main__":

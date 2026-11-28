@@ -45,14 +45,8 @@ class AppRiskMapTests(unittest.TestCase):
         simplified = simplify_commune_geojson(self.geojson)
         self.assertEqual(len(simplified["features"]), 146)
         self.assertEqual(
-            {
-                feature["properties"]["commune_code"]
-                for feature in simplified["features"]
-            },
-            {
-                feature["properties"]["commune_code"]
-                for feature in self.geojson["features"]
-            },
+            {feature["properties"]["commune_code"] for feature in simplified["features"]},
+            {feature["properties"]["commune_code"] for feature in self.geojson["features"]},
         )
         self.assertEqual(
             simplified["features"][0]["properties"],
@@ -62,24 +56,28 @@ class AppRiskMapTests(unittest.TestCase):
     def test_simplification_removes_redundant_vertices(self):
         geojson = {
             "type": "FeatureCollection",
-            "features": [{
-                "type": "Feature",
-                "properties": {"commune_code": "01"},
-                "geometry": {
-                    "type": "Polygon",
-                    "coordinates": [[
-                        [0, 0],
-                        [0.0002, 0],
-                        [0.0004, 0],
-                        [0.0006, 0],
-                        [0.0006, 0.0006],
-                        [0.0004, 0.0006],
-                        [0.0002, 0.0006],
-                        [0, 0.0006],
-                        [0, 0],
-                    ]],
-                },
-            }],
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {"commune_code": "01"},
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [0, 0],
+                                [0.0002, 0],
+                                [0.0004, 0],
+                                [0.0006, 0],
+                                [0.0006, 0.0006],
+                                [0.0004, 0.0006],
+                                [0.0002, 0.0006],
+                                [0, 0.0006],
+                                [0, 0],
+                            ]
+                        ],
+                    },
+                }
+            ],
         }
         simplified = simplify_commune_geojson(geojson)
         self.assertEqual(
@@ -89,32 +87,40 @@ class AppRiskMapTests(unittest.TestCase):
 
     def test_map_event_selects_only_commune_popups(self):
         self.assertEqual(
-            commune_code_from_map_event({
-                "last_object_clicked_popup": "Tanger\nCode: MA-01-001",
-            }),
+            commune_code_from_map_event(
+                {
+                    "last_object_clicked_popup": "Tanger\nCode: MA-01-001",
+                }
+            ),
             "MA-01-001",
         )
         self.assertEqual(
-            commune_code_from_map_event({
-                "last_object_clicked_popup": (
-                    "<div><b>Tanger</b><br><b>Code:</b> MA-01-001"
-                    "<br><b>Province:</b> Tanger</div>"
-                ),
-            }),
+            commune_code_from_map_event(
+                {
+                    "last_object_clicked_popup": (
+                        "<div><b>Tanger</b><br><b>Code:</b> MA-01-001"
+                        "<br><b>Province:</b> Tanger</div>"
+                    ),
+                }
+            ),
             "MA-01-001",
         )
         self.assertEqual(
-            commune_code_from_map_event({
-                "last_active_drawing": {
-                    "properties": {"commune_code": "MA-01-002"},
-                },
-            }),
+            commune_code_from_map_event(
+                {
+                    "last_active_drawing": {
+                        "properties": {"commune_code": "MA-01-002"},
+                    },
+                }
+            ),
             "MA-01-002",
         )
         self.assertIsNone(
-            commune_code_from_map_event({
-                "last_object_clicked_popup": "Hôpital\nType: hospital",
-            })
+            commune_code_from_map_event(
+                {
+                    "last_object_clicked_popup": "Hôpital\nType: hospital",
+                }
+            )
         )
 
     def test_facility_search_matches_name_type_and_city(self):
@@ -131,13 +137,15 @@ class AppRiskMapTests(unittest.TestCase):
         self.assertEqual(filter_facility_search(rows, "PHARMACIE"), [rows[1]])
 
     def test_commune_search_is_accent_and_arabic_compatible(self):
-        rows = [{
-            "name_fr": "Tétouan",
-            "name_ar": "تطوان",
-            "commune_code": "MA-01-001",
-            "province": "Tétouan",
-            "milieu": "Urbain",
-        }]
+        rows = [
+            {
+                "name_fr": "Tétouan",
+                "name_ar": "تطوان",
+                "commune_code": "MA-01-001",
+                "province": "Tétouan",
+                "milieu": "Urbain",
+            }
+        ]
         self.assertEqual(filter_map_communes(rows, [], [], "tetouan"), rows)
         self.assertEqual(filter_map_communes(rows, [], [], "تطوان"), rows)
 

@@ -31,14 +31,19 @@ def fetch_commune_forecast(commune_code, latitude, longitude, issued_on=None):
             if att == MAX_ATTEMPTS - 1:
                 raise
         if att < MAX_ATTEMPTS - 1:
-            time.sleep(10 * (att + 1))   # 10 s, 20 s... (plus court que pour l'historique)
+            time.sleep(10 * (att + 1))  # 10 s, 20 s... (plus court que pour l'historique)
 
     response.raise_for_status()
 
     df = pd.DataFrame(response.json()["daily"])
-    df.rename(columns={"time": "target_date",
-                       "precipitation_sum": "precip_mm",
-                       "temperature_2m_max": "tmax_c"}, inplace=True)
+    df.rename(
+        columns={
+            "time": "target_date",
+            "precipitation_sum": "precip_mm",
+            "temperature_2m_max": "tmax_c",
+        },
+        inplace=True,
+    )
     df["target_date"] = pd.to_datetime(df["target_date"]).dt.date
     df["commune_code"] = commune_code
     df["forecast_issued_on"] = issued_on

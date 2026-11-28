@@ -89,7 +89,8 @@ def render_territorial_risk_map(
 
     # Identification des communes à priorité critique
     critical_communes = [
-        c for c in communes
+        c
+        for c in communes
         if c.get("is_public_healthcare_absent") or c.get("primary_care_per_10k", 0.0) < 1.0
     ]
 
@@ -156,7 +157,9 @@ def render_territorial_risk_map(
     def risk_style_fn(feature):
         code = str(feature.get("properties", {}).get("commune_code", "")).strip()
         row = commune_data_by_code.get(code, {})
-        is_crit = row.get("is_public_healthcare_absent") or row.get("primary_care_per_10k", 0.0) < 1.0
+        is_crit = (
+            row.get("is_public_healthcare_absent") or row.get("primary_care_per_10k", 0.0) < 1.0
+        )
 
         stroke_color = "#991B1B" if (priority_only and is_crit) else "#334155"
         stroke_weight = 2.5 if (priority_only and is_crit) else 1
@@ -214,19 +217,23 @@ def render_territorial_risk_map(
                 <h4 style="margin:0 0 6px; color:#92400E; font-size:0.95rem;">📊 Synthèse de Vulnérabilité</h4>
                 <div style="font-size:0.85rem; color:#78350F;">
                     • <strong>Communes analysées :</strong> {len(communes)}<br/>
-                    • <strong>Communes sans structure publique :</strong> {sum(1 for c in communes if c.get('is_public_healthcare_absent'))}<br/>
-                    • <strong>Taux primaire critique (&lt;1/10k) :</strong> {sum(1 for c in communes if c.get('primary_care_per_10k', 0.0) < 1.0)}<br/>
-                    • <strong>Communes rurales isolées :</strong> {sum(1 for c in communes if c.get('milieu') == 'Rural' and c.get('pub_hospitals', 0) == 0)}
+                    • <strong>Communes sans structure publique :</strong> {sum(1 for c in communes if c.get("is_public_healthcare_absent"))}<br/>
+                    • <strong>Taux primaire critique (&lt;1/10k) :</strong> {sum(1 for c in communes if c.get("primary_care_per_10k", 0.0) < 1.0)}<br/>
+                    • <strong>Communes rurales isolées :</strong> {sum(1 for c in communes if c.get("milieu") == "Rural" and c.get("pub_hospitals", 0) == 0)}
                 </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-        st.markdown("<div style='font-size:0.9rem; font-weight:700; color:#0F172A; margin-bottom:6px;'>🚨 Communes en Situation de Fragilité :</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div style='font-size:0.9rem; font-weight:700; color:#0F172A; margin-bottom:6px;'>🚨 Communes en Situation de Fragilité :</div>",
+            unsafe_allow_html=True,
+        )
 
         display_critical = [
-            c for c in critical_communes
+            c
+            for c in critical_communes
             if selected_province == "Toutes les provinces" or c.get("province") == selected_province
         ]
 
@@ -252,7 +259,9 @@ def render_territorial_risk_map(
                     unsafe_allow_html=True,
                 )
             if len(display_critical) > 8:
-                st.caption(f"...et {len(display_critical) - 8} autres communes dans cette province.")
+                st.caption(
+                    f"...et {len(display_critical) - 8} autres communes dans cette province."
+                )
         else:
             st.success("Aucune commune sous seuil critique dans la province sélectionnée.")
 

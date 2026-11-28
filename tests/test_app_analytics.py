@@ -23,10 +23,7 @@ class CommuneRankingTests(unittest.TestCase):
         cls.rows = _commune_rows(cls.communes, cls.facilities)
 
     def test_commune_facility_totals_match_associated_source_records(self):
-        associated = sum(
-            facility.get("commune_code") is not None
-            for facility in self.facilities
-        )
+        associated = sum(facility.get("commune_code") is not None for facility in self.facilities)
         self.assertEqual(sum(row["Total établissements"] for row in self.rows), associated)
         self.assertEqual(associated, 826)
         self.assertEqual(
@@ -102,8 +99,7 @@ class CommuneRankingTests(unittest.TestCase):
         self.assertTrue(
             any(button.label == "Exporter le classement" for button in app.button)
             or any(
-                button.label == "Exporter le classement"
-                for button in app.get("download_button")
+                button.label == "Exporter le classement" for button in app.get("download_button")
             )
         )
         selected_code = app.session_state["ranking_selected_commune_code"]
@@ -112,9 +108,7 @@ class CommuneRankingTests(unittest.TestCase):
 
         self.assertEqual(list(app.exception), [])
         self.assertEqual(app.session_state["selected_page"], "Commune Details")
-        self.assertTrue(
-            app.selectbox(key="details_commune_selector").value.endswith(selected_code)
-        )
+        self.assertTrue(app.selectbox(key="details_commune_selector").value.endswith(selected_code))
 
 
 if __name__ == "__main__":

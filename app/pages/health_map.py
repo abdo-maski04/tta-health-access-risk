@@ -280,7 +280,9 @@ def render_health_map(
 
         # Communes filtrées selon la province choisie
         if selected_province != "Toutes les provinces":
-            filtered_communes_prov = [c for c in communes if str(c.get("province")) == selected_province]
+            filtered_communes_prov = [
+                c for c in communes if str(c.get("province")) == selected_province
+            ]
         else:
             filtered_communes_prov = communes
 
@@ -295,7 +297,9 @@ def render_health_map(
         # Trouver l'index de la commune active
         active_commune_name = "Aucune commune sélectionnée"
         if active_code:
-            match_comm = next((c for c in communes if str(c.get("commune_code")) == active_code), None)
+            match_comm = next(
+                (c for c in communes if str(c.get("commune_code")) == active_code), None
+            )
             if match_comm and match_comm.get("name_fr") in commune_name_to_code:
                 active_commune_name = str(match_comm.get("name_fr"))
 
@@ -313,7 +317,9 @@ def render_health_map(
             if selected_commune_name == "Aucune commune sélectionnée":
                 st.session_state["health_map_selected_commune_code"] = None
             else:
-                st.session_state["health_map_selected_commune_code"] = commune_name_to_code.get(selected_commune_name)
+                st.session_state["health_map_selected_commune_code"] = commune_name_to_code.get(
+                    selected_commune_name
+                )
             st.rerun()
 
         # 3. Dropdown Thématique
@@ -347,10 +353,22 @@ def render_health_map(
         )
 
         # 4 Toggles Verticaux avec badges SVG colorés
-        show_hosp = st.checkbox("🔴 Hôpitaux Publics (16)", value=st.session_state["hm_show_hosp"], key="hm_show_hosp")
-        show_essp = st.checkbox("🔷 Soins Primaires ESSP", value=st.session_state["hm_show_essp"], key="hm_show_essp")
-        show_pharm = st.checkbox("🟢 Pharmacies Validées (722)", value=st.session_state["hm_show_pharm"], key="hm_show_pharm")
-        show_clinics = st.checkbox("🟣 Cliniques & Spécialisés", value=st.session_state["hm_show_clinics"], key="hm_show_clinics")
+        show_hosp = st.checkbox(
+            "🔴 Hôpitaux Publics (16)", value=st.session_state["hm_show_hosp"], key="hm_show_hosp"
+        )
+        show_essp = st.checkbox(
+            "🔷 Soins Primaires ESSP", value=st.session_state["hm_show_essp"], key="hm_show_essp"
+        )
+        show_pharm = st.checkbox(
+            "🟢 Pharmacies Validées (722)",
+            value=st.session_state["hm_show_pharm"],
+            key="hm_show_pharm",
+        )
+        show_clinics = st.checkbox(
+            "🟣 Cliniques & Spécialisés",
+            value=st.session_state["hm_show_clinics"],
+            key="hm_show_clinics",
+        )
 
         # Légende Thématique Compacte
         if selected_thematic == "Milieu territorial":
@@ -445,7 +463,9 @@ def render_health_map(
     with col_map:
         # Centrage dynamique
         if active_code:
-            target_comm = next((c for c in communes if str(c.get("commune_code")) == active_code), None)
+            target_comm = next(
+                (c for c in communes if str(c.get("commune_code")) == active_code), None
+            )
             if target_comm and target_comm.get("centroid_lat") and target_comm.get("centroid_lon"):
                 map_center = [target_comm["centroid_lat"], target_comm["centroid_lon"]]
                 map_zoom = 11
@@ -493,7 +513,7 @@ def render_health_map(
 
         def style_fn(feature):
             code = str(feature.get("properties", {}).get("commune_code", "")).strip()
-            is_active = (active_code is not None and code == active_code)
+            is_active = active_code is not None and code == active_code
             row = commune_data_by_code.get(code)
             fill_col = _get_commune_choropleth_color(row, selected_thematic)
             return {
@@ -518,22 +538,28 @@ def render_health_map(
 
         # Établissements filtrés
         valid_facilities = [
-            f for f in facilities
+            f
+            for f in facilities
             if f.get("has_gps") is True
-            and f.get("validation_status") not in ("OUTSIDE_REGION_TERRITORY", "RECONCILED_PUBLIC_DUPLICATE")
+            and f.get("validation_status")
+            not in ("OUTSIDE_REGION_TERRITORY", "RECONCILED_PUBLIC_DUPLICATE")
         ]
         if selected_province != "Toutes les provinces":
             prov_codes = {str(c["commune_code"]) for c in filtered_communes_prov}
-            valid_facilities = [f for f in valid_facilities if str(f.get("commune_code")) in prov_codes]
+            valid_facilities = [
+                f for f in valid_facilities if str(f.get("commune_code")) in prov_codes
+            ]
 
         # 1. Hôpitaux Publics (16 officiels non regroupés pour haute visibilité)
         if show_hosp:
             hosp_layer = folium.FeatureGroup(name="Hôpitaux Publics (16)")
             hosp_pts = [
-                f for f in valid_facilities
+                f
+                for f in valid_facilities
                 if f.get("facility_tier") == "PUBLIC_CORE"
                 and f.get("validation_status") == "OFFICIAL_MINISTRY"
-                and f.get("lat") and f.get("lon")
+                and f.get("lat")
+                and f.get("lon")
             ]
             for p in hosp_pts:
                 folium.Marker(
@@ -550,10 +576,12 @@ def render_health_map(
                 options={"maxClusterRadius": 30, "disableClusteringAtZoom": 13},
             )
             essp_pts = [
-                f for f in valid_facilities
+                f
+                for f in valid_facilities
                 if f.get("facility_tier") == "PUBLIC_CORE"
                 and f.get("category_code") in ("CSU-1", "CSU-2", "CSR-1", "CSR-2", "DR")
-                and f.get("lat") and f.get("lon")
+                and f.get("lat")
+                and f.get("lon")
             ]
             for p in essp_pts:
                 folium.Marker(
@@ -570,10 +598,12 @@ def render_health_map(
                 options={"maxClusterRadius": 35, "disableClusteringAtZoom": 13},
             )
             pharm_pts = [
-                f for f in valid_facilities
+                f
+                for f in valid_facilities
                 if f.get("facility_tier") == "PRIVATE_VALID"
                 and f.get("category_code") == "PHARMACY"
-                and f.get("lat") and f.get("lon")
+                and f.get("lat")
+                and f.get("lon")
             ]
             for p in pharm_pts:
                 folium.Marker(
@@ -590,10 +620,12 @@ def render_health_map(
                 options={"maxClusterRadius": 30, "disableClusteringAtZoom": 13},
             )
             clinics_pts = [
-                f for f in valid_facilities
+                f
+                for f in valid_facilities
                 if f.get("facility_tier") == "PRIVATE_VALID"
                 and f.get("category_code") in ("CLINIC", "DOCTOR", "LABORATORY", "HOSP_OSM_OTHER")
-                and f.get("lat") and f.get("lon")
+                and f.get("lat")
+                and f.get("lon")
             ]
             for p in clinics_pts:
                 folium.Marker(
@@ -622,7 +654,9 @@ def render_health_map(
             elif isinstance(last_drawing, dict):
                 click_signature = str(last_drawing.get("properties", {}).get("commune_code", ""))
 
-            if click_signature and click_signature != st.session_state.get("_health_map_last_click_sig"):
+            if click_signature and click_signature != st.session_state.get(
+                "_health_map_last_click_sig"
+            ):
                 st.session_state["_health_map_last_click_sig"] = click_signature
 
                 clicked_code = None
@@ -758,7 +792,7 @@ def render_health_map(
                 <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 8px 10px; margin-top: 10px;">
                     <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;">
                         <span style="color: #64748B;">Soins Primaires / 10k hab. :</span>
-                        <strong style="color: {'#DC2626' if c_ratio_prim < 1.0 else '#0D5C75'};">{c_ratio_prim:.2f}</strong>
+                        <strong style="color: {"#DC2626" if c_ratio_prim < 1.0 else "#0D5C75"};">{c_ratio_prim:.2f}</strong>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 11px;">
                         <span style="color: #64748B;">Pharmacies / 10k hab. :</span>

@@ -51,10 +51,7 @@ def _navigation_icon_label(dashboard: str) -> str:
     return f"![{html.escape(title)}](data:image/svg+xml;base64,{encoded_svg})"
 
 
-NAVIGATION_ICONS = {
-    dashboard: _navigation_icon_label(dashboard)
-    for dashboard, _ in DASHBOARDS
-}
+NAVIGATION_ICONS = {dashboard: _navigation_icon_label(dashboard) for dashboard, _ in DASHBOARDS}
 
 
 def render_sidebar() -> str:
@@ -62,18 +59,12 @@ def render_sidebar() -> str:
     requested_page = st.session_state.pop("pending_navigation_page", None)
     if requested_page in {dashboard for dashboard, _ in DASHBOARDS}:
         requested_index = next(
-            index
-            for index, (dashboard, _) in enumerate(DASHBOARDS)
-            if dashboard == requested_page
+            index for index, (dashboard, _) in enumerate(DASHBOARDS) if dashboard == requested_page
         )
         st.session_state["sidebar_navigation_radio"] = labels[requested_index]
     current_page = st.session_state.get("selected_page", "Overview Dashboard")
     default_index = next(
-        (
-            index
-            for index, (dashboard, _) in enumerate(DASHBOARDS)
-            if dashboard == current_page
-        ),
+        (index for index, (dashboard, _) in enumerate(DASHBOARDS) if dashboard == current_page),
         0,
     )
     with st.sidebar.container(key="tta-sidebar-brand"):
@@ -82,11 +73,7 @@ def render_sidebar() -> str:
     selected_label = st.sidebar.radio(
         "Navigation",
         labels,
-        index=(
-            None
-            if "sidebar_navigation_radio" in st.session_state
-            else default_index
-        ),
+        index=(None if "sidebar_navigation_radio" in st.session_state else default_index),
         label_visibility="collapsed",
         key="sidebar_navigation_radio",
     )
@@ -110,9 +97,7 @@ def render_sidebar() -> str:
     )
     sources_available = all(path.is_file() for path in source_files)
     source_status = (
-        "Système opérationnel"
-        if sources_available
-        else "Sources de données incomplètes"
+        "Système opérationnel" if sources_available else "Sources de données incomplètes"
     )
     st.sidebar.markdown(
         f"""

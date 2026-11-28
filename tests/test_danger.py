@@ -5,11 +5,17 @@ from tta_risk.scoring.danger import compute_danger  # adapte l'import
 
 pytestmark = pytest.mark.integration
 
+
 def make_row(precip, tmax, **kw):
     base = dict(
-        precip_mm=precip, tmax_c=tmax,
-        rain_p65=5.0, rain_p80=10.0, rain_p90=20.0,
-        heat_p65=28.0, heat_p80=32.0, heat_p90=36.0,
+        precip_mm=precip,
+        tmax_c=tmax,
+        rain_p65=5.0,
+        rain_p80=10.0,
+        rain_p90=20.0,
+        heat_p65=28.0,
+        heat_p80=32.0,
+        heat_p90=36.0,
     )
     base.update(kw)
     return base
@@ -57,6 +63,14 @@ def test_max_of_both():
 
 
 def test_missing_thresholds_gives_zero():
-    r = danger_of(precip=50, tmax=40, rain_p65=None, rain_p80=None, rain_p90=None,
-                  heat_p65=None, heat_p80=None, heat_p90=None)
+    r = danger_of(
+        precip=50,
+        tmax=40,
+        rain_p65=None,
+        rain_p80=None,
+        rain_p90=None,
+        heat_p65=None,
+        heat_p80=None,
+        heat_p90=None,
+    )
     assert r.danger == 0 and r.dominant == "none"

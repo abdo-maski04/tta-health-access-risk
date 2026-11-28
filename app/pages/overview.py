@@ -42,11 +42,7 @@ OVERVIEW_MILIEU_COLORS = COLORS["overview_milieu"]
 
 
 def _is_number(value: object) -> bool:
-    return (
-        isinstance(value, (int, float))
-        and not isinstance(value, bool)
-        and math.isfinite(value)
-    )
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def _sum_field(rows: list[dict], field: str) -> float | int | None:
@@ -86,7 +82,8 @@ def filter_overview_communes(
     province_set = set(provinces or [])
     milieu_set = set(milieux or [])
     return [
-        row for row in communes
+        row
+        for row in communes
         if (not province_set or row["province"] in province_set)
         and (not milieu_set or row["milieu"] in milieu_set)
         and (
@@ -105,8 +102,7 @@ def build_provincial_summary(
 ) -> list[dict]:
     """Aggregate commune populations and verified facility associations."""
     population_label = (
-        f"Population {population_year}" if population_year is not None
-        else "Population"
+        f"Population {population_year}" if population_year is not None else "Population"
     )
     rows = []
     for province in sorted({row["province"] for row in communes}):
@@ -123,23 +119,21 @@ def build_provincial_summary(
             if pop_year is not None and total_area is not None and total_area > 0
             else None
         )
-        rows.append({
-            "Province": province,
-            "Communes": len(province_communes),
-            population_label: pop_year,
-            "Population urbaine 2024": _sum_field(
-                province_communes, "population_urbaine_2024"
-            ),
-            "Population rurale 2024": _sum_field(
-                province_communes, "population_rurale_2024"
-            ),
-            "Établissements associés": sum(
-                row.get("commune_code") is not None
-                and str(row["commune_code"]) in commune_codes
-                for row in facilities
-            ),
-            "Densité (hab/km²)": density,
-        })
+        rows.append(
+            {
+                "Province": province,
+                "Communes": len(province_communes),
+                population_label: pop_year,
+                "Population urbaine 2024": _sum_field(province_communes, "population_urbaine_2024"),
+                "Population rurale 2024": _sum_field(province_communes, "population_rurale_2024"),
+                "Établissements associés": sum(
+                    row.get("commune_code") is not None
+                    and str(row["commune_code"]) in commune_codes
+                    for row in facilities
+                ),
+                "Densité (hab/km²)": density,
+            }
+        )
     return sorted(
         rows,
         key=lambda row: (
@@ -153,9 +147,7 @@ def build_provincial_summary(
 def _reset_overview_filters() -> None:
     st.session_state["overview_search"] = ""
     st.session_state["overview_territory"] = REGION_OPTION
-    st.session_state["overview_year"] = st.session_state.get(
-        "overview_latest_year", 2024
-    )
+    st.session_state["overview_year"] = st.session_state.get("overview_latest_year", 2024)
     st.session_state["overview_milieu"] = []
 
 
@@ -176,10 +168,7 @@ def _build_map(
     import folium
 
     folium_map = get_initial_map()
-    associated = [
-        row for row in facilities
-        if row.get("commune_code") is not None
-    ]
+    associated = [row for row in facilities if row.get("commune_code") is not None]
     build_commune_layer(
         communes,
         geojson,
@@ -190,9 +179,7 @@ def _build_map(
     build_facility_layer(associated, folium_map, color_by_type=False)
     if show_unassigned:
         build_unassigned_facility_layer(facilities, folium_map)
-    unassigned_count = sum(
-        row.get("commune_code") is None for row in facilities
-    )
+    unassigned_count = sum(row.get("commune_code") is None for row in facilities)
     folium_map.add_child(
         build_legend(
             unassigned_count if show_unassigned else 0,
@@ -273,10 +260,12 @@ def render_overview(
     page_header("Overview Dashboard", "", compact=True)
 
     with st.container(key="tta-overview-toolbar"):
-        search_col, territory_col, year_col, filters_col, export_col, notice_col, user_col = st.columns(
-            [1.65, 1.15, 0.88, 0.72, 0.82, 0.22, 0.85],
-            gap="small",
-            vertical_alignment="center",
+        search_col, territory_col, year_col, filters_col, export_col, notice_col, user_col = (
+            st.columns(
+                [1.65, 1.15, 0.88, 0.72, 0.82, 0.22, 0.85],
+                gap="small",
+                vertical_alignment="center",
+            )
         )
         search = search_col.text_input(
             "Rechercher une commune",
@@ -293,9 +282,7 @@ def render_overview(
         population_year = year_col.selectbox(
             "Période",
             year_options or [None],
-            format_func=lambda year: (
-                "Non disponible" if year is None else str(year)
-            ),
+            format_func=lambda year: "Non disponible" if year is None else str(year),
             label_visibility="collapsed",
             key="overview_year",
         )
@@ -337,25 +324,19 @@ def render_overview(
     filtered_geojson = {
         "type": "FeatureCollection",
         "features": [
-            feature for feature in commune_geojson["features"]
+            feature
+            for feature in commune_geojson["features"]
             if str(feature["properties"]["commune_code"]) in filtered_codes
         ],
     }
 
-    unassociated_facilities = [
-        row for row in facilities
-        if row.get("commune_code") is None
-    ]
-    territorial_filter_active = bool(
-        selected_provinces or selected_milieux or search.strip()
-    )
+    unassociated_facilities = [row for row in facilities if row.get("commune_code") is None]
+    territorial_filter_active = bool(selected_provinces or selected_milieux or search.strip())
     shown_facilities = [
-        row for row in facilities
+        row
+        for row in facilities
         if row.get("commune_code") is not None
-        and (
-            not territorial_filter_active
-            or str(row["commune_code"]) in filtered_codes
-        )
+        and (not territorial_filter_active or str(row["commune_code"]) in filtered_codes)
     ]
     if not territorial_filter_active:
         shown_facilities.extend(unassociated_facilities)
@@ -397,9 +378,7 @@ def render_overview(
     )
     filtered_years = available_population_years(filtered)
     latest_filtered_year = filtered_years[-1] if filtered_years else None
-    previous_filtered_year = (
-        filtered_years[-2] if len(filtered_years) > 1 else None
-    )
+    previous_filtered_year = filtered_years[-2] if len(filtered_years) > 1 else None
     latest_population = (
         _sum_field(filtered, f"population_{latest_filtered_year}")
         if latest_filtered_year is not None
@@ -433,57 +412,60 @@ def render_overview(
         if not territorial_filter_active
         else "Communes filtrées"
     )
-    kpi_row([
-        {
-            "label": "Communes",
-            "value": f"{len(filtered):,}".replace(",", " "),
-            "description": communes_description,
-            "source": "",
-            "icon": "👥",
-        },
-        {
-            "label": f"Population totale ({population_year or '—'})",
-            "value": _format_number(population_total),
-            "description": population_description,
-            "source": "",
-            "icon": "👥",
-        },
-        {
-            "label": "Établissements OSM",
-            "value": f"{len(shown_facilities):,}".replace(",", " "),
-            "description": facility_description,
-            "source": "",
-            "icon": "🏥",
-        },
-        {
-            "label": "Provinces / Préfectures",
-            "value": len({row["province"] for row in filtered}),
-            "description": "Région TTA",
-            "source": "",
-            "icon": "📍",
-        },
-        {
-            "label": "Urbaines",
-            "value": milieu_counts["Urbain"],
-            "description": "Communes",
-            "source": "",
-            "icon": "🏙️",
-        },
-        {
-            "label": "Mixtes",
-            "value": milieu_counts["Mixte"],
-            "description": "Communes",
-            "source": "",
-            "icon": "🏘️",
-        },
-        {
-            "label": "Rurales",
-            "value": milieu_counts["Rural"],
-            "description": "Communes",
-            "source": "",
-            "icon": "🏡",
-        },
-    ], columns=7)
+    kpi_row(
+        [
+            {
+                "label": "Communes",
+                "value": f"{len(filtered):,}".replace(",", " "),
+                "description": communes_description,
+                "source": "",
+                "icon": "👥",
+            },
+            {
+                "label": f"Population totale ({population_year or '—'})",
+                "value": _format_number(population_total),
+                "description": population_description,
+                "source": "",
+                "icon": "👥",
+            },
+            {
+                "label": "Établissements OSM",
+                "value": f"{len(shown_facilities):,}".replace(",", " "),
+                "description": facility_description,
+                "source": "",
+                "icon": "🏥",
+            },
+            {
+                "label": "Provinces / Préfectures",
+                "value": len({row["province"] for row in filtered}),
+                "description": "Région TTA",
+                "source": "",
+                "icon": "📍",
+            },
+            {
+                "label": "Urbaines",
+                "value": milieu_counts["Urbain"],
+                "description": "Communes",
+                "source": "",
+                "icon": "🏙️",
+            },
+            {
+                "label": "Mixtes",
+                "value": milieu_counts["Mixte"],
+                "description": "Communes",
+                "source": "",
+                "icon": "🏘️",
+            },
+            {
+                "label": "Rurales",
+                "value": milieu_counts["Rural"],
+                "description": "Communes",
+                "source": "",
+                "icon": "🏡",
+            },
+        ],
+        columns=7,
+    )
 
     chart_columns = st.columns(3, gap="small")
     year_label = str(population_year) if population_year is not None else "Non disponible"
@@ -517,14 +499,9 @@ def render_overview(
 
     chart_columns = st.columns([1.1, 1, 1], gap="small")
     with chart_columns[0], st.container(border=True):
-        evolution_period = (
-            f" ({filtered_years[0]}–{filtered_years[-1]})"
-            if filtered_years
-            else ""
-        )
+        evolution_period = f" ({filtered_years[0]}–{filtered_years[-1]})" if filtered_years else ""
         st.markdown(
-            f"<div class='tta-card-title'>Évolution démographique"
-            f"{evolution_period}</div>",
+            f"<div class='tta-card-title'>Évolution démographique{evolution_period}</div>",
             unsafe_allow_html=True,
         )
         evolution_chart, evolution_summary = st.columns([2.2, 1], gap="small")
@@ -540,12 +517,11 @@ def render_overview(
                 st.caption("Population la plus récente")
                 st.markdown(f"**{_format_number(latest_population)}**")
                 st.caption(
-                    str(latest_filtered_year) if latest_filtered_year is not None
+                    str(latest_filtered_year)
+                    if latest_filtered_year is not None
                     else "Année non disponible"
                 )
-                growth_label = (
-                    f"{growth:+.1f}%" if growth is not None else "Non disponible"
-                )
+                growth_label = f"{growth:+.1f}%" if growth is not None else "Non disponible"
                 st.markdown(
                     "<div class='tta-evolution-label'>Évolution</div>"
                     f"<div class='tta-evolution-value'>{growth_label}</div>",
@@ -590,9 +566,7 @@ def render_overview(
 
             if key == "Densité (hab/km²)":
                 f_row[display_key] = _format_number(value, 1)
-            elif key != "Communes" and (
-                isinstance(value, (int, float)) or value is None
-            ):
+            elif key != "Communes" and (isinstance(value, (int, float)) or value is None):
                 f_row[display_key] = _format_number(value)
             else:
                 f_row[display_key] = value

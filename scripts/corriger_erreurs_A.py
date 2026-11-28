@@ -412,7 +412,11 @@ def colonnes_table(sql: str, table: str) -> list[str]:
     noms = []
     for ligne in corps:
         ligne = ligne.strip()
-        if not ligne or ligne.startswith("--") or ligne.upper().startswith(("PRIMARY", "CONSTRAINT")):
+        if (
+            not ligne
+            or ligne.startswith("--")
+            or ligne.upper().startswith(("PRIMARY", "CONSTRAINT"))
+        ):
             continue
         nom = re.split(r"[\s,]+", ligne)[0].strip()
         if nom:

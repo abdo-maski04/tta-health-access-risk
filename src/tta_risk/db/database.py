@@ -34,14 +34,9 @@ SET precipitation_sum  = EXCLUDED.precipitation_sum,
 
 def convert_df_to_rows(df):
     rows = list(
-        df[
-            [
-                "commune_code",
-                "date",
-                "precipitation_sum",
-                "temperature_2m_max"
-            ]
-        ].itertuples(index=False, name=None)
+        df[["commune_code", "date", "precipitation_sum", "temperature_2m_max"]].itertuples(
+            index=False, name=None
+        )
     )
     return rows
 
@@ -116,15 +111,14 @@ SET precip_mm   = EXCLUDED.precip_mm,
 """
 
 
-
 def convert_forecast_df_to_rows(df):
     # NaN pandas -> None, sinon Postgres stocke 'NaN' au lieu de NULL
     clean = df.astype(object).where(df.notna(), None)
     return list(
-        clean[["commune_code", "forecast_issued_on", "target_date",
-               "precip_mm", "tmax_c"]].itertuples(index=False, name=None)
+        clean[
+            ["commune_code", "forecast_issued_on", "target_date", "precip_mm", "tmax_c"]
+        ].itertuples(index=False, name=None)
     )
-
 
 
 def load_forecast_rows(rows):
@@ -172,9 +166,19 @@ def read_forecast_with_thresholds(issued_on):
 # ---------------------------------------------------------------------------
 
 COLONNES_RISK = (
-    "commune_code", "forecast_issued_on", "target_date", "precip_mm", "tmax_c",
-    "rain_level", "heat_level", "danger", "dominant",
-    "classe_trajet", "score", "niveau", "raison",
+    "commune_code",
+    "forecast_issued_on",
+    "target_date",
+    "precip_mm",
+    "tmax_c",
+    "rain_level",
+    "heat_level",
+    "danger",
+    "dominant",
+    "classe_trajet",
+    "score",
+    "niveau",
+    "raison",
 )
 
 upsert_risk_query = """

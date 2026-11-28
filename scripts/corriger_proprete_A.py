@@ -217,7 +217,9 @@ dans la nomenclature HCP. La somme reste 146.
 # 9. README : vraies instructions Docker
 # ---------------------------------------------------------------------------
 
-AVANT_DOCKER = "Les instructions pour Docker (Airflow, PostgreSQL) et Streamlit seront ajoutées ici."
+AVANT_DOCKER = (
+    "Les instructions pour Docker (Airflow, PostgreSQL) et Streamlit seront ajoutées ici."
+)
 APRES_DOCKER = """### Base de données (PostgreSQL)
 
 ```bat

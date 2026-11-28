@@ -39,11 +39,7 @@ def kpi_card(
         if unit and value is not None
         else ""
     )
-    source_html = (
-        f"<div class='tta-kpi-source'>{html.escape(source)}</div>"
-        if source
-        else ""
-    )
+    source_html = f"<div class='tta-kpi-source'>{html.escape(source)}</div>" if source else ""
     desc_html = ""
     if description:
         if description.startswith("+") or "vs 2014" in description:
@@ -52,9 +48,7 @@ def kpi_card(
                 f"{html.escape(description)}</span></div>"
             )
         else:
-            desc_html = (
-                f"<div class='tta-kpi-description'>{html.escape(description)}</div>"
-            )
+            desc_html = f"<div class='tta-kpi-description'>{html.escape(description)}</div>"
 
     st.markdown(
         "<div class='tta-kpi'>"
@@ -76,6 +70,6 @@ def kpi_row(items: Iterable[dict[str, Any]], columns: int = 4) -> None:
         return
     for offset in range(0, len(cards), columns):
         cols = st.columns(min(columns, len(cards) - offset))
-        for column, item in zip(cols, cards[offset:offset + columns], strict=False):
+        for column, item in zip(cols, cards[offset : offset + columns], strict=False):
             with column:
                 kpi_card(**item)

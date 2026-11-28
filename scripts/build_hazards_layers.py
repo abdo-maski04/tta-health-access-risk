@@ -87,23 +87,25 @@ def build_hazards():
         # Intersection avec l'emprise territoriale
         inter = bx.intersection(gdf_com.union_all())
         if not inter.is_empty:
-            features.append({
-                "type": "Feature",
-                "properties": {
-                    "nom": fz["nom_oued"],
-                    "categorie": "Zone inondable documentée",
-                    "type_alea": fz["type_alea"],
-                    "niveau": fz["niveau_gravite"],
-                    "province": fz["province"],
-                    "communes": fz["communes"],
-                    "organisme_source": fz["source_institutionnelle"],
-                    "annee": fz["annee_etude"],
-                    "statut": fz["statut_juridique"],
-                    "fiabilite": "HAUTE (Études ABHL / Ministère)",
-                    "color_rgb": [2, 132, 199, 140],  # Bleu azur translucide
-                },
-                "geometry": inter.__geo_interface__,
-            })
+            features.append(
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "nom": fz["nom_oued"],
+                        "categorie": "Zone inondable documentée",
+                        "type_alea": fz["type_alea"],
+                        "niveau": fz["niveau_gravite"],
+                        "province": fz["province"],
+                        "communes": fz["communes"],
+                        "organisme_source": fz["source_institutionnelle"],
+                        "annee": fz["annee_etude"],
+                        "statut": fz["statut_juridique"],
+                        "fiabilite": "HAUTE (Études ABHL / Ministère)",
+                        "color_rgb": [2, 132, 199, 140],  # Bleu azur translucide
+                    },
+                    "geometry": inter.__geo_interface__,
+                }
+            )
 
     # 2. Zones de forte instabilité de versants et glissements de terrain (Dorsale Calcaire et Flyschs du Rif)
     # Données issues des études géotechniques et géomorphologiques de la chaîne rifaine
@@ -144,30 +146,34 @@ def build_hazards():
         bx = box(*lz["bbox"])
         inter = bx.intersection(gdf_com.union_all())
         if not inter.is_empty:
-            features.append({
-                "type": "Feature",
-                "properties": {
-                    "nom": lz["nom"],
-                    "categorie": "Zone d'instabilité de versant",
-                    "type_alea": lz["type_alea"],
-                    "niveau": lz["niveau_gravite"],
-                    "province": lz["province"],
-                    "communes": "Versants montagneux rifains",
-                    "organisme_source": lz["source_institutionnelle"],
-                    "annee": lz["annee"],
-                    "statut": lz["statut"],
-                    "fiabilite": "HAUTE (Études scientifiques & géotechniques)",
-                    "color_rgb": [217, 119, 6, 140],  # Ambre/Ocre pour glissements
-                },
-                "geometry": inter.__geo_interface__,
-            })
+            features.append(
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "nom": lz["nom"],
+                        "categorie": "Zone d'instabilité de versant",
+                        "type_alea": lz["type_alea"],
+                        "niveau": lz["niveau_gravite"],
+                        "province": lz["province"],
+                        "communes": "Versants montagneux rifains",
+                        "organisme_source": lz["source_institutionnelle"],
+                        "annee": lz["annee"],
+                        "statut": lz["statut"],
+                        "fiabilite": "HAUTE (Études scientifiques & géotechniques)",
+                        "color_rgb": [217, 119, 6, 140],  # Ambre/Ocre pour glissements
+                    },
+                    "geometry": inter.__geo_interface__,
+                }
+            )
 
     out_hazards = PROCESSED_HAZARDS_DIR / "tta_territorial_constraints.geojson"
     out_hazards.write_text(
         json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"Couche des contraintes territoriales et aléas générée : {out_hazards} ({len(features)} zones documentées)")
+    print(
+        f"Couche des contraintes territoriales et aléas générée : {out_hazards} ({len(features)} zones documentées)"
+    )
     return 0
 
 

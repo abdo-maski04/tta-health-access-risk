@@ -1,4 +1,5 @@
 """Test d'intégration : les API Open-Meteo répondent avec les bonnes données."""
+
 import pytest
 import requests
 

@@ -14,10 +14,11 @@ from tta_risk.scoring.score import (
 
 pytestmark = pytest.mark.unit
 
-SEUILS = (12.0, 20.0, 30.0)          # p65, p80, p90
+SEUILS = (12.0, 20.0, 30.0)  # p65, p80, p90
 
 
 # --------------------------------------------------------------- etape 1 : danger
+
 
 def test_sous_le_premier_seuil_donne_zero():
     assert niveau(5.0, SEUILS) == 0
@@ -53,11 +54,20 @@ def test_valeur_absente_donne_zero():
 
 # --------------------------------------------------------------- etape 2 : trajet
 
-@pytest.mark.parametrize("temps,classe", [
-    (0.5, 1), (10.0, 1), (14.9, 1),
-    (15.0, 2), (30.0, 2), (45.0, 2),
-    (45.1, 3), (77.7, 3),
-])
+
+@pytest.mark.parametrize(
+    "temps,classe",
+    [
+        (0.5, 1),
+        (10.0, 1),
+        (14.9, 1),
+        (15.0, 2),
+        (30.0, 2),
+        (45.0, 2),
+        (45.1, 3),
+        (77.7, 3),
+    ],
+)
 def test_classes_de_trajet(temps, classe):
     assert classe_trajet(temps) == classe
 
@@ -69,9 +79,18 @@ def test_classe_jamais_nulle_et_erreur_si_inconnu():
 
 # --------------------------------------------------------------- etape 3 : score
 
-@pytest.mark.parametrize("danger,classe,attendu", [
-    (0, 3, 0), (1, 1, 1), (1, 3, 3), (2, 2, 4), (2, 3, 6), (3, 3, 9),
-])
+
+@pytest.mark.parametrize(
+    "danger,classe,attendu",
+    [
+        (0, 3, 0),
+        (1, 1, 1),
+        (1, 3, 3),
+        (2, 2, 4),
+        (2, 3, 6),
+        (3, 3, 9),
+    ],
+)
 def test_produit_danger_par_classe(danger, classe, attendu):
     assert score(danger, classe) == attendu
 
@@ -85,10 +104,19 @@ def test_les_scores_impossibles_sont_refuses():
 
 # --------------------------------------------------------------- etape 4 : couleur
 
-@pytest.mark.parametrize("valeur,attendu", [
-    (0, "vert"), (1, "jaune"), (2, "jaune"), (3, "orange"),
-    (4, "orange"), (6, "rouge"), (9, "rouge"),
-])
+
+@pytest.mark.parametrize(
+    "valeur,attendu",
+    [
+        (0, "vert"),
+        (1, "jaune"),
+        (2, "jaune"),
+        (3, "orange"),
+        (4, "orange"),
+        (6, "rouge"),
+        (9, "rouge"),
+    ],
+)
 def test_couleurs(valeur, attendu):
     assert couleur(valeur) == attendu
 
@@ -99,6 +127,7 @@ def test_couleur_impossible():
 
 
 # --------------------------------------------------------------- raison et population
+
 
 def test_raison_pluie_quand_elle_domine():
     assert raison(3, 1, 2) == "pluie"
@@ -127,10 +156,15 @@ def test_population_seulement_si_rouge():
 
 # --------------------------------------------------------------- cas complet
 
+
 def test_commune_pluvieuse_et_isolee_donne_rouge():
     resultat = scorer_commune(
-        pluie_mm=45.0, tmax_c=25.0, temps_min=60.0, population=25000,
-        seuils_pluie=SEUILS, seuils_chaleur=(30.0, 34.0, 38.0),
+        pluie_mm=45.0,
+        tmax_c=25.0,
+        temps_min=60.0,
+        population=25000,
+        seuils_pluie=SEUILS,
+        seuils_chaleur=(30.0, 34.0, 38.0),
     )
     assert resultat["danger_meteo"] == 3
     assert resultat["classe_trajet"] == 3
@@ -142,8 +176,12 @@ def test_commune_pluvieuse_et_isolee_donne_rouge():
 
 def test_commune_par_beau_temps_reste_verte_meme_isolee():
     resultat = scorer_commune(
-        pluie_mm=1.0, tmax_c=22.0, temps_min=90.0, population=800,
-        seuils_pluie=SEUILS, seuils_chaleur=(30.0, 34.0, 38.0),
+        pluie_mm=1.0,
+        tmax_c=22.0,
+        temps_min=90.0,
+        population=800,
+        seuils_pluie=SEUILS,
+        seuils_chaleur=(30.0, 34.0, 38.0),
     )
     assert resultat["danger_meteo"] == 0
     assert resultat["score"] == 0
@@ -154,8 +192,11 @@ def test_commune_par_beau_temps_reste_verte_meme_isolee():
 
 def test_commune_proche_sous_la_pluie_reste_jaune():
     resultat = scorer_commune(
-        pluie_mm=45.0, tmax_c=22.0, temps_min=8.0,
-        seuils_pluie=SEUILS, seuils_chaleur=(30.0, 34.0, 38.0),
+        pluie_mm=45.0,
+        tmax_c=22.0,
+        temps_min=8.0,
+        seuils_pluie=SEUILS,
+        seuils_chaleur=(30.0, 34.0, 38.0),
     )
     assert resultat["danger_meteo"] == 3
     assert resultat["score"] == 3

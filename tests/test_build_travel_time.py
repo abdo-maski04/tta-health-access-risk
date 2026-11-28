@@ -136,7 +136,10 @@ def test_upsert_merge_by_commune_code(tmp_path):
                 "temps_min": 5.0,
                 "distance_km": 2.5,
             },
-            "geometry": {"type": "LineString", "coordinates": [[-6.15, 35.18], [-6.15683, 35.18577]]},
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [[-6.15, 35.18], [-6.15683, 35.18577]],
+            },
         }
     ]
 
@@ -162,16 +165,30 @@ def test_upsert_merge_by_commune_code(tmp_path):
 def test_preservation_of_96_routes(tmp_path):
     out_dir = tmp_path / "out_v2"
     # Recalcul de 1 commune uniquement
-    new_rows = [{"commune_code": "MA-01-573-0101", "hospital_name": "CHP Mohamed 6", "temps_min": 15.0, "distance_km": 15.8}]
+    new_rows = [
+        {
+            "commune_code": "MA-01-573-0101",
+            "hospital_name": "CHP Mohamed 6",
+            "temps_min": 15.0,
+            "distance_km": 15.8,
+        }
+    ]
     new_features = [
         {
             "type": "Feature",
-            "properties": {"commune_code": "MA-01-573-0101", "hospital_name": "CHP Mohamed 6", "temps_min": 15.0, "distance_km": 15.8},
+            "properties": {
+                "commune_code": "MA-01-573-0101",
+                "hospital_name": "CHP Mohamed 6",
+                "temps_min": 15.0,
+                "distance_km": 15.8,
+            },
             "geometry": {"type": "LineString", "coordinates": [[-5.35, 35.85], [-5.329, 35.692]]},
         }
     ]
 
-    upsert_travel_data(BASE_CSV, BASE_GEOJSON, out_dir, new_rows, new_features, apply_doc_norm=False)
+    upsert_travel_data(
+        BASE_CSV, BASE_GEOJSON, out_dir, new_rows, new_features, apply_doc_norm=False
+    )
 
     df_orig = pd.read_csv(BASE_CSV, dtype={"commune_code": str})
     df_new = pd.read_csv(out_dir / "travel_time_TTA_2024.csv", dtype={"commune_code": str})
@@ -264,31 +281,47 @@ def test_par_ors_v2_compares_all_cached_candidates(tmp_path):
     cache_dir = tmp_path / "ors_v2"
     cache_dir.mkdir(parents=True, exist_ok=True)
     code = "MA-01-227-0313"
-    cand_slow = {"osm_type": "way", "osm_id": 293247182, "name": "Hopital Mohamed 6", "lat": 35.692, "lon": -5.329}
-    cand_fast = {"osm_type": "way", "osm_id": 475665966, "name": "Hôpital Mohammed VI", "lat": 35.751, "lon": -5.828}
+    cand_slow = {
+        "osm_type": "way",
+        "osm_id": 293247182,
+        "name": "Hopital Mohamed 6",
+        "lat": 35.692,
+        "lon": -5.329,
+    }
+    cand_fast = {
+        "osm_type": "way",
+        "osm_id": 475665966,
+        "name": "Hôpital Mohammed VI",
+        "lat": 35.751,
+        "lon": -5.828,
+    }
 
     get_cache_path(cache_dir, code, cand_slow["osm_type"], cand_slow["osm_id"]).write_text(
-        json.dumps({
-            "commune_code": code,
-            "hopital": cand_slow,
-            "temps_min": 53.7,
-            "distance_km": 53.19,
-            "trace": [[-5.5, 35.8], [-5.329, 35.692]],
-            "methode": "ORS_DRIVING_CAR",
-            "status": "SUCCESS",
-        }),
+        json.dumps(
+            {
+                "commune_code": code,
+                "hopital": cand_slow,
+                "temps_min": 53.7,
+                "distance_km": 53.19,
+                "trace": [[-5.5, 35.8], [-5.329, 35.692]],
+                "methode": "ORS_DRIVING_CAR",
+                "status": "SUCCESS",
+            }
+        ),
         encoding="utf-8",
     )
     get_cache_path(cache_dir, code, cand_fast["osm_type"], cand_fast["osm_id"]).write_text(
-        json.dumps({
-            "commune_code": code,
-            "hopital": cand_fast,
-            "temps_min": 44.6,
-            "distance_km": 55.75,
-            "trace": [[-5.5, 35.8], [-5.828, 35.751]],
-            "methode": "ORS_DRIVING_CAR",
-            "status": "SUCCESS",
-        }),
+        json.dumps(
+            {
+                "commune_code": code,
+                "hopital": cand_fast,
+                "temps_min": 44.6,
+                "distance_km": 55.75,
+                "trace": [[-5.5, 35.8], [-5.828, 35.751]],
+                "methode": "ORS_DRIVING_CAR",
+                "status": "SUCCESS",
+            }
+        ),
         encoding="utf-8",
     )
 
@@ -311,19 +344,33 @@ def test_par_ors_v2_queries_uncached_faster_candidate(tmp_path):
     cache_dir = tmp_path / "ors_v2"
     cache_dir.mkdir(parents=True, exist_ok=True)
     code = "MA-01-571-0301"
-    cand_cached = {"osm_type": "way", "osm_id": 1242229574, "name": "Hospital Ben Karrich", "lat": 35.51, "lon": -5.42}
-    cand_uncached = {"osm_type": "way", "osm_id": 484204214, "name": "Hôpital Sanyat Rmel", "lat": 35.57, "lon": -5.36}
+    cand_cached = {
+        "osm_type": "way",
+        "osm_id": 1242229574,
+        "name": "Hospital Ben Karrich",
+        "lat": 35.51,
+        "lon": -5.42,
+    }
+    cand_uncached = {
+        "osm_type": "way",
+        "osm_id": 484204214,
+        "name": "Hôpital Sanyat Rmel",
+        "lat": 35.57,
+        "lon": -5.36,
+    }
 
     get_cache_path(cache_dir, code, cand_cached["osm_type"], cand_cached["osm_id"]).write_text(
-        json.dumps({
-            "commune_code": code,
-            "hopital": cand_cached,
-            "temps_min": 34.1,
-            "distance_km": 24.70,
-            "trace": [[-5.5, 35.5], [-5.42, 35.51]],
-            "methode": "ORS_DRIVING_CAR",
-            "status": "SUCCESS",
-        }),
+        json.dumps(
+            {
+                "commune_code": code,
+                "hopital": cand_cached,
+                "temps_min": 34.1,
+                "distance_km": 24.70,
+                "trace": [[-5.5, 35.5], [-5.42, 35.51]],
+                "methode": "ORS_DRIVING_CAR",
+                "status": "SUCCESS",
+            }
+        ),
         encoding="utf-8",
     )
 
@@ -358,7 +405,13 @@ def test_par_ors_v2_queries_uncached_faster_candidate(tmp_path):
 # 18. Coherence entre distance estimee (avec facteur de detour) et temps estime
 def test_par_estimation_distance_consistent_with_speed():
     candidats = [
-        {"osm_type": "way", "osm_id": 871505068, "name": "CHU de Tanger", "lat": 35.683432, "lon": -5.925265}
+        {
+            "osm_type": "way",
+            "osm_id": 871505068,
+            "name": "CHU de Tanger",
+            "lat": 35.683432,
+            "lon": -5.925265,
+        }
     ]
     origine = (35.75, -5.80)
     expected_haversine = haversine(origine[0], origine[1], candidats[0]["lat"], candidats[0]["lon"])

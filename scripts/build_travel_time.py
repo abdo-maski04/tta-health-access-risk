@@ -89,6 +89,7 @@ def cle() -> str | None:
     """Lit ORS_API_KEY dans .env a la racine du depot."""
     try:
         from dotenv import load_dotenv
+
         load_dotenv(RACINE / ".env")
     except ImportError:
         pass
@@ -228,7 +229,9 @@ def get_candidates_for_commune(
     return pool_sorted[:k_nearest]
 
 
-def itineraire(session: Any, token: str, origine: tuple[float, float], hopital: dict[str, Any]) -> dict[str, Any] | None:
+def itineraire(
+    session: Any, token: str, origine: tuple[float, float], hopital: dict[str, Any]
+) -> dict[str, Any] | None:
     """Appelle ORS Directions pour calculer l'itineraire."""
     coordonnees = [[origine[1], origine[0]], [hopital["lon"], hopital["lat"]]]
     entetes = {"Authorization": token, "Content-Type": "application/json"}
@@ -256,7 +259,9 @@ def itineraire(session: Any, token: str, origine: tuple[float, float], hopital: 
                     return features[0]
                 return None
             if rep.status_code in (401, 403):
-                raise RuntimeError(f"Authentification refusee ou quota ORS epuise ({rep.status_code})")
+                raise RuntimeError(
+                    f"Authentification refusee ou quota ORS epuise ({rep.status_code})"
+                )
             if rep.status_code == 429:
                 time.sleep(30)
                 continue
@@ -428,16 +433,39 @@ def upsert_travel_data(
 
 def main(argv: list[str] | None = None) -> int:
     """Point d'entree principal avec options de securite et de ciblage."""
-    parseur = argparse.ArgumentParser(description="Calcul d'accessibilite hospitaliere GeoVulnera TTA")
+    parseur = argparse.ArgumentParser(
+        description="Calcul d'accessibilite hospitaliere GeoVulnera TTA"
+    )
     parseur.add_argument("--limit", type=int, default=0, help="Ne traiter que N communes")
-    parseur.add_argument("--approx", action="store_true", help="Forcer le plan B (estimation a vol d'oiseau)")
-    parseur.add_argument("--communes-list", type=str, default="", help="Codes HCP separes par des virgules")
-    parseur.add_argument("--communes-file", type=str, default="", help="Fichier texte listant les codes HCP")
-    parseur.add_argument("--force-recompute", action="store_true", help="Ignorer le cache et forcer le recalcul")
-    parseur.add_argument("--dry-run", action="store_true", help="Simulation hors ligne sans appel API ni ecriture finale")
-    parseur.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR), help="Repertoire de sortie")
-    parseur.add_argument("--whitelist", type=str, default=str(WHITELIST_PATH), help="Chemin vers hospital_whitelist.json")
-    parseur.add_argument("--no-doc-norm", action="store_true", help="Desactiver la normalisation documentaire")
+    parseur.add_argument(
+        "--approx", action="store_true", help="Forcer le plan B (estimation a vol d'oiseau)"
+    )
+    parseur.add_argument(
+        "--communes-list", type=str, default="", help="Codes HCP separes par des virgules"
+    )
+    parseur.add_argument(
+        "--communes-file", type=str, default="", help="Fichier texte listant les codes HCP"
+    )
+    parseur.add_argument(
+        "--force-recompute", action="store_true", help="Ignorer le cache et forcer le recalcul"
+    )
+    parseur.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Simulation hors ligne sans appel API ni ecriture finale",
+    )
+    parseur.add_argument(
+        "--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR), help="Repertoire de sortie"
+    )
+    parseur.add_argument(
+        "--whitelist",
+        type=str,
+        default=str(WHITELIST_PATH),
+        help="Chemin vers hospital_whitelist.json",
+    )
+    parseur.add_argument(
+        "--no-doc-norm", action="store_true", help="Desactiver la normalisation documentaire"
+    )
     args = parseur.parse_args(argv)
 
     if not COMMUNES.is_file() or not BASE_CSV.is_file() or not BASE_GEOJSON.is_file():
@@ -447,7 +475,9 @@ def main(argv: list[str] | None = None) -> int:
     # Charger la whitelist qualifiee
     whitelist = load_whitelist(Path(args.whitelist))
     communes_df = pd.read_csv(COMMUNES, dtype={"commune_code": str})
-    print(f"Referentiel charge : {len(communes_df)} communes | Whitelist : {whitelist['metadata']['total_official_hospitals']} hopitaux officiels")
+    print(
+        f"Referentiel charge : {len(communes_df)} communes | Whitelist : {whitelist['metadata']['total_official_hospitals']} hopitaux officiels"
+    )
 
     # Filtrage cible des communes
     target_codes: list[str] | None = None
@@ -458,13 +488,17 @@ def main(argv: list[str] | None = None) -> int:
         if not f_path.is_file():
             print(f"ERREUR : Fichier communes introuvable : {f_path}")
             return 1
-        target_codes = [line.strip() for line in f_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        target_codes = [
+            line.strip() for line in f_path.read_text(encoding="utf-8").splitlines() if line.strip()
+        ]
 
     if target_codes:
         valid_set = set(communes_df["commune_code"])
         invalids = [c for c in target_codes if c not in valid_set]
         if invalids:
-            print(f"ERREUR : {len(invalids)} codes HCP invalides dans la selection : {invalids[:5]}")
+            print(
+                f"ERREUR : {len(invalids)} codes HCP invalides dans la selection : {invalids[:5]}"
+            )
             return 1
         communes_df = communes_df[communes_df["commune_code"].isin(target_codes)].copy()
         print(f"Selection ciblee activee : {len(communes_df)} communes a traiter.")
@@ -476,9 +510,14 @@ def main(argv: list[str] | None = None) -> int:
     session = None
     if token:
         import requests
+
         session = requests.Session()
 
-    mode_label = "DRY-RUN (SIMULATION)" if args.dry_run else ("ORS (EN LIGNE)" if token else "APPROX (PLAN B)")
+    mode_label = (
+        "DRY-RUN (SIMULATION)"
+        if args.dry_run
+        else ("ORS (EN LIGNE)" if token else "APPROX (PLAN B)")
+    )
     print(f"Mode d'execution : {mode_label}")
     if args.dry_run:
         print("Avertissement : Mode simulation, aucun appel reseau ne sera effectue.")
@@ -490,7 +529,9 @@ def main(argv: list[str] | None = None) -> int:
 
     for n, commune in enumerate(communes_df.itertuples(), start=1):
         origine = (float(commune.start_lat), float(commune.start_lon))
-        candidats = get_candidates_for_commune(commune.commune_code, origine[0], origine[1], whitelist)
+        candidats = get_candidates_for_commune(
+            commune.commune_code, origine[0], origine[1], whitelist
+        )
 
         if args.dry_run:
             # Verification statique des candidats
@@ -560,7 +601,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  Progression : {n}/{len(communes_df)} communes analysees")
 
     if args.dry_run:
-        print(f"\n[DRY-RUN TERMINE] {len(lignes)} communes verifiees avec succes. Aucune donnee modifiee.")
+        print(
+            f"\n[DRY-RUN TERMINE] {len(lignes)} communes verifiees avec succes. Aucune donnee modifiee."
+        )
         return 0
 
     # Fusion atomique securisee sans ecrasement des 96 communes

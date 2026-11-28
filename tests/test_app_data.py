@@ -33,10 +33,7 @@ class AppDataTests(unittest.TestCase):
 
     def test_csv_geojson_codes_match(self):
         csv_codes = {row["commune_code"] for row in self.communes}
-        geo_codes = {
-            feature["properties"]["commune_code"]
-            for feature in self.geojson["features"]
-        }
+        geo_codes = {feature["properties"]["commune_code"] for feature in self.geojson["features"]}
         self.assertEqual(csv_codes, geo_codes)
 
     def test_validate_datasets_accepts_real_data(self):
@@ -55,9 +52,7 @@ class AppDataTests(unittest.TestCase):
 
     def test_exact_facility_count_unique_identifiers(self):
         self.assertEqual(len(self.facilities), 892)
-        identifiers = [
-            (row["osm_type"], row["osm_id"]) for row in self.facilities
-        ]
+        identifiers = [(row["osm_type"], row["osm_id"]) for row in self.facilities]
         self.assertEqual(len(set(identifiers)), 892)
 
     def test_all_facility_coordinates_are_valid(self):
@@ -88,10 +83,7 @@ class AppDataTests(unittest.TestCase):
             self.facilities,
             join_commune_properties(self.communes, self.geojson),
         )
-        unassociated = [
-            row for row in assigned
-            if row["commune_code"] is None
-        ]
+        unassociated = [row for row in assigned if row["commune_code"] is None]
         self.assertGreater(len(unassociated), 0)
         self.assertLess(len(unassociated), len(assigned))
 

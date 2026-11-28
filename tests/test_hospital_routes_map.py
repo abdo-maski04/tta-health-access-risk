@@ -93,7 +93,12 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
     @patch("streamlit.checkbox")
     def test_render_hospital_routes_map_smoke_test(self, mock_check, mock_select, mock_deck):
         """Smoke test : vérifie que le rendu de la page s'exécute sans lever d'exception."""
-        mock_select.side_effect = ["Toutes les provinces", "Tous les statuts (146)", "Tous les hôpitaux", "Toutes les communes"]
+        mock_select.side_effect = [
+            "Toutes les provinces",
+            "Tous les statuts (146)",
+            "Tous les hôpitaux",
+            "Toutes les communes",
+        ]
         mock_check.return_value = True
 
         # Doit s'exécuter sans erreur
@@ -111,7 +116,10 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
             "features": [
                 {
                     "type": "Feature",
-                    "geometry": {"type": "LineString", "coordinates": [[-5.8, 35.7], [-5.81, 35.72]]},
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[-5.8, 35.7], [-5.81, 35.72]],
+                    },
                     "properties": {
                         "name_fr": "Tanger",
                         "commune_code": "MA-01-511-0101",
@@ -145,10 +153,13 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
             routes_geojson=routes_gj,
             hospitals_geojson=hospitals_gj,
             communes_geojson=self.communes_gj,
-            hydro_rivers_geojson=aux.get("hydro_rivers") or {"type": "FeatureCollection", "features": []},
-            hydro_basins_geojson=aux.get("hydro_basins") or {"type": "FeatureCollection", "features": []},
+            hydro_rivers_geojson=aux.get("hydro_rivers")
+            or {"type": "FeatureCollection", "features": []},
+            hydro_basins_geojson=aux.get("hydro_basins")
+            or {"type": "FeatureCollection", "features": []},
             hazards_geojson=aux.get("hazards") or {"type": "FeatureCollection", "features": []},
-            isochrones_geojson=aux.get("isochrones") or {"type": "FeatureCollection", "features": []},
+            isochrones_geojson=aux.get("isochrones")
+            or {"type": "FeatureCollection", "features": []},
             terrain_bounds=aux.get("terrain_bounds", [-6.2923, 34.4560, -3.7540, 35.9730]),
             height=780,
         )
@@ -159,12 +170,17 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
         self.assertIn("getHospitalSvgIcon", html)
         self.assertIn("CHU", html)
         # Vérification zéro placeholder PyDeck résiduel ou non résolu
-        for bad_placeholder in ["{name_fr} {name} {nom}", "{hospital_canonical} {hospital_name}", "{category} {type_alea}"]:
+        for bad_placeholder in [
+            "{name_fr} {name} {nom}",
+            "{hospital_canonical} {hospital_name}",
+            "{category} {type_alea}",
+        ]:
             self.assertNotIn(bad_placeholder, html)
 
     def test_auxiliary_layers_loader(self):
         """Vérifie le chargement des couches auxiliaires (relief, hydro, aléas, isochrones)."""
         from app.pages.hospital_routes_map import _load_auxiliary_layers
+
         aux = _load_auxiliary_layers()
         self.assertIn("terrain_bounds", aux)
         self.assertIsInstance(aux["terrain_bounds"], list)
@@ -179,11 +195,20 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
     def test_geospatial_metadata_catalog(self):
         """Vérifie l'existence et la conformité du catalogue de métadonnées géospatiales."""
         from pathlib import Path
+
         meta_csv = Path("data/metadata/geospatial_sources.csv")
         self.assertTrue(meta_csv.exists())
         df = pd.read_csv(meta_csv)
         self.assertGreaterEqual(len(df), 6)
-        expected_cols = {"dataset_id", "name", "category", "provider", "format", "coverage", "license"}
+        expected_cols = {
+            "dataset_id",
+            "name",
+            "category",
+            "provider",
+            "format",
+            "coverage",
+            "license",
+        }
         self.assertTrue(expected_cols.issubset(set(df.columns)))
         dataset_ids = set(df["dataset_id"])
         self.assertIn("COPERNICUS_DEM_GLO", dataset_ids)
@@ -194,6 +219,7 @@ class HospitalRoutesMapV2Tests(unittest.TestCase):
     def test_terrain_and_hydro_files_exist_and_valid(self):
         """Vérifie la présence et la non-vacuité des rasters terrain et vecteurs hydrographiques."""
         from pathlib import Path
+
         dem_tif = Path("data/processed/terrain/tta_dem_30m.tif")
         hs_png = Path("data/processed/terrain/tta_hillshade_display.png")
         hydro_gj = Path("data/processed/hydro/tta_hydrorivers.geojson")

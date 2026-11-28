@@ -12,6 +12,11 @@ def test_upsert_query_history():
     load_weather_rows(rows2)
     with get_connection() as conn:
         with conn.cursor() as cursor:
-            cursor.execute("select count(*) from weather.weather_daily where commune_code=%s and date=%s", ("sidi abdo", "2023-01-01"))
+            cursor.execute(
+                "select count(*) from weather.weather_daily where commune_code=%s and date=%s",
+                ("sidi abdo", "2023-01-01"),
+            )
             result = cursor.fetchone()[0]
-            assert result == 1, "le non chargements des lignes dupliquées des données météo a échoué"
+            assert result == 1, (
+                "le non chargements des lignes dupliquées des données météo a échoué"
+            )

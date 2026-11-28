@@ -15,16 +15,24 @@ class AppMapTests(unittest.TestCase):
             set(map_utils.MILIEU_COLORS),
             {"Urbain", "Mixte", "Rural"},
         )
-        self.assertEqual(map_utils.MILIEU_COLORS, {
-            "Urbain": "#279B91",
-            "Mixte": "#E6AD55",
-            "Rural": "#648BB8",
-        })
+        self.assertEqual(
+            map_utils.MILIEU_COLORS,
+            {
+                "Urbain": "#279B91",
+                "Mixte": "#E6AD55",
+                "Rural": "#648BB8",
+            },
+        )
 
     def test_facility_colors_cover_real_types(self):
         types = {
-            "hospital", "clinic", "doctors", "laboratory", "pharmacy",
-            "physiotherapist", "healthcare_unspecified",
+            "hospital",
+            "clinic",
+            "doctors",
+            "laboratory",
+            "pharmacy",
+            "physiotherapist",
+            "healthcare_unspecified",
         }
         self.assertTrue(types.issubset(set(map_utils.FACILITY_COLORS)))
 
@@ -37,10 +45,7 @@ class AppMapTests(unittest.TestCase):
         from data_loader import load_communes_geojson
 
         geojson = load_communes_geojson()
-        types = {
-            feature["geometry"]["type"]
-            for feature in geojson["features"]
-        }
+        types = {feature["geometry"]["type"] for feature in geojson["features"]}
         self.assertEqual(types, {"Polygon", "MultiPolygon"})
 
     def test_popup_contents_have_no_fake_risk_fields(self):
@@ -61,13 +66,15 @@ class AppMapTests(unittest.TestCase):
 
         folium_map = folium.Map(location=[35.20, -5.45], zoom_start=7)
         build_unassigned_facility_layer(
-            [{
-                "name": "Centre El Fath D`hemodialyse ${2 + 2}",
-                "facility_type": "clinic",
-                "commune_code": None,
-                "lat": 35.2,
-                "lon": -5.45,
-            }],
+            [
+                {
+                    "name": "Centre El Fath D`hemodialyse ${2 + 2}",
+                    "facility_type": "clinic",
+                    "commune_code": None,
+                    "lat": 35.2,
+                    "lon": -5.45,
+                }
+            ],
             folium_map,
         )
 
@@ -100,10 +107,7 @@ class AppMapTests(unittest.TestCase):
         facilities = assign_facility_communes(load_facilities(), enriched)
         folium_map = folium.Map(location=[35.20, -5.45], zoom_start=7)
 
-        associated = [
-            row for row in facilities
-            if row["commune_code"] is not None
-        ]
+        associated = [row for row in facilities if row["commune_code"] is not None]
         commune_group = build_commune_layer(
             communes,
             enriched,
@@ -146,7 +150,8 @@ class AppMapTests(unittest.TestCase):
             if marker.__class__.__name__ == "CircleMarker"
         )
         unassigned_markers = [
-            marker for marker in unassigned_group._children.values()
+            marker
+            for marker in unassigned_group._children.values()
             if marker.__class__.__name__ == "CircleMarker"
         ]
         associated_locations = {
@@ -154,13 +159,9 @@ class AppMapTests(unittest.TestCase):
             for marker in facility_group._children.values()
             if marker.__class__.__name__ == "CircleMarker"
         }
-        unassigned_locations = {
-            tuple(marker.location) for marker in unassigned_markers
-        }
+        unassigned_locations = {tuple(marker.location) for marker in unassigned_markers}
         expected_unassigned_locations = {
-            (row["lat"], row["lon"])
-            for row in facilities
-            if row["commune_code"] is None
+            (row["lat"], row["lon"]) for row in facilities if row["commune_code"] is None
         }
         self.assertEqual(polygon_count, 146)
         self.assertEqual(marker_count, 826)
@@ -169,15 +170,11 @@ class AppMapTests(unittest.TestCase):
         self.assertEqual(unassigned_locations, expected_unassigned_locations)
         self.assertTrue(associated_locations.isdisjoint(unassigned_locations))
         self.assertTrue(
-            all(
-                marker.options["color"] == THEME.text_muted
-                for marker in unassigned_markers
-            )
+            all(marker.options["color"] == THEME.text_muted for marker in unassigned_markers)
         )
         for marker in unassigned_markers:
             popup = next(
-                child for child in marker._children.values()
-                if child.__class__.__name__ == "Popup"
+                child for child in marker._children.values() if child.__class__.__name__ == "Popup"
             )
             self.assertIn(
                 "Hors périmètre des 146 polygones",
@@ -190,8 +187,7 @@ class AppMapTests(unittest.TestCase):
         self.assertIn("Hors polygones (66)", map_html)
         first_commune = communes[0]
         first_associated_count = sum(
-            row["commune_code"] == first_commune["commune_code"]
-            for row in associated
+            row["commune_code"] == first_commune["commune_code"] for row in associated
         )
         self.assertIn(
             f"Établissements associés:</b> {first_associated_count}",
@@ -199,8 +195,7 @@ class AppMapTests(unittest.TestCase):
         )
         self.assertEqual(
             geojson_bounds(enriched),
-            [[34.50599078168922, -6.2422943115234375],
-             [35.92297639918852, -3.80401611328125]],
+            [[34.50599078168922, -6.2422943115234375], [35.92297639918852, -3.80401611328125]],
         )
 
     def test_overview_markers_use_association_color(self):
@@ -208,13 +203,15 @@ class AppMapTests(unittest.TestCase):
 
         folium_map = folium.Map(location=[35.20, -5.45], zoom_start=7)
         group = map_utils.build_facility_layer(
-            [{
-                "lat": 35.2,
-                "lon": -5.45,
-                "facility_type": "pharmacy",
-                "commune_code": "1",
-                "name": "Pharmacie test",
-            }],
+            [
+                {
+                    "lat": 35.2,
+                    "lon": -5.45,
+                    "facility_type": "pharmacy",
+                    "commune_code": "1",
+                    "name": "Pharmacie test",
+                }
+            ],
             folium_map,
             color_by_type=False,
         )
@@ -264,13 +261,15 @@ class AppMapTests(unittest.TestCase):
 
         folium_map = folium.Map(location=[35.2, -5.45], zoom_start=7)
         layer = build_facility_layer(
-            [{
-                "lat": 35.2,
-                "lon": -5.45,
-                "facility_type": "hospital",
-                "commune_code": "01",
-                "name": "Centre de santé",
-            }],
+            [
+                {
+                    "lat": 35.2,
+                    "lon": -5.45,
+                    "facility_type": "hospital",
+                    "commune_code": "01",
+                    "name": "Centre de santé",
+                }
+            ],
             folium_map,
             symbol_markers=True,
         )
@@ -306,34 +305,38 @@ class AppMapTests(unittest.TestCase):
             get_initial_map,
         )
 
-        communes = [{
-            "commune_code": "01",
-            "name_fr": "Commune A",
-            "centroid_lat": 35.2,
-            "centroid_lon": -5.4,
-            "population_2024": 120,
-        }, {
-            "commune_code": "02",
-            "name_fr": "Commune B",
-            "centroid_lat": 35.3,
-            "centroid_lon": -5.5,
-            "population_2024": 80,
-        }]
-        facilities = [{
-            "commune_code": "01",
-            "facility_type": "hospital",
-            "lat": 35.21,
-            "lon": -5.41,
-        }, {
-            "commune_code": None,
-            "facility_type": "pharmacy",
-            "lat": 35.31,
-            "lon": -5.51,
-        }]
+        communes = [
+            {
+                "commune_code": "01",
+                "name_fr": "Commune A",
+                "centroid_lat": 35.2,
+                "centroid_lon": -5.4,
+                "population_2024": 120,
+            },
+            {
+                "commune_code": "02",
+                "name_fr": "Commune B",
+                "centroid_lat": 35.3,
+                "centroid_lon": -5.5,
+                "population_2024": 80,
+            },
+        ]
+        facilities = [
+            {
+                "commune_code": "01",
+                "facility_type": "hospital",
+                "lat": 35.21,
+                "lon": -5.41,
+            },
+            {
+                "commune_code": None,
+                "facility_type": "pharmacy",
+                "lat": 35.31,
+                "lon": -5.51,
+            },
+        ]
         folium_map = get_initial_map("satellite")
-        bubbles = build_proportional_bubble_layer(
-            communes, facilities[:1], folium_map
-        )
+        bubbles = build_proportional_bubble_layer(communes, facilities[:1], folium_map)
         heatmap = build_heatmap_layer(facilities, folium_map, show=False)
         bounds = [[35.1, -5.6], [35.4, -5.3]]
         add_enterprise_map_controls(

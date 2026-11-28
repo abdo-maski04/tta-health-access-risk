@@ -35,7 +35,9 @@ def estimate_empirical_isochrones(df_times, gdf_com, df_pop):
     print("Modélisation empirique des bassins temporels d'accessibilité hospitalière...")
 
     # Enrichir les communes avec la population 2024 et les métriques de trajet v2
-    merged = gdf_com.merge(df_pop[["commune_code", "population_2024"]], on="commune_code", how="left")
+    merged = gdf_com.merge(
+        df_pop[["commune_code", "population_2024"]], on="commune_code", how="left"
+    )
     merged = merged.merge(
         df_times[["commune_code", "temps_min", "distance_km", "hospital_name", "classe_trajet"]],
         on="commune_code",
@@ -66,17 +68,21 @@ def estimate_empirical_isochrones(df_times, gdf_com, df_pop):
             else "Seuil critique d'isolement territorial (> 60 min)"
         )
 
-        pct_pop = round((pop_accessible / total_regional_pop * 100), 2) if total_regional_pop > 0 else 0.0
+        pct_pop = (
+            round((pop_accessible / total_regional_pop * 100), 2) if total_regional_pop > 0 else 0.0
+        )
 
-        results.append({
-            "isochrone_min": t,
-            "label": f"Accessibilité ≤ {t} min",
-            "threshold_category": category,
-            "nb_communes_couvertes": nb_communes,
-            "population_couverte": pop_accessible,
-            "pct_population_regionale": pct_pop,
-            "geometry": smoothed_geom
-        })
+        results.append(
+            {
+                "isochrone_min": t,
+                "label": f"Accessibilité ≤ {t} min",
+                "threshold_category": category,
+                "nb_communes_couvertes": nb_communes,
+                "population_couverte": pop_accessible,
+                "pct_population_regionale": pct_pop,
+                "geometry": smoothed_geom,
+            }
+        )
 
     gdf_iso = gpd.GeoDataFrame(results, crs="EPSG:4326")
     gdf_iso.to_file(ISOCHRONES_OUT, driver="GeoJSON")
@@ -91,10 +97,10 @@ def estimate_empirical_isochrones(df_times, gdf_com, df_pop):
                 "category": r["threshold_category"],
                 "communes": r["nb_communes_couvertes"],
                 "population": r["population_couverte"],
-                "pct": r["pct_population_regionale"]
+                "pct": r["pct_population_regionale"],
             }
             for r in results
-        ]
+        ],
     }
     with open(ISOCHRONES_STATS_OUT, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
@@ -107,7 +113,9 @@ def main():
     stats = estimate_empirical_isochrones(df_times, gdf_com, df_pop)
     print("\nSynthèse de la couverture isochrone TTA :")
     for tier in stats["tiers"]:
-        print(f"  - {tier['category']} (≤ {tier['threshold_min']} min) : {tier['communes']} communes, {tier['population']:,} hab. ({tier['pct']}%)")
+        print(
+            f"  - {tier['category']} (≤ {tier['threshold_min']} min) : {tier['communes']} communes, {tier['population']:,} hab. ({tier['pct']}%)"
+        )
 
 
 if __name__ == "__main__":
