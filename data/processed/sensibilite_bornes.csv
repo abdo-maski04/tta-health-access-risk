@@ -5,6 +5,7 @@ MA-01-151-1105,Bni Selmane,Chefchaouen,Rural,21413,109.3,3,3,3,3,3,3,3,0
 MA-01-151-0607,Bni Ahmed Gharbia,Chefchaouen,Rural,10623,106.5,3,3,3,3,3,3,3,0
 MA-01-151-1103,Bni Mansour,Chefchaouen,Rural,16660,106.2,3,3,3,3,3,3,3,0
 MA-01-151-0911,Bni Smih,Chefchaouen,Rural,13918,106.0,3,3,3,3,3,3,3,0
+MA-01-051-1311,Chakrane,Al Hoceima,Mixte,3306,98.0,3,3,3,3,3,3,3,0
 MA-01-571-0303,Al Kharroub,Tétouan,Rural,2099,93.8,3,3,3,3,3,3,3,0
 MA-01-151-0615,Mansoura,Chefchaouen,Rural,13526,90.6,3,3,3,3,3,3,3,0
 MA-01-151-0909,Bni Rzine,Chefchaouen,Rural,16539,88.6,3,3,3,3,3,3,3,0
@@ -12,7 +13,6 @@ MA-01-405-1107,Kalaat Bouqorra,Ouezzane,Rural,13999,82.8,3,3,3,3,3,3,3,0
 MA-01-151-0303,Bab Berred,Chefchaouen,Mixte,24743,81.9,3,3,3,3,3,3,3,0
 MA-01-051-0925,Tamsaout,Al Hoceima,Rural,12856,81.6,3,3,3,3,3,3,3,0
 MA-01-151-0901,Amtar,Chefchaouen,Rural,8568,80.0,3,3,3,3,3,3,3,0
-MA-01-051-1311,Chakrane,Al Hoceima,Mixte,3306,79.8,3,3,3,3,3,3,3,0
 MA-01-405-0909,Moqrissat,Ouezzane,Mixte,9413,79.4,3,3,3,3,3,3,3,0
 MA-01-331-0711,Souk L'qolla,Larache,Mixte,13592,78.7,3,3,3,3,3,3,3,0
 MA-01-051-0901,Abdelghaya Souahel,Al Hoceima,Rural,24435,78.2,3,3,3,3,3,3,3,0
@@ -31,9 +31,9 @@ MA-01-405-1317,Teroual,Ouezzane,Rural,11673,66.1,3,3,3,3,3,3,3,0
 MA-01-051-0923,Taghzout,Al Hoceima,Rural,4116,65.7,3,3,3,3,3,3,3,0
 MA-01-331-0903,Bni Arouss,Larache,Mixte,7337,65.3,3,3,3,3,3,3,3,0
 MA-01-051-0909,Bni Bouchibet,Al Hoceima,Rural,8909,65.1,3,3,3,3,3,3,3,0
-MA-01-571-0307,Bni Harchen,Tétouan,Rural,6423,64.1,3,3,3,3,3,3,3,0
 MA-01-331-0915,Zaaroura,Larache,Mixte,8615,64.0,3,3,3,3,3,3,3,0
 MA-01-331-0913,Tazroute,Larache,Mixte,5449,63.4,3,3,3,3,3,3,3,0
+MA-01-051-1305,Arbaa Taourirt,Al Hoceima,Mixte,3799,62.8,3,3,3,3,3,3,3,0
 MA-01-571-0311,Bni Idder,Tétouan,Rural,4659,62.0,3,3,3,3,3,3,3,0
 MA-01-151-0503,Bni Darkoul,Chefchaouen,Rural,13984,61.9,3,3,3,3,3,3,3,0
 MA-01-405-0901,Ain Beida,Ouezzane,Mixte,10368,60.7,3,3,3,3,3,3,3,0
@@ -42,14 +42,16 @@ MA-01-051-0721,Sidi Bouzineb,Al Hoceima,Rural,2756,58.9,3,3,3,2,2,2,3,3
 MA-01-051-1121,Rouadi,Al Hoceima,Mixte,6858,58.7,3,3,3,2,2,2,3,3
 MA-01-151-0505,Bni Faghloum,Chefchaouen,Rural,9260,58.3,3,3,3,2,2,2,3,3
 MA-01-051-0705,Bni Ammart,Al Hoceima,Mixte,5583,58.3,3,3,3,2,2,2,3,3
-MA-01-151-0515,Tanaqoub,Chefchaouen,Rural,8097,57.8,3,3,3,2,2,2,3,3
 MA-01-151-0507,Bni Salah,Chefchaouen,Rural,10535,57.8,3,3,3,2,2,2,3,3
 MA-01-405-1303,Lamjaara,Ouezzane,Mixte,19162,56.4,3,3,3,2,2,2,3,3
+MA-01-051-1319,Nekkour,Al Hoceima,Mixte,7721,55.8,3,3,3,2,2,2,3,3
+MA-01-151-0515,Tanaqoub,Chefchaouen,Rural,8097,55.7,3,3,3,2,2,2,3,3
 MA-01-051-0703,Bni Ahmed Imoukzan,Al Hoceima,Rural,7580,54.6,3,3,3,2,2,2,3,3
 MA-01-051-0307,Senada,Al Hoceima,Rural,8059,54.5,3,3,3,2,2,2,3,3
 MA-01-151-0701,Bni Bouzra,Chefchaouen,Rural,15888,53.3,3,2,3,2,2,2,3,4
 MA-01-405-1111,Zoumi,Ouezzane,Mixte,36573,53.2,3,2,3,2,2,2,3,4
 MA-01-051-0305,Bni Gmil Maksouline,Al Hoceima,Rural,7214,52.6,3,2,3,2,2,2,3,4
+MA-01-571-0307,Bni Harchen,Tétouan,Rural,6423,52.5,3,2,3,2,2,2,3,4
 MA-01-151-0707,Steha,Chefchaouen,Mixte,11452,51.9,3,2,3,2,2,2,3,4
 MA-01-405-1309,Ouannana,Ouezzane,Rural,12123,51.6,3,2,3,2,2,2,3,4
 MA-01-405-1313,Sidi Bousber,Ouezzane,Mixte,9671,51.2,3,2,3,2,2,2,3,4
@@ -57,90 +59,88 @@ MA-01-051-0913,Issaguen,Al Hoceima,Mixte,17834,51.0,3,2,3,2,2,2,3,4
 MA-01-051-1125,Zaouiat Sidi Abdelkader,Al Hoceima,Rural,4150,47.8,3,2,3,2,2,2,3,4
 MA-01-331-0701,Boujedyane,Larache,Mixte,9624,46.9,3,2,3,2,2,2,3,4
 MA-01-051-0303,Bni Gmil,Al Hoceima,Mixte,7752,46.7,3,2,3,2,2,2,3,4
+MA-01-051-1323,Tifarouine,Al Hoceima,Rural,3318,45.5,3,2,3,2,2,2,3,4
+MA-01-571-0513,Bni Leit,Tétouan,Rural,5004,45.2,3,2,3,2,2,2,3,4
 MA-01-331-0901,Ayacha,Larache,Rural,6925,44.9,2,2,3,2,2,2,2,1
-MA-01-051-1305,Arbaa Taourirt,Al Hoceima,Mixte,3799,44.6,2,2,3,2,2,2,2,1
-MA-01-331-1107,Rissana Chamalia,Larache,Rural,12961,43.9,2,2,3,2,2,2,2,1
-MA-01-571-0513,Bni Leit,Tétouan,Rural,5004,43.8,2,2,3,2,2,2,2,1
+MA-01-227-0313,Ksar El Majaz,Fahs-Anjra,Mixte,12703,44.6,2,2,3,2,2,2,2,1
+MA-01-331-1107,Rissana Chamalia,Larache,Rural,12961,42.8,2,2,3,2,2,2,2,1
 MA-01-571-0519,Oulad Ali Mansour,Tétouan,Rural,4683,42.2,2,2,3,2,2,2,2,1
 MA-01-405-0905,Brikcha,Ouezzane,Mixte,8777,41.9,2,2,3,2,2,2,2,1
-MA-01-227-0313,Ksar El Majaz,Fahs-Anjra,Mixte,12703,41.4,2,2,3,2,2,2,2,1
-MA-01-331-1109,Rissana Janoubia,Larache,Mixte,19480,39.9,2,2,3,2,2,2,2,1
+MA-01-405-0705,Masmouda,Ouezzane,Rural,14594,40.4,2,2,3,2,2,2,2,1
+MA-01-051-1313,Imrabten,Al Hoceima,Mixte,6983,40.3,2,2,3,2,2,2,2,1
 MA-01-051-0711,Bni Bounsar,Al Hoceima,Mixte,6498,39.8,2,2,3,2,2,2,2,1
+MA-01-227-0305,Anjra,Fahs-Anjra,Mixte,17251,38.7,2,2,3,2,2,2,2,1
 MA-01-571-0525,Zaouiat Sidi Kacem,Tétouan,Rural,12851,38.5,2,2,3,2,2,2,2,1
-MA-01-331-0905,Bni Garfett,Larache,Mixte,11311,38.4,2,2,3,2,2,2,2,1
-MA-01-051-1107,Bni Abdellah,Al Hoceima,Mixte,4939,38.3,2,2,3,2,2,2,2,1
-MA-01-511-0507,Dar Chaoui,Tanger-Assilah,Mixte,4471,38.2,2,2,3,2,2,2,2,1
-MA-01-151-0513,Laghdir,Chefchaouen,Rural,6454,37.8,2,2,3,2,2,2,2,1
-MA-01-051-1319,Nekkour,Al Hoceima,Mixte,7721,37.6,2,2,3,2,2,2,2,1
-MA-01-051-1323,Tifarouine,Al Hoceima,Rural,3318,35.7,2,2,3,2,2,2,2,1
+MA-01-331-0905,Bni Garfett,Larache,Mixte,11311,38.5,2,2,3,2,2,2,2,1
+MA-01-227-0321,Taghramt,Fahs-Anjra,Mixte,9326,38.4,2,2,3,2,2,2,2,1
+MA-01-511-0507,Dar Chaoui,Tanger-Assilah,Mixte,4471,38.3,2,2,3,2,2,2,2,1
+MA-01-051-1107,Bni Abdellah,Al Hoceima,Mixte,4939,37.1,2,2,3,2,2,2,2,1
+MA-01-227-0505,Ksar Sghir,Fahs-Anjra,Mixte,17125,36.9,2,2,3,2,2,2,2,1
+MA-01-151-0513,Laghdir,Chefchaouen,Rural,6454,35.7,2,2,3,2,2,2,2,1
 MA-01-151-0711,Tassift,Chefchaouen,Rural,6924,35.7,2,2,3,2,2,2,2,1
-MA-01-405-0705,Masmouda,Ouezzane,Rural,14594,35.2,2,2,3,2,2,2,2,1
-MA-01-571-0301,Ain Lahsan,Tétouan,Rural,7450,34.3,2,2,3,2,2,2,2,1
+MA-01-571-0319,Souk Kdim,Tétouan,Rural,8699,35.4,2,2,3,2,2,2,2,1
 MA-01-571-0523,Zaitoune,Tétouan,Mixte,13492,34.2,2,2,3,2,2,2,2,1
-MA-01-051-1313,Imrabten,Al Hoceima,Mixte,6983,33.9,2,2,3,2,2,2,2,1
-MA-01-571-0507,Azla,Tétouan,Rural,22985,33.6,2,2,3,2,2,2,2,1
+MA-01-227-0501,Al Bahraoyine,Fahs-Anjra,Mixte,15491,33.9,2,2,3,2,2,2,2,1
 MA-01-405-0715,Sidi Redouane,Ouezzane,Mixte,17903,33.4,2,2,3,2,2,2,2,1
 MA-01-331-0715,Tatoft,Larache,Rural,8657,33.4,2,2,3,2,2,2,2,1
 MA-01-051-0917,Moulay Ahmed Cherif,Al Hoceima,Rural,9357,33.0,2,2,3,2,2,2,2,1
-MA-01-511-0505,Sebt Azzinate,Tanger-Assilah,Mixte,7265,32.2,2,2,3,2,2,2,2,1
-MA-01-227-0509,Malloussa,Fahs-Anjra,Mixte,18854,31.8,2,2,3,2,2,2,2,1
+MA-01-331-1109,Rissana Janoubia,Larache,Mixte,19480,32.9,2,2,3,2,2,2,2,1
+MA-01-405-0707,Mzefroune,Ouezzane,Rural,6226,32.7,2,2,3,2,2,2,2,1
+MA-01-405-0903,Asjen,Ouezzane,Rural,11479,32.3,2,2,3,2,2,2,2,1
+MA-01-511-0505,Sebt Azzinate,Tanger-Assilah,Mixte,7265,32.3,2,2,3,2,2,2,2,1
+MA-01-571-0301,Ain Lahsan,Tétouan,Rural,7450,31.2,2,2,3,2,2,2,2,1
 MA-01-151-0713,Tizgane,Chefchaouen,Mixte,12292,30.6,2,2,3,2,2,2,2,1
 MA-01-051-0301,Bni Boufrah,Al Hoceima,Mixte,8401,30.3,2,2,3,2,2,2,2,1
-MA-01-227-0311,Jouamaa,Fahs-Anjra,Mixte,10039,29.5,2,2,2,2,1,2,2,1
+MA-01-227-0311,Jouamaa,Fahs-Anjra,Mixte,10039,29.8,2,2,2,2,1,2,2,1
+MA-01-573-0109,Belyounech,M'diq-Fnideq,Mixte,5208,29.5,2,2,2,2,1,2,2,1
 MA-01-571-0501,Al Hamra,Tétouan,Rural,11877,29.4,2,2,2,2,1,2,2,1
-MA-01-227-0505,Ksar Sghir,Fahs-Anjra,Mixte,17125,29.2,2,2,2,2,1,2,2,1
-MA-01-511-0501,Al Manzla,Tanger-Assilah,Rural,2680,29.0,2,2,2,2,1,2,2,1
-MA-01-511-0519,Hjar Ennhal,Tanger-Assilah,Mixte,27204,28.7,2,2,2,2,1,2,2,1
+MA-01-511-0501,Al Manzla,Tanger-Assilah,Rural,2680,29.1,2,2,2,2,1,2,2,1
+MA-01-511-0519,Hjar Ennhal,Tanger-Assilah,Mixte,27204,28.8,2,2,2,2,1,2,2,1
 MA-01-151-0501,Bab Taza,Chefchaouen,Mixte,29895,28.7,2,2,2,2,1,2,2,1
-MA-01-227-0305,Anjra,Fahs-Anjra,Mixte,17251,28.3,2,2,2,2,1,2,2,1
-MA-01-405-0707,Mzefroune,Ouezzane,Rural,6226,27.5,2,2,2,2,1,2,2,1
-MA-01-227-0321,Taghramt,Fahs-Anjra,Mixte,9326,27.4,2,2,2,2,1,2,2,1
-MA-01-405-0903,Asjen,Ouezzane,Rural,11479,27.1,2,2,2,2,1,2,2,1
+MA-01-571-0317,Saddina,Tétouan,Rural,7619,28.6,2,1,2,2,1,2,2,2
+MA-01-227-0509,Malloussa,Fahs-Anjra,Mixte,18854,28.6,2,1,2,2,1,2,2,2
 MA-01-051-0727,Zarkt,Al Hoceima,Rural,5601,26.6,2,1,2,2,1,2,2,2
-MA-01-331-0717,Zouada,Larache,Mixte,25289,26.5,2,1,2,2,1,2,2,2
-MA-01-227-0501,Al Bahraoyine,Fahs-Anjra,Mixte,15491,25.2,2,1,2,2,1,2,2,2
-MA-01-151-0509,Derdara,Chefchaouen,Rural,11276,25.1,2,1,2,2,1,2,2,2
-MA-01-331-1113,Souk Tolba,Larache,Mixte,12855,25.0,2,1,2,2,1,2,2,2
-MA-01-571-0319,Souk Kdim,Tétouan,Rural,8699,25.0,2,1,2,2,1,2,2,2
+MA-01-151-0509,Derdara,Chefchaouen,Rural,11276,26.5,2,1,2,2,1,2,2,2
+MA-01-331-0717,Zouada,Larache,Mixte,25289,26.0,2,1,2,2,1,2,2,2
+MA-01-571-0505,Al Oued,Tétouan,Rural,10875,25.8,2,1,2,2,1,2,2,2
 MA-01-571-0321,Sahtryine,Tétouan,Rural,8733,24.9,2,1,2,2,1,2,2,2
+MA-01-331-1113,Souk Tolba,Larache,Mixte,12855,24.4,2,1,2,2,1,2,2,2
 MA-01-571-0527,Zinat,Tétouan,Rural,8214,24.3,2,1,2,2,1,2,2,2
 MA-01-051-1101,Ait Kamra,Al Hoceima,Mixte,8269,24.3,2,1,2,2,1,2,2,2
-MA-01-571-0505,Al Oued,Tétouan,Rural,10875,24.3,2,1,2,2,1,2,2,2
-MA-01-331-1111,Sahel,Larache,Mixte,18258,23.2,2,1,2,2,1,2,2,2
+MA-01-571-0315,Mallalienne,Tétouan,Rural,10874,24.1,2,1,2,2,1,2,2,2
+MA-01-571-0507,Azla,Tétouan,Rural,22985,23.9,2,1,2,2,1,2,2,2
+MA-01-331-1111,Sahel,Larache,Mixte,18258,23.3,2,1,2,2,1,2,2,2
 MA-01-573-0107,Allyene,M'diq-Fnideq,Mixte,8111,23.2,2,1,2,2,1,2,2,2
 MA-01-051-1109,Bni Hadifa,Al Hoceima,Mixte,4723,22.7,2,1,2,2,1,2,2,2
+MA-01-331-0705,Laouamra,Larache,Mixte,48253,22.5,2,1,2,2,1,2,2,2
 MA-01-511-0313,Sidi Lyamani,Tanger-Assilah,Mixte,10616,22.4,2,1,2,2,1,2,2,2
-MA-01-331-1103,Oulad Ouchih,Larache,Mixte,13409,22.1,2,1,2,2,1,2,2,2
-MA-01-331-1112,Souaken,Larache,Rural,12582,21.7,2,1,2,2,1,2,2,2
-MA-01-571-0315,Mallalienne,Tétouan,Rural,10874,21.7,2,1,2,2,1,2,2,2
+MA-01-331-1103,Oulad Ouchih,Larache,Mixte,13409,21.5,2,1,2,2,1,2,2,2
 MA-01-051-0719,Sidi Boutmim,Al Hoceima,Mixte,8462,21.5,2,1,2,2,1,2,2,2
-MA-01-331-0705,Laouamra,Larache,Mixte,48253,21.5,2,1,2,2,1,2,2,2
 MA-01-571-0515,Bni Said,Tétouan,Rural,10465,21.4,2,1,2,2,1,2,2,2
+MA-01-331-1112,Souaken,Larache,Rural,12582,21.1,2,1,2,2,1,2,2,2
 MA-01-051-1115,Izemmouren,Al Hoceima,Mixte,6365,20.4,2,1,2,2,1,2,2,2
+MA-01-051-0103,Bni Bouayach,Al Hoceima,Urbain,20013,20.3,2,1,2,2,1,2,2,2
+MA-01-051-1317,Louta,Al Hoceima,Rural,4408,19.2,2,1,2,1,1,2,2,3
 MA-01-511-0303,Aquouass Briech,Tanger-Assilah,Mixte,4981,18.6,2,1,2,1,1,2,2,3
 MA-01-511-0315,Had Al Gharbia,Tanger-Assilah,Mixte,12838,18.3,2,1,2,1,1,2,2,3
 MA-01-405-0701,Bni Quolla,Ouezzane,Rural,13551,18.1,2,1,2,1,1,2,2,3
+MA-01-573-0101,Fnideq,M'diq-Fnideq,Urbain,77250,17.5,2,1,2,1,1,2,2,3
 MA-01-511-0517,Laaouama,Tanger-Assilah,Mixte,19187,17.2,2,1,2,1,1,2,2,3
-MA-01-573-0109,Belyounech,M'diq-Fnideq,Mixte,5208,17.2,2,1,2,1,1,2,2,3
-MA-01-573-0101,Fnideq,M'diq-Fnideq,Urbain,77250,16.4,2,1,2,1,1,2,2,3
-MA-01-051-1317,Louta,Al Hoceima,Rural,4408,12.8,1,1,2,1,1,1,1,1
+MA-01-573-0103,Martil,M'diq-Fnideq,Urbain,95896,17.0,2,1,2,1,1,2,2,3
 MA-01-571-0107,Oued Laou,Tétouan,Urbain,11690,12.4,1,1,2,1,1,1,1,1
 MA-01-331-0703,Ksar Bjir,Larache,Rural,17182,12.2,1,1,2,1,1,1,1,1
 MA-01-511-0311,Sahel Chamali,Tanger-Assilah,Rural,5028,12.1,1,1,2,1,1,1,1,1
 MA-01-573-0105,M'diq,M'diq-Fnideq,Urbain,67599,10.0,1,1,2,1,1,1,1,1
+MA-01-051-1303,Ait Youssef Ou Ali,Al Hoceima,Mixte,13830,9.9,1,1,1,1,1,1,1,0
 MA-01-511-0109,Gueznaia,Tanger-Assilah,Urbain,88676,9.1,1,1,1,1,1,1,1,0
-MA-01-571-0317,Saddina,Tétouan,Rural,7619,7.5,1,1,1,1,1,1,1,0
+MA-01-405-0109,Ouezzane,Ouezzane,Urbain,57737,8.4,1,1,1,1,1,1,1,0
+MA-01-331-0103,Larache,Larache,Urbain,133731,8.2,1,1,1,1,1,1,1,0
 MA-01-511-0101,Assilah,Tanger-Assilah,Urbain,36039,7.5,1,1,1,1,1,1,1,0
-MA-01-331-0103,Larache,Larache,Urbain,133731,6.0,1,1,1,1,1,1,1,0
 MA-01-051-0109,Ajdir,Al Hoceima,Urbain,5630,5.8,1,1,1,1,1,1,1,0
 MA-01-511-0100,Tanger,Tanger-Assilah,Urbain,1275428,5.8,1,1,1,1,1,1,1,0
-MA-01-573-0103,Martil,M'diq-Fnideq,Urbain,95896,5.0,1,1,1,1,1,1,1,0
-MA-01-051-1303,Ait Youssef Ou Ali,Al Hoceima,Mixte,13830,3.7,1,1,1,1,1,1,1,0
-MA-01-405-0109,Ouezzane,Ouezzane,Urbain,57737,3.2,1,1,1,1,1,1,1,0
+MA-01-571-0111,Tétouan,Tétouan,Urbain,422757,5.1,1,1,1,1,1,1,1,0
 MA-01-051-0101,Al Hoceima,Al Hoceima,Urbain,50225,3.1,1,1,1,1,1,1,1,0
-MA-01-051-0103,Bni Bouayach,Al Hoceima,Urbain,20013,3.0,1,1,1,1,1,1,1,0
-MA-01-331-0101,Ksar El Kebir,Larache,Urbain,124701,2.6,1,1,1,1,1,1,1,0
-MA-01-571-0111,Tétouan,Tétouan,Urbain,422757,2.5,1,1,1,1,1,1,1,0
+MA-01-331-0101,Ksar El Kebir,Larache,Urbain,124701,2.1,1,1,1,1,1,1,1,0
 MA-01-051-0105,Imzouren,Al Hoceima,Urbain,34848,2.0,1,1,1,1,1,1,1,0
 MA-01-571-0517,Dar Bni Karrich,Tétouan,Mixte,10115,1.7,1,1,1,1,1,1,1,0
 MA-01-051-0107,Targuist,Al Hoceima,Urbain,14638,1.4,1,1,1,1,1,1,1,0

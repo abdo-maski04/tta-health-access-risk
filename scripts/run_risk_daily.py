@@ -7,6 +7,7 @@ from src.tta_risk.db.database import (
     load_risk_rows,
     read_forecast_with_thresholds,
 )
+from src.tta_risk.scoring.daily import ajouter_score, charger_temps, verifier_temps
 from src.tta_risk.scoring.danger import compute_danger
 
 
@@ -24,10 +25,25 @@ def run(issued_on=None):
         print(f"Attention : {missing} lignes sans seuils (niveaux mis à 0)")
 
     result = compute_danger(df)
+
+    # Le score a besoin du temps de trajet de chaque commune (D-015 : 15 / 45 min).
+    result = result.merge(
+        charger_temps(), on="commune_code", how="left", validate="many_to_one"
+    )
+    verifier_temps(result)
+    result = ajouter_score(result)
+
     n = load_risk_rows(convert_risk_df_to_rows(result))
 
     print(f"{n} lignes écrites dans weather.risk_daily (prévisions du {issued_on})")
+    print("danger (0-3) :")
     print(result["danger"].value_counts().sort_index().to_string())
+    print("score (0,1,2,3,4,6,9) :")
+    print(result["score"].value_counts().sort_index().to_string())
+    print("niveau :")
+    print(result["niveau"].value_counts().to_string())
+    print("raison :")
+    print(result["raison"].value_counts().to_string())
     return n
 
 

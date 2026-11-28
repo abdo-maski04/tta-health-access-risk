@@ -171,31 +171,43 @@ def read_forecast_with_thresholds(issued_on):
 # Danger quotidien (weather.risk_daily)
 # ---------------------------------------------------------------------------
 
+COLONNES_RISK = (
+    "commune_code", "forecast_issued_on", "target_date", "precip_mm", "tmax_c",
+    "rain_level", "heat_level", "danger", "dominant",
+    "classe_trajet", "score", "niveau", "raison",
+)
+
 upsert_risk_query = """
 INSERT INTO weather.risk_daily
     (commune_code, forecast_issued_on, target_date, precip_mm, tmax_c,
-     rain_level, heat_level, danger, dominant)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+     rain_level, heat_level, danger, dominant,
+     classe_trajet, score, niveau, raison)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 ON CONFLICT (commune_code, forecast_issued_on, target_date) DO UPDATE
-SET precip_mm   = EXCLUDED.precip_mm,
-    tmax_c      = EXCLUDED.tmax_c,
-    rain_level  = EXCLUDED.rain_level,
-    heat_level  = EXCLUDED.heat_level,
-    danger      = EXCLUDED.danger,
-    dominant    = EXCLUDED.dominant,
-    computed_at = now();
+SET precip_mm     = EXCLUDED.precip_mm,
+    tmax_c        = EXCLUDED.tmax_c,
+    rain_level    = EXCLUDED.rain_level,
+    heat_level    = EXCLUDED.heat_level,
+    danger        = EXCLUDED.danger,
+    dominant      = EXCLUDED.dominant,
+    classe_trajet = EXCLUDED.classe_trajet,
+    score         = EXCLUDED.score,
+    niveau        = EXCLUDED.niveau,
+    raison        = EXCLUDED.raison,
+    computed_at   = now();
 """
 
 
 def convert_risk_df_to_rows(df):
     # NaN pandas -> None, et types numpy -> types Python (psycopg)
-    clean = df.astype(object).where(df.notna(), None)
-    return list(
-        clean[["commune_code", "forecast_issued_on", "target_date",
-               "precip_mm", "tmax_c",
-               "rain_level", "heat_level", "danger", "dominant"]]
-        .itertuples(index=False, name=None)
-    )
+    # Les colonnes absentes du DataFrame (anciens tests) sont remplies a None :
+    # le nombre de valeurs reste 13, donc l'ordre de l'INSERT est respecte.
+    complet = df.copy()
+    for colonne in COLONNES_RISK:
+        if colonne not in complet.columns:
+            complet[colonne] = None
+    clean = complet.astype(object).where(complet.notna(), None)
+    return list(clean[list(COLONNES_RISK)].itertuples(index=False, name=None))
 
 
 def load_risk_rows(rows):

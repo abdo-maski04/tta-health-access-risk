@@ -257,8 +257,7 @@ Clé : (`commune_code`, `forecast_issued_on`, `target_date`).
 
 ## 6. `weather.risk_daily` — sortie du danger quotidien *(propriété B, complétée par A)*
 
-Table écrite par `scripts/run_risk_daily.py`. **État actuel : le danger météo est écrit, le score ne l'est pas
-encore** — les quatre colonnes du score sont ajoutées à l'étape suivante (dernière ligne de ce tableau).
+Table écrite par `scripts/run_risk_daily.py`. Le danger météo et le score sont écrits par le même script. Les quatre colonnes du score sont décrites ci-dessous (D-018).
 
 | Variable | Type | Unité | Statut | Description |
 |---|---|---|---|---|
@@ -271,13 +270,11 @@ encore** — les quatre colonnes du score sont ajoutées à l'étape suivante (d
 | `heat_level` | petit entier | 0-3 | `CALCULE` | Niveau chaleur, mêmes seuils appliqués à `tmax_c`. |
 | `danger` | petit entier | 0-3 | `CALCULE` | `max(rain_level, heat_level)`. C'est le `danger_meteo` de la méthodologie. |
 | `dominant` | texte | — | `CALCULE` | Météo dominante **uniquement** : `rain` / `heat` / `both` / `none`. Ne vaut jamais `eloignement` (D-018). |
+| `classe_trajet` | petit entier | 1-3 | `CALCULE` | 1 = moins de 15 min, 2 = de 15 à 45 min, 3 = plus de 45 min (D-015). Vient de `travel_time_TTA_2024.csv`. |
+| `score` | petit entier | 0-9 | `CALCULE` | `danger × classe_trajet` → 0, 1, 2, 3, 4, 6, 9. **Score ordinal, pas une probabilité.** |
+| `niveau` | texte | — | `CALCULE` | `vert` (0) / `jaune` (1-2) / `orange` (3-4) / `rouge` (6-9). |
+| `raison` | texte | — | `CALCULE` | Facteur **affiché** : `pluie` / `chaleur` / `eloignement`. Départage : pluie, puis chaleur, puis éloignement. Voir D-018. |
 | `computed_at` | horodatage | — | — | Date d'écriture, automatique. |
-
-> Les quatre colonnes suivantes seront ajoutées par le module de scoring (décision D-018) :
-> `classe_trajet` (1-3), `score` (0, 1, 2, 3, 4, 6, 9), `niveau` (`vert` / `jaune` / `orange` / `rouge`)
-> et `raison` (`pluie` / `chaleur` / `eloignement`).
-> **`raison` est le facteur affiché ; `dominant` ne parle que de météo.** Les deux colonnes coexistent,
-> aucune ne remplace l'autre.
 
 **Colonnes retirées du dictionnaire v1 :** `danger_meteo` (nom réel : `danger`), `composante_pluie` et
 `composante_chaleur` (noms réels : `rain_level` et `heat_level`), `date` (nom réel : `target_date`),
