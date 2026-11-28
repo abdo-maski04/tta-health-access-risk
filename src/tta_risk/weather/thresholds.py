@@ -1,8 +1,8 @@
 import pandas as pd
 
 QUANTILES = [0.65, 0.80, 0.90]
-RAIN_MIN_MM = 1.0      # un "jour pluvieux" = au moins 1 mm
-MIN_RAIN_DAYS = 20     # en dessous, les percentiles de pluie sont jugés peu fiables
+RAIN_MIN_MM = 1.0  # un "jour pluvieux" = au moins 1 mm
+MIN_RAIN_DAYS = 20  # en dessous, les percentiles de pluie sont jugés peu fiables
 
 
 def compute_thresholds(df: pd.DataFrame) -> pd.DataFrame:
@@ -24,6 +24,15 @@ def compute_thresholds(df: pd.DataFrame) -> pd.DataFrame:
     rain.loc[n_rain_days.reindex(rain.index) < MIN_RAIN_DAYS] = float("nan")
 
     result = heat.join(rain, how="left").reset_index()
-    return result[["commune_code", "month",
-                   "rain_p65", "rain_p80", "rain_p90",
-                   "heat_p65", "heat_p80", "heat_p90"]]
+    return result[
+        [
+            "commune_code",
+            "month",
+            "rain_p65",
+            "rain_p80",
+            "rain_p90",
+            "heat_p65",
+            "heat_p80",
+            "heat_p90",
+        ]
+    ]

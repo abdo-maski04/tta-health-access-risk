@@ -3,8 +3,7 @@ import pandas as pd
 
 RAIN_MIN_MM = 1.0  # en dessous, ce n'est pas un jour pluvieux
 
-THRESHOLD_COLS = ["rain_p65", "rain_p80", "rain_p90",
-                  "heat_p65", "heat_p80", "heat_p90"]
+THRESHOLD_COLS = ["rain_p65", "rain_p80", "rain_p90", "heat_p65", "heat_p80", "heat_p90"]
 
 
 def _level(values, p65, p80, p90):
@@ -36,10 +35,12 @@ def compute_danger(df: pd.DataFrame) -> pd.DataFrame:
 
     # L'ordre compte : danger == 0 d'abord, sinon 0 et 0 donnerait "both"
     out["dominant"] = np.select(
-        [out["danger"] == 0,
-         out["rain_level"] > out["heat_level"],
-         out["heat_level"] > out["rain_level"]],
+        [
+            out["danger"] == 0,
+            out["rain_level"] > out["heat_level"],
+            out["heat_level"] > out["rain_level"],
+        ],
         ["none", "rain", "heat"],
-        default="both",   # niveaux égaux et > 0
+        default="both",  # niveaux égaux et > 0
     )
     return out

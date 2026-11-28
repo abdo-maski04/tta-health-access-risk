@@ -54,7 +54,9 @@ def _rows():
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_columns_match_dictionary():
     """Les 13 colonnes du fichier sont exactement celles du dictionnaire."""
     with CSV_PATH.open(encoding="utf-8") as f:
@@ -63,7 +65,9 @@ def test_columns_match_dictionary():
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_minimum_usable_facilities():
     """Il y a assez d'établissements de soins pour calculer une accessibilité.
 
@@ -71,14 +75,18 @@ def test_minimum_usable_facilities():
     pour une urgence. Seuil volontairement bas, ce test détecte une extraction vide.
     """
     rows = _rows()
-    care = [r for r in rows if r["facility_type"] in {"hospital", "clinic", "doctors", "laboratory"}]
+    care = [
+        r for r in rows if r["facility_type"] in {"hospital", "clinic", "doctors", "laboratory"}
+    ]
     assert len(care) >= 50, f"Seulement {len(care)} établissements de soins — extraction suspecte."
     hospitals = [r for r in rows if r["facility_type"] == "hospital"]
     assert len(hospitals) >= 20, f"Seulement {len(hospitals)} hôpitaux — extraction suspecte."
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_coordinates_valid_and_inside_bbox():
     """Chaque point a une latitude/longitude valide et située dans l'emprise TTA + 50 km."""
     for row in _rows():
@@ -91,7 +99,9 @@ def test_coordinates_valid_and_inside_bbox():
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_identifiers_unique_and_typed():
     """Les identifiants OSM sont uniques et de type node/way."""
     rows = _rows()
@@ -103,7 +113,9 @@ def test_identifiers_unique_and_typed():
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_all_provinces_covered():
     """Chacune des 8 provinces de la région possède au moins un établissement de soins.
 
@@ -121,7 +133,9 @@ def test_all_provinces_covered():
         "Ouezzane": (-5.58, 34.80),
         "Al Hoceima": (-3.94, 35.24),
     }
-    care = [r for r in _rows() if r["facility_type"] in {"hospital", "clinic", "doctors", "laboratory"}]
+    care = [
+        r for r in _rows() if r["facility_type"] in {"hospital", "clinic", "doctors", "laboratory"}
+    ]
     missing = []
     for name, (plon, plat) in provinces.items():
         # un établissement de soins à moins de 0.6° (~60 km) du centroïde
@@ -134,7 +148,9 @@ def test_all_provinces_covered():
 
 
 @pytest.mark.health
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="health_facilities_TTA.csv non présent sur cette branche"
+)
 def test_licence_is_odbl():
     """La licence ODbL est mentionnée sur chaque ligne — obligation de citation OSM."""
     for row in _rows():

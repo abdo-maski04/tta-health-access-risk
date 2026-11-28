@@ -71,7 +71,9 @@ def inspect_file(path: Path) -> dict:
                     info["record_count"] = len(j["facilities"])
         elif path.suffix.lower() in [".tif", ".tiff"]:
             with rasterio.open(path) as src:
-                info["details"] = f"Raster shape: {src.shape}, bands: {src.count}, dtype: {src.dtypes[0]}"
+                info["details"] = (
+                    f"Raster shape: {src.shape}, bands: {src.count}, dtype: {src.dtypes[0]}"
+                )
                 info["crs"] = str(src.crs)
     except Exception as e:
         info["details"] = f"Inspection error: {e}"

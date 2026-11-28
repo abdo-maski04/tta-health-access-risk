@@ -37,9 +37,9 @@ def compute_hillshade_and_slope(dem_array, cell_size_x, cell_size_y, azimuth=315
 
     aspect_rad = np.arctan2(dz_dy, -dz_dx)
     # Hillshade formula
-    shaded = np.sin(altitude_rad) * np.cos(slope_rad) + np.cos(altitude_rad) * np.sin(slope_rad) * np.cos(
-        azimuth_rad - aspect_rad
-    )
+    shaded = np.sin(altitude_rad) * np.cos(slope_rad) + np.cos(altitude_rad) * np.sin(
+        slope_rad
+    ) * np.cos(azimuth_rad - aspect_rad)
     # Clip and scale to 0 - 255
     hillshade = np.clip(shaded, 0, 1) * 255.0
 
@@ -100,7 +100,12 @@ def main():
     dem[dem < -100] = 0.0
 
     out_meta.update(
-        {"height": dem.shape[0], "width": dem.shape[1], "transform": out_transform, "dtype": "float32"}
+        {
+            "height": dem.shape[0],
+            "width": dem.shape[1],
+            "transform": out_transform,
+            "dtype": "float32",
+        }
     )
 
     # Sauvegarde DEM 30m
@@ -172,7 +177,9 @@ def main():
     out_png_path = PROCESSED_TERRAIN_DIR / "tta_hillshade_display.png"
     img = Image.fromarray(rgba, "RGBA")
     img.save(out_png_path, "PNG", optimize=True)
-    print(f"[OK] Image PyDeck BitmapLayer générée : {out_png_path} (Dimensions: {img.size}, Bounds: {bounds})")
+    print(
+        f"[OK] Image PyDeck BitmapLayer générée : {out_png_path} (Dimensions: {img.size}, Bounds: {bounds})"
+    )
 
     # Métadonnées JSON
     stats = {
@@ -189,11 +196,13 @@ def main():
         "slope_max_deg": float(np.max(slope_deg)),
         "slope_mean_deg": float(np.mean(slope_deg[dem > 0])),
         "display_png": str(out_png_path.name),
-        "status": "VALIDATED"
+        "status": "VALIDATED",
     }
     with open(PROCESSED_TERRAIN_DIR / "tta_terrain_metadata.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
-    print(f"[OK] Métadonnées terrain enregistrées : {PROCESSED_TERRAIN_DIR / 'tta_terrain_metadata.json'}")
+    print(
+        f"[OK] Métadonnées terrain enregistrées : {PROCESSED_TERRAIN_DIR / 'tta_terrain_metadata.json'}"
+    )
     return 0
 
 

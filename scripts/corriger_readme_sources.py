@@ -37,9 +37,7 @@ def main() -> None:
 
     readme = RACINE / "README.md"
     if not readme.is_file():
-        sys.exit(
-            "ERREUR : README.md introuvable. Lance ce script depuis la racine du depot."
-        )
+        sys.exit("ERREUR : README.md introuvable. Lance ce script depuis la racine du depot.")
 
     texte = readme.read_text(encoding="utf-8")
 

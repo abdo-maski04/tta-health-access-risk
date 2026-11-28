@@ -105,9 +105,9 @@ def compute_hillshade_and_slope(dem, cell_x_m, cell_y_m, azimuth=315.0, altitude
     slope_pct = np.tan(slope_rad) * 100.0
 
     aspect_rad = np.arctan2(dz_dy, -dz_dx)
-    shaded = np.sin(altitude_rad) * np.cos(slope_rad) + np.cos(altitude_rad) * np.sin(slope_rad) * np.cos(
-        azimuth_rad - aspect_rad
-    )
+    shaded = np.sin(altitude_rad) * np.cos(slope_rad) + np.cos(altitude_rad) * np.sin(
+        slope_rad
+    ) * np.cos(azimuth_rad - aspect_rad)
     hillshade = np.clip(shaded, 0, 1) * 255.0
     return hillshade.astype(np.float32), slope_deg.astype(np.float32), slope_pct.astype(np.float32)
 
@@ -171,6 +171,7 @@ def main():
     # 6. Image PyDeck BitmapLayer (RGBA)
     norm_dem = np.clip(dem / 2200.0, 0, 1)
     import matplotlib as mpl
+
     cmap = mpl.colormaps["gist_earth"]
     hypso_rgb = cmap(norm_dem)[:, :, :3]
     hs_norm = (hillshade / 255.0)[:, :, np.newaxis]
@@ -203,11 +204,13 @@ def main():
         "slope_max_deg": float(slope_deg.max()),
         "slope_mean_deg": float(np.mean(slope_deg[dem > 2.0])),
         "display_png": str(out_png.name),
-        "status": "VALIDATED"
+        "status": "VALIDATED",
     }
     with open(PROCESSED_TERRAIN_DIR / "tta_terrain_metadata.json", "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2, ensure_ascii=False)
-    print(f"[OK] Métadonnées terrain enregistrées : {PROCESSED_TERRAIN_DIR / 'tta_terrain_metadata.json'}")
+    print(
+        f"[OK] Métadonnées terrain enregistrées : {PROCESSED_TERRAIN_DIR / 'tta_terrain_metadata.json'}"
+    )
     return 0
 
 

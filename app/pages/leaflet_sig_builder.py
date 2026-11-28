@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 HILLSHADE_PNG = ROOT / "data" / "processed" / "terrain" / "tta_hillshade_display.png"
 
+
 def generate_leaflet_sig_html(
     routes_geojson: dict,
     hospitals_geojson: dict,
@@ -16,7 +17,7 @@ def generate_leaflet_sig_html(
     hazards_geojson: dict,
     isochrones_geojson: dict,
     terrain_bounds: list,
-    height: int = 780
+    height: int = 780,
 ) -> str:
     """Génère le code HTML/CSS/JavaScript autonome pour la carte SIG professionnelle."""
 
@@ -35,7 +36,9 @@ def generate_leaflet_sig_html(
     if HILLSHADE_PNG.exists():
         try:
             with open(HILLSHADE_PNG, "rb") as f:
-                hillshade_b64 = "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+                hillshade_b64 = "data:image/png;base64," + base64.b64encode(f.read()).decode(
+                    "ascii"
+                )
         except Exception:
             hillshade_b64 = ""
     s_hillshade = json.dumps(hillshade_b64)

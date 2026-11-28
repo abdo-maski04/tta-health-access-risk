@@ -1,4 +1,4 @@
-﻿"""
+"""
 TTA Health Access Risk — Membre A
 Étape 4 : assemblage du jeu de données livrable (dataset final du Membre A).
 
@@ -93,10 +93,20 @@ def main() -> None:
         "features": [
             {
                 "type": "Feature",
-                "geometry": {"type": "Point", "coordinates": [float(r["start_point_lon"]), float(r["start_point_lat"])]},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [float(r["start_point_lon"]), float(r["start_point_lat"])],
+                },
                 "properties": {
                     k: r[k]
-                    for k in ("commune_code", "name_fr", "province", "population_2024", "milieu", "part_rurale_pct")
+                    for k in (
+                        "commune_code",
+                        "name_fr",
+                        "province",
+                        "population_2024",
+                        "milieu",
+                        "part_rurale_pct",
+                    )
                 },
             }
             for r in rows

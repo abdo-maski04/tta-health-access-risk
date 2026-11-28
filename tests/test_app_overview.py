@@ -79,10 +79,7 @@ class AppOverviewTests(unittest.TestCase):
         )
         self.assertGreater(len(filtered), 0)
         self.assertTrue(
-            all(
-                row["province"] == "Al Hoceima" and row["milieu"] == "Rural"
-                for row in filtered
-            )
+            all(row["province"] == "Al Hoceima" and row["milieu"] == "Rural" for row in filtered)
         )
 
     def test_search_filter_by_code_and_name(self):
@@ -95,7 +92,9 @@ class AppOverviewTests(unittest.TestCase):
             search=self.communes[0]["name_fr"],
         )
         self.assertEqual(len(code_result), 1)
-        self.assertIn(self.communes[0]["commune_code"], [row["commune_code"] for row in name_result])
+        self.assertIn(
+            self.communes[0]["commune_code"], [row["commune_code"] for row in name_result]
+        )
 
     def test_empty_filter_returns_no_communes(self):
         result = filter_overview_communes(self.communes, search="zzzz-not-found")
@@ -131,21 +130,25 @@ class AppOverviewTests(unittest.TestCase):
     def test_population_years_are_discovered_from_available_columns(self):
         self.assertEqual(available_population_years(self.communes), [2014, 2024])
         self.assertEqual(
-            available_population_years([
-                {"population_2014": 100, "population_2024": None},
-                {"population_2014": 120, "population_2024": None},
-            ]),
+            available_population_years(
+                [
+                    {"population_2014": 100, "population_2024": None},
+                    {"population_2014": 120, "population_2024": None},
+                ]
+            ),
             [2014],
         )
 
     def test_missing_demographic_values_remain_unavailable(self):
-        rows = [{
-            "commune_code": "01",
-            "province": "Example",
-            "area_km2": None,
-            "population_2014": None,
-            "population_2024": None,
-        }]
+        rows = [
+            {
+                "commune_code": "01",
+                "province": "Example",
+                "area_km2": None,
+                "population_2014": None,
+                "population_2024": None,
+            }
+        ]
         summary = build_provincial_summary(rows, [], population_year=2024)
         self.assertIsNone(summary[0]["Population 2024"])
         self.assertIsNone(summary[0]["Population urbaine 2024"])
@@ -210,10 +213,17 @@ class AppOverviewTests(unittest.TestCase):
     def test_facility_donut_groups_only_real_source_types(self):
         figure = facilities_by_type(self.facilities)
         self.assertEqual(sum(figure.data[0].values), 892)
-        self.assertEqual(set(figure.data[0].labels), {
-            "Pharmacies", "Hôpitaux", "Cliniques", "Médecins",
-            "Laboratoires", "Autres",
-        })
+        self.assertEqual(
+            set(figure.data[0].labels),
+            {
+                "Pharmacies",
+                "Hôpitaux",
+                "Cliniques",
+                "Médecins",
+                "Laboratoires",
+                "Autres",
+            },
+        )
         self.assertEqual(
             figure.data[0].values[list(figure.data[0].labels).index("Autres")],
             4,

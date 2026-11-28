@@ -171,7 +171,9 @@ def render_hospital_routes_map(
         col_f1, col_f2, col_f3, col_f4 = st.columns([1.5, 1.8, 1.8, 1.8])
 
         with col_f1:
-            province_list = ["Toutes les provinces"] + sorted(routes_df["province"].unique().tolist())
+            province_list = ["Toutes les provinces"] + sorted(
+                routes_df["province"].unique().tolist()
+            )
             selected_province = st.selectbox(
                 "Province / Préfecture :",
                 province_list,
@@ -218,20 +220,33 @@ def render_hospital_routes_map(
             )
 
         # Bascules multi-couches
-        st.markdown("<div style='margin-top:10px; font-weight:700; color:#334155; font-size:0.9rem;'>Couches Géospatiales à afficher :</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div style='margin-top:10px; font-weight:700; color:#334155; font-size:0.9rem;'>Couches Géospatiales à afficher :</div>",
+            unsafe_allow_html=True,
+        )
         col_l1, col_l2, col_l3, col_l4 = st.columns(4)
         with col_l1:
             show_routes = st.checkbox("🛣️ Itinéraires routiers", value=True, key="v2_show_routes")
-            show_terrain = st.checkbox("🏔️ Relief & Topographie (MNT)", value=True, key="v2_show_terrain")
+            show_terrain = st.checkbox(
+                "🏔️ Relief & Topographie (MNT)", value=True, key="v2_show_terrain"
+            )
         with col_l2:
             show_polygons = st.checkbox("🗺️ Limites communales", value=True, key="v2_show_polygons")
-            show_hydro = st.checkbox("🌊 Réseau hydrographique & Oueds", value=True, key="v2_show_hydro")
+            show_hydro = st.checkbox(
+                "🌊 Réseau hydrographique & Oueds", value=True, key="v2_show_hydro"
+            )
         with col_l3:
             show_hospitals = st.checkbox("🏥 Hôpitaux publics", value=True, key="v2_show_hospitals")
-            show_hazards = st.checkbox("⚠️ Zones de contraintes morpho-topographiques", value=False, key="v2_show_hazards")
+            show_hazards = st.checkbox(
+                "⚠️ Zones de contraintes morpho-topographiques", value=False, key="v2_show_hazards"
+            )
         with col_l4:
-            show_origins = st.checkbox("📍 Chefs-lieux de commune", value=False, key="v2_show_origins")
-            show_isochrones = st.checkbox("⏱️ Bassins d'urgence (Isochrones)", value=False, key="v2_show_isochrones")
+            show_origins = st.checkbox(
+                "📍 Chefs-lieux de commune", value=False, key="v2_show_origins"
+            )
+            show_isochrones = st.checkbox(
+                "⏱️ Bassins d'urgence (Isochrones)", value=False, key="v2_show_isochrones"
+            )
 
     # 4. Application des Filtres
     filtered_df = routes_df.copy()
@@ -242,7 +257,9 @@ def render_hospital_routes_map(
     if selected_status == "⏱️ Urgence vitale (≤ 30 min)":
         filtered_df = filtered_df[filtered_df["temps_min"] <= 30.0]
     elif selected_status == "⚠️ Délai modéré (30 à 60 min)":
-        filtered_df = filtered_df[(filtered_df["temps_min"] > 30.0) & (filtered_df["temps_min"] <= 60.0)]
+        filtered_df = filtered_df[
+            (filtered_df["temps_min"] > 30.0) & (filtered_df["temps_min"] <= 60.0)
+        ]
     elif selected_status == "🚨 Isolement sanitaire critique (> 60 min)":
         filtered_df = filtered_df[filtered_df["temps_min"] > 60.0]
     elif selected_status == "🔄 Recalculés ORS v2 (50)":
@@ -258,9 +275,17 @@ def render_hospital_routes_map(
 
     # 5. Cartouches d'indicateurs de synthèse (KPIs)
     total_displayed = len(filtered_df)
-    pop_displayed = int(filtered_df["population_2024"].sum()) if "population_2024" in filtered_df.columns else 0
-    pop_under_30 = int(filtered_df[filtered_df["temps_min"] <= 30.0]["population_2024"].sum()) if "population_2024" in filtered_df.columns else 0
-    pct_under_30 = round((pop_under_30 / max(1, pop_displayed) * 100), 1) if pop_displayed > 0 else 0.0
+    pop_displayed = (
+        int(filtered_df["population_2024"].sum()) if "population_2024" in filtered_df.columns else 0
+    )
+    pop_under_30 = (
+        int(filtered_df[filtered_df["temps_min"] <= 30.0]["population_2024"].sum())
+        if "population_2024" in filtered_df.columns
+        else 0
+    )
+    pct_under_30 = (
+        round((pop_under_30 / max(1, pop_displayed) * 100), 1) if pop_displayed > 0 else 0.0
+    )
     med_temps = round(filtered_df["temps_min"].median(), 1) if total_displayed > 0 else 0.0
     med_dist = round(filtered_df["distance_km"].median(), 1) if total_displayed > 0 else 0.0
 
@@ -270,7 +295,11 @@ def render_hospital_routes_map(
     with kpi_c2:
         st.metric("Population Couverte", f"{pop_displayed:,}".replace(",", " ") + " hab.")
     with kpi_c3:
-        st.metric("Accès ≤ 30 min (Urgence)", f"{pct_under_30}%", delta="Golden Hour" if pct_under_30 >= 70 else "Critique")
+        st.metric(
+            "Accès ≤ 30 min (Urgence)",
+            f"{pct_under_30}%",
+            delta="Golden Hour" if pct_under_30 >= 70 else "Critique",
+        )
     with kpi_c4:
         st.metric("Durée Médiane", f"{med_temps} min")
     with kpi_c5:
@@ -350,7 +379,8 @@ def render_hospital_routes_map(
         filtered_gj = {
             "type": "FeatureCollection",
             "features": [
-                f for f in communes_gj["features"]
+                f
+                for f in communes_gj["features"]
                 if f["properties"].get("commune_code") in active_codes
             ],
         }
@@ -475,16 +505,21 @@ def render_hospital_routes_map(
         layers=layers,
         initial_view_state=view_state,
         tooltip=tooltip,
-        map_style="mapbox://styles/mapbox/light-v10" if hasattr(pdk.map_styles, "LIGHT") else "light",
+        map_style="mapbox://styles/mapbox/light-v10"
+        if hasattr(pdk.map_styles, "LIGHT")
+        else "light",
     )
 
     # 6. Rendu Cartographique Double Moteur : SIG Leaflet Professionnel & Vue PyDeck 3D
-    tab_sig, tab_pydeck = st.tabs([
-        "🗺️ Interface SIG Interactive Professionnelle (Leaflet)",
-        "🌐 Vue Synthétique 3D (PyDeck)",
-    ])
+    tab_sig, tab_pydeck = st.tabs(
+        [
+            "🗺️ Interface SIG Interactive Professionnelle (Leaflet)",
+            "🌐 Vue Synthétique 3D (PyDeck)",
+        ]
+    )
 
     with tab_sig:
+
         def _clean_prop_val(v: Any) -> Any:
             if v is None:
                 return None
@@ -544,10 +579,14 @@ def render_hospital_routes_map(
             routes_geojson=routes_gj,
             hospitals_geojson=hospitals_gj,
             communes_geojson=communes_gj,
-            hydro_rivers_geojson=aux_layers.get("hydro_rivers") or {"type": "FeatureCollection", "features": []},
-            hydro_basins_geojson=aux_layers.get("hydro_basins") or {"type": "FeatureCollection", "features": []},
-            hazards_geojson=aux_layers.get("hazards") or {"type": "FeatureCollection", "features": []},
-            isochrones_geojson=aux_layers.get("isochrones") or {"type": "FeatureCollection", "features": []},
+            hydro_rivers_geojson=aux_layers.get("hydro_rivers")
+            or {"type": "FeatureCollection", "features": []},
+            hydro_basins_geojson=aux_layers.get("hydro_basins")
+            or {"type": "FeatureCollection", "features": []},
+            hazards_geojson=aux_layers.get("hazards")
+            or {"type": "FeatureCollection", "features": []},
+            isochrones_geojson=aux_layers.get("isochrones")
+            or {"type": "FeatureCollection", "features": []},
             terrain_bounds=aux_layers.get("terrain_bounds", [-6.2923, 34.4560, -3.7540, 35.9730]),
             height=780,
         )
@@ -610,16 +649,16 @@ def render_hospital_routes_map(
             f"""
             <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:12px; padding:18px 22px; margin-bottom:18px;">
                 <h4 style="margin:0 0 10px 0; color:#166534; font-size:1.15rem;">
-                    📍 Fiche d'Accessibilité Hospitalière : {c_row['name_fr']} ({c_row['province']})
+                    📍 Fiche d'Accessibilité Hospitalière : {c_row["name_fr"]} ({c_row["province"]})
                 </h4>
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap:12px; font-size:0.89rem;">
-                    <div><b>Population légale 2024 :</b> {c_row.get('population_2024', 0):,} hab.</div>
-                    <div><b>Milieu territorial :</b> {c_row['milieu']}</div>
-                    <div><b>Hôpital de référence :</b> <b>{c_row['hospital_canonical']}</b></div>
-                    <div><b>Temps de parcours :</b> <b style="color:#D97706; font-size:1.05rem;">{c_row['temps_min']} min</b></div>
-                    <div><b>Distance routière :</b> <b>{c_row['distance_km']} km</b></div>
-                    <div><b>Vitesse moyenne estimée :</b> ~{round(c_row['distance_km'] / max(0.01, c_row['temps_min'] / 60), 1)} km/h</div>
-                    <div><b>Palier d'urgence :</b> <span style="color:#0369A1; font-weight:700;">{c_row.get('access_tier', 'Standard')}</span></div>
+                    <div><b>Population légale 2024 :</b> {c_row.get("population_2024", 0):,} hab.</div>
+                    <div><b>Milieu territorial :</b> {c_row["milieu"]}</div>
+                    <div><b>Hôpital de référence :</b> <b>{c_row["hospital_canonical"]}</b></div>
+                    <div><b>Temps de parcours :</b> <b style="color:#D97706; font-size:1.05rem;">{c_row["temps_min"]} min</b></div>
+                    <div><b>Distance routière :</b> <b>{c_row["distance_km"]} km</b></div>
+                    <div><b>Vitesse moyenne estimée :</b> ~{round(c_row["distance_km"] / max(0.01, c_row["temps_min"] / 60), 1)} km/h</div>
+                    <div><b>Palier d'urgence :</b> <span style="color:#0369A1; font-weight:700;">{c_row.get("access_tier", "Standard")}</span></div>
                     <div><b>Intégrité du calcul :</b> Conforme réseau routier réel</div>
                 </div>
             </div>
@@ -628,10 +667,19 @@ def render_hospital_routes_map(
         )
 
     # 9. Tableau Exploratoire des Données Filtrées
-    with st.expander("📋 Table Détaillée des 146 Itinéraires et Indicateurs Territoriaux", expanded=False):
+    with st.expander(
+        "📋 Table Détaillée des 146 Itinéraires et Indicateurs Territoriaux", expanded=False
+    ):
         display_cols = [
-            "commune_code", "name_fr", "province", "milieu", "population_2024",
-            "hospital_canonical", "distance_km", "temps_min", "access_tier",
+            "commune_code",
+            "name_fr",
+            "province",
+            "milieu",
+            "population_2024",
+            "hospital_canonical",
+            "distance_km",
+            "temps_min",
+            "access_tier",
         ]
         col_names_fr = {
             "commune_code": "Code HCP",
@@ -660,4 +708,6 @@ def render_hospital_routes_map(
                 key="download_filtered_csv",
             )
         with dcol2:
-            st.caption("Sources consolidées : MNT Copernicus DEM, HydroRIVERS, HCP 2024, MSPS & ORS.")
+            st.caption(
+                "Sources consolidées : MNT Copernicus DEM, HydroRIVERS, HCP 2024, MSPS & ORS."
+            )

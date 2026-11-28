@@ -1,4 +1,4 @@
-﻿"""
+"""
 TTA Health Access Risk — Membre A
 Étape 2 : intégration de la population légale RGPH 2024 (HCP) au référentiel.
 
@@ -77,7 +77,10 @@ def main() -> None:
             rec = {
                 "commune_code": cc,
                 "label_officiel": line["label"].replace("'''", "").strip(),
-                "est_arrondissement": line["label"].replace("'''", "").strip().startswith("Arrondissement"),
+                "est_arrondissement": line["label"]
+                .replace("'''", "")
+                .strip()
+                .startswith("Arrondissement"),
                 "population_2024": int(line["population_totale"]),
                 "marocains_2024": int(line["marocains"]),
                 "etrangers_2024": int(line["etrangers"]),
@@ -97,7 +100,9 @@ def main() -> None:
         code = r["commune_code"]
         p = pop.get(code)
         if p is None:
-            non_apparies.append({"commune_code": code, "name_fr": r["name_fr"], "province": r["province"]})
+            non_apparies.append(
+                {"commune_code": code, "name_fr": r["name_fr"], "province": r["province"]}
+            )
             continue
         rows.append(
             {
@@ -170,15 +175,27 @@ def main() -> None:
             "cle_unique": len(doublons) == 0,
             "population_totale_conforme": total_pop == TOTAL_REGION_OFFICIEL,
             "menages_totaux_conformes": total_men == MENAGES_REGION_OFFICIEL,
-            "tanger_coherent_avec_arrondissements": (tanger["population_2024"] == sum_arr) if tanger else False,
+            "tanger_coherent_avec_arrondissements": (tanger["population_2024"] == sum_arr)
+            if tanger
+            else False,
         },
     }
 
     # --- écriture ---
     cols = [
-        "commune_code", "name_fr", "province", "province_code",
-        "population_2024", "marocains_2024", "etrangers_2024", "menages_2024",
-        "milieu", "annee_reference", "source", "statut_valeur", "code_geo_officiel",
+        "commune_code",
+        "name_fr",
+        "province",
+        "province_code",
+        "population_2024",
+        "marocains_2024",
+        "etrangers_2024",
+        "menages_2024",
+        "milieu",
+        "annee_reference",
+        "source",
+        "statut_valeur",
+        "code_geo_officiel",
     ]
     with (OUT_DIR / "demographics.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols)
@@ -189,25 +206,56 @@ def main() -> None:
     ref_by = {r["commune_code"]: r for r in ref}
     with (OUT_DIR / "population_TEMPLATE.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow([
-            "commune_code", "name_fr", "province", "population_2024", "menages_2024",
-            "milieu", "superficie_km2", "densite_hab_km2",
-            "annee_reference", "source", "statut_valeur",
-        ])
+        w.writerow(
+            [
+                "commune_code",
+                "name_fr",
+                "province",
+                "population_2024",
+                "menages_2024",
+                "milieu",
+                "superficie_km2",
+                "densite_hab_km2",
+                "annee_reference",
+                "source",
+                "statut_valeur",
+            ]
+        )
         for x in rows:
             sup = float(ref_by[x["commune_code"]]["area_km2"])
             dens = round(x["population_2024"] / sup, 1) if sup > 0 else ""
-            w.writerow([
-                x["commune_code"], x["name_fr"], x["province"], x["population_2024"], x["menages_2024"],
-                x["milieu"], sup, dens, 2024, "HCP RGPH 2024", "OFFICIEL",
-            ])
+            w.writerow(
+                [
+                    x["commune_code"],
+                    x["name_fr"],
+                    x["province"],
+                    x["population_2024"],
+                    x["menages_2024"],
+                    x["milieu"],
+                    sup,
+                    dens,
+                    2024,
+                    "HCP RGPH 2024",
+                    "OFFICIEL",
+                ]
+            )
 
-    (OUT_DIR / "qc_demographics.json").write_text(json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT_DIR / "qc_demographics.json").write_text(
+        json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     print(json.dumps(qc["checks"], ensure_ascii=False, indent=2))
     print(f"\ncommunes appariées : {len(rows)} / {len(ref)}")
-    print(f"population totale  : {total_pop:,} (officiel {TOTAL_REGION_OFFICIEL:,}, écart {qc['ecart_population']:+d})".replace(",", " "))
-    print(f"ménages totaux     : {total_men:,} (officiel {MENAGES_REGION_OFFICIEL:,}, écart {qc['ecart_menages']:+d})".replace(",", " "))
+    print(
+        f"population totale  : {total_pop:,} (officiel {TOTAL_REGION_OFFICIEL:,}, écart {qc['ecart_population']:+d})".replace(
+            ",", " "
+        )
+    )
+    print(
+        f"ménages totaux     : {total_men:,} (officiel {MENAGES_REGION_OFFICIEL:,}, écart {qc['ecart_menages']:+d})".replace(
+            ",", " "
+        )
+    )
     if non_apparies:
         print(f"\nNON APPARIÉES ({len(non_apparies)}) :")
         for n in non_apparies:

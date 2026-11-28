@@ -11,7 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 COMMUNES_CSV = ROOT / "data" / "processed" / "communes_TTA_2024.csv"
 COMMUNES_GEOJSON = ROOT / "data" / "processed" / "communes_TTA.geojson"
 WHITELIST_JSON = ROOT / "config" / "hospital_whitelist.json"
-RAW_MS_BY_COMMUNE = ROOT / "data" / "raw" / "ministere_sante" / "official_public_health_by_commune_2025.csv"
+RAW_MS_BY_COMMUNE = (
+    ROOT / "data" / "raw" / "ministere_sante" / "official_public_health_by_commune_2025.csv"
+)
 RAW_MS_TTA = ROOT / "data" / "raw" / "ministere_sante" / "official_public_health_tta_2025.csv"
 MS_BY_COMMUNE = ROOT / "data" / "processed" / "official_public_health_by_commune_2025.csv"
 MS_TTA = ROOT / "data" / "processed" / "official_public_health_tta_2025.csv"
@@ -41,7 +43,9 @@ class ScientificDataIntegrityTests(unittest.TestCase):
         self.assertEqual(df_ms["commune_name"].nunique(), 146)
         self.assertEqual(set(df_ms["commune_code"]), set(df_ref["commune_code"]))
         # Cohérence arithmétique interne des totaux sanitaires
-        computed_total = df_ms["CSU"] + df_ms["CSR"] + df_ms["DR"] + df_ms["Hospitals"] + df_ms["Specialized"]
+        computed_total = (
+            df_ms["CSU"] + df_ms["CSR"] + df_ms["DR"] + df_ms["Hospitals"] + df_ms["Specialized"]
+        )
         self.assertTrue((computed_total == df_ms["Total_Public_Official"]).all())
 
     def test_ministere_tta_323_establishments_and_parity_with_raw(self):
@@ -73,7 +77,9 @@ class ScientificDataIntegrityTests(unittest.TestCase):
         # Cohérence croisée des totaux par commune entre les 323 établissements et la table communale
         counts_by_code = df_drv_tta["commune_code"].value_counts().to_dict()
         for _, row in df_drv_com.iterrows():
-            self.assertEqual(counts_by_code.get(row["commune_code"], 0), int(row["Total_Public_Official"]))
+            self.assertEqual(
+                counts_by_code.get(row["commune_code"], 0), int(row["Total_Public_Official"])
+            )
 
     def test_hospital_whitelist_enriched_and_valid(self):
         """Vérifie les 15 hôpitaux de la whitelist, leurs coordonnées et leurs catégories."""

@@ -82,7 +82,8 @@ def test_verifier_temps_signale_une_colonne_manquante():
 def test_personne_exposee_n_entre_pas_dans_le_score():
     # Deux communes de meme danger et meme temps : score identique, quelle que
     # soit leur population. La population est un axe separe (methodologie §4).
-    deux = pd.DataFrame([ligne(commune="A", rain=2, temps=20.0),
-                         ligne(commune="B", rain=2, temps=20.0)])
+    deux = pd.DataFrame(
+        [ligne(commune="A", rain=2, temps=20.0), ligne(commune="B", rain=2, temps=20.0)]
+    )
     resultat = ajouter_score(deux)
     assert resultat["score"].tolist() == [4, 4]

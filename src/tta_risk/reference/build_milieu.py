@@ -1,4 +1,4 @@
-﻿"""
+"""
 TTA Health Access Risk — Membre A
 Étape 3 : détermination du milieu de résidence (Urbain / Rural / Mixte) par commune.
 
@@ -102,7 +102,9 @@ def main() -> None:
         if rp is None:
             rp, rm, nd = 0, 0, 0
             if total > 0 and key not in ar_to_code:
-                non_appariees.append({"commune_code": code, "name_fr": d["name_fr"], "name_ar": name_ar})
+                non_appariees.append(
+                    {"commune_code": code, "name_fr": d["name_fr"], "name_ar": name_ar}
+                )
         else:
             nd = nb_douars.get(key, 0)
 
@@ -179,24 +181,46 @@ def main() -> None:
 
     # --- 5. écriture --------------------------------------------------------
     cols = [
-        "commune_code", "name_fr", "province", "province_code",
-        "population_2024", "marocains_2024", "etrangers_2024", "menages_2024",
+        "commune_code",
+        "name_fr",
+        "province",
+        "province_code",
+        "population_2024",
+        "marocains_2024",
+        "etrangers_2024",
+        "menages_2024",
         "milieu",
-        "population_urbaine_2024", "population_rurale_2024",
-        "menages_ruraux_2024", "part_rurale_pct", "nb_douars",
-        "annee_reference", "source", "statut_valeur", "code_geo_officiel",
+        "population_urbaine_2024",
+        "population_rurale_2024",
+        "menages_ruraux_2024",
+        "part_rurale_pct",
+        "nb_douars",
+        "annee_reference",
+        "source",
+        "statut_valeur",
+        "code_geo_officiel",
     ]
     with DEMO.open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
         w.writerows(demo_rows)
 
-    (OUT_DIR / "qc_milieu.json").write_text(json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT_DIR / "qc_milieu.json").write_text(
+        json.dumps(qc, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     print(json.dumps(qc["checks"], ensure_ascii=False, indent=2))
     print(f"\nRépartition : {dict(repartition)}")
-    print(f"Population rurale : {tot_rural:,} (officiel {POP_RURALE_REGION_OFFICIELLE:,}, écart {qc['ecart_rural']:+d})".replace(",", " "))
-    print(f"Ménages ruraux    : {tot_men_rural:,} (officiel {MENAGES_RURAUX_REGION_OFFICIELS:,}, écart {qc['ecart_menages_ruraux']:+d})".replace(",", " "))
+    print(
+        f"Population rurale : {tot_rural:,} (officiel {POP_RURALE_REGION_OFFICIELLE:,}, écart {qc['ecart_rural']:+d})".replace(
+            ",", " "
+        )
+    )
+    print(
+        f"Ménages ruraux    : {tot_men_rural:,} (officiel {MENAGES_RURAUX_REGION_OFFICIELS:,}, écart {qc['ecart_menages_ruraux']:+d})".replace(
+            ",", " "
+        )
+    )
     if incoh_code:
         print(f"⚠ {len(incoh_code)} codes géographiques incohérents :")
         for c in incoh_code[:10]:

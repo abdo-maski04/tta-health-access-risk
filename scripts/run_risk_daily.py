@@ -27,9 +27,7 @@ def run(issued_on=None):
     result = compute_danger(df)
 
     # Le score a besoin du temps de trajet de chaque commune (D-015 : 15 / 45 min).
-    result = result.merge(
-        charger_temps(), on="commune_code", how="left", validate="many_to_one"
-    )
+    result = result.merge(charger_temps(), on="commune_code", how="left", validate="many_to_one")
     verifier_temps(result)
     result = ajouter_score(result)
 

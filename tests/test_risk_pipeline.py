@@ -12,17 +12,21 @@ from tta_risk.db.database import (
 
 @pytest.mark.unit
 def test_convert_risk_rows_nan_becomes_none():
-    df = pd.DataFrame([{
-        "commune_code": "X",
-        "forecast_issued_on": "2026-01-01",
-        "target_date": "2026-01-02",
-        "precip_mm": float("nan"),
-        "tmax_c": 20.0,
-        "rain_level": 0,
-        "heat_level": 0,
-        "danger": 0,
-        "dominant": "none",
-    }])
+    df = pd.DataFrame(
+        [
+            {
+                "commune_code": "X",
+                "forecast_issued_on": "2026-01-01",
+                "target_date": "2026-01-02",
+                "precip_mm": float("nan"),
+                "tmax_c": 20.0,
+                "rain_level": 0,
+                "heat_level": 0,
+                "danger": 0,
+                "dominant": "none",
+            }
+        ]
+    )
 
     row = convert_risk_df_to_rows(df)[0]
 
@@ -48,18 +52,12 @@ def test_risk_upsert_is_idempotent():
         load_risk_rows([row])
 
         with get_connection() as conn, conn.cursor() as cur:
-            cur.execute(
-                "SELECT count(*) FROM weather.risk_daily "
-                "WHERE commune_code = 'TEST_RISK'"
-            )
+            cur.execute("SELECT count(*) FROM weather.risk_daily WHERE commune_code = 'TEST_RISK'")
             assert cur.fetchone()[0] == 1
 
     finally:
         with get_connection() as conn, conn.cursor() as cur:
-            cur.execute(
-                "DELETE FROM weather.risk_daily "
-                "WHERE commune_code = 'TEST_RISK'"
-            )
+            cur.execute("DELETE FROM weather.risk_daily WHERE commune_code = 'TEST_RISK'")
             conn.commit()
 
 

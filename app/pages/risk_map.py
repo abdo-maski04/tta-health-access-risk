@@ -80,9 +80,7 @@ FACILITY_TYPES = {
     "other": {"physiotherapist", "healthcare_unspecified"},
 }
 FACILITY_LABELS = {
-    kind: FACILITY_GROUPS[group][0]
-    for group, types in FACILITY_TYPES.items()
-    for kind in types
+    kind: FACILITY_GROUPS[group][0] for group, types in FACILITY_TYPES.items() for kind in types
 }
 GEOD = Geod(ellps="WGS84")
 
@@ -352,9 +350,7 @@ def _calculate_commune_areas_km2(geojson: dict) -> dict[str, float]:
         elif geometry["type"] == "MultiPolygon":
             polygons = geometry["coordinates"]
         else:
-            raise ValueError(
-                f"Géométrie communale non prise en charge: {geometry['type']}"
-            )
+            raise ValueError(f"Géométrie communale non prise en charge: {geometry['type']}")
 
         area_m2 = 0.0
         for polygon in polygons:
@@ -446,10 +442,7 @@ def _filter_facilities_by_scope(
         row
         for row in facilities
         if (assigned is None or (row.get("commune_code") is not None) is assigned)
-        and (
-            code_set is None
-            or str(row.get("commune_code") or "").strip() in code_set
-        )
+        and (code_set is None or str(row.get("commune_code") or "").strip() in code_set)
         and (type_set is None or row.get("facility_type") in type_set)
     ]
 
@@ -481,8 +474,7 @@ def filter_facility_search(
         row
         for row in facilities
         if any(
-            needle in _normalize_search(str(row.get(field) or ""))
-            for field in searchable_fields
+            needle in _normalize_search(str(row.get(field) or "")) for field in searchable_fields
         )
         or needle
         in _normalize_search(
@@ -571,11 +563,7 @@ def commune_code_from_map_event(
 
 
 def _format_number(value: object, decimals: int = 0) -> str:
-    if (
-        isinstance(value, bool)
-        or not isinstance(value, (int, float))
-        or not math.isfinite(value)
-    ):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
         return "Non disponible"
     return f"{value:,.{decimals}f}".replace(",", " ")
 
@@ -648,19 +636,13 @@ def _search_target(
         return "", None
     province_names = sorted({str(row["province"]) for row in communes})
     exact_province = next(
-        (
-            province
-            for province in province_names
-            if _normalize_search(province) == needle
-        ),
+        (province for province in province_names if _normalize_search(province) == needle),
         None,
     )
     if exact_province:
         return "province", exact_province
     partial_provinces = [
-        province
-        for province in province_names
-        if needle in _normalize_search(province)
+        province for province in province_names if needle in _normalize_search(province)
     ]
     if len(partial_provinces) == 1:
         return "province", partial_provinces[0]
@@ -754,11 +736,7 @@ def _map_search_overlay(
             st.session_state["risk_selected_commune_code"] = None
             st.session_state["risk_search_status"] = f"Province trouvée : {match}"
         elif target == "commune" and match is not None:
-            commune = next(
-                row
-                for row in communes
-                if str(row["commune_code"]) == str(match)
-            )
+            commune = next(row for row in communes if str(row["commune_code"]) == str(match))
             st.session_state["risk_province_filter"] = commune["province"]
             st.session_state["risk_commune_filter"] = (
                 f"{commune['name_fr']} · {commune['commune_code']}"
@@ -824,10 +802,7 @@ def _section_label(label: str, icon: str) -> str:
         "aria-hidden='true'>"
         f"{SECTION_ICON_CONTENT[icon]}</svg>"
     )
-    return (
-        "<div class='tta-map-section-label'>"
-        f"{icon_svg}{html.escape(label)}</div>"
-    )
+    return f"<div class='tta-map-section-label'>{icon_svg}{html.escape(label)}</div>"
 
 
 def _render_summary(
@@ -940,8 +915,7 @@ def render_interactive_risk_map(
     validated_pharmacies = sum(
         1
         for f in facilities
-        if f.get("facility_tier") == "PRIVATE_VALID"
-        and f.get("category_code") == "PHARMACY"
+        if f.get("facility_tier") == "PRIVATE_VALID" and f.get("category_code") == "PHARMACY"
     )
     if validated_pharmacies == 0:
         validated_pharmacies = 722
@@ -1057,7 +1031,6 @@ def render_interactive_risk_map(
         compact=True,
     )
 
-
     defaults = {
         "risk_map_search": "",
         "risk_search_active": "",
@@ -1095,21 +1068,15 @@ def render_interactive_risk_map(
     )
     active_search = _map_search_overlay(communes, facilities)
     provinces = sorted({str(row["province"]) for row in communes})
-    if (
-        st.session_state.get("risk_province_filter")
-        not in ["Toutes les provinces", *provinces]
-    ):
+    if st.session_state.get("risk_province_filter") not in ["Toutes les provinces", *provinces]:
         st.session_state["risk_province_filter"] = "Toutes les provinces"
 
-    commune_by_code = {
-        str(row["commune_code"]).strip(): row for row in communes
-    }
+    commune_by_code = {str(row["commune_code"]).strip(): row for row in communes}
     selected_province = st.session_state["risk_province_filter"]
     province_rows = [
         row
         for row in communes
-        if selected_province == "Toutes les provinces"
-        or row["province"] == selected_province
+        if selected_province == "Toutes les provinces" or row["province"] == selected_province
     ]
     commune_options = {
         "Toutes les communes": None,
@@ -1121,10 +1088,9 @@ def render_interactive_risk_map(
     if st.session_state["risk_commune_filter"] not in commune_options:
         st.session_state["risk_commune_filter"] = "Toutes les communes"
 
-    selected_code = (
-        commune_options.get(st.session_state["risk_commune_filter"])
-        or st.session_state.get("risk_selected_commune_code")
-    )
+    selected_code = commune_options.get(
+        st.session_state["risk_commune_filter"]
+    ) or st.session_state.get("risk_selected_commune_code")
     selected_commune = commune_by_code.get(str(selected_code)) if selected_code else None
     panel_title = (
         str(selected_commune.get("name_fr", "Commune"))
@@ -1157,9 +1123,9 @@ def render_interactive_risk_map(
                 unsafe_allow_html=True,
             )
             if minimize_col.button("—", key="risk_map_minimize", help="Réduire le panneau"):
-                st.session_state["risk_inspector_collapsed"] = (
-                    not st.session_state["risk_inspector_collapsed"]
-                )
+                st.session_state["risk_inspector_collapsed"] = not st.session_state[
+                    "risk_inspector_collapsed"
+                ]
                 st.rerun()
             if close_col.button("×", key="risk_map_close", help="Masquer le panneau"):
                 st.session_state["risk_inspector_visible"] = False
@@ -1174,9 +1140,7 @@ def render_interactive_risk_map(
                     st.session_state["risk_inspector_collapsed"] = False
                     st.rerun()
             else:
-                filter_tab, summary_tab = st.tabs(
-                    ["Filtres & Couches", "Synthèse & Légende"]
-                )
+                filter_tab, summary_tab = st.tabs(["Filtres & Couches", "Synthèse & Légende"])
                 with filter_tab:
                     st.markdown(
                         _section_label("Filtres géographiques", "layers"),
@@ -1202,22 +1166,15 @@ def render_interactive_risk_map(
                     commune_options = {
                         "Toutes les communes": None,
                         **{
-                            f"{row['name_fr']} · {row['commune_code']}": str(
-                                row["commune_code"]
-                            )
+                            f"{row['name_fr']} · {row['commune_code']}": str(row["commune_code"])
                             for row in sorted(
                                 province_rows,
                                 key=lambda row: row["name_fr"],
                             )
                         },
                     }
-                    if (
-                        st.session_state["risk_commune_filter"]
-                        not in commune_options
-                    ):
-                        st.session_state["risk_commune_filter"] = (
-                            "Toutes les communes"
-                        )
+                    if st.session_state["risk_commune_filter"] not in commune_options:
+                        st.session_state["risk_commune_filter"] = "Toutes les communes"
                     selected_option = st.selectbox(
                         "Commune",
                         list(commune_options),
@@ -1225,9 +1182,7 @@ def render_interactive_risk_map(
                     )
                     selected_code = commune_options[selected_option]
                     selected_commune = (
-                        commune_by_code.get(str(selected_code))
-                        if selected_code
-                        else None
+                        commune_by_code.get(str(selected_code)) if selected_code else None
                     )
 
                     geographic_communes = filter_map_communes(
@@ -1247,8 +1202,7 @@ def render_interactive_risk_map(
                             if str(row["commune_code"]) == str(selected_code)
                         ]
                     geographic_codes = {
-                        str(row["commune_code"]).strip()
-                        for row in geographic_communes
+                        str(row["commune_code"]).strip() for row in geographic_communes
                     }
                     geographic_code_key = tuple(sorted(geographic_codes))
                     all_associated = _filter_facilities_by_scope(
@@ -1269,10 +1223,7 @@ def render_interactive_risk_map(
                         facility_types=selected_types,
                         assigned=False,
                     )
-                    if (
-                        active_search
-                        and st.session_state.get("risk_search_target") == "facility"
-                    ):
+                    if active_search and st.session_state.get("risk_search_target") == "facility":
                         matched_ids = {
                             (row.get("osm_type"), str(row.get("osm_id")))
                             for row in filter_facility_search(facilities, active_search)
@@ -1367,9 +1318,7 @@ def render_interactive_risk_map(
                     summary_communes = filter_map_communes(
                         communes,
                         provinces=(
-                            []
-                            if current_province == "Toutes les provinces"
-                            else [current_province]
+                            [] if current_province == "Toutes les provinces" else [current_province]
                         ),
                         milieux=[] if current_milieu == "Tous" else [current_milieu],
                         search="",
@@ -1380,10 +1329,7 @@ def render_interactive_risk_map(
                             for row in summary_communes
                             if str(row["commune_code"]) == str(current_commune_code)
                         ]
-                    summary_codes = {
-                        str(row["commune_code"]).strip()
-                        for row in summary_communes
-                    }
+                    summary_codes = {str(row["commune_code"]).strip() for row in summary_communes}
                     summary_types = tuple(sorted(_facility_types_from_state()))
                     summary_code_key = tuple(sorted(summary_codes))
                     summary_associated = _filter_facilities_by_scope(
@@ -1397,20 +1343,19 @@ def render_interactive_risk_map(
                         facility_types=summary_types,
                         assigned=False,
                     )
-                    if (
-                        active_search
-                        and st.session_state.get("risk_search_target") == "facility"
-                    ):
+                    if active_search and st.session_state.get("risk_search_target") == "facility":
                         matched_ids = {
                             (row.get("osm_type"), str(row.get("osm_id")))
                             for row in filter_facility_search(facilities, active_search)
                         }
                         summary_associated = [
-                            row for row in summary_associated
+                            row
+                            for row in summary_associated
                             if (row.get("osm_type"), str(row.get("osm_id"))) in matched_ids
                         ]
                         summary_unassigned = [
-                            row for row in summary_unassigned
+                            row
+                            for row in summary_unassigned
                             if (row.get("osm_type"), str(row.get("osm_id"))) in matched_ids
                         ]
                     _render_summary(
@@ -1431,26 +1376,19 @@ def render_interactive_risk_map(
     province_rows = [
         row
         for row in communes
-        if selected_province == "Toutes les provinces"
-        or row["province"] == selected_province
+        if selected_province == "Toutes les provinces" or row["province"] == selected_province
     ]
     commune_code_by_label = {
         f"{row['name_fr']} · {row['commune_code']}": str(row["commune_code"])
         for row in province_rows
     }
     selected_filter_code = commune_code_by_label.get(selected_commune_label)
-    selected_code = selected_filter_code or st.session_state.get(
-        "risk_selected_commune_code"
-    )
+    selected_code = selected_filter_code or st.session_state.get("risk_selected_commune_code")
     selected_commune = commune_by_code.get(str(selected_code)) if selected_code else None
 
     filtered_communes = filter_map_communes(
         communes,
-        provinces=(
-            []
-            if selected_province == "Toutes les provinces"
-            else [selected_province]
-        ),
+        provinces=([] if selected_province == "Toutes les provinces" else [selected_province]),
         milieux=[] if selected_milieu == "Tous" else [selected_milieu],
         search="",
     )
@@ -1458,13 +1396,9 @@ def render_interactive_risk_map(
         filtered_communes = []
     if selected_filter_code:
         filtered_communes = [
-            row
-            for row in filtered_communes
-            if str(row["commune_code"]) == selected_filter_code
+            row for row in filtered_communes if str(row["commune_code"]) == selected_filter_code
         ]
-    filtered_codes = {
-        str(row["commune_code"]).strip() for row in filtered_communes
-    }
+    filtered_codes = {str(row["commune_code"]).strip() for row in filtered_communes}
     if selected_code and str(selected_code) not in filtered_codes:
         selected_code = None
         st.session_state["risk_selected_commune_code"] = None
@@ -1496,20 +1430,19 @@ def render_interactive_risk_map(
         facility_types=selected_type_key,
         assigned=False,
     )
-    if (
-        active_search
-        and st.session_state.get("risk_search_target") == "facility"
-    ):
+    if active_search and st.session_state.get("risk_search_target") == "facility":
         matched_ids = {
             (row.get("osm_type"), str(row.get("osm_id")))
             for row in filter_facility_search(facilities, active_search)
         }
         visible_associated = [
-            row for row in visible_associated
+            row
+            for row in visible_associated
             if (row.get("osm_type"), str(row.get("osm_id"))) in matched_ids
         ]
         visible_unassigned = [
-            row for row in visible_unassigned
+            row
+            for row in visible_unassigned
             if (row.get("osm_type"), str(row.get("osm_id"))) in matched_ids
         ]
 
@@ -1598,13 +1531,10 @@ def render_interactive_risk_map(
     selected_features = [
         feature
         for feature in filtered_geojson["features"]
-        if selected_code
-        and str(feature["properties"].get("commune_code")) == str(selected_code)
+        if selected_code and str(feature["properties"].get("commune_code")) == str(selected_code)
     ]
     focus_bounds = (
-        geojson_bounds(
-            {"type": "FeatureCollection", "features": selected_features}
-        )
+        geojson_bounds({"type": "FeatureCollection", "features": selected_features})
         if selected_features
         else bounds
     )

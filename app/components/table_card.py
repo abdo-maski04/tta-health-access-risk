@@ -53,4 +53,3 @@ def table_card(
                 "<div class='tta-table-empty'>Données non disponibles.</div>",
                 unsafe_allow_html=True,
             )
-

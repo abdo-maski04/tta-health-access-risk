@@ -100,20 +100,22 @@ def milieu_donut(communes: Iterable[dict[str, Any]]) -> go.Figure:
     categories = ["Urbain", "Mixte", "Rural"]
     values = [counts[label] for label in categories]
     labels = [f"{label} ({count})" for label, count in zip(categories, values)]
-    fig = go.Figure(go.Pie(
-        labels=labels,
-        values=values,
-        hole=0.62,
-        sort=False,
-        marker={
-            "colors": [COLORS["overview_milieu"][label] for label in categories],
-            "line": {"color": THEME.surface, "width": 2},
-        },
-        textinfo="percent",
-        textfont={"size": 10, "color": THEME.surface},
-        hovertemplate="%{label}: %{value} communes (%{percent})<extra></extra>",
-        domain={"x": [0.0, 0.68], "y": [0, 1]},
-    ))
+    fig = go.Figure(
+        go.Pie(
+            labels=labels,
+            values=values,
+            hole=0.62,
+            sort=False,
+            marker={
+                "colors": [COLORS["overview_milieu"][label] for label in categories],
+                "line": {"color": THEME.surface, "width": 2},
+            },
+            textinfo="percent",
+            textfont={"size": 10, "color": THEME.surface},
+            hovertemplate="%{label}: %{value} communes (%{percent})<extra></extra>",
+            domain={"x": [0.0, 0.68], "y": [0, 1]},
+        )
+    )
     fig.update_layout(
         title={"text": "Répartition des communes par milieu", "x": 0.02, "font": {"size": 13}},
         height=CHART_HEIGHT,
@@ -127,13 +129,15 @@ def milieu_donut(communes: Iterable[dict[str, Any]]) -> go.Figure:
             "y": 0.5,
             "font": {"size": 9, "color": THEME.text_muted},
         },
-        annotations=[{
-            "text": str(sum(values)),
-            "x": 0.34,
-            "y": 0.5,
-            "showarrow": False,
-            "font": {"size": 15, "color": THEME.navy, "weight": 700},
-        }],
+        annotations=[
+            {
+                "text": str(sum(values)),
+                "x": 0.34,
+                "y": 0.5,
+                "showarrow": False,
+                "font": {"size": 15, "color": THEME.navy, "weight": 700},
+            }
+        ],
     )
     return fig
 
@@ -154,15 +158,17 @@ def population_by_province(
     for row in rows:
         totals[row["province"]] = totals.get(row["province"], 0) + row[field]
     ordered = sorted(totals.items(), key=lambda item: item[1], reverse=True)
-    fig = go.Figure(go.Bar(
-        x=[name for name, _ in ordered],
-        y=[value for _, value in ordered],
-        marker={"color": COLORS["overview_chart"]["primary"], "line": {"width": 0}},
-        text=[f"{value:,}".replace(",", " ") for _, value in ordered],
-        textposition="outside",
-        cliponaxis=False,
-        hovertemplate="%{x}: %{y:,.0f} habitants<extra></extra>",
-    ))
+    fig = go.Figure(
+        go.Bar(
+            x=[name for name, _ in ordered],
+            y=[value for _, value in ordered],
+            marker={"color": COLORS["overview_chart"]["primary"], "line": {"width": 0}},
+            text=[f"{value:,}".replace(",", " ") for _, value in ordered],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="%{x}: %{y:,.0f} habitants<extra></extra>",
+        )
+    )
     fig.update_layout(yaxis_title="Habitants")
     fig.update_xaxes(tickangle=-28, automargin=True)
     return apply_layout(fig, title)
@@ -245,20 +251,23 @@ def demographic_evolution(communes: Iterable[dict[str, Any]]) -> go.Figure:
     years = _population_years(rows)
     if not years:
         return empty_figure(title, "Données historiques non disponibles ou incomplètes")
-    populations = [
-        _sum_complete(rows, f"population_{year}")
-        for year in years
-    ]
-    fig = go.Figure(go.Scatter(
-        x=years,
-        y=populations,
-        mode="lines+markers",
-        line={"color": COLORS["overview_chart"]["secondary"], "width": 3, "shape": "spline"},
-        fill="tozeroy",
-        fillcolor="rgba(23,133,130,0.12)",
-        marker={"color": COLORS["overview_chart"]["secondary"], "size": 8, "line": {"color": THEME.surface, "width": 2}},
-        hovertemplate="%{x}: %{y:,.0f} habitants<extra></extra>",
-    ))
+    populations = [_sum_complete(rows, f"population_{year}") for year in years]
+    fig = go.Figure(
+        go.Scatter(
+            x=years,
+            y=populations,
+            mode="lines+markers",
+            line={"color": COLORS["overview_chart"]["secondary"], "width": 3, "shape": "spline"},
+            fill="tozeroy",
+            fillcolor="rgba(23,133,130,0.12)",
+            marker={
+                "color": COLORS["overview_chart"]["secondary"],
+                "size": 8,
+                "line": {"color": THEME.surface, "width": 2},
+            },
+            hovertemplate="%{x}: %{y:,.0f} habitants<extra></extra>",
+        )
+    )
     fig.update_layout(yaxis_title="Habitants")
     if len(populations) > 1 and populations[0] and populations[-1] is not None:
         growth = (populations[-1] - populations[0]) / populations[0] * 100
@@ -297,16 +306,22 @@ def population_top_bottom(
     )[:10]
     if not ordered:
         return empty_figure(title, f"Population {year} non disponible")
-    fig = go.Figure(go.Bar(
-        x=[row[field] for row in ordered],
-        y=[row["name_fr"] for row in ordered],
-        orientation="h",
-        marker={"color": COLORS["overview_chart"]["rural"] if bottom else COLORS["overview_chart"]["primary"]},
-        text=[f"{row[field]:,}".replace(",", " ") for row in ordered],
-        textposition="outside",
-        cliponaxis=False,
-        hovertemplate="%{y}: %{x:,.0f} habitants<extra></extra>",
-    ))
+    fig = go.Figure(
+        go.Bar(
+            x=[row[field] for row in ordered],
+            y=[row["name_fr"] for row in ordered],
+            orientation="h",
+            marker={
+                "color": COLORS["overview_chart"]["rural"]
+                if bottom
+                else COLORS["overview_chart"]["primary"]
+            },
+            text=[f"{row[field]:,}".replace(",", " ") for row in ordered],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="%{y}: %{x:,.0f} habitants<extra></extra>",
+        )
+    )
     fig.update_layout(
         xaxis_title="Habitants",
         margin={"l": 118, "r": 42, "t": 42, "b": 32},
@@ -339,18 +354,20 @@ def facilities_by_type(facilities: Iterable[dict[str, Any]]) -> go.Figure:
         counts[FACILITY_LABELS.get(facility_type, "Autres")] += count
     labels = sorted(counts, key=counts.get, reverse=True)
     values = [counts[label] for label in labels]
-    fig = go.Figure(go.Pie(
-        labels=labels,
-        values=values,
-        hole=0.62,
-        sort=False,
-        marker={
-            "colors": [color_by_label[label] for label in labels],
-            "line": {"color": THEME.surface, "width": 2},
-        },
-        textinfo="none",
-        hovertemplate="%{label}: %{value} établissements OSM<extra></extra>",
-    ))
+    fig = go.Figure(
+        go.Pie(
+            labels=labels,
+            values=values,
+            hole=0.62,
+            sort=False,
+            marker={
+                "colors": [color_by_label[label] for label in labels],
+                "line": {"color": THEME.surface, "width": 2},
+            },
+            textinfo="none",
+            hovertemplate="%{label}: %{value} établissements OSM<extra></extra>",
+        )
+    )
     fig.update_layout(
         title={"text": "Établissements OSM par type", "x": 0.02, "font": {"size": 13}},
         height=CHART_HEIGHT,
@@ -364,13 +381,15 @@ def facilities_by_type(facilities: Iterable[dict[str, Any]]) -> go.Figure:
             "y": 0.5,
             "font": {"size": 9, "color": THEME.text_muted},
         },
-        annotations=[{
-            "text": f"{len(rows)}<br><span style='font-size:9px'>Total OSM</span>",
-            "x": 0.34,
-            "y": 0.5,
-            "showarrow": False,
-            "font": {"size": 14, "color": THEME.navy, "weight": 700},
-        }],
+        annotations=[
+            {
+                "text": f"{len(rows)}<br><span style='font-size:9px'>Total OSM</span>",
+                "x": 0.34,
+                "y": 0.5,
+                "showarrow": False,
+                "font": {"size": 14, "color": THEME.navy, "weight": 700},
+            }
+        ],
     )
     return fig
 
@@ -385,26 +404,24 @@ def associated_facilities_by_province(
     if not commune_rows:
         return empty_figure(title)
 
-    associated = {
-        str(row["commune_code"]): row["province"]
-        for row in commune_rows
-    }
+    associated = {str(row["commune_code"]): row["province"] for row in commune_rows}
     counts = Counter(
         associated[str(row["commune_code"])]
         for row in facility_rows
-        if row.get("commune_code") is not None
-        and str(row["commune_code"]) in associated
+        if row.get("commune_code") is not None and str(row["commune_code"]) in associated
     )
     ordered = sorted(counts.items(), key=lambda item: item[1], reverse=True)
-    fig = go.Figure(go.Bar(
-        x=[province for province, _ in ordered],
-        y=[count for _, count in ordered],
-        marker={"color": THEME.turquoise},
-        text=[str(count) for _, count in ordered],
-        textposition="outside",
-        cliponaxis=False,
-        hovertemplate="%{x}: %{y} établissements associés<extra></extra>",
-    ))
+    fig = go.Figure(
+        go.Bar(
+            x=[province for province, _ in ordered],
+            y=[count for _, count in ordered],
+            marker={"color": THEME.turquoise},
+            text=[str(count) for _, count in ordered],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="%{x}: %{y} établissements associés<extra></extra>",
+        )
+    )
     fig.update_xaxes(tickangle=-28, automargin=True)
     fig.update_layout(yaxis_title="Établissements")
     return apply_layout(fig, title)

@@ -28,4 +28,5 @@ def test_project_root_structure():
 def test_import_package():
     """Vérifie que le package principal src/tta_risk peut être importé."""
     import tta_risk
+
     assert tta_risk is not None

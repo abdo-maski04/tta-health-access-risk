@@ -8,12 +8,7 @@ from tta_risk.db.database import get_connection
 
 pytestmark = pytest.mark.integration
 
-CSV_PATH = (
-    Path(__file__).resolve().parents[1]
-    / "data"
-    / "processed"
-    / "communes_TTA_2024.csv"
-)
+CSV_PATH = Path(__file__).resolve().parents[1] / "data" / "processed" / "communes_TTA_2024.csv"
 START_DATE = date(2016, 1, 1)
 END_DATE = date(2025, 12, 31)
 EXPECTED_DAYS = (END_DATE - START_DATE).days + 1

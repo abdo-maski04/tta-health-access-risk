@@ -39,14 +39,25 @@ def load_communes(path: str | Path | None = None) -> list[dict]:
         rows = list(csv.DictReader(file))
 
     integer_fields = {
-        "population_2014", "population_2024", "menages_2014", "menages_2024",
-        "population_urbaine_2024", "population_rurale_2024",
-        "osm_relation_id", "annee_reference",
+        "population_2014",
+        "population_2024",
+        "menages_2014",
+        "menages_2024",
+        "population_urbaine_2024",
+        "population_rurale_2024",
+        "osm_relation_id",
+        "annee_reference",
     }
     float_fields = {
-        "croissance_annuelle_pct", "part_60plus_2014_pct", "part_rurale_pct",
-        "area_km2", "densite_hab_km2", "centroid_lon", "centroid_lat",
-        "start_lon", "start_lat",
+        "croissance_annuelle_pct",
+        "part_60plus_2014_pct",
+        "part_rurale_pct",
+        "area_km2",
+        "densite_hab_km2",
+        "centroid_lon",
+        "centroid_lat",
+        "start_lon",
+        "start_lat",
     }
 
     for row in rows:
@@ -90,15 +101,24 @@ def validate_commune_datasets(
     geojson = geojson if geojson is not None else load_communes_geojson()
 
     if len(communes) != COMMUNE_COUNT:
-        raise ValueError(f"Exactement {COMMUNE_COUNT} communes sont attendues; obtenu {len(communes)}")
+        raise ValueError(
+            f"Exactement {COMMUNE_COUNT} communes sont attendues; obtenu {len(communes)}"
+        )
 
     commune_codes = [str(row["commune_code"]).strip() for row in communes]
     if len(set(commune_codes)) != COMMUNE_COUNT:
         raise ValueError("Les 146 commune_code doivent être uniques")
 
     required = {
-        "commune_code", "name_fr", "province", "milieu", "population_2024",
-        "centroid_lon", "centroid_lat", "start_lon", "start_lat",
+        "commune_code",
+        "name_fr",
+        "province",
+        "milieu",
+        "population_2024",
+        "centroid_lon",
+        "centroid_lat",
+        "start_lon",
+        "start_lat",
     }
     for row in communes:
         missing = required - set(row)
@@ -115,10 +135,7 @@ def validate_commune_datasets(
             f"Exactement {COMMUNE_COUNT} entités GeoJSON sont attendues; obtenu {len(features)}"
         )
 
-    geo_codes = {
-        str(feature["properties"]["commune_code"]).strip()
-        for feature in features
-    }
+    geo_codes = {str(feature["properties"]["commune_code"]).strip() for feature in features}
     if len(geo_codes) != COMMUNE_COUNT:
         raise ValueError("Les commune_code du GeoJSON doivent être uniques")
     if set(commune_codes) != geo_codes:
@@ -136,8 +153,7 @@ def validate_commune_datasets(
                 f"Exactement {FACILITY_COUNT} établissements sont attendus; obtenu {len(facilities)}"
             )
         identifiers = [
-            (str(row["osm_type"]).strip(), str(row["osm_id"]).strip())
-            for row in facilities
+            (str(row["osm_type"]).strip(), str(row["osm_id"]).strip()) for row in facilities
         ]
         if len(set(identifiers)) != len(identifiers):
             raise ValueError("Les identifiants OSM des établissements doivent être uniques")
@@ -146,9 +162,7 @@ def validate_commune_datasets(
             lat = row["lat"]
             lon = row["lon"]
             if not (-90 <= lat <= 90 and -180 <= lon <= 180):
-                raise ValueError(
-                    f"Coordonnées invalides pour l'établissement OSM {row['osm_id']}"
-                )
+                raise ValueError(f"Coordonnées invalides pour l'établissement OSM {row['osm_id']}")
 
 
 def join_commune_properties(communes: Iterable[dict], geojson: dict) -> dict:
@@ -179,11 +193,13 @@ def filter_communes(
             continue
         if milieu_set and row["milieu"] not in milieu_set:
             continue
-        searchable = " ".join((
-            str(row.get("name_fr", "")),
-            str(row.get("name_ar", "")),
-            str(row.get("commune_code", "")),
-        )).casefold()
+        searchable = " ".join(
+            (
+                str(row.get("name_fr", "")),
+                str(row.get("name_ar", "")),
+                str(row.get("commune_code", "")),
+            )
+        ).casefold()
         if needle and needle not in searchable:
             continue
         result.append(row)
@@ -302,9 +318,18 @@ def load_communes_health_profile(path: str | Path | None = None) -> list[dict]:
         rows = list(csv.DictReader(file))
 
     integer_fields = {
-        "population_2024", "pub_csu", "pub_csr", "pub_csr2_maternite", "pub_dr",
-        "pub_primary_total", "pub_hospitals", "pub_specialized", "pub_total_official",
-        "osm_pharmacies_mapped", "osm_clinics_candidates", "osm_doctors_mapped",
+        "population_2024",
+        "pub_csu",
+        "pub_csr",
+        "pub_csr2_maternite",
+        "pub_dr",
+        "pub_primary_total",
+        "pub_hospitals",
+        "pub_specialized",
+        "pub_total_official",
+        "osm_pharmacies_mapped",
+        "osm_clinics_candidates",
+        "osm_doctors_mapped",
         "osm_health_points_total",
     }
     float_fields = {"part_rurale_pct", "primary_care_per_10k", "pharmacy_per_10k"}
@@ -320,7 +345,9 @@ def load_communes_health_profile(path: str | Path | None = None) -> list[dict]:
             row[field] = float(val.strip()) if val is not None and val.strip() else 0.0
         for field in bool_fields:
             val = row.get(field)
-            row[field] = str(val).strip().lower() in ("true", "1", "yes") if val is not None else False
+            row[field] = (
+                str(val).strip().lower() in ("true", "1", "yes") if val is not None else False
+            )
     return rows
 
 
@@ -329,7 +356,9 @@ def load_health_facilities_master(path: str | Path | None = None) -> list[dict]:
     """Charge le master individuel des établissements de santé du RSC-TTA (1 215 structures)."""
     source = Path(path) if path is not None else HEALTH_FACILITIES_MASTER_CSV
     if not source.is_file():
-        raise FileNotFoundError(f"Fichier master des infrastructures sanitaires introuvable: {source}")
+        raise FileNotFoundError(
+            f"Fichier master des infrastructures sanitaires introuvable: {source}"
+        )
 
     with source.open("r", encoding="utf-8-sig", newline="") as file:
         rows = list(csv.DictReader(file))
@@ -337,14 +366,24 @@ def load_health_facilities_master(path: str | Path | None = None) -> list[dict]:
     for row in rows:
         row["facility_id"] = str(row.get("facility_id", "")).strip()
         commune_code_raw = row.get("commune_code")
-        row["commune_code"] = str(commune_code_raw).strip() if commune_code_raw and str(commune_code_raw).strip() else None
+        row["commune_code"] = (
+            str(commune_code_raw).strip()
+            if commune_code_raw and str(commune_code_raw).strip()
+            else None
+        )
 
         has_gps_raw = str(row.get("has_gps", "")).strip().lower()
         row["has_gps"] = has_gps_raw in ("true", "1", "yes")
 
         lat_raw = str(row.get("lat", "")).strip()
         lon_raw = str(row.get("lon", "")).strip()
-        if row["has_gps"] and lat_raw and lon_raw and lat_raw.lower() not in ("none", "nan", "null") and lon_raw.lower() not in ("none", "nan", "null"):
+        if (
+            row["has_gps"]
+            and lat_raw
+            and lon_raw
+            and lat_raw.lower() not in ("none", "nan", "null")
+            and lon_raw.lower() not in ("none", "nan", "null")
+        ):
             try:
                 row["lat"] = float(lat_raw)
                 row["lon"] = float(lon_raw)
@@ -399,8 +438,14 @@ def get_sanitary_prepared_data(
         if code in base_communes:
             bc = base_communes[code]
             for geo_key in (
-                "centroid_lat", "centroid_lon", "start_lat", "start_lon",
-                "area_km2", "densite_hab_km2", "name_ar", "population_2014",
+                "centroid_lat",
+                "centroid_lon",
+                "start_lat",
+                "start_lon",
+                "area_km2",
+                "densite_hab_km2",
+                "name_ar",
+                "population_2014",
                 "osm_relation_id",
             ):
                 if geo_key in bc and geo_key not in row:
@@ -506,52 +551,63 @@ def load_v2_routes_consolidated():
 
         osm_id_int = int(row["hospital_osm_id"]) if pd.notna(row["hospital_osm_id"]) else None
         wl_info = wl_facilities.get(osm_id_int, {})
-        canonical_name = wl_info.get("canonical_name", wl_info.get("name", str(row["hospital_name"])))
+        canonical_name = wl_info.get(
+            "canonical_name", wl_info.get("name", str(row["hospital_name"]))
+        )
 
-        records.append({
-            "commune_code": code,
-            "name_fr": str(row["name_fr"]),
-            "name_ar": com_meta.get(code, {}).get("name_ar", ""),
-            "province": str(row["province"]),
-            "milieu": str(row["milieu"]),
-            "start_lat": float(row["start_lat"]),
-            "start_lon": float(row["start_lon"]),
-            "hospital_osm_type": str(row["hospital_osm_type"]),
-            "hospital_osm_id": osm_id_int,
-            "hospital_name": str(row["hospital_name"]),
-            "hospital_canonical": canonical_name,
-            "hospital_lat": float(row["hospital_lat"]),
-            "hospital_lon": float(row["hospital_lon"]),
-            "distance_km": float(row["distance_km"]),
-            "temps_min": float(row["temps_min"]),
-            "classe_trajet": int(row["classe_trajet"]),
-            "methode": str(row["methode"]),
-            "is_recalculated": is_recalc,
-            "is_provisional": is_prov,
-            "statut_calcul": statut_calc,
-            "statut_dest": statut_dest,
-            "badge": badge,
-            "population_2024": pop_2024_map.get(code, 0),
-            "access_tier": (
-                "≤ 30 min (Urgence & Soins Immédiats)"
-                if float(row["temps_min"]) <= 30.0
-                else "30 - 60 min (Délai d'accès modéré)"
-                if float(row["temps_min"]) <= 60.0
-                else "> 60 min (Isolement sanitaire critique)"
-            ),
-            "color_rgb": color_rgb,
-            "color_hex": color_hex,
-            "path": route_paths.get(code, []),
-        })
+        records.append(
+            {
+                "commune_code": code,
+                "name_fr": str(row["name_fr"]),
+                "name_ar": com_meta.get(code, {}).get("name_ar", ""),
+                "province": str(row["province"]),
+                "milieu": str(row["milieu"]),
+                "start_lat": float(row["start_lat"]),
+                "start_lon": float(row["start_lon"]),
+                "hospital_osm_type": str(row["hospital_osm_type"]),
+                "hospital_osm_id": osm_id_int,
+                "hospital_name": str(row["hospital_name"]),
+                "hospital_canonical": canonical_name,
+                "hospital_lat": float(row["hospital_lat"]),
+                "hospital_lon": float(row["hospital_lon"]),
+                "distance_km": float(row["distance_km"]),
+                "temps_min": float(row["temps_min"]),
+                "classe_trajet": int(row["classe_trajet"]),
+                "methode": str(row["methode"]),
+                "is_recalculated": is_recalc,
+                "is_provisional": is_prov,
+                "statut_calcul": statut_calc,
+                "statut_dest": statut_dest,
+                "badge": badge,
+                "population_2024": pop_2024_map.get(code, 0),
+                "access_tier": (
+                    "≤ 30 min (Urgence & Soins Immédiats)"
+                    if float(row["temps_min"]) <= 30.0
+                    else "30 - 60 min (Délai d'accès modéré)"
+                    if float(row["temps_min"]) <= 60.0
+                    else "> 60 min (Isolement sanitaire critique)"
+                ),
+                "color_rgb": color_rgb,
+                "color_hex": color_hex,
+                "path": route_paths.get(code, []),
+            }
+        )
 
     routes_df = pd.DataFrame(records)
 
     # 5. Préparer les hôpitaux : inclure systématiquement les 15 hôpitaux publics officiels de la whitelist
     # plus les candidats locaux ou établissements réels utilisés comme destinations
-    dest_counts = routes_df.groupby("hospital_osm_id").agg(
-        communes_count=("commune_code", "count"),
-        communes_list=("name_fr", lambda s: ", ".join(sorted(s)[:5]) + ("..." if len(s) > 5 else "")),
-    ).to_dict(orient="index")
+    dest_counts = (
+        routes_df.groupby("hospital_osm_id")
+        .agg(
+            communes_count=("commune_code", "count"),
+            communes_list=(
+                "name_fr",
+                lambda s: ", ".join(sorted(s)[:5]) + ("..." if len(s) > 5 else ""),
+            ),
+        )
+        .to_dict(orient="index")
+    )
 
     hosp_records = []
     seen_osm_ids = set()
@@ -563,20 +619,24 @@ def load_v2_routes_consolidated():
             for fac in wl_data.get("facilities", []):
                 osm_id = int(fac["osm_id"])
                 seen_osm_ids.add(osm_id)
-                cnt_info = dest_counts.get(osm_id, {"communes_count": 0, "communes_list": "Aucune commune rattachée"})
-                hosp_records.append({
-                    "osm_id": osm_id,
-                    "osm_type": fac["osm_type"],
-                    "name": fac.get("canonical_name", fac.get("name")),
-                    "lat": float(fac["latitude"]),
-                    "lon": float(fac["longitude"]),
-                    "communes_count": int(cnt_info["communes_count"]),
-                    "communes_list": cnt_info["communes_list"],
-                    "is_official": True,
-                    "h_type": "Hôpital Public Officiel (Ministère)",
-                    "color": [220, 38, 38, 240],  # Rouge vif
-                    "radius": 1400,
-                })
+                cnt_info = dest_counts.get(
+                    osm_id, {"communes_count": 0, "communes_list": "Aucune commune rattachée"}
+                )
+                hosp_records.append(
+                    {
+                        "osm_id": osm_id,
+                        "osm_type": fac["osm_type"],
+                        "name": fac.get("canonical_name", fac.get("name")),
+                        "lat": float(fac["latitude"]),
+                        "lon": float(fac["longitude"]),
+                        "communes_count": int(cnt_info["communes_count"]),
+                        "communes_list": cnt_info["communes_list"],
+                        "is_official": True,
+                        "h_type": "Hôpital Public Officiel (Ministère)",
+                        "color": [220, 38, 38, 240],  # Rouge vif
+                        "radius": 1400,
+                    }
+                )
 
     # Ensuite ajouter les autres établissements de destination utilisés (ex: Bni Saïd, Imzouren...)
     for _, row in routes_df.drop_duplicates(subset=["hospital_osm_id"]).iterrows():
@@ -597,19 +657,21 @@ def load_v2_routes_consolidated():
                 color = [79, 70, 229, 240]  # Indigo
                 h_type = "Établissement Hospitalier Validé"
 
-            hosp_records.append({
-                "osm_id": osm_id,
-                "osm_type": row["hospital_osm_type"],
-                "name": row["hospital_canonical"],
-                "lat": float(row["hospital_lat"]),
-                "lon": float(row["hospital_lon"]),
-                "communes_count": int(cnt_info["communes_count"]),
-                "communes_list": cnt_info["communes_list"],
-                "is_official": False,
-                "h_type": h_type,
-                "color": color,
-                "radius": 1100,
-            })
+            hosp_records.append(
+                {
+                    "osm_id": osm_id,
+                    "osm_type": row["hospital_osm_type"],
+                    "name": row["hospital_canonical"],
+                    "lat": float(row["hospital_lat"]),
+                    "lon": float(row["hospital_lon"]),
+                    "communes_count": int(cnt_info["communes_count"]),
+                    "communes_list": cnt_info["communes_list"],
+                    "is_official": False,
+                    "h_type": h_type,
+                    "color": color,
+                    "radius": 1100,
+                }
+            )
 
     hospitals_df = pd.DataFrame(hosp_records)
 
@@ -630,9 +692,17 @@ def load_v2_routes_consolidated():
             feat["properties"]["is_provisional"] = r["is_provisional"]
             feat["properties"]["is_recalculated"] = r["is_recalculated"]
             # Fill color translucide pour PyDeck GeoJsonLayer
-            feat["properties"]["fill_color"] = [r["color_rgb"][0], r["color_rgb"][1], r["color_rgb"][2], 40]
-            feat["properties"]["line_color"] = [r["color_rgb"][0], r["color_rgb"][1], r["color_rgb"][2], 160]
+            feat["properties"]["fill_color"] = [
+                r["color_rgb"][0],
+                r["color_rgb"][1],
+                r["color_rgb"][2],
+                40,
+            ]
+            feat["properties"]["line_color"] = [
+                r["color_rgb"][0],
+                r["color_rgb"][1],
+                r["color_rgb"][2],
+                160,
+            ]
 
     return routes_df, hospitals_df, communes_geojson
-
-

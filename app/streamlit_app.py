@@ -36,6 +36,7 @@ except ImportError:
     import importlib
 
     import data_loader
+
     importlib.reload(data_loader)
     from data_loader import get_prepared_data  # noqa: E402
 
@@ -61,6 +62,7 @@ with page_root.container():
         try:
             try:
                 from data_loader import get_sanitary_prepared_data
+
                 communes, commune_geojson, facilities = get_sanitary_prepared_data()
             except Exception:
                 communes, commune_geojson, facilities = get_prepared_data()

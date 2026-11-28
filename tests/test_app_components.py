@@ -37,17 +37,23 @@ class AppComponentTests(unittest.TestCase):
         self.assertIn("--tta-navy-secondary", APP_CSS)
 
     def test_milieu_colors_exist_for_three_categories(self):
-        self.assertEqual(COLORS["milieu"], {
-            "Urbain": "#279B91",
-            "Mixte": "#E6AD55",
-            "Rural": "#648BB8",
-        })
-        self.assertEqual(COLORS["risk_milieu"], {
-            "Urbain": "#3B82F6",
-            "Mixte": "#10B981",
-            "Rural": "#F59E0B",
-            "Non assigné": "#94A3B8",
-        })
+        self.assertEqual(
+            COLORS["milieu"],
+            {
+                "Urbain": "#279B91",
+                "Mixte": "#E6AD55",
+                "Rural": "#648BB8",
+            },
+        )
+        self.assertEqual(
+            COLORS["risk_milieu"],
+            {
+                "Urbain": "#3B82F6",
+                "Mixte": "#10B981",
+                "Rural": "#F59E0B",
+                "Non assigné": "#94A3B8",
+            },
+        )
         self.assertIn("#0A3642", APP_CSS)
         self.assertIn("#E2E8F0", APP_CSS)
         self.assertIn('header[data-testid="stHeader"]', APP_CSS)
@@ -59,7 +65,7 @@ class AppComponentTests(unittest.TestCase):
         self.assertIn('[data-testid="collapsedControl"]', APP_CSS)
         self.assertIn('[data-testid="stIconMaterial"]', APP_CSS)
         self.assertIn('button[aria-label="Expand sidebar"]', APP_CSS)
-        self.assertIn("[data-stale=\"true\"]", APP_CSS)
+        self.assertIn('[data-stale="true"]', APP_CSS)
         self.assertIn("background-color: #F4F7F9 !important", APP_CSS)
         self.assertIn("background: #FFFFFF !important", APP_CSS)
         self.assertIn("background: #0D5C75 !important", APP_CSS)
@@ -76,9 +82,7 @@ class AppComponentTests(unittest.TestCase):
     def test_sidebar_lists_exactly_seven_dashboards(self):
         self.assertEqual(len(DASHBOARDS), 7)
         self.assertEqual(len(NAVIGATION_ICON_SVGS), 7)
-        self.assertTrue(
-            all("<svg " in icon for icon in NAVIGATION_ICON_SVGS.values())
-        )
+        self.assertTrue(all("<svg " in icon for icon in NAVIGATION_ICON_SVGS.values()))
         labels = [label for label, _ in DASHBOARDS]
         self.assertEqual(
             labels,

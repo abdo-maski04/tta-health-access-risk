@@ -33,10 +33,16 @@ def main():
     print(f"1. Fichier : {DEM_TIF.name}")
     print(f"   - CRS exact : {crs}")
     print(f"   - Dimensions : {w} colonnes x {h} lignes ({count} bande, dtype={dtype})")
-    print(f"   - Emprise géographique : Ouest={bounds.left:.4f}, Sud={bounds.bottom:.4f}, Est={bounds.right:.4f}, Nord={bounds.top:.4f}")
-    print(f"   - Résolution angulaire : {res_x_deg:.6f}° (X) x {res_y_deg:.6f}° (Y) (~{res_x_deg*3600:.1f} arc-sec)")
+    print(
+        f"   - Emprise géographique : Ouest={bounds.left:.4f}, Sud={bounds.bottom:.4f}, Est={bounds.right:.4f}, Nord={bounds.top:.4f}"
+    )
+    print(
+        f"   - Résolution angulaire : {res_x_deg:.6f}° (X) x {res_y_deg:.6f}° (Y) (~{res_x_deg * 3600:.1f} arc-sec)"
+    )
     print(f"   - Résolution métrique réelle au sol : {res_x_m:.1f} m (X) x {res_y_m:.1f} m (Y)")
-    print(f"   - Altitudes réelles : min={arr.min():.1f} m, max={arr.max():.1f} m, moyenne={arr[arr > 2].mean():.1f} m")
+    print(
+        f"   - Altitudes réelles : min={arr.min():.1f} m, max={arr.max():.1f} m, moyenne={arr[arr > 2].mean():.1f} m"
+    )
 
     # Vérification des tuiles sources
     raw_tiles = list(RAW_DEM_DIR.glob("*.tif"))
@@ -46,18 +52,30 @@ def main():
         try:
             with rasterio.open(t) as r_src:
                 r_src.read(1)
-                print(f"   - {t.name} : shape={r_src.shape}, res={r_src.res[0]*3600:.1f} arc-sec (~30m), status=VALIDE")
+                print(
+                    f"   - {t.name} : shape={r_src.shape}, res={r_src.res[0] * 3600:.1f} arc-sec (~30m), status=VALIDE"
+                )
                 valid_tiles += 1
         except Exception as e:
             print(f"   - {t.name} : INCOMPLET / CORROMPU ({e})")
 
     # Conclusion sur la résolution
     print("\n3. CONCLUSION SCIENTIFIQUE SUR LA RÉSOLUTION :")
-    print("   - Résolution native source déclarée dans nom : 30 m (Copernicus DEM GLO-30, 1 arc-seconde)")
-    print(f"   - Résolution réelle du fichier généré : ~{round(res_x_m)} m x {round(res_y_m)} m (~400 m)")
-    print("   - Méthode de génération : Interpolation spatiale Rbf multiquadrique à partir de points d'altitude réels (sommets rifains, communes et échantillons Open-Meteo)")
-    print("   - Diagnostic d'intégrité : Le fichier tta_dem_30m.tif NE DOIT PAS être présenté comme un raster à 30m natif !")
-    print("   - Action requise : Renommer/documenter en 'tta_dem_regional_400m.tif' ou clarifier explicitement dans les métadonnées la grille régionale régularisée à 400m pour affichage web fluide.")
+    print(
+        "   - Résolution native source déclarée dans nom : 30 m (Copernicus DEM GLO-30, 1 arc-seconde)"
+    )
+    print(
+        f"   - Résolution réelle du fichier généré : ~{round(res_x_m)} m x {round(res_y_m)} m (~400 m)"
+    )
+    print(
+        "   - Méthode de génération : Interpolation spatiale Rbf multiquadrique à partir de points d'altitude réels (sommets rifains, communes et échantillons Open-Meteo)"
+    )
+    print(
+        "   - Diagnostic d'intégrité : Le fichier tta_dem_30m.tif NE DOIT PAS être présenté comme un raster à 30m natif !"
+    )
+    print(
+        "   - Action requise : Renommer/documenter en 'tta_dem_regional_400m.tif' ou clarifier explicitement dans les métadonnées la grille régionale régularisée à 400m pour affichage web fluide."
+    )
 
 
 if __name__ == "__main__":

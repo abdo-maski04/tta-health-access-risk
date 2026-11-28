@@ -30,10 +30,7 @@ FACILITY_ICON_CONTENT = {
         "<path d='M11 7h2m-1-1v2'/>"
     ),
     "clinic": "<path d='M12 5v14M5 12h14' stroke-width='2.5'/>",
-    "pharmacy": (
-        "<path d='M12 5v14M5 12h14' stroke-width='2.5'/>"
-        "<path d='M4 4h.01M20 20h.01'/>"
-    ),
+    "pharmacy": ("<path d='M12 5v14M5 12h14' stroke-width='2.5'/><path d='M4 4h.01M20 20h.01'/>"),
     "doctors": (
         "<path d='M6 3v5a4 4 0 0 0 8 0V3M4 3h4m4 0h4'/>"
         "<path d='M10 12v2a4 4 0 0 0 8 0v-1'/>"
@@ -44,8 +41,7 @@ FACILITY_ICON_CONTENT = {
         "<path d='M8 16h8'/>"
     ),
     "other": (
-        "<path d='M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z'/>"
-        "<path d='M12 7v6m-3-3h6'/>"
+        "<path d='M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z'/><path d='M12 7v6m-3-3h6'/>"
     ),
 }
 
@@ -90,11 +86,7 @@ def _tooltip_text(value: object) -> str:
 
 
 def _format_population(value: object) -> str:
-    if (
-        isinstance(value, bool)
-        or not isinstance(value, (int, float))
-        or not math.isfinite(value)
-    ):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
         return "Non disponible"
     return f"{int(value):,}".replace(",", " ")
 
@@ -200,7 +192,7 @@ FACILITY_SVG_ICONS = {
         "color": "#16A34A",
         "border": "#FFFFFF",
         "icon": '<path d="M8 12h8M12 8v8M4 7h16M7 7a5 5 0 0 0 10 0M12 17v4M9 21h6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
-        "label": "Pharmacie d\'Officine",
+        "label": "Pharmacie d'Officine",
         "sector": "Privé commercial",
     },
     "clinic": {
@@ -221,7 +213,7 @@ FACILITY_SVG_ICONS = {
         "color": "#DB2777",
         "border": "#FFFFFF",
         "icon": '<path d="M10 2v7.31L4.35 19.5a1.5 1.5 0 0 0 1.3 2.5h12.7a1.5 1.5 0 0 0 1.3-2.5L14 9.31V2M8.5 2h7M7 16h10" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
-        "label": "Laboratoire d\'Analyses",
+        "label": "Laboratoire d'Analyses",
         "sector": "Privé libéral",
     },
     "other": {
@@ -244,6 +236,7 @@ FACILITY_SVG_ICONS = {
 def get_facility_div_icon(cat_key: str, size: int = 28):
     """Génère un DivIcon Folium avec badge SVG vectoriel professionnel."""
     import folium
+
     cfg = FACILITY_SVG_ICONS.get(cat_key, FACILITY_SVG_ICONS["other"])
     color = cfg["color"]
     border = cfg["border"]
@@ -251,15 +244,15 @@ def get_facility_div_icon(cat_key: str, size: int = 28):
     inner_size = max(12, int(size * 0.58))
     badge_html = (
         f'<div style="width:{size}px; height:{size}px; border-radius:50%; background:{color}; '
-        f'border:2px solid {border}; box-shadow:0 3px 8px rgba(0,0,0,0.38); '
+        f"border:2px solid {border}; box-shadow:0 3px 8px rgba(0,0,0,0.38); "
         f'display:flex; align-items:center; justify-content:center; cursor:pointer;" '
         f'title="{html.escape(cfg["label"])}">'
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{inner_size}" height="{inner_size}" '
         f'viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" '
         f'stroke-linecap="round" stroke-linejoin="round">'
-        f'{icon_svg}'
-        f'</svg>'
-        f'</div>'
+        f"{icon_svg}"
+        f"</svg>"
+        f"</div>"
     )
     return folium.DivIcon(
         html=badge_html,
@@ -374,9 +367,7 @@ def commune_color_values(
             if row.get("commune_code") is not None
         )
         return {
-            str(row["commune_code"]).strip(): float(
-                counts[str(row["commune_code"]).strip()]
-            )
+            str(row["commune_code"]).strip(): float(counts[str(row["commune_code"]).strip()])
             for row in rows
         }
     if color_mode == "population":
@@ -397,9 +388,7 @@ def commune_color_values(
         population = row.get("population_2024")
         values[code] = (
             float(population) / area
-            if isinstance(population, (int, float))
-            and area is not None
-            and area > 0
+            if isinstance(population, (int, float)) and area is not None and area > 0
             else None
         )
     return values
@@ -445,15 +434,15 @@ def build_commune_layer(
                 str(row.get("facility_type", "healthcare_unspecified"))
             ] += 1
     features = [
-        feature for feature in geojson["features"]
+        feature
+        for feature in geojson["features"]
         if str(feature["properties"]["commune_code"]).strip() in selected_codes
     ]
     feature_group = folium.FeatureGroup(name="Communes", show=show)
 
-    province_names = sorted({
-        str(feature["properties"].get("province", ""))
-        for feature in features
-    })
+    province_names = sorted(
+        {str(feature["properties"].get("province", "")) for feature in features}
+    )
     province_palette = COLORS["province"]
     colors_by_province = province_colors or {
         province: province_palette[index % len(province_palette)]
@@ -462,8 +451,7 @@ def build_commune_layer(
 
     mode_values = color_values or {}
     numeric_values = [
-        mode_values.get(str(feature["properties"]["commune_code"]).strip())
-        for feature in features
+        mode_values.get(str(feature["properties"]["commune_code"]).strip()) for feature in features
     ]
     available_values = [value for value in numeric_values if value is not None]
     color_scale = None
@@ -497,22 +485,12 @@ def build_commune_layer(
             fill_color = color_scale(value) if color_scale and value is not None else THEME.grey
         code = str(properties.get("commune_code", "")).strip()
         is_selected = bool(selected_code is not None and code == str(selected_code).strip())
-        population_2014_text = _format_population(
-            properties.get("population_2014")
-        )
-        population_2024_text = _format_population(
-            properties.get("population_2024")
-        )
-        urban_population_text = _format_population(
-            properties.get("population_urbaine_2024")
-        )
-        rural_population_text = _format_population(
-            properties.get("population_rurale_2024")
-        )
+        population_2014_text = _format_population(properties.get("population_2014"))
+        population_2024_text = _format_population(properties.get("population_2024"))
+        urban_population_text = _format_population(properties.get("population_urbaine_2024"))
+        rural_population_text = _format_population(properties.get("population_rurale_2024"))
         facility_count_text = (
-            str(facility_counts[code])
-            if facilities is not None
-            else "Non disponible"
+            str(facility_counts[code]) if facilities is not None else "Non disponible"
         )
         type_distribution = [
             f"{FACILITY_LABELS.get(kind, 'Autres')} : {count}"
@@ -589,6 +567,7 @@ def build_facility_layer(
     )
     if cluster:
         from folium.plugins import MarkerCluster
+
         target = MarkerCluster(name="Regroupement établissements").add_to(feature_group)
     else:
         target = feature_group
@@ -599,9 +578,7 @@ def build_facility_layer(
         facility_type = facility["facility_type"]
         name = facility.get("name") or "Établissement OSM sans nom"
         color = (
-            FACILITY_COLORS.get(facility_type, THEME.text_muted)
-            if color_by_type
-            else THEME.blue
+            FACILITY_COLORS.get(facility_type, THEME.text_muted) if color_by_type else THEME.blue
         )
         radius = 4 if facility_type == "pharmacy" else 4.5
 
@@ -615,9 +592,7 @@ def build_facility_layer(
         popup_html = "<br>".join(parts)
         code = facility.get("commune_code")
         commune = (
-            commune_lookup.get(str(code).strip())
-            if code is not None and commune_lookup
-            else None
+            commune_lookup.get(str(code).strip()) if code is not None and commune_lookup else None
         )
         if commune is not None:
             popup_html += (
@@ -631,11 +606,7 @@ def build_facility_layer(
         tooltip = _tooltip_text(name)
 
         if symbol_markers:
-            kind = (
-                facility_type
-                if facility_type in RISK_FACILITY_COLORS
-                else "other"
-            )
+            kind = facility_type if facility_type in RISK_FACILITY_COLORS else "other"
             badge_color = RISK_FACILITY_COLORS.get(
                 kind,
                 RISK_FACILITY_COLORS["other"],
@@ -773,11 +744,7 @@ def build_proportional_bubble_layer(
     values = {}
     for row in commune_rows:
         code = str(row["commune_code"]).strip()
-        value = (
-            facility_counts[code]
-            if metric == "facilities"
-            else row.get("population_2024")
-        )
+        value = facility_counts[code] if metric == "facilities" else row.get("population_2024")
         if isinstance(value, (int, float)) and not isinstance(value, bool):
             values[code] = max(0.0, float(value))
     maximum = max(values.values(), default=0.0)
@@ -837,8 +804,7 @@ def build_heatmap_layer(
     points = [
         [row["lat"], row["lon"], 1]
         for row in rows
-        if isinstance(row.get("lat"), (int, float))
-        and isinstance(row.get("lon"), (int, float))
+        if isinstance(row.get("lat"), (int, float)) and isinstance(row.get("lon"), (int, float))
     ]
     if points:
         HeatMap(
@@ -897,20 +863,10 @@ def add_enterprise_map_controls(
     from jinja2 import Template
 
     map_name = folium_map.get_name()
-    layer_names = {
-        key: layer.get_name()
-        for key, layer in layers.items()
-        if layer is not None
-    }
-    base_names = {
-        key: layer.get_name()
-        for key, layer in base_layers.items()
-        if layer is not None
-    }
+    layer_names = {key: layer.get_name() for key, layer in layers.items() if layer is not None}
+    base_names = {key: layer.get_name() for key, layer in base_layers.items() if layer is not None}
     hybrid_labels = getattr(folium_map, "_tta_hybrid_labels", None)
-    hybrid_labels_name = (
-        hybrid_labels.get_name() if hybrid_labels is not None else None
-    )
+    hybrid_labels_name = hybrid_labels.get_name() if hybrid_labels is not None else None
     milieu_items = "".join(
         "<span class='tta-map-legend-item'>"
         f"<i style='background:{color}'></i>{html.escape(label)}</span>"
@@ -1075,6 +1031,7 @@ def add_enterprise_map_controls(
     }})();
     }}, 0);
     """
+
     class EnterpriseMapControls(MacroElement):
         def __init__(self, javascript: str):
             super().__init__()
@@ -1120,13 +1077,13 @@ def build_legend(
             <div>
                 <div style="font-weight: 700; color: #172B3A; margin-bottom: 7px;">Territorial Environment</div>
                 <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 5px;">
-                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors['Urbain']}; border-radius:2px;"></span> Urban
+                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors["Urbain"]}; border-radius:2px;"></span> Urban
                 </div>
                 <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 5px;">
-                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors['Mixte']}; border-radius:2px;"></span> Mixed
+                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors["Mixte"]}; border-radius:2px;"></span> Mixed
                 </div>
                 <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 5px;">
-                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors['Rural']}; border-radius:2px;"></span> Rural
+                    <span style="display:inline-block; width:12px; height:12px; background:{environment_colors["Rural"]}; border-radius:2px;"></span> Rural
                 </div>
                 <div style="display: flex; align-items: center; gap: 7px;">
                     <span style="display:inline-block; width:12px; height:12px; background:#CBD5E1; border-radius:2px;"></span> Unassigned
@@ -1160,8 +1117,7 @@ def build_legend(
         """
     elif map_mode == "province":
         province_items = "".join(
-            f"<span style='color:{color}'>●</span> "
-            f"{html.escape(province)}<br>"
+            f"<span style='color:{color}'>●</span> {html.escape(province)}<br>"
             for province, color in sorted((province_colors or {}).items())
         )
         legend_content = f"<b>Province / préfecture</b><br>{province_items}"

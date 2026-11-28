@@ -38,7 +38,7 @@ def _global_header(title: str) -> None:
                 st.markdown("### 📋 Navigation")
                 current_page = st.session_state.get("selected_page", "Overview Dashboard")
                 for key, label in DASHBOARDS:
-                    is_current = (current_page == key)
+                    is_current = current_page == key
                     btn_text = f"● {label}" if is_current else label
                     if st.button(
                         btn_text,
@@ -81,8 +81,7 @@ def _global_header(title: str) -> None:
         if territory == "Région TTA":
             territory = REGION_NAME
         region_col.markdown(
-            f"<div class='tta-global-header-region'>"
-            f"{html.escape(str(territory))}</div>",
+            f"<div class='tta-global-header-region'>{html.escape(str(territory))}</div>",
             unsafe_allow_html=True,
         )
         page_col.markdown(

@@ -16,7 +16,9 @@ GEOJSON_PATH = ROOT / "data" / "processed" / "communes_TTA.geojson"
 
 
 @pytest.mark.territory
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="communes_TTA_2024.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="communes_TTA_2024.csv non présent sur cette branche"
+)
 def test_communes_count_and_uniqueness():
     """Vérifie que le CSV contient exactement 146 communes avec des codes uniques."""
     with CSV_PATH.open(encoding="utf-8") as f:
@@ -32,7 +34,9 @@ def test_communes_count_and_uniqueness():
 
 
 @pytest.mark.territory
-@pytest.mark.skipif(not CSV_PATH.exists(), reason="communes_TTA_2024.csv non présent sur cette branche")
+@pytest.mark.skipif(
+    not CSV_PATH.exists(), reason="communes_TTA_2024.csv non présent sur cette branche"
+)
 def test_communes_required_fields_and_types():
     """Vérifie la non-vacuité des colonnes clés et la validité numérique."""
     with CSV_PATH.open(encoding="utf-8") as f:
@@ -54,7 +58,9 @@ def test_communes_required_fields_and_types():
 
 
 @pytest.mark.territory
-@pytest.mark.skipif(not GEOJSON_PATH.exists(), reason="communes_TTA.geojson non présent sur cette branche")
+@pytest.mark.skipif(
+    not GEOJSON_PATH.exists(), reason="communes_TTA.geojson non présent sur cette branche"
+)
 def test_geojson_concordance_with_csv():
     """Vérifie la concordance entre le GeoJSON et le CSV des communes."""
     with GEOJSON_PATH.open(encoding="utf-8") as f:

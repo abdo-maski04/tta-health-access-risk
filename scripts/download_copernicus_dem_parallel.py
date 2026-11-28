@@ -42,7 +42,9 @@ def download_tile(tile_name: str) -> Path:
     if existing_size > 0:
         headers["Range"] = f"bytes={existing_size}-"
         mode = "ab"
-        print(f"  [REPRISE] {tile_name}.tif à {existing_size / 1024 / 1024:.1f} / {total_size / 1024 / 1024:.1f} MB")
+        print(
+            f"  [REPRISE] {tile_name}.tif à {existing_size / 1024 / 1024:.1f} / {total_size / 1024 / 1024:.1f} MB"
+        )
     else:
         print(f"  [DEBUT] {tile_name}.tif ({total_size / 1024 / 1024:.1f} MB)")
 

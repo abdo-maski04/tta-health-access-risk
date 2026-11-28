@@ -1,4 +1,5 @@
 """Dashboards analytiques GeoVulnera TTA construits sur les données préparées."""
+
 from __future__ import annotations
 
 import html
@@ -99,25 +100,29 @@ def _commune_rows(communes: list[dict], facilities: list[dict]) -> list[dict]:
         density = commune.get("densite_hab_km2")
         if density is None:
             density = _safe_ratio(commune.get("population_2024"), commune.get("area_km2"))
-        rows.append({
-            "Code": str(commune["commune_code"]),
-            "Commune": commune.get("name_fr", ""),
-            "Province": commune.get("province", ""),
-            "Milieu": commune.get("milieu", ""),
-            "Population 2014": commune.get("population_2014"),
-            "Population 2024": commune.get("population_2024"),
-            "Superficie km²": commune.get("area_km2"),
-            "Densité": density,
-            "Total établissements": total,
-            "Hôpitaux": counts["hospital"],
-            "Cliniques": counts["clinic"],
-            "Pharmacies": counts["pharmacy"],
-            "Médecins": counts["doctors"],
-            "Laboratoires": counts["laboratory"],
-            "Autres": counts["healthcare_unspecified"] + counts["physiotherapist"],
-            "Établissements / 10 000": _safe_ratio(total * 10000, commune.get("population_2024")),
-            "_raw": commune,
-        })
+        rows.append(
+            {
+                "Code": str(commune["commune_code"]),
+                "Commune": commune.get("name_fr", ""),
+                "Province": commune.get("province", ""),
+                "Milieu": commune.get("milieu", ""),
+                "Population 2014": commune.get("population_2014"),
+                "Population 2024": commune.get("population_2024"),
+                "Superficie km²": commune.get("area_km2"),
+                "Densité": density,
+                "Total établissements": total,
+                "Hôpitaux": counts["hospital"],
+                "Cliniques": counts["clinic"],
+                "Pharmacies": counts["pharmacy"],
+                "Médecins": counts["doctors"],
+                "Laboratoires": counts["laboratory"],
+                "Autres": counts["healthcare_unspecified"] + counts["physiotherapist"],
+                "Établissements / 10 000": _safe_ratio(
+                    total * 10000, commune.get("population_2024")
+                ),
+                "_raw": commune,
+            }
+        )
     return rows
 
 
@@ -424,18 +429,12 @@ def _filter_ranking_rows(
             continue
         if milieu != "Tous" and row["Milieu"] != milieu:
             continue
-        if needle and needle not in _normalize_ranking_text(
-            f"{row['Commune']} {row['Code']}"
-        ):
+        if needle and needle not in _normalize_ranking_text(f"{row['Commune']} {row['Code']}"):
             continue
         population = row.get(f"Population {population_year}")
-        if min_population is not None and (
-            population is None or population < min_population
-        ):
+        if min_population is not None and (population is None or population < min_population):
             continue
-        if max_population is not None and (
-            population is None or population > max_population
-        ):
+        if max_population is not None and (population is None or population > max_population):
             continue
         facility_count = _ranking_facility_count(row, facility_type)
         if min_facilities is not None and facility_count < min_facilities:
@@ -566,9 +565,13 @@ def _filters(rows: list[dict], key_prefix: str) -> tuple[list[dict], str, str]:
         st.markdown("**Filtres d’analyse**")
         c1, c2, c3 = st.columns([1.2, 1, 1.5])
         with c1:
-            province = st.selectbox("Province", ["Toutes les provinces", *provinces], key=f"{key_prefix}_province")
+            province = st.selectbox(
+                "Province", ["Toutes les provinces", *provinces], key=f"{key_prefix}_province"
+            )
         with c2:
-            milieu = st.selectbox("Milieu territorial", ["Tous", *milieux], key=f"{key_prefix}_milieu")
+            milieu = st.selectbox(
+                "Milieu territorial", ["Tous", *milieux], key=f"{key_prefix}_milieu"
+            )
         with c3:
             search = st.text_input("Rechercher une commune ou un code", key=f"{key_prefix}_search")
     filtered = rows
@@ -578,7 +581,9 @@ def _filters(rows: list[dict], key_prefix: str) -> tuple[list[dict], str, str]:
         filtered = [row for row in filtered if row["Milieu"] == milieu]
     if search.strip():
         needle = search.casefold().strip()
-        filtered = [row for row in filtered if needle in f"{row['Commune']} {row['Code']}".casefold()]
+        filtered = [
+            row for row in filtered if needle in f"{row['Commune']} {row['Code']}".casefold()
+        ]
     return filtered, province, milieu
 
 
@@ -659,25 +664,27 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
     export_rows = []
     for index, row in enumerate(ranked, start=1):
         population = row.get(f"Population {filter_values['population_year']}")
-        export_rows.append({
-            "Rang": index,
-            "Commune": row["Commune"],
-            "Code": row["Code"],
-            "Province": row["Province"],
-            "Environnement": row["Milieu"],
-            f"Population {filter_values['population_year']}": population,
-            "Total établissements": row["Total établissements"],
-            "Hôpitaux": row["Hôpitaux"],
-            "Cliniques": row["Cliniques"],
-            "Pharmacies": row["Pharmacies"],
-            "Médecins": row["Médecins"],
-            "Laboratoires": row["Laboratoires"],
-            "Autres": row["Autres"],
-            "Établissements / 10 000 hab.": _safe_ratio(
-                row["Total établissements"] * 10000,
-                population,
-            ),
-        })
+        export_rows.append(
+            {
+                "Rang": index,
+                "Commune": row["Commune"],
+                "Code": row["Code"],
+                "Province": row["Province"],
+                "Environnement": row["Milieu"],
+                f"Population {filter_values['population_year']}": population,
+                "Total établissements": row["Total établissements"],
+                "Hôpitaux": row["Hôpitaux"],
+                "Cliniques": row["Cliniques"],
+                "Pharmacies": row["Pharmacies"],
+                "Médecins": row["Médecins"],
+                "Laboratoires": row["Laboratoires"],
+                "Autres": row["Autres"],
+                "Établissements / 10 000 hab.": _safe_ratio(
+                    row["Total établissements"] * 10000,
+                    population,
+                ),
+            }
+        )
     export_columns = [
         "Rang",
         "Commune",
@@ -695,9 +702,7 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
         "Établissements / 10 000 hab.",
     ]
     export_csv = (
-        pd.DataFrame(export_rows, columns=export_columns)
-        .to_csv(index=False)
-        .encode("utf-8-sig")
+        pd.DataFrame(export_rows, columns=export_columns).to_csv(index=False).encode("utf-8-sig")
     )
     export_col.download_button(
         "Exporter le classement",
@@ -715,10 +720,34 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
             )
 
     kpi_items = [
-        ("Total Communes", len(rows), "Communes incluses dans l’analyse régionale.", "communes", "#E6F3F4"),
-        ("Établissements Associés", sum(row["Total établissements"] for row in rows), "Établissements rattachés à une commune.", "facilities", "#EAF2FF"),
-        ("Provinces", len({row["Province"] for row in rows}), "Provinces et préfectures représentées.", "province", "#E6F3F4"),
-        ("Établissements Non Associés", sum(facility.get("commune_code") is None for facility in facilities), "Hors des polygones communaux.", "unassigned", "#F1F5F9"),
+        (
+            "Total Communes",
+            len(rows),
+            "Communes incluses dans l’analyse régionale.",
+            "communes",
+            "#E6F3F4",
+        ),
+        (
+            "Établissements Associés",
+            sum(row["Total établissements"] for row in rows),
+            "Établissements rattachés à une commune.",
+            "facilities",
+            "#EAF2FF",
+        ),
+        (
+            "Provinces",
+            len({row["Province"] for row in rows}),
+            "Provinces et préfectures représentées.",
+            "province",
+            "#E6F3F4",
+        ),
+        (
+            "Établissements Non Associés",
+            sum(facility.get("commune_code") is None for facility in facilities),
+            "Hors des polygones communaux.",
+            "unassigned",
+            "#F1F5F9",
+        ),
     ]
     kpi_columns = st.columns(4)
     for column, (label, value, description, icon, _background) in zip(
@@ -847,25 +876,19 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
                     f"{_ranking_icon('chart')}Tableau de classement</div>",
                     unsafe_allow_html=True,
                 )
-                st.caption(
-                    f"{len(ranked)} commune(s) après application des filtres."
-                )
+                st.caption(f"{len(ranked)} commune(s) après application des filtres.")
                 if not ranked:
                     empty_state(
                         "Aucune commune trouvée",
                         "Ajustez les filtres pour afficher des résultats.",
                     )
                 else:
-                    labels = [
-                        f"{row['Commune']} · {row['Code']}"
-                        for row in ranked
-                    ]
-                    previous_code = st.session_state.get(
-                        "ranking_selected_commune_code"
-                    )
+                    labels = [f"{row['Commune']} · {row['Code']}" for row in ranked]
+                    previous_code = st.session_state.get("ranking_selected_commune_code")
                     default_label = next(
                         (
-                            label for label, row in zip(labels, ranked, strict=True)
+                            label
+                            for label, row in zip(labels, ranked, strict=True)
                             if row["Code"] == previous_code
                         ),
                         labels[0],
@@ -878,7 +901,8 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
                         key="ranking_selected_commune_label",
                     )
                     selected_row = next(
-                        row for row in ranked
+                        row
+                        for row in ranked
                         if f"{row['Commune']} · {row['Code']}" == selected_label
                     )
                     st.session_state["ranking_selected_commune_code"] = selected_row["Code"]
@@ -975,15 +999,17 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
                     f"rgba(13, 92, 117, {0.72 + 0.28 * index / max(1, len(top10) - 1):.2f})"
                     for index in range(len(top10))
                 ]
-                figure = go.Figure(go.Bar(
-                    x=[row["Total établissements"] for row in top10],
-                    y=[row["Commune"] for row in top10],
-                    orientation="h",
-                    marker_color=colors,
-                    text=[row["Total établissements"] for row in top10],
-                    textposition="outside",
-                    cliponaxis=False,
-                ))
+                figure = go.Figure(
+                    go.Bar(
+                        x=[row["Total établissements"] for row in top10],
+                        y=[row["Commune"] for row in top10],
+                        orientation="h",
+                        marker_color=colors,
+                        text=[row["Total établissements"] for row in top10],
+                        textposition="outside",
+                        cliponaxis=False,
+                    )
+                )
                 figure.update_yaxes(autorange="reversed")
                 _ranking_chart(figure)
             else:
@@ -996,18 +1022,20 @@ def render_commune_ranking(communes: list[dict], facilities: list[dict]) -> None
                 unsafe_allow_html=True,
             )
             if bottom10:
-                figure = go.Figure(go.Bar(
-                    x=[row["Total établissements"] for row in bottom10],
-                    y=[row["Commune"] for row in bottom10],
-                    orientation="h",
-                    marker_color=[
-                        f"rgba(217, 119, 6, {0.72 + 0.28 * index / max(1, len(bottom10) - 1):.2f})"
-                        for index in range(len(bottom10))
-                    ],
-                    text=[row["Total établissements"] for row in bottom10],
-                    textposition="outside",
-                    cliponaxis=False,
-                ))
+                figure = go.Figure(
+                    go.Bar(
+                        x=[row["Total établissements"] for row in bottom10],
+                        y=[row["Commune"] for row in bottom10],
+                        orientation="h",
+                        marker_color=[
+                            f"rgba(217, 119, 6, {0.72 + 0.28 * index / max(1, len(bottom10) - 1):.2f})"
+                            for index in range(len(bottom10))
+                        ],
+                        text=[row["Total établissements"] for row in bottom10],
+                        textposition="outside",
+                        cliponaxis=False,
+                    )
+                )
                 figure.update_yaxes(autorange="reversed")
                 max_val = max(
                     (row["Total établissements"] for row in bottom10),
@@ -1097,17 +1125,24 @@ def _open_ranking_commune_details(label: str) -> None:
 
 
 def _commune_picker(communes: list[dict], key: str) -> dict | None:
-    options = {f"{row['name_fr']} · {row['province']} · {row['commune_code']}": row for row in communes}
+    options = {
+        f"{row['name_fr']} · {row['province']} · {row['commune_code']}": row for row in communes
+    }
     choice = st.selectbox("Sélectionner une commune", list(options), key=key)
     return options.get(choice)
 
-def render_commune_details(communes: list[dict], commune_geojson: dict, facilities: list[dict]) -> None:
+
+def render_commune_details(
+    communes: list[dict], commune_geojson: dict, facilities: list[dict]
+) -> None:
     """Dashboard 4: Détails Commune - profil démographique, territorial et infrastructures de santé."""
 
     def _commune_label(row: dict) -> str:
-        return f"{row.get('name_fr', '')} · {row.get('province', '')} · {row.get('commune_code', '')}"
+        return (
+            f"{row.get('name_fr', '')} · {row.get('province', '')} · {row.get('commune_code', '')}"
+        )
 
-    sorted_communes = sorted(communes, key=lambda r: str(r.get('name_fr', '')).casefold())
+    sorted_communes = sorted(communes, key=lambda r: str(r.get("name_fr", "")).casefold())
     labels = [_commune_label(r) for r in sorted_communes]
     label_to_row = {label: row for label, row in zip(labels, sorted_communes, strict=True)}
 
@@ -1138,18 +1173,34 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
     )
 
     province_communes = [r for r in communes if r.get("province") == province]
-    province_pop_2024 = [r.get("population_2024") for r in province_communes if r.get("population_2024")]
+    province_pop_2024 = [
+        r.get("population_2024") for r in province_communes if r.get("population_2024")
+    ]
     province_areas = [r.get("area_km2") for r in province_communes if r.get("area_km2")]
     province_total_pop = sum(v for v in province_pop_2024 if isinstance(v, (int, float)))
     province_total_area = sum(v for v in province_areas if isinstance(v, (int, float)))
-    province_avg_density = (province_total_pop / province_total_area) if province_total_area else None
+    province_avg_density = (
+        (province_total_pop / province_total_area) if province_total_area else None
+    )
 
-    province_facilities = [f for f in facilities if str(f.get("commune_code")) in {str(r["commune_code"]) for r in province_communes}]
+    province_facilities = [
+        f
+        for f in facilities
+        if str(f.get("commune_code")) in {str(r["commune_code"]) for r in province_communes}
+    ]
     province_total_facilities = len(province_facilities)
-    province_avg_facilities = province_total_facilities / len(province_communes) if province_communes else 0
+    province_avg_facilities = (
+        province_total_facilities / len(province_communes) if province_communes else 0
+    )
 
-    region_total_pop = sum(r.get("population_2024") or 0 for r in communes if isinstance(r.get("population_2024"), (int, float)))
-    region_total_area = sum(r.get("area_km2") or 0 for r in communes if isinstance(r.get("area_km2"), (int, float)))
+    region_total_pop = sum(
+        r.get("population_2024") or 0
+        for r in communes
+        if isinstance(r.get("population_2024"), (int, float))
+    )
+    region_total_area = sum(
+        r.get("area_km2") or 0 for r in communes if isinstance(r.get("area_km2"), (int, float))
+    )
     region_avg_density = region_total_pop / region_total_area if region_total_area else None
     region_total_facilities = len(facilities)
     region_avg_facilities = region_total_facilities / len(communes) if communes else 0
@@ -1435,11 +1486,7 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 {"Champ": "Densité (hab/km²)", "Valeur": _fmt_float(density, 1)},
                 {"Champ": "Établissements de santé", "Valeur": _fmt_int(total_facilities)},
             ]
-            profile_csv = (
-                pd.DataFrame(profile_rows)
-                .to_csv(index=False)
-                .encode("utf-8-sig")
-            )
+            profile_csv = pd.DataFrame(profile_rows).to_csv(index=False).encode("utf-8-sig")
             st.download_button(
                 "💾 Exporter le profil",
                 data=profile_csv,
@@ -1605,24 +1652,28 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
         )
         if population_2014 is not None and population_2024 is not None:
             fig = go.Figure()
-            fig.add_trace(go.Bar(
-                x=["Population"],
-                y=[population_2014],
-                name="2014",
-                marker_color="#2BB3A3",
-                text=[_fmt_int(population_2014)],
-                textposition="outside",
-                cliponaxis=False,
-            ))
-            fig.add_trace(go.Bar(
-                x=["Population"],
-                y=[population_2024],
-                name="2024",
-                marker_color="#0D5C75",
-                text=[_fmt_int(population_2024)],
-                textposition="outside",
-                cliponaxis=False,
-            ))
+            fig.add_trace(
+                go.Bar(
+                    x=["Population"],
+                    y=[population_2014],
+                    name="2014",
+                    marker_color="#2BB3A3",
+                    text=[_fmt_int(population_2014)],
+                    textposition="outside",
+                    cliponaxis=False,
+                )
+            )
+            fig.add_trace(
+                go.Bar(
+                    x=["Population"],
+                    y=[population_2024],
+                    name="2024",
+                    marker_color="#0D5C75",
+                    text=[_fmt_int(population_2024)],
+                    textposition="outside",
+                    cliponaxis=False,
+                )
+            )
             fig.update_layout(
                 height=300,
                 margin={"l": 8, "r": 8, "t": 8, "b": 42},
@@ -1635,7 +1686,9 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 xaxis={"gridcolor": "#E2E8F0", "zeroline": False, "tickfont": {"size": 9}},
                 yaxis={"gridcolor": "#E2E8F0", "zeroline": False, "tickfont": {"size": 9}},
             )
-            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False, "responsive": True})
+            st.plotly_chart(
+                fig, use_container_width=True, config={"displayModeBar": False, "responsive": True}
+            )
         else:
             st.markdown(
                 "<div class='tta-details-empty'>Données démographiques incomplètes pour cette commune.</div>",
@@ -1653,7 +1706,15 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
             unsafe_allow_html=True,
         )
         if total_facilities > 0:
-            facility_order = ["hospital", "clinic", "pharmacy", "doctors", "laboratory", "healthcare_unspecified", "physiotherapist"]
+            facility_order = [
+                "hospital",
+                "clinic",
+                "pharmacy",
+                "doctors",
+                "laboratory",
+                "healthcare_unspecified",
+                "physiotherapist",
+            ]
             facility_labels = {
                 "hospital": "Hôpitaux",
                 "clinic": "Cliniques",
@@ -1681,15 +1742,17 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                     donut_labels.append(facility_labels[kind])
                     donut_values.append(cnt)
                     donut_colors.append(facility_colors[kind])
-            fig = go.Figure(go.Pie(
-                labels=donut_labels,
-                values=donut_values,
-                hole=0.6,
-                marker_colors=donut_colors,
-                textposition="none",
-                hoverinfo="label+value+percent",
-                sort=False,
-            ))
+            fig = go.Figure(
+                go.Pie(
+                    labels=donut_labels,
+                    values=donut_values,
+                    hole=0.6,
+                    marker_colors=donut_colors,
+                    textposition="none",
+                    hoverinfo="label+value+percent",
+                    sort=False,
+                )
+            )
             fig.update_layout(
                 height=300,
                 margin={"l": 8, "r": 8, "t": 8, "b": 8},
@@ -1700,15 +1763,25 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
                 annotations=[
                     dict(
                         text=f"<b>{total_facilities}</b><br>Établissements",
-                        x=0.5, y=0.5, font_size=16, font_color="#0D5C75", showarrow=False,
+                        x=0.5,
+                        y=0.5,
+                        font_size=16,
+                        font_color="#0D5C75",
+                        showarrow=False,
                     ),
                     dict(
                         text="dans OSM",
-                        x=0.5, y=0.56, font_size=10, font_color="#64748B", showarrow=False,
+                        x=0.5,
+                        y=0.56,
+                        font_size=10,
+                        font_color="#64748B",
+                        showarrow=False,
                     ),
                 ],
             )
-            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False, "responsive": True})
+            st.plotly_chart(
+                fig, use_container_width=True, config={"displayModeBar": False, "responsive": True}
+            )
             st.markdown(
                 "<div class='tta-details-card-title' style='margin-top:.75rem;'>"
                 "Répartition par type"
@@ -1813,13 +1886,34 @@ def render_commune_details(communes: list[dict], commune_geojson: dict, faciliti
         )
         st.markdown("<div class='tta-details-table-wrap'>", unsafe_allow_html=True)
         context_rows = [
-            ("Densité de population (hab/km²)", _fmt_float(density, 1), _fmt_float(province_avg_density, 1), _fmt_float(region_avg_density, 1)),
-            ("Établissements de santé (moy. / commune)", _fmt_int(round(province_avg_facilities, 1)), _fmt_int(round(province_avg_facilities, 1)), _fmt_int(round(region_avg_facilities, 1))),
-            ("Établissements / 10 000 hab.", _fmt_float(ratio_commune, 1), _fmt_float(ratio_province, 1), _fmt_float(ratio_region, 1)),
+            (
+                "Densité de population (hab/km²)",
+                _fmt_float(density, 1),
+                _fmt_float(province_avg_density, 1),
+                _fmt_float(region_avg_density, 1),
+            ),
+            (
+                "Établissements de santé (moy. / commune)",
+                _fmt_int(round(province_avg_facilities, 1)),
+                _fmt_int(round(province_avg_facilities, 1)),
+                _fmt_int(round(region_avg_facilities, 1)),
+            ),
+            (
+                "Établissements / 10 000 hab.",
+                _fmt_float(ratio_commune, 1),
+                _fmt_float(ratio_province, 1),
+                _fmt_float(ratio_region, 1),
+            ),
             ("Environnement territorial", milieu, province, "Mixte"),
         ]
         table_html = "<table class='tta-details-table'>"
-        table_html += "<thead><tr><th>Indicateur</th><th style='width:30%;'>" + html.escape(str(name_fr)) + "</th><th>Moy. Province (" + html.escape(str(province)) + ")</th><th>Moy. Régionale (TTA)</th></tr></thead>"
+        table_html += (
+            "<thead><tr><th>Indicateur</th><th style='width:30%;'>"
+            + html.escape(str(name_fr))
+            + "</th><th>Moy. Province ("
+            + html.escape(str(province))
+            + ")</th><th>Moy. Régionale (TTA)</th></tr></thead>"
+        )
         table_html += "<tbody>"
         for indicator, commune_val, province_val, region_val in context_rows:
             table_html += (
@@ -1854,12 +1948,25 @@ def _population_by_province(communes: list[dict]) -> pd.DataFrame:
 
 
 def render_trends(communes: list[dict], facilities: list[dict]) -> None:
-    _title("Trends & Historical Analysis", "Explore demographic evolution, healthcare infrastructure trends, environmental variations and historical territorial risk indicators across the TTA region.")
+    _title(
+        "Trends & Historical Analysis",
+        "Explore demographic evolution, healthcare infrastructure trends, environmental variations and historical territorial risk indicators across the TTA region.",
+    )
     with st.container(border=True):
         st.markdown("**Historical Analysis Filters**")
         c1, c2 = st.columns([1, 2])
         with c1:
-            indicator = st.selectbox("Historical Indicator", ["Population Evolution", "Healthcare Infrastructure Evolution", "Healthcare Risk Score Evolution", "Healthcare Accessibility Evolution", "Weather and Environmental Trends"], key="trends_indicator")
+            indicator = st.selectbox(
+                "Historical Indicator",
+                [
+                    "Population Evolution",
+                    "Healthcare Infrastructure Evolution",
+                    "Healthcare Risk Score Evolution",
+                    "Healthcare Accessibility Evolution",
+                    "Weather and Environmental Trends",
+                ],
+                key="trends_indicator",
+            )
         with c2:
             st.selectbox("Reference years", ["2014 → 2024"], key="trends_period")
     total_2014 = sum(row.get("population_2014") or 0 for row in communes)
@@ -1867,20 +1974,51 @@ def render_trends(communes: list[dict], facilities: list[dict]) -> None:
     variation = total_2024 - total_2014
     variation_pct = _safe_ratio(variation * 100, total_2014)
     if indicator == "Population Evolution":
-        kpi_row([
-            {"label": "Selected Period", "value": "2014 → 2024", "icon": "◷"},
-            {"label": "Available Records", "value": 2, "description": "Années de référence valides.", "icon": "▤"},
-            {"label": "Communes Covered", "value": len(communes), "icon": "◉"},
-            {"label": "Observed Variation", "value": f"{variation_pct:+.2f}%" if variation_pct is not None else "Not available", "icon": "↗"},
-        ])
+        kpi_row(
+            [
+                {"label": "Selected Period", "value": "2014 → 2024", "icon": "◷"},
+                {
+                    "label": "Available Records",
+                    "value": 2,
+                    "description": "Années de référence valides.",
+                    "icon": "▤",
+                },
+                {"label": "Communes Covered", "value": len(communes), "icon": "◉"},
+                {
+                    "label": "Observed Variation",
+                    "value": f"{variation_pct:+.2f}%"
+                    if variation_pct is not None
+                    else "Not available",
+                    "icon": "↗",
+                },
+            ]
+        )
         st.markdown("### Historical Trends Overview")
-        fig = go.Figure(go.Bar(x=["2014", "2024"], y=[total_2014, total_2024], marker_color=[COLORS["milieu"]["Rural"], THEME.turquoise], text=[_fmt(total_2014), _fmt(total_2024)], textposition="outside"))
+        fig = go.Figure(
+            go.Bar(
+                x=["2014", "2024"],
+                y=[total_2014, total_2024],
+                marker_color=[COLORS["milieu"]["Rural"], THEME.turquoise],
+                text=[_fmt(total_2014), _fmt(total_2024)],
+                textposition="outside",
+            )
+        )
         _chart(fig, 330)
         st.markdown("### Demographic Evolution — 2014 to 2024")
         province_df = _population_by_province(communes)
         fig = go.Figure()
-        fig.add_bar(x=province_df["Province"], y=province_df["2014"], name="2014", marker_color=COLORS["milieu"]["Rural"])
-        fig.add_bar(x=province_df["Province"], y=province_df["2024"], name="2024", marker_color=THEME.turquoise)
+        fig.add_bar(
+            x=province_df["Province"],
+            y=province_df["2014"],
+            name="2014",
+            marker_color=COLORS["milieu"]["Rural"],
+        )
+        fig.add_bar(
+            x=province_df["Province"],
+            y=province_df["2024"],
+            name="2024",
+            marker_color=THEME.turquoise,
+        )
         fig.update_layout(barmode="group")
         _chart(fig, 340)
         growth = []
@@ -1889,64 +2027,178 @@ def render_trends(communes: list[dict], facilities: list[dict]) -> None:
                 growth.append((row["name_fr"], row["population_2024"] - row["population_2014"]))
         growth.sort(key=lambda x: x[1], reverse=True)
         c1, c2 = st.columns(2)
-        for col, title, values, color in [(c1, "Top population growth", growth[:10], THEME.turquoise), (c2, "Lowest population variation", list(reversed(growth[-10:])), COLORS["milieu"]["Rural"])]:
+        for col, title, values, color in [
+            (c1, "Top population growth", growth[:10], THEME.turquoise),
+            (
+                c2,
+                "Lowest population variation",
+                list(reversed(growth[-10:])),
+                COLORS["milieu"]["Rural"],
+            ),
+        ]:
             with col:
                 with st.container(border=True):
                     st.markdown(f"### {title}")
-                    fig = go.Figure(go.Bar(x=[v for _, v in reversed(values)], y=[n for n, _ in reversed(values)], orientation="h", marker_color=color))
+                    fig = go.Figure(
+                        go.Bar(
+                            x=[v for _, v in reversed(values)],
+                            y=[n for n, _ in reversed(values)],
+                            orientation="h",
+                            marker_color=color,
+                        )
+                    )
                     _chart(fig, 320)
     else:
-        kpi_row([{ "label": "Selected Period", "value": "Not available", "icon": "◷"}, {"label": "Available Records", "value": "Not available", "icon": "▤"}, {"label": "Communes Covered", "value": "Not available", "icon": "◉"}, {"label": "Observed Variation", "value": "Not available", "icon": "↗"}])
-        _unavailable("Historical Trends Overview", "Cette série historique n’est pas encore intégrée. La comparaison démographique 2014 → 2024 reste disponible.")
-    _unavailable("Historical Territorial Risk Analysis", "Historical risk analysis is awaiting validated daily risk records from the risk-scoring pipeline.")
-    _unavailable("Environmental Trends", "Historical environmental observations are not yet available for this analysis.")
-    _unavailable("Temporal Activity Heatmap", "La heatmap reste désactivée jusqu’à l’intégration d’un jeu historique adapté.")
+        kpi_row(
+            [
+                {"label": "Selected Period", "value": "Not available", "icon": "◷"},
+                {"label": "Available Records", "value": "Not available", "icon": "▤"},
+                {"label": "Communes Covered", "value": "Not available", "icon": "◉"},
+                {"label": "Observed Variation", "value": "Not available", "icon": "↗"},
+            ]
+        )
+        _unavailable(
+            "Historical Trends Overview",
+            "Cette série historique n’est pas encore intégrée. La comparaison démographique 2014 → 2024 reste disponible.",
+        )
+    _unavailable(
+        "Historical Territorial Risk Analysis",
+        "Historical risk analysis is awaiting validated daily risk records from the risk-scoring pipeline.",
+    )
+    _unavailable(
+        "Environmental Trends",
+        "Historical environmental observations are not yet available for this analysis.",
+    )
+    _unavailable(
+        "Temporal Activity Heatmap",
+        "La heatmap reste désactivée jusqu’à l’intégration d’un jeu historique adapté.",
+    )
     with st.container(border=True):
         st.markdown("### Historical Data Coverage")
-        st.info("Population : observations de référence 2014 et 2024 disponibles. Les séries quotidiennes de risque, météo, accessibilité et évolution des établissements ne sont pas encore intégrées.")
+        st.info(
+            "Population : observations de référence 2014 et 2024 disponibles. Les séries quotidiennes de risque, météo, accessibilité et évolution des établissements ne sont pas encore intégrées."
+        )
 
 
 def render_alerts(communes: list[dict], facilities: list[dict]) -> None:
-    _title("Alerts & Priority Areas", "Monitor territorial alerts, identify priority communes, and investigate emerging healthcare vulnerability situations across the TTA region.")
-    kpi_row([{ "label": "Active Alerts", "value": "Not available", "description": "Alert data not yet integrated", "icon": "!"}, {"label": "Critical Alerts", "value": "Not available", "icon": "!"}, {"label": "Priority Communes", "value": "Not available", "icon": "◉"}, {"label": "Pending Review", "value": "Not available", "icon": "◷"}])
+    _title(
+        "Alerts & Priority Areas",
+        "Monitor territorial alerts, identify priority communes, and investigate emerging healthcare vulnerability situations across the TTA region.",
+    )
+    kpi_row(
+        [
+            {
+                "label": "Active Alerts",
+                "value": "Not available",
+                "description": "Alert data not yet integrated",
+                "icon": "!",
+            },
+            {"label": "Critical Alerts", "value": "Not available", "icon": "!"},
+            {"label": "Priority Communes", "value": "Not available", "icon": "◉"},
+            {"label": "Pending Review", "value": "Not available", "icon": "◷"},
+        ]
+    )
     with st.container(border=True):
         st.markdown("### Alert Filters")
-        st.info("Les filtres de sévérité, statut et période seront activés après intégration des enregistrements d’alertes et de leurs règles validées.")
+        st.info(
+            "Les filtres de sévérité, statut et période seront activés après intégration des enregistrements d’alertes et de leurs règles validées."
+        )
     c1, c2 = st.columns([1.5, 1])
     with c1:
         with st.container(border=True):
             st.markdown("### Regional Priority Areas")
-            st.caption("Les limites communales sont disponibles, mais aucune zone prioritaire validée ne peut être affichée.")
-            st.map(pd.DataFrame({"lat": [r["centroid_lat"] for r in communes], "lon": [r["centroid_lon"] for r in communes]}), zoom=7, use_container_width=True)
+            st.caption(
+                "Les limites communales sont disponibles, mais aucune zone prioritaire validée ne peut être affichée."
+            )
+            st.map(
+                pd.DataFrame(
+                    {
+                        "lat": [r["centroid_lat"] for r in communes],
+                        "lon": [r["centroid_lon"] for r in communes],
+                    }
+                ),
+                zoom=7,
+                use_container_width=True,
+            )
     with c2:
-        _unavailable("Priority Areas Ranking", "Aucun classement de priorité n’est affiché sans alertes validées.")
+        _unavailable(
+            "Priority Areas Ranking",
+            "Aucun classement de priorité n’est affiché sans alertes validées.",
+        )
     _unavailable("Alert Management", "Alert data not yet integrated")
-    _unavailable("Alert Details & Lifecycle", "Les détails, statuts, historiques et transitions seront disponibles après intégration du workflow d’alertes.")
+    _unavailable(
+        "Alert Details & Lifecycle",
+        "Les détails, statuts, historiques et transitions seront disponibles après intégration du workflow d’alertes.",
+    )
 
 
 def render_monitoring(communes: list[dict], facilities: list[dict]) -> None:
-    _title("System Monitoring", "Operational status of data sources, processing pipelines and dashboard dependencies.")
+    _title(
+        "System Monitoring",
+        "Operational status of data sources, processing pipelines and dashboard dependencies.",
+    )
     root = Path(__file__).resolve().parents[2]
     checks = [
         ("Communes CSV", root / "data/processed/communes_TTA_2024.csv", len(communes), 146),
-        ("Communes GeoJSON", root / "data/processed/communes_TTA.geojson", "FeatureCollection", "FeatureCollection"),
-        ("Healthcare facilities CSV", root / "data/processed/health_facilities_TTA.csv", len(facilities), 892),
+        (
+            "Communes GeoJSON",
+            root / "data/processed/communes_TTA.geojson",
+            "FeatureCollection",
+            "FeatureCollection",
+        ),
+        (
+            "Healthcare facilities CSV",
+            root / "data/processed/health_facilities_TTA.csv",
+            len(facilities),
+            892,
+        ),
     ]
     available = sum(path.exists() for _, path, _, _ in checks)
-    kpi_row([{ "label": "Sources Available", "value": f"{available}/{len(checks)}", "description": "Contrôles locaux réussis.", "icon": "✓"}, {"label": "Communes Loaded", "value": len(communes), "icon": "◉"}, {"label": "Facilities Loaded", "value": len(facilities), "icon": "▣"}, {"label": "Unassigned Facilities", "value": sum(1 for f in facilities if f.get("commune_code") is None), "icon": "○"}])
+    kpi_row(
+        [
+            {
+                "label": "Sources Available",
+                "value": f"{available}/{len(checks)}",
+                "description": "Contrôles locaux réussis.",
+                "icon": "✓",
+            },
+            {"label": "Communes Loaded", "value": len(communes), "icon": "◉"},
+            {"label": "Facilities Loaded", "value": len(facilities), "icon": "▣"},
+            {
+                "label": "Unassigned Facilities",
+                "value": sum(1 for f in facilities if f.get("commune_code") is None),
+                "icon": "○",
+            },
+        ]
+    )
     with st.container(border=True):
         st.markdown("### Data Source Health")
         table = []
         for label, path, observed, expected in checks:
-            table.append({"Source": label, "Statut": "Disponible" if path.exists() else "Indisponible", "Chemin": str(path.relative_to(root)) if path.exists() else "—", "Observation": observed, "Référence": expected})
+            table.append(
+                {
+                    "Source": label,
+                    "Statut": "Disponible" if path.exists() else "Indisponible",
+                    "Chemin": str(path.relative_to(root)) if path.exists() else "—",
+                    "Observation": observed,
+                    "Référence": expected,
+                }
+            )
         st.dataframe(pd.DataFrame(table), use_container_width=True, hide_index=True)
     c1, c2 = st.columns(2)
     with c1:
         with st.container(border=True):
             st.markdown("### Pipeline Coverage")
-            st.info("Le monitoring confirme la disponibilité des fichiers locaux chargés par l’application. Les exécutions Airflow, la base PostgreSQL et les appels externes nécessitent une connexion à leur environnement opérationnel.")
+            st.info(
+                "Le monitoring confirme la disponibilité des fichiers locaux chargés par l’application. Les exécutions Airflow, la base PostgreSQL et les appels externes nécessitent une connexion à leur environnement opérationnel."
+            )
     with c2:
         with st.container(border=True):
             st.markdown("### Data Integrity")
-            st.success("Les identifiants communaux sont conservés comme chaînes et les établissements non affectés restent séparés des statistiques communales.")
-    _unavailable("Risk & Accessibility Pipeline", "Les métriques opérationnelles détaillées seront affichées après intégration des sorties validées de scoring et d’accessibilité.")
+            st.success(
+                "Les identifiants communaux sont conservés comme chaînes et les établissements non affectés restent séparés des statistiques communales."
+            )
+    _unavailable(
+        "Risk & Accessibility Pipeline",
+        "Les métriques opérationnelles détaillées seront affichées après intégration des sorties validées de scoring et d’accessibilité.",
+    )

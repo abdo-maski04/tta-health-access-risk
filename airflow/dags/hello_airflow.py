@@ -1,13 +1,10 @@
-
 import pendulum
 from airflow.sdk import dag, task
 
 
 @dag(
     dag_id="hello_airflow",
-    start_date=pendulum.datetime(
-        2026, 11, 28, tz="Africa/Casablanca"
-    ),
+    start_date=pendulum.datetime(2026, 11, 28, tz="Africa/Casablanca"),
     schedule=None,
     catchup=False,
     tags=["test"],
@@ -32,4 +29,3 @@ def hello_airflow():
 
 
 hello_airflow()
-

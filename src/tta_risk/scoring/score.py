@@ -121,9 +121,15 @@ def personnes_exposees(population, niveau_couleur: str) -> int:
     return int(population)
 
 
-def scorer_commune(pluie_mm, tmax_c, temps_min, population=None,
-                   seuils_pluie=(None, None, None), seuils_chaleur=(None, None, None),
-                   config=None) -> dict:
+def scorer_commune(
+    pluie_mm,
+    tmax_c,
+    temps_min,
+    population=None,
+    seuils_pluie=(None, None, None),
+    seuils_chaleur=(None, None, None),
+    config=None,
+) -> dict:
     """Scoring complet d'une commune pour un jour donne."""
     if config is None:
         config = DEFAUTS
