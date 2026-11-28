@@ -24,9 +24,9 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-from src.tta_risk.scoring.daily import ajouter_score, charger_temps, verifier_temps
 
 from src.tta_risk.db.database import get_connection
+from src.tta_risk.scoring.daily import ajouter_score, charger_temps, verifier_temps
 from src.tta_risk.scoring.danger import compute_danger
 from src.tta_risk.scoring.score import personnes_exposees
 
