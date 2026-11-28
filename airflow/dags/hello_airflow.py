@@ -1,6 +1,5 @@
 
 import pendulum
-
 from airflow.sdk import dag, task
 
 
