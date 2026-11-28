@@ -1,0 +1,84 @@
+
+x-airflow-common: &airflow-common
+  image: tta-airflow:1.0
+
+  environment: &airflow-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:${AIRFLOW_DB_PASSWORD}@airflow-db:5432/airflow
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Africa/Casablanca
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-api-server:8080/execution/
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET}
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: "admin:admin"
+    AIRFLOW__WORKERS__EXECUTION_API_TIMEOUT: "60"
+    AIRFLOW__CORE__PARALLELISM: "4"
+
+    # Business database
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: "5432"
+    POSTGRES_USER: ${POSTGRES_USER}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    POSTGRES_DB: ${POSTGRES_DB}
+
+    PYTHONPATH: /opt/tta-risk:/opt/tta-risk/src
+
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./src:/opt/tta-risk/src:ro
+    - ./scripts:/opt/tta-risk/scripts:ro
+    - ./data:/opt/tta-risk/data:ro
+    - ./config:/opt/tta-risk/config:ro
+    - airflow_config:/opt/airflow/config
+
+  depends_on:
+    airflow-db:
+      condition: service_healthy
+
+services:
+
+  airflow-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD}
+      POSTGRES_DB: airflow
+
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+    restart: unless-stopped
+
+  airflow-init:
+    <<: *airflow-common
+    command: db migrate
+
+  airflow-api-server:
+    <<: *airflow-common
+    command: api-server
+
+    ports:
+      - "127.0.0.1:8080:8080"
+
+    restart: unless-stopped
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: unless-stopped
+
+  airflow-dag-processor:
+    <<: *airflow-common
+    command: dag-processor
+    restart: unless-stopped
+
+volumes:
+  airflow_db_data:
+  airflow_config:
